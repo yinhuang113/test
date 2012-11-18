@@ -55,6 +55,7 @@
 		A9214EE816586AAB00315E60 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A9214EE716586AAB00315E60 /* Makefile */; };
 		A9214EE9165876B000315E60 /* runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214ED81658640F00315E60 /* runner.cpp */; };
 		A9214EEB16587AEC00315E60 /* poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EEA16587AEC00315E60 /* poly.cpp */; };
+		A9214EEF1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,8 @@
 		A9214ED81658640F00315E60 /* runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = runner.cpp; sourceTree = "<group>"; };
 		A9214EE716586AAB00315E60 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		A9214EEA16587AEC00315E60 /* poly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = poly.cpp; path = ../poly.cpp; sourceTree = "<group>"; };
+		A9214EEC1658973100315E60 /* libboost_unit_test_framework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_unit_test_framework.a; path = ../../../../../../../../usr/local/lib/libboost_unit_test_framework.a; sourceTree = "<group>"; };
+		A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_unit_test_framework-mt.dylib"; path = "../../../../../../../../usr/local/Cellar/boost/1.50.0/lib/libboost_unit_test_framework-mt.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9214EEF1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,8 @@
 		A9214E121653438F00315E60 = {
 			isa = PBXGroup;
 			children = (
+				A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */,
+				A9214EEC1658973100315E60 /* libboost_unit_test_framework.a */,
 				A9214EEA16587AEC00315E60 /* poly.cpp */,
 				A9214E2F165343B100315E60 /* poly */,
 				A9214EC61658615000315E60 /* tests */,
@@ -582,10 +588,11 @@
 					/usr/local/include,
 					"$(inherited)",
 				);
-				OTHER_LDFLAGS = (
-					"-L/usr/local/lib",
-					"-lboost_unit_test_framework",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.50.0/lib,
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -597,10 +604,11 @@
 					/usr/local/include,
 					"$(inherited)",
 				);
-				OTHER_LDFLAGS = (
-					"-L/usr/local/lib",
-					"-lboost_unit_test_framework",
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.50.0/lib,
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
