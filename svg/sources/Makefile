@@ -1,5 +1,5 @@
 # Define directories
-POLY_OBJDIR:=$(OBJDIR)/examples
+POLY_OBJDIR:=$(OBJDIR)/poly
 AUTODIRS:=$(POLY_OBJDIR)
 
 # Define source files and object files
@@ -7,9 +7,7 @@ CFILES:=${shell find ${CURDIR} -name "*.cpp" -print}
 OFILES:=$(patsubst %.cpp,%.o,$(CFILES))
 OFILES:=$(notdir $(OFILES))
 OFILES:=$(addprefix $(POLY_OBJDIR)/,$(OFILES))
-OUTFILES:=$(patsubst %.cpp,%,$(CFILES))
-OUTFILES:=$(notdir $(OUTFILES))
-OUTFILES:=$(addprefix $(BINDIR)/,$(OUTFILES))
+OUTFILES:=$(BINDIR)/poly
 CPPFLAGS:=$(CPPFLAGS)
 LDFLAGS:=$(LDFLAGS) -L$(BINDIR) -lsvg2
 # Define sub-directories
@@ -25,10 +23,14 @@ poly_pre:
 poly_post: $(OUTFILES)
 	@$(ECHO) "-- poly done --"
 
-$(BINDIR)/%: %.cpp $(LIBSVG2_AFILE)
-	$(CROSS_COMPILE)$(CXX) $(CPPFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $(POLY_OBJDIR)/$(notdir $@).o
-	$(CROSS_COMPILE)$(CXX) $(POLY_OBJDIR)/$(notdir $@).o $(LDFLAGS) -o $@
+$(POLY_OBJDIR)/%.o: %.cpp
+	$(CROSS_COMPILE)$(CXX) $(CPPFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
 
+$(POLY_OBJDIR)/poly.o: ../poly.cpp
+	$(CROSS_COMPILE)$(CXX) $(CPPFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
+
+$(BINDIR)/poly: $(OFILES) $(LIBSVG2_AFILE) $(POLY_OBJDIR)/poly.o
+	$(CROSS_COMPILE)$(CXX) $(OFILES) $(POLY_OBJDIR)/poly.o $(LDFLAGS) -o $@
 
 clean:
 	@$(RM) $(POLY_OBJDIR)

@@ -41,7 +41,20 @@
 		A9214EA7165344E400315E60 /* svg_types.c in Sources */ = {isa = PBXBuildFile; fileRef = A9214E96165344E400315E60 /* svg_types.c */; };
 		A9214EA8165344E400315E60 /* svg_xml.c in Sources */ = {isa = PBXBuildFile; fileRef = A9214E97165344E400315E60 /* svg_xml.c */; };
 		A9214EAA1653453100315E60 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9214EA91653453100315E60 /* libxml2.dylib */; };
-		A9214EB51653468C00315E60 /* poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EB31653468C00315E60 /* poly.cpp */; };
+		A9214EB91657952900315E60 /* polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EB71657952900315E60 /* polygon.cpp */; };
+		A9214EBC1657957900315E60 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBA1657957900315E60 /* point.cpp */; };
+		A9214EBF1657965800315E60 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBD1657965800315E60 /* vector.cpp */; };
+		A9214EC216579CF500315E60 /* serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC016579CF500315E60 /* serialization.cpp */; };
+		A9214EC51657A3AF00315E60 /* bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC31657A3AF00315E60 /* bezier.cpp */; };
+		A9214EE01658666400315E60 /* bezier_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC71658617400315E60 /* bezier_test.cpp */; };
+		A9214EE21658678600315E60 /* polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EB71657952900315E60 /* polygon.cpp */; };
+		A9214EE31658678600315E60 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBA1657957900315E60 /* point.cpp */; };
+		A9214EE41658678600315E60 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBD1657965800315E60 /* vector.cpp */; };
+		A9214EE51658678600315E60 /* serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC016579CF500315E60 /* serialization.cpp */; };
+		A9214EE61658678600315E60 /* bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC31657A3AF00315E60 /* bezier.cpp */; };
+		A9214EE816586AAB00315E60 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A9214EE716586AAB00315E60 /* Makefile */; };
+		A9214EE9165876B000315E60 /* runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214ED81658640F00315E60 /* runner.cpp */; };
+		A9214EEB16587AEC00315E60 /* poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EEA16587AEC00315E60 /* poly.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +69,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A9214E1B1653438F00315E60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A9214ECC165863A600315E60 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -106,8 +128,23 @@
 		A9214EAC1653455100315E60 /* AZ0016_1.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AZ0016_1.svg; sourceTree = "<group>"; };
 		A9214EAD1653455100315E60 /* CA1820_1.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CA1820_1.svg; sourceTree = "<group>"; };
 		A9214EAE1653455100315E60 /* CA1820_2.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CA1820_2.svg; sourceTree = "<group>"; };
-		A9214EB31653468C00315E60 /* poly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = poly.cpp; sourceTree = "<group>"; };
 		A9214EB41653468C00315E60 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		A9214EB71657952900315E60 /* polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polygon.cpp; sourceTree = "<group>"; };
+		A9214EB81657952900315E60 /* polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = polygon.h; sourceTree = "<group>"; };
+		A9214EBA1657957900315E60 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = "<group>"; };
+		A9214EBB1657957900315E60 /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
+		A9214EBD1657965800315E60 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
+		A9214EBE1657965800315E60 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		A9214EC016579CF500315E60 /* serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialization.cpp; sourceTree = "<group>"; };
+		A9214EC116579CF500315E60 /* serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialization.h; sourceTree = "<group>"; };
+		A9214EC31657A3AF00315E60 /* bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bezier.cpp; sourceTree = "<group>"; };
+		A9214EC41657A3AF00315E60 /* bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bezier.h; sourceTree = "<group>"; };
+		A9214EC71658617400315E60 /* bezier_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bezier_test.cpp; sourceTree = "<group>"; };
+		A9214EC81658617400315E60 /* bezier_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bezier_test.h; sourceTree = "<group>"; };
+		A9214ECE165863A600315E60 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9214ED81658640F00315E60 /* runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = runner.cpp; sourceTree = "<group>"; };
+		A9214EE716586AAB00315E60 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		A9214EEA16587AEC00315E60 /* poly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = poly.cpp; path = ../poly.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +164,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9214ECB165863A600315E60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A9214E121653438F00315E60 = {
 			isa = PBXGroup;
 			children = (
+				A9214EEA16587AEC00315E60 /* poly.cpp */,
 				A9214E2F165343B100315E60 /* poly */,
+				A9214EC61658615000315E60 /* tests */,
 				A9214EAB1653455100315E60 /* resources */,
 				A9214E3C1653440100315E60 /* libsvg2 */,
 				A9214EA91653453100315E60 /* libxml2.dylib */,
@@ -146,6 +192,7 @@
 			children = (
 				A9214E1D1653438F00315E60 /* poly */,
 				A9214E38165343D500315E60 /* libsvg2.a */,
+				A9214ECE165863A600315E60 /* test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,8 +200,17 @@
 		A9214E2F165343B100315E60 /* poly */ = {
 			isa = PBXGroup;
 			children = (
-				A9214EB31653468C00315E60 /* poly.cpp */,
 				A9214EB41653468C00315E60 /* Makefile */,
+				A9214EB71657952900315E60 /* polygon.cpp */,
+				A9214EB81657952900315E60 /* polygon.h */,
+				A9214EBA1657957900315E60 /* point.cpp */,
+				A9214EBB1657957900315E60 /* point.h */,
+				A9214EBD1657965800315E60 /* vector.cpp */,
+				A9214EBE1657965800315E60 /* vector.h */,
+				A9214EC016579CF500315E60 /* serialization.cpp */,
+				A9214EC116579CF500315E60 /* serialization.h */,
+				A9214EC31657A3AF00315E60 /* bezier.cpp */,
+				A9214EC41657A3AF00315E60 /* bezier.h */,
 			);
 			name = poly;
 			path = ../sources;
@@ -244,6 +300,18 @@
 			path = ../resources;
 			sourceTree = "<group>";
 		};
+		A9214EC61658615000315E60 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				A9214EE716586AAB00315E60 /* Makefile */,
+				A9214EC71658617400315E60 /* bezier_test.cpp */,
+				A9214EC81658617400315E60 /* bezier_test.h */,
+				A9214ED81658640F00315E60 /* runner.cpp */,
+			);
+			name = tests;
+			path = ../tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -308,6 +376,23 @@
 			productReference = A9214E38165343D500315E60 /* libsvg2.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		A9214ECD165863A600315E60 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9214ED5165863A600315E60 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				A9214ECA165863A600315E60 /* Sources */,
+				A9214ECB165863A600315E60 /* Frameworks */,
+				A9214ECC165863A600315E60 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = A9214ECE165863A600315E60 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -331,6 +416,7 @@
 			targets = (
 				A9214E1C1653438F00315E60 /* poly */,
 				A9214E37165343D500315E60 /* libsvg2 */,
+				A9214ECD165863A600315E60 /* test */,
 			);
 		};
 /* End PBXProject section */
@@ -340,7 +426,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9214EB51653468C00315E60 /* poly.cpp in Sources */,
+				A9214EB91657952900315E60 /* polygon.cpp in Sources */,
+				A9214EBC1657957900315E60 /* point.cpp in Sources */,
+				A9214EBF1657965800315E60 /* vector.cpp in Sources */,
+				A9214EC216579CF500315E60 /* serialization.cpp in Sources */,
+				A9214EC51657A3AF00315E60 /* bezier.cpp in Sources */,
+				A9214EE816586AAB00315E60 /* Makefile in Sources */,
+				A9214EEB16587AEC00315E60 /* poly.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +456,20 @@
 				A9214EA6165344E400315E60 /* svg_string.c in Sources */,
 				A9214EA7165344E400315E60 /* svg_types.c in Sources */,
 				A9214EA8165344E400315E60 /* svg_xml.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9214ECA165863A600315E60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9214EE01658666400315E60 /* bezier_test.cpp in Sources */,
+				A9214EE21658678600315E60 /* polygon.cpp in Sources */,
+				A9214EE31658678600315E60 /* point.cpp in Sources */,
+				A9214EE41658678600315E60 /* vector.cpp in Sources */,
+				A9214EE51658678600315E60 /* serialization.cpp in Sources */,
+				A9214EE61658678600315E60 /* bezier.cpp in Sources */,
+				A9214EE9165876B000315E60 /* runner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +503,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -424,6 +531,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -467,6 +575,36 @@
 			};
 			name = Release;
 		};
+		A9214ED6165863A600315E60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lboost_unit_test_framework",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9214ED7165863A600315E60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-L/usr/local/lib",
+					"-lboost_unit_test_framework",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,6 +631,14 @@
 			buildConfigurations = (
 				A9214E3A165343D500315E60 /* Debug */,
 				A9214E3B165343D500315E60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A9214ED5165863A600315E60 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9214ED6165863A600315E60 /* Debug */,
+				A9214ED7165863A600315E60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
