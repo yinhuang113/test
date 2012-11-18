@@ -3,7 +3,7 @@ ECHO=echo
 RM=rm -rf
 MV=mv
 MKDIR=mkdir
-CXX=clang++
+CXX=g++
 
 CROSS_COMPILE:=
 
@@ -18,16 +18,16 @@ AUTODIRS:=$(BINDIR) $(OBJDIR) $(DOCSDIR)
 LIBSVG_DIR:=$(CURDIR)/libsvg2
 
 # include directories
-CPPFLAGS:=$(CPPFLAGS) -std=gnu++11 -I/usr/include/libxml2 -I$(LIBSVG_DIR)/include
+CPPFLAGS:=$(CPPFLAGS) -std=gnu++0x $(shell xml2-config --cflags) -I$(LIBSVG_DIR)/include
 
 # Linker options
-LDFLAGS:=-L$(LIBSVG_DIR)/bin -lxml2
+LDFLAGS:=-L$(LIBSVG_DIR)/bin $(shell xml2-config --libs)
 
 # Adds flags to CPPFLAGS
 ifdef NDEBUG
-CPPFLAGS:=$(CPPFLAGS) -std=gnu++11 -Wall -Wextra -Wconversion -O3 -DNDEBUG
+CPPFLAGS:=$(CPPFLAGS) -std=gnu++0x -Wall -Wextra -Wconversion -O3 -DNDEBUG
 else
-CPPFLAGS:=$(CPPFLAGS) -std=gnu++11 -Wall -Wextra -Wconversion -O0 -ggdb -DDEBUG=1 
+CPPFLAGS:=$(CPPFLAGS) -std=gnu++0x -Wall -Wextra -Wconversion -O0 -ggdb -DDEBUG=1 
 endif
 
 export

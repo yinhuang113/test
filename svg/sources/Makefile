@@ -9,7 +9,7 @@ OFILES:=$(notdir $(OFILES))
 OFILES:=$(addprefix $(POLY_OBJDIR)/,$(OFILES))
 OUTFILES:=$(BINDIR)/poly
 CPPFLAGS:=$(CPPFLAGS)
-LDFLAGS:=$(LDFLAGS) -L$(BINDIR) -lsvg2
+LDFLAGS:=-lsvg2 $(LDFLAGS) -L$(BINDIR)
 # Define sub-directories
 VPATH:=$(dir $(CFILES)) $(INCDIR)
 

@@ -3,6 +3,7 @@
 
 #include "svg.h"
 #include <iostream>
+#include <strings.h>
 
 #define FLOOR_ID "FLOOR"
 
