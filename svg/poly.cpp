@@ -1,14 +1,19 @@
+#include "bezier.h"
+#include "path_to_polygon.h"
 #include "polygon.h"
 #include "serialization.h"
 
 #include "svg.h"
 #include <iostream>
+#include <iterator>
+#include <list>
 #include <strings.h>
 
 #define FLOOR_ID "FLOOR"
 
 void processItem(svgItem *item);
 mb::polygon convertPathToPolygon(svgPath *path);
+std::list<mb::point> convertPathCommandToPolygon(svgPathCommand* cmd, mb::point& current);
 mb::polygon convertRectToPolygon(svgRect *rect);
 mb::polygon convertCircleToPolygon(svgCircle *circle);
 mb::polygon convertEllipseToPolygon(svgEllipse *ellipste);
@@ -94,6 +99,9 @@ void processItem(svgItem *item) {
 }
 
 mb::polygon convertPathToPolygon(svgPath *path) {
+	mb::path_to_polygon ptp;
+	ptp.convert(path);
+	
 	mb::polygon poly;
 	return poly;
 }

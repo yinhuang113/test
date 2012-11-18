@@ -56,6 +56,10 @@ namespace mb {
 		void add_vertex(const point& p) {
 			_vertices.push_back(p);
 		}
+		template <typename iterator>
+		void add_vertices(iterator begin, iterator end) {
+			_vertices.insert(_vertices.end(), begin, end);
+		}
 		void remove_vertex(iterator it) {
 			_vertices.erase(it);
 		}

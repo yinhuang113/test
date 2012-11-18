@@ -32,26 +32,32 @@ namespace mb {
 		return std::make_pair(c1, c2);
 	}
 	
-	bezier::list_t bezier::linearize(float tol) const {
+	bezier::list_t bezier::linearize(real_t tol) const {
 		return recursive_linearize(*this, tol);
 	}
 	
-	bezier::list_t bezier::recursive_linearize(const bezier& b, float tol) {
+	bezier::list_t bezier::recursive_linearize(const bezier& b, real_t tol) {
 		// Calculate all the mid-points of the line segments
-		point p12 = lerp(b.p1, b.p2, 0.5);
-		point p23 = lerp(b.p2, b.p3, 0.5);
-		point p34 = lerp(b.p3, b.p4, 0.5);
-		point p123 = lerp(p12, p23, 0.5);
-		point p234 = lerp(p23, p34, 0.5);
-		point p1234 = lerp(p123, p234, 0.5);
+		point p12 = lerp(b.p1, b.p2, 0.5f);
+		point p23 = lerp(b.p2, b.p3, 0.5f);
+		point p34 = lerp(b.p3, b.p4, 0.5f);
+		point p123 = lerp(p12, p23, 0.5f);
+		point p234 = lerp(p23, p34, 0.5f);
+		point p1234 = lerp(p123, p234, 0.5f);
 		
 		// Try to approximate the full cubic curve by a single straight line
-        vector v14 = b.p4 - b.p1;                  // vector from p1 to p4, the line approximation
-		vector n = v14.unit().perp();          // normal for the line approximation
-		float d2 = std::fabs(dot(b.p4 - b.p2, n)); // distance between the line and p2
-		float d3 = std::fabs(dot(b.p4 - b.p3, n)); // distance between the line and p3
+        vector v14 = b.p4 - b.p1;  // vector from p1 to p4, the line approximation
+		real_t d14 = v14.length(); // distance between p1 an dp4
+		vector t = v14 / d14;      // tangent for the line approximation
+		vector n = t.perp();       // normal for the line approximation
 		
-        if (std::max(d2, d3) <= tol) {
+		// perpendicular and tangential distances between the control points and their ideal line locations
+		real_t d2p = std::fabs(dot(b.p4 - b.p2, n));
+		real_t d2t = std::fabs(dot(b.p2 - b.p1, t) - d14/3.f);
+		real_t d3p = std::fabs(dot(b.p4 - b.p3, n));
+		real_t d3t = std::fabs(-dot(b.p4 - b.p3, t) - d14/3.f);
+		
+        if (std::max(d2p + d2t, d3p + d3t) <= tol) {
 			list_t l;
 			l.push_back(b.p1);
 			l.push_back(p1234);

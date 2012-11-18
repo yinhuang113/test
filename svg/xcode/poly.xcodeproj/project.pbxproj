@@ -52,10 +52,10 @@
 		A9214EE41658678600315E60 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBD1657965800315E60 /* vector.cpp */; };
 		A9214EE51658678600315E60 /* serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC016579CF500315E60 /* serialization.cpp */; };
 		A9214EE61658678600315E60 /* bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC31657A3AF00315E60 /* bezier.cpp */; };
-		A9214EE816586AAB00315E60 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A9214EE716586AAB00315E60 /* Makefile */; };
 		A9214EE9165876B000315E60 /* runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214ED81658640F00315E60 /* runner.cpp */; };
 		A9214EEB16587AEC00315E60 /* poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EEA16587AEC00315E60 /* poly.cpp */; };
 		A9214EEF1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */; };
+		A9214EF21659886000315E60 /* path_to_polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EF01659886000315E60 /* path_to_polygon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,13 +141,13 @@
 		A9214EC31657A3AF00315E60 /* bezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bezier.cpp; sourceTree = "<group>"; };
 		A9214EC41657A3AF00315E60 /* bezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bezier.h; sourceTree = "<group>"; };
 		A9214EC71658617400315E60 /* bezier_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bezier_test.cpp; sourceTree = "<group>"; };
-		A9214EC81658617400315E60 /* bezier_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bezier_test.h; sourceTree = "<group>"; };
 		A9214ECE165863A600315E60 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9214ED81658640F00315E60 /* runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = runner.cpp; sourceTree = "<group>"; };
 		A9214EE716586AAB00315E60 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		A9214EEA16587AEC00315E60 /* poly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = poly.cpp; path = ../poly.cpp; sourceTree = "<group>"; };
-		A9214EEC1658973100315E60 /* libboost_unit_test_framework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_unit_test_framework.a; path = ../../../../../../../../usr/local/lib/libboost_unit_test_framework.a; sourceTree = "<group>"; };
 		A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_unit_test_framework-mt.dylib"; path = "../../../../../../../../usr/local/Cellar/boost/1.50.0/lib/libboost_unit_test_framework-mt.dylib"; sourceTree = "<group>"; };
+		A9214EF01659886000315E60 /* path_to_polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = path_to_polygon.cpp; sourceTree = "<group>"; };
+		A9214EF11659886000315E60 /* path_to_polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_to_polygon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,14 +181,13 @@
 		A9214E121653438F00315E60 = {
 			isa = PBXGroup;
 			children = (
-				A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */,
-				A9214EEC1658973100315E60 /* libboost_unit_test_framework.a */,
 				A9214EEA16587AEC00315E60 /* poly.cpp */,
 				A9214E2F165343B100315E60 /* poly */,
 				A9214EC61658615000315E60 /* tests */,
 				A9214EAB1653455100315E60 /* resources */,
 				A9214E3C1653440100315E60 /* libsvg2 */,
 				A9214EA91653453100315E60 /* libxml2.dylib */,
+				A9214EEE1658AC9100315E60 /* libboost_unit_test_framework-mt.dylib */,
 				A9214E1E1653438F00315E60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -217,6 +216,8 @@
 				A9214EC116579CF500315E60 /* serialization.h */,
 				A9214EC31657A3AF00315E60 /* bezier.cpp */,
 				A9214EC41657A3AF00315E60 /* bezier.h */,
+				A9214EF01659886000315E60 /* path_to_polygon.cpp */,
+				A9214EF11659886000315E60 /* path_to_polygon.h */,
 			);
 			name = poly;
 			path = ../sources;
@@ -310,9 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				A9214EE716586AAB00315E60 /* Makefile */,
-				A9214EC71658617400315E60 /* bezier_test.cpp */,
-				A9214EC81658617400315E60 /* bezier_test.h */,
 				A9214ED81658640F00315E60 /* runner.cpp */,
+				A9214EC71658617400315E60 /* bezier_test.cpp */,
 			);
 			name = tests;
 			path = ../tests;
@@ -437,8 +437,8 @@
 				A9214EBF1657965800315E60 /* vector.cpp in Sources */,
 				A9214EC216579CF500315E60 /* serialization.cpp in Sources */,
 				A9214EC51657A3AF00315E60 /* bezier.cpp in Sources */,
-				A9214EE816586AAB00315E60 /* Makefile in Sources */,
 				A9214EEB16587AEC00315E60 /* poly.cpp in Sources */,
+				A9214EF21659886000315E60 /* path_to_polygon.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,10 +495,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -512,7 +508,6 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
@@ -529,10 +524,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -540,7 +531,6 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,

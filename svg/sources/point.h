@@ -54,6 +54,10 @@ namespace mb {
 	inline point lerp(const point& p1, const point& p2, point::value_t t) {
 		return point(p1.x + (p2.x - p1.x)*t, p1.y + (p2.y - p1.y)*t);
 	}
+	
+	inline point::value_t distance(const point& p1, const point& p2) {
+		return (p2 - p1).length();
+	}
 }
 
 #endif

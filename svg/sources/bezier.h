@@ -26,11 +26,12 @@ namespace mb {
 		// Split the curve un two at t in [0, 1]
 		std::pair<bezier, bezier> split(real_t t = 0.5f) const;
 		
-		// Linearize the bezier curve with the given tolerance
+		// Linearize the bezier curve with the given tolerance. The tolerance expresses how much the control points
+		// for each segment bezier deviate from their constant-speed line positions. 
 		list_t linearize(real_t tol = 1) const;
 		
 	protected:
-		static list_t recursive_linearize(const bezier& b, float tol);
+		static list_t recursive_linearize(const bezier& b, real_t tol);
 		
 	private:
 		

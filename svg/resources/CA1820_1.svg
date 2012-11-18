@@ -3,6 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="CA1820_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="960px" viewBox="0 0 640 960" enable-background="new 0 0 640 960" xml:space="preserve">
+
 <g id="FLOOR">
 	<path fill="#E5E5E5" stroke="#B7B7B7" stroke-width="0.25" d="M524.205,556.987V412.251h-5.241l0.005-6.154
 		c0-1.942-1.053-3.645-2.649-4.569l-56.473-32.381c-0.837-0.479-1.75-0.702-2.615-0.696l-47.855-0.047l-0.053,56.163h-125.36
@@ -13,6 +14,7 @@
 		l3.516-2.019l0.813,1.415l10.98-6.295c1.34-0.771,2.06-2.211,1.972-3.686l-0.076-1.163l-2.1,0.14l-0.223-3.364l6.669-0.474V556.987
 		z"/>
 </g>
+
 <g id="STORES">
 	<polygon fill="#B7B7B7" points="466.352,372.878 465.176,374.932 460.332,372.159 461.508,370.1 	"/>
 	<rect x="385.203" y="429.562" fill="#B7B7B7" width="4.557" height="3.399"/>
