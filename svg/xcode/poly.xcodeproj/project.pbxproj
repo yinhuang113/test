@@ -42,14 +42,10 @@
 		A9214EA8165344E400315E60 /* svg_xml.c in Sources */ = {isa = PBXBuildFile; fileRef = A9214E97165344E400315E60 /* svg_xml.c */; };
 		A9214EAA1653453100315E60 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9214EA91653453100315E60 /* libxml2.dylib */; };
 		A9214EB91657952900315E60 /* polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EB71657952900315E60 /* polygon.cpp */; };
-		A9214EBC1657957900315E60 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBA1657957900315E60 /* point.cpp */; };
-		A9214EBF1657965800315E60 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBD1657965800315E60 /* vector.cpp */; };
 		A9214EC216579CF500315E60 /* serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC016579CF500315E60 /* serialization.cpp */; };
 		A9214EC51657A3AF00315E60 /* bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC31657A3AF00315E60 /* bezier.cpp */; };
 		A9214EE01658666400315E60 /* bezier_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC71658617400315E60 /* bezier_test.cpp */; };
 		A9214EE21658678600315E60 /* polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EB71657952900315E60 /* polygon.cpp */; };
-		A9214EE31658678600315E60 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBA1657957900315E60 /* point.cpp */; };
-		A9214EE41658678600315E60 /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EBD1657965800315E60 /* vector.cpp */; };
 		A9214EE51658678600315E60 /* serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC016579CF500315E60 /* serialization.cpp */; };
 		A9214EE61658678600315E60 /* bezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214EC31657A3AF00315E60 /* bezier.cpp */; };
 		A9214EE9165876B000315E60 /* runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9214ED81658640F00315E60 /* runner.cpp */; };
@@ -65,6 +61,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A9214E37165343D500315E60;
 			remoteInfo = libsvg2;
+		};
+		A9214EF316599A5200315E60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9214E141653438F00315E60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9214ECD165863A600315E60;
+			remoteInfo = test;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -132,9 +135,7 @@
 		A9214EB41653468C00315E60 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		A9214EB71657952900315E60 /* polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polygon.cpp; sourceTree = "<group>"; };
 		A9214EB81657952900315E60 /* polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = polygon.h; sourceTree = "<group>"; };
-		A9214EBA1657957900315E60 /* point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = point.cpp; sourceTree = "<group>"; };
 		A9214EBB1657957900315E60 /* point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = point.h; sourceTree = "<group>"; };
-		A9214EBD1657965800315E60 /* vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector.cpp; sourceTree = "<group>"; };
 		A9214EBE1657965800315E60 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
 		A9214EC016579CF500315E60 /* serialization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = serialization.cpp; sourceTree = "<group>"; };
 		A9214EC116579CF500315E60 /* serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serialization.h; sourceTree = "<group>"; };
@@ -206,18 +207,16 @@
 			isa = PBXGroup;
 			children = (
 				A9214EB41653468C00315E60 /* Makefile */,
-				A9214EB71657952900315E60 /* polygon.cpp */,
-				A9214EB81657952900315E60 /* polygon.h */,
-				A9214EBA1657957900315E60 /* point.cpp */,
-				A9214EBB1657957900315E60 /* point.h */,
-				A9214EBD1657965800315E60 /* vector.cpp */,
 				A9214EBE1657965800315E60 /* vector.h */,
-				A9214EC016579CF500315E60 /* serialization.cpp */,
-				A9214EC116579CF500315E60 /* serialization.h */,
-				A9214EC31657A3AF00315E60 /* bezier.cpp */,
+				A9214EBB1657957900315E60 /* point.h */,
+				A9214EB81657952900315E60 /* polygon.h */,
+				A9214EB71657952900315E60 /* polygon.cpp */,
 				A9214EC41657A3AF00315E60 /* bezier.h */,
-				A9214EF01659886000315E60 /* path_to_polygon.cpp */,
+				A9214EC31657A3AF00315E60 /* bezier.cpp */,
+				A9214EC116579CF500315E60 /* serialization.h */,
+				A9214EC016579CF500315E60 /* serialization.cpp */,
 				A9214EF11659886000315E60 /* path_to_polygon.h */,
+				A9214EF01659886000315E60 /* path_to_polygon.cpp */,
 			);
 			name = poly;
 			path = ../sources;
@@ -358,6 +357,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A9214EF416599A5200315E60 /* PBXTargetDependency */,
 				A9214E621653448800315E60 /* PBXTargetDependency */,
 			);
 			name = poly;
@@ -433,8 +433,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9214EB91657952900315E60 /* polygon.cpp in Sources */,
-				A9214EBC1657957900315E60 /* point.cpp in Sources */,
-				A9214EBF1657965800315E60 /* vector.cpp in Sources */,
 				A9214EC216579CF500315E60 /* serialization.cpp in Sources */,
 				A9214EC51657A3AF00315E60 /* bezier.cpp in Sources */,
 				A9214EEB16587AEC00315E60 /* poly.cpp in Sources */,
@@ -471,8 +469,6 @@
 			files = (
 				A9214EE01658666400315E60 /* bezier_test.cpp in Sources */,
 				A9214EE21658678600315E60 /* polygon.cpp in Sources */,
-				A9214EE31658678600315E60 /* point.cpp in Sources */,
-				A9214EE41658678600315E60 /* vector.cpp in Sources */,
 				A9214EE51658678600315E60 /* serialization.cpp in Sources */,
 				A9214EE61658678600315E60 /* bezier.cpp in Sources */,
 				A9214EE9165876B000315E60 /* runner.cpp in Sources */,
@@ -486,6 +482,11 @@
 			isa = PBXTargetDependency;
 			target = A9214E37165343D500315E60 /* libsvg2 */;
 			targetProxy = A9214E611653448800315E60 /* PBXContainerItemProxy */;
+		};
+		A9214EF416599A5200315E60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9214ECD165863A600315E60 /* test */;
+			targetProxy = A9214EF316599A5200315E60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -567,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
