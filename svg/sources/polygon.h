@@ -66,6 +66,9 @@ namespace mb {
 		void clear() {
 			_vertices.clear();
 		}
+		void swap(polygon& p) {
+			_vertices.swap(p._vertices);
+		}
 		
 	private:
 		list_t _vertices;

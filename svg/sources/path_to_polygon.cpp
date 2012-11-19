@@ -17,6 +17,7 @@ namespace mb {
 		_current = _start;
 		_last_control = _start;
 		_polygon.clear();
+		_polygons.clear();
 		
 		svgPathCommand* cmd = path->ptFirstCommand;
 		while (cmd) {
@@ -192,8 +193,19 @@ namespace mb {
 			} break;
 				
 			case SVG_PATH_CMD_ID_ARCTO_ABS:
+				// TODO
+				_current.x = cmd->tParameters.tArcTo.tX.fValue;
+				_current.y = cmd->tParameters.tArcTo.tY.fValue;
+				_last_control = _current;
+				_polygon.add_vertex(_current);
+				break;
+				
 			case SVG_PATH_CMD_ID_ARCTO_REL:
 				// TODO
+				_current.x += cmd->tParameters.tArcTo.tX.fValue;
+				_current.y += cmd->tParameters.tArcTo.tY.fValue;
+				_last_control = _current;
+				_polygon.add_vertex(_current);
 				break;
 				
 			case SVG_PATH_CMD_ID_CLOSEPATH:
@@ -208,7 +220,8 @@ namespace mb {
 	}
 	
 	void path_to_polygon::new_polygon() {
-		std::cout << _polygon << "\n";
-		_polygon.clear();
+		polygon p;
+		_polygon.swap(p);
+		_polygons.push_back(p);
 	}
 }

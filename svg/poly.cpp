@@ -12,8 +12,7 @@
 #define FLOOR_ID "FLOOR"
 
 void processItem(svgItem *item);
-mb::polygon convertPathToPolygon(svgPath *path);
-std::list<mb::point> convertPathCommandToPolygon(svgPathCommand* cmd, mb::point& current);
+std::list<mb::polygon> convertPathToPolygons(svgPath *path);
 mb::polygon convertRectToPolygon(svgRect *rect);
 mb::polygon convertCircleToPolygon(svgCircle *circle);
 mb::polygon convertEllipseToPolygon(svgEllipse *ellipste);
@@ -59,9 +58,11 @@ void processItem(svgItem *item) {
 		std::cout << "Item type: " << subitem->tKind << "\n";
 		mb::polygon poly;
 		switch (subitem->tKind) {
-			case SVG_ITEM_KIND_PATH:
-				poly = convertPathToPolygon(&subitem->tParameters.tPath);
-				break;
+			case SVG_ITEM_KIND_PATH: {
+				std::list<mb::polygon> list = convertPathToPolygons(&subitem->tParameters.tPath);
+				for (std::list<mb::polygon>::iterator it = list.begin(); it != list.end(); ++it)
+					std::cout << *it << "\n";
+			} break;
 				
 			case SVG_ITEM_KIND_RECT:
 				poly = convertRectToPolygon(&subitem->tParameters.tRect);
@@ -93,17 +94,16 @@ void processItem(svgItem *item) {
 			default:
 				SVG_DEBUG_PRINTF("Invalid or unsupported element %d", subitem->tKind);
 		}
-		std::cout << poly << "\n";
+		if (!poly.empty())
+			std::cout << poly << "\n";
 		subitem = subitem->ptNextItem;
 	}
 }
 
-mb::polygon convertPathToPolygon(svgPath *path) {
+std::list<mb::polygon> convertPathToPolygons(svgPath *path) {
 	mb::path_to_polygon ptp;
 	ptp.convert(path);
-	
-	mb::polygon poly;
-	return poly;
+	return ptp.polygons();
 }
 
 mb::polygon convertRectToPolygon(svgRect *rect) {
