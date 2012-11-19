@@ -34,17 +34,11 @@ int main(int argc, char* argv[]) {
 		return -1;
 	}
 	
-	std::cout << "File parsed!\n";
-	std::cout << "Item count: " << ptSvg->tItemList.ui32Count << "\n";
-	
-	// TODO: convert paths to polygons
+	// Process all top level elements
 	svgItem *item = ptSvg->tItemList.ptItem;
 	while (item != NULL) {
-		std::cout << "Item id: " << item->szId << "\n";
-		if (strcasecmp(item->szId, FLOOR_ID) == 0) {
-			std::cout << "Found floor of type " << item->tKind << "\n";
-			processItem(item);
-		}
+		std::cout << "# id: " << item->szId << "\n";
+		processItem(item);
 		item = item->ptNextItem;
 	}
 	
@@ -55,7 +49,6 @@ int main(int argc, char* argv[]) {
 void processItem(svgItem *item) {
 	svgItem *subitem = item->ptFirstChild;
 	while (subitem != NULL) {
-		std::cout << "Item type: " << subitem->tKind << "\n";
 		mb::polygon poly;
 		switch (subitem->tKind) {
 			case SVG_ITEM_KIND_PATH: {
@@ -92,7 +85,7 @@ void processItem(svgItem *item) {
 			case SVG_ITEM_KIND_TITLE:
 			case SVG_ITEM_KIND_DESC:
 			default:
-				SVG_DEBUG_PRINTF("Invalid or unsupported element %d", subitem->tKind);
+				std::cerr << "Invalid or unsupported element " << subitem->tKind;
 		}
 		if (!poly.empty())
 			std::cout << poly << "\n";
@@ -123,12 +116,13 @@ mb::polygon convertRectToPolygon(svgRect *rect) {
 mb::polygon convertCircleToPolygon(svgCircle *circle) {
 	mb::polygon poly;
 	// TODO
+	std::cerr << "Circle elements are not supported\n";
 	return poly;
 }
 
 mb::polygon convertEllipseToPolygon(svgEllipse *ellipste) {
 	mb::polygon poly;
-	// TODO
+	std::cerr << "Ellipse elements are not supported\n";
 	return poly;
 }
 
