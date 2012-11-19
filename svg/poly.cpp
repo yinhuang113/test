@@ -122,25 +122,39 @@ mb::polygon convertRectToPolygon(svgRect *rect) {
 
 mb::polygon convertCircleToPolygon(svgCircle *circle) {
 	mb::polygon poly;
+	// TODO
 	return poly;
 }
 
 mb::polygon convertEllipseToPolygon(svgEllipse *ellipste) {
 	mb::polygon poly;
+	// TODO
 	return poly;
 }
 
 mb::polygon convertLineToPolygon(svgLine *line) {
 	mb::polygon poly;
+	poly.add_vertex(mb::point(line->tX1.fValue, line->tY1.fValue));
+	poly.add_vertex(mb::point(line->tX2.fValue, line->tY2.fValue));
 	return poly;
 }
 
 mb::polygon convertPolylineToPolygon(svgPolyline *polyline) {
 	mb::polygon poly;
+	svgPoint* point = &polyline->tFirstPoint;
+	while (point) {
+		poly.add_vertex(mb::point(point->tX.fValue, point->tY.fValue));
+		point = point->ptNextPoint;
+	}
 	return poly;
 }
 
 mb::polygon convertPolygonToPolygon(svgPolygon* polygon) {
 	mb::polygon poly;
+	svgPoint* point = &polygon->tFirstPoint;
+	while (point) {
+		poly.add_vertex(mb::point(point->tX.fValue, point->tY.fValue));
+		point = point->ptNextPoint;
+	}
 	return poly;
 }
