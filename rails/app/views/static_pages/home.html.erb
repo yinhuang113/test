@@ -1,0 +1,8 @@
+<% provide(:title, 'Map Builder') %>
+<div class="center hero-unit">
+  <h1>Welcome to Map Builder</h1>
+  
+  <% if !current_user %>
+    <%= link_to "Log in now!", login_path, class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

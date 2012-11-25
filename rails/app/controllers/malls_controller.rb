@@ -10,6 +10,11 @@ class MallsController < ApplicationController
   end
 
   def create
+    @mall = Mall.build(params[:mall])
+    if @mall.save
+      flash[:success] = "Mall created!"
+    end
+    redirect_to :new
   end
 
   def show
