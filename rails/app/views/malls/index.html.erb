@@ -1,19 +1,21 @@
+<% provide(:title, 'All malls') %>
 <h1>Malls</h1>
-<table>
+<table class="table table-striped table-hover">
   <tr>
     <th>Mall Name</th>
     <th>Address</th>
     <th>Email</th>
+    <th></th>
   </tr>
 <% @malls.each do |mall| %>
   <tr>
     <td><%= link_to(mall.name, mall) %></td>
-    <td><%= mall.address + mall.city + mall.state + mall.zipcode%></td>
+    <td><%= mall.address + mall.city + mall.state + mall.zipcode %></td>
     <td><%= mall.email %></td>
     <td><%= link_to 'Edit', edit_mall_path(mall) %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'New Mall', new_mall_path %>
+<%= link_to 'New Mall', new_mall_path, class: "btn btn-primary" %>
 

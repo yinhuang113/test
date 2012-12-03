@@ -12,4 +12,5 @@ Mapbuilder::Application.routes.draw do
   resources :users
   resources :sessions
   resources :malls
+  resources :vendors
 end

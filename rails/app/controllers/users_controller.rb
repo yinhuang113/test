@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, :notice => "Thank you for signing up!"
+      flash[:success] = "Welcome to the Map Builder!"
+      redirect_to root_url
     else
-      render "new"
+      render 'new'
     end
   end
 end

@@ -10,11 +10,13 @@ class MallsController < ApplicationController
   end
 
   def create
-    @mall = Mall.build(params[:mall])
+    @mall = Mall.new(params[:mall])
     if @mall.save
       flash[:success] = "Mall created!"
+      redirect_to @mall
+    else
+      render 'new'
     end
-    redirect_to :new
   end
 
   def show
@@ -22,11 +24,22 @@ class MallsController < ApplicationController
   end
 
   def edit
+    @mall = Mall.find(params[:id])
   end
 
   def update
+    @mall = Mall.find(params[:id])
+    if @mall.update_attributes(params[:mall])
+      flash[:success] = "Mall updated"
+      redirect_to @mall
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    Mall.find(params[:id]).destroy
+    flash[:success] = "Mall destroyed."
+    redirect_to malls_url
   end
 end
