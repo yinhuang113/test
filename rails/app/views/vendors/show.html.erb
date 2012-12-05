@@ -6,6 +6,13 @@
     <ul>
       <li>Email: <%= @vendor.contact_email %></li>
       <li>Website: <%= @vendor.website %></li>
+      <li>Categories:
+        <ul>
+          <% @vendor.categories.each do |category| %>
+            <li><%= category.name %>
+          <% end %>
+        </ul>
+      </li>
     </ul>
     <%= link_to 'Edit', edit_vendor_path(@vendor), :class => "btn btn-primary" %>
   </div>
