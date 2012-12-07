@@ -5,6 +5,7 @@
     <th>Vendor Name</th>
     <th>Contact Email</th>
     <th>Website</th>
+    <th>Categories</th>
     <th></th>
   </tr>
 <% @vendors.each do |vendor| %>
@@ -12,6 +13,7 @@
     <td><%= link_to vendor.name, vendor %></td>
     <td><%= vendor.contact_email %></td>
     <td><%= vendor.website %></td>
+    <td style="max-width: 150px"><%= vendor.categories.select(:name).map(&:name).join(', ') %></td>
     <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
   </tr>
 <% end %>
