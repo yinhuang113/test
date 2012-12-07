@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'json'
 gem 'pg'
 gem 'rake'
+gem 'simple_form'
 gem 'therubyracer'
 
 group :development, :test do
