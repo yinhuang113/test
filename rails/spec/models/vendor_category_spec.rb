@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe VendorCategory do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @category = VendorCategory.new(name: "Example Category")
+  end
+
+  subject { @category }
+
+  it { should respond_to(:name) }
 end
