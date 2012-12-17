@@ -1,0 +1,23 @@
+<% provide(:title, 'Schedules') %>
+<h1><%= @mall.name %> - Schedules</h1>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Priority</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th></th>
+  </tr>
+<% @schedules.each do |schedule| %>
+  <tr>
+    <td><%= link_to schedule.name, mall_schedule_path(@mall, schedule) %></td>
+    <td><%= schedule.priority %></td>
+    <td><%= schedule.start_date %></td>
+    <td><%= schedule.end_date %></td>
+    <td><%= link_to 'Edit', edit_mall_schedule_path(@mall, schedule) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Mall', mall_path(@mall), class: "btn" %>
+<%= link_to 'New Schedule', new_mall_schedule_path(@mall), class: "btn btn-primary" %>

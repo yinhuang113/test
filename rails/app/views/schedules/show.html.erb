@@ -1,0 +1,15 @@
+<% provide(:title, @schedule.mall.name) %> 
+<h1><%= @schedule.mall.name %> - <%= @schedule.name %></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <ul>
+      <li>Name: <%= @schedule.name %></li>
+      <li>Priority: <%= @schedule.priority %></li>
+      <li>Start Date: <%= @schedule.start_date %></li>
+      <li>End Date: <%= @schedule.end_date %></li>
+    </ul>
+    <%= link_to 'Schedules', mall_schedules_path(@schedule.mall), class: "btn" %>
+    <%= link_to 'Edit', edit_mall_schedule_path(@mall, @schedule), class: "btn btn-primary" %>
+  </div>
+</div>

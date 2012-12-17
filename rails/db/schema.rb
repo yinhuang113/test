@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217173812) do
+ActiveRecord::Schema.define(:version => 20121217222026) do
 
   create_table "floors", :force => true do |t|
     t.integer  "mall_id"
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(:version => 20121217173812) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "mall_id",                   :null => false
+    t.integer  "priority",   :default => 0, :null => false
+    t.string   "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "schedules", ["end_date"], :name => "index_schedules_on_end_date"
+  add_index "schedules", ["mall_id"], :name => "index_schedules_on_mall_id"
+  add_index "schedules", ["start_date"], :name => "index_schedules_on_start_date"
 
   create_table "users", :force => true do |t|
     t.string   "email"
