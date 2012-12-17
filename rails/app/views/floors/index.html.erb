@@ -1,0 +1,25 @@
+<% provide(:title, 'Floors') %>
+<h1><%= @mall.name %> - Floors</h1>
+<table class="table table-striped table-hover">
+  <col style="width: 100px">
+  <tr>
+    <th>Floor Plan</th>
+    <th>Label</th>
+    <th>Order</th>
+    <th>Main</th>
+    <th></th>
+  </tr>
+<% @floors.each do |floor| %>
+  <tr>
+    <td><%= link_to image_tag(svg_floor_path(floor), size: "48x48"), svg_floor_path(floor) %></td>
+    <td><%= link_to floor.label, floor_path(floor) %></td>
+    <td><%= floor.order %></td>
+    <td><%= floor.main %></td>
+    <td><%= link_to 'Edit', edit_floor_path(floor) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Mall', mall_path(@mall), class: "btn" %>
+<%= link_to 'New Floor', new_mall_floor_path(@mall), class: "btn btn-primary" %>
+

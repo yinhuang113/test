@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121205041819) do
+ActiveRecord::Schema.define(:version => 20121217173812) do
+
+  create_table "floors", :force => true do |t|
+    t.integer  "mall_id"
+    t.text     "svg"
+    t.string   "label"
+    t.integer  "order"
+    t.boolean  "main"
+    t.string   "source_map_file_name"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "floors", ["mall_id", "order"], :name => "index_floors_on_mall_id_and_order", :unique => true
+  add_index "floors", ["mall_id"], :name => "index_floors_on_mall_id"
 
   create_table "malls", :force => true do |t|
     t.string   "name"

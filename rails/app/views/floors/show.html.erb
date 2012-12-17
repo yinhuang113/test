@@ -1,0 +1,18 @@
+<% provide(:title, @floor.mall.name) %> 
+<h1><%= @floor.mall.name %> - <%= @floor.label %></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <ul>
+      <li>Label: <%= @floor.label %></li>
+      <li>Main floor: <%= @floor.main %></li>
+      <li>Order: <%= @floor.order %></li>
+      <li>Source map file name: <%= @floor.source_map_file_name %></li>
+    </ul>
+    <div class="map">
+      <%= image_tag svg_floor_path(@floor) %>
+    </div>
+    <%= link_to 'Floors', mall_floors_path(@floor.mall), class: "btn" %>
+    <%= link_to 'Edit', edit_floor_path(@floor), class: "btn btn-primary" %>
+  </div>
+</div>

@@ -11,6 +11,14 @@ Mapbuilder::Application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :malls
+  
+  resources :floors, except: [:index] do
+    get 'svg', on: :member
+  end
+  
+  resources :malls do
+    resources :floors, only: [:index, :new]
+  end
   resources :vendors
+  
 end
