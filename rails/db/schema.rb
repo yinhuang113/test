@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218165737) do
+ActiveRecord::Schema.define(:version => 20121218172649) do
 
   create_table "connector_types", :force => true do |t|
     t.string   "name",       :null => false
@@ -107,5 +107,19 @@ ActiveRecord::Schema.define(:version => 20121218165737) do
   end
 
   add_index "vendors", ["name"], :name => "index_vendors_on_name"
+
+  create_table "zone_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "zones", :force => true do |t|
+    t.integer  "polygon_id"
+    t.integer  "zone_type_id"
+    t.string   "label"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
 end
