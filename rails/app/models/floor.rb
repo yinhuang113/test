@@ -2,6 +2,7 @@ class Floor < ActiveRecord::Base
   attr_accessible :label, :main, :mall_id, :order, :source_map_file_name, :svg, :svg_file
   belongs_to :mall
   has_many :ploygons
+  has_many :connector_locations
   
   validates :label, presence: true
   validates :order, presence: true, numericality: { only_integer: true, greater_than_or_equal: 0 }

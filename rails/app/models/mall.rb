@@ -3,4 +3,5 @@ class Mall < ActiveRecord::Base
   has_many :floors
   has_many :schedules
   has_many :stores
+  has_many :connectors
 end
