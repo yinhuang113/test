@@ -1,0 +1,13 @@
+<%= simple_form_for([@mall, @schedule, @interval]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.association :schedule, as: :hidden %>
+  <%= f.input :name %>
+  <%= f.input :day, collection: 1..7, label_method: lambda { |day| ScheduleInterval.day_name(day) } %>
+  <%= f.input :open_hour, collection: 0..23 %>
+  <%= f.input :open_minute, collection: [0, 15, 30, 45] %>
+  <%= f.input :close_hour, collection: 0..23 %>
+  <%= f.input :close_minute, collection: [0, 15, 30, 45] %>
+  
+  <%= f.button :submit, class: "btn btn-large btn-primary" %>
+<% end %>

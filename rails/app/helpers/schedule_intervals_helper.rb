@@ -1,0 +1,2 @@
+module ScheduleIntervalsHelper
+end

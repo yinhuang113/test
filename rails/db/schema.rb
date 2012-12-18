@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217222026) do
+ActiveRecord::Schema.define(:version => 20121217231218) do
 
   create_table "floors", :force => true do |t|
     t.integer  "mall_id"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(:version => 20121217222026) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "schedule_intervals", :force => true do |t|
+    t.integer  "schedule_id"
+    t.integer  "day"
+    t.string   "name"
+    t.integer  "open_time"
+    t.integer  "close_time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "schedule_intervals", ["schedule_id"], :name => "index_schedule_intervals_on_schedule_id"
 
   create_table "schedules", :force => true do |t|
     t.integer  "mall_id",                   :null => false

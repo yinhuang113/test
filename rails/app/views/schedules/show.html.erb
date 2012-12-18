@@ -10,6 +10,7 @@
       <li>End Date: <%= @schedule.end_date %></li>
     </ul>
     <%= link_to 'Schedules', mall_schedules_path(@schedule.mall), class: "btn" %>
+    <%= link_to 'Intervals', mall_schedule_schedule_intervals_path(@mall, @schedule), class: "btn" %>
     <%= link_to 'Edit', edit_mall_schedule_path(@mall, @schedule), class: "btn btn-primary" %>
   </div>
 </div>

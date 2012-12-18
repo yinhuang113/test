@@ -18,7 +18,9 @@ Mapbuilder::Application.routes.draw do
 
   resources :malls do
     resources :floors, only: [:index, :new]
-    resources :schedules
+    resources :schedules do
+      resources :schedule_intervals
+    end
   end
 
   resources :vendors

@@ -1,6 +1,7 @@
 class Schedule < ActiveRecord::Base
   attr_accessible :mall_id, :priority, :name, :start_date, :end_date
   belongs_to :mall
+  has_many :intervals, class_name: 'ScheduleInterval'
   
   validates :priority, presence: true, numericality: { only_integer: true }
   validates :name, presence: true
