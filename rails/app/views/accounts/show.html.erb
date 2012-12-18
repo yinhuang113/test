@@ -8,7 +8,7 @@
       <li>Status: <%= @account.status %></li>
     </ul>
     <%= link_to 'Accounts', accounts_path, class: "btn" %>
-    <%= link_to 'Malls', malls_path(account_id: @account_id), class: "btn" %>
+    <%= link_to 'Malls', malls_path(account_id: @account.id), class: "btn" %>
     <%= link_to 'Edit', edit_account_path(@account), class: "btn btn-primary" %>
   </div>
 </div>

@@ -2,15 +2,22 @@ class MallsController < ApplicationController
   before_filter :authorize
   
   def index
-    @malls = Mall.all
+    @account = Account.find(params[:account_id]) if params[:account_id]
+    if @account
+      @malls = Mall.by_account(@account)
+    else
+      @malls = Mall.all
+    end
   end
 
   def new
     @mall = Mall.new
+    @mall.account_id = params[:account_id]
   end
 
   def create
     @mall = Mall.new(params[:mall])
+    @mall.account_id = params[:account_id] if params[:account_id]
     if @mall.save
       flash[:success] = "Mall created!"
       redirect_to @mall
