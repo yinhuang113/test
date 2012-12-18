@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218173701) do
+ActiveRecord::Schema.define(:version => 20121218174012) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -86,10 +86,16 @@ ActiveRecord::Schema.define(:version => 20121218173701) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "tilte",           :default => "", :null => false
+    t.string   "first_name",      :default => "", :null => false
+    t.string   "last_name",       :default => "", :null => false
+    t.integer  "role_value",      :default => 0,  :null => false
+    t.integer  "account_id"
   end
 
+  add_index "users", ["account_id"], :name => "index_users_on_account_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "vendor_categories", :force => true do |t|
