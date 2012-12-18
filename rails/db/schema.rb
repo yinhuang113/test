@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218172649) do
+ActiveRecord::Schema.define(:version => 20121218173701) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name"
+    t.integer  "status_value"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "accounts", ["status_value"], :name => "index_accounts_on_status_value"
 
   create_table "connector_types", :force => true do |t|
     t.string   "name",       :null => false
