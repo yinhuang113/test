@@ -1,0 +1,12 @@
+<%= simple_form_for([@mall, @connector]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.association :mall, as: :hidden %>
+  <%= f.association :connector_type %>
+  <%= f.simple_fields_for :connector_locations do |builder| %>
+    <%= render 'connector_location_fields', f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Location", f, :connector_locations %>
+  
+  <%= f.button :submit, class: "btn btn-large btn-primary" %>
+<% end %>

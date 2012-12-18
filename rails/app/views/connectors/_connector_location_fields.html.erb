@@ -1,0 +1,6 @@
+<fieldset class="well">
+  <%= f.association :floor, collection: @mall.floors, label_method: :label %>
+  <%= f.input :location %>
+  <%= f.input :_destroy, as: :hidden %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>
