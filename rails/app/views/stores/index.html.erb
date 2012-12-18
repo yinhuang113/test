@@ -1,0 +1,31 @@
+<% provide(:title, 'Stores') %>
+<h1><%= @mall.name %> - Stores</h1>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Vendor</th>
+    <th>Category</th>
+    <th>Polygon</th>
+    <th>Telephone</th>
+    <th>Website</th>
+    <th>Email</th>
+    <th style="width: 56px"></th>
+  </tr>
+<% @stores.each do |store| %>
+  <tr>
+    <td><%= link_to store.vendor.name, vendor_path(store.vendor) %></td>
+    <td><%= store.vendor_category.name %></td>
+    <td><%= store.polygon.label %></td>
+    <td><%= store.telephone %></td>
+    <td><%= store.website %></td>
+    <td><%= store.email %></td>
+    <td>
+      <%= link_to [@mall, store] do %><i class="icon-eye-open"></i><% end %>
+      <%= link_to edit_mall_store_path(@mall, store) do %><i class="icon-pencil"></i><% end %>
+      <%= link_to [@mall, store], confirm: 'Are you sure?', method: :delete do %><i class="icon-remove"></i><% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Mall', mall_path(@mall), class: "btn" %>
+<%= link_to 'New Store', new_mall_store_path(@mall), class: "btn btn-primary" %>

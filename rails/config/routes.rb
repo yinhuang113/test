@@ -22,6 +22,7 @@ Mapbuilder::Application.routes.draw do
     resources :schedules do
       resources :schedule_intervals
     end
+    resources :stores
   end
 
   resources :vendors

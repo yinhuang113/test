@@ -1,0 +1,19 @@
+<%= simple_form_for([@mall, @store]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.association :mall, as: :hidden %>
+  <%= f.association :vendor %>
+  <%= f.association :vendor_category, collection: @store.vendor.categories %>
+  <%= f.input :description %>
+  <%= f.input :telephone %>
+  <%= f.input :website %>
+  <%= f.input :email %>
+  
+  <%= f.simple_fields_for :polygon do |p| %>
+    <%= p.association :floor, label_method: :label, include_blank: false %>
+    <%= p.input :label %>
+    <%= p.input :vertices %>
+  <% end %>
+  
+  <%= f.button :submit, class: "btn btn-large btn-primary" %>
+<% end %>
