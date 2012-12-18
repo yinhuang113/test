@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217231218) do
+ActiveRecord::Schema.define(:version => 20121218165737) do
+
+  create_table "connector_types", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "floors", :force => true do |t|
     t.integer  "mall_id"
