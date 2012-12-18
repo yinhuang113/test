@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218175021) do
+ActiveRecord::Schema.define(:version => 20121218180854) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -92,6 +92,22 @@ ActiveRecord::Schema.define(:version => 20121218175021) do
   add_index "schedules", ["end_date"], :name => "index_schedules_on_end_date"
   add_index "schedules", ["mall_id"], :name => "index_schedules_on_mall_id"
   add_index "schedules", ["start_date"], :name => "index_schedules_on_start_date"
+
+  create_table "stores", :force => true do |t|
+    t.integer  "mall_id",            :null => false
+    t.integer  "vendor_id",          :null => false
+    t.integer  "polygon_id",         :null => false
+    t.integer  "vendor_category_id"
+    t.text     "description"
+    t.string   "telephone"
+    t.string   "website"
+    t.string   "email"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "stores", ["mall_id"], :name => "index_stores_on_mall_id"
+  add_index "stores", ["vendor_id"], :name => "index_stores_on_vendor_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
