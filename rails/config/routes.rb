@@ -9,6 +9,7 @@ Mapbuilder::Application.routes.draw do
   match '/login', :to => 'sessions#new'
   match '/logout', :to => 'sessions#destroy'
 
+  resources :accounts
   resources :users
   resources :sessions
 

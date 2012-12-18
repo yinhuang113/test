@@ -1,9 +1,9 @@
 class CreateConnectorLocations < ActiveRecord::Migration
   def change
     create_table :connector_locations do |t|
-      t.belongs_to :floor
-      t.belongs_to :connector
-      t.point :location
+      t.belongs_to :floor, null: false
+      t.belongs_to :connector, null: false
+      t.column :location, 'point', null: false
 
       t.timestamps
     end

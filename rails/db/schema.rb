@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218183132) do
+ActiveRecord::Schema.define(:version => 20121218191439) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -22,11 +22,32 @@ ActiveRecord::Schema.define(:version => 20121218183132) do
 
   add_index "accounts", ["status_value"], :name => "index_accounts_on_status_value"
 
+  create_table "connector_locations", :force => true do |t|
+    t.integer  "floor_id",                    :null => false
+    t.integer  "connector_id",                :null => false
+    t.string   "location",     :limit => nil, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "connector_locations", ["connector_id"], :name => "index_connector_locations_on_connector_id"
+  add_index "connector_locations", ["floor_id"], :name => "index_connector_locations_on_floor_id"
+
   create_table "connector_types", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "connectors", :force => true do |t|
+    t.integer  "mall_id"
+    t.integer  "connector_type_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "connectors", ["connector_type_id"], :name => "index_connectors_on_connector_type_id"
+  add_index "connectors", ["mall_id"], :name => "index_connectors_on_mall_id"
 
   create_table "entrances", :force => true do |t|
     t.string   "name",                      :default => "", :null => false
@@ -65,7 +86,10 @@ ActiveRecord::Schema.define(:version => 20121218183132) do
     t.string   "database"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "account_id"
   end
+
+  add_index "malls", ["account_id"], :name => "index_malls_on_account_id"
 
   create_table "polygons", :force => true do |t|
     t.integer  "floor_id",                  :null => false
