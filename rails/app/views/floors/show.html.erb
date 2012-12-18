@@ -13,6 +13,7 @@
       <%= image_tag svg_floor_path(@floor) %>
     </div>
     <%= link_to 'Floors', mall_floors_path(@floor.mall), class: "btn" %>
+    <%= link_to 'Entrances', mall_floor_entrances_path(@floor.mall, @floor), class: "btn" %>
     <%= link_to 'Edit', edit_floor_path(@floor), class: "btn btn-primary" %>
   </div>
 </div>

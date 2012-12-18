@@ -18,7 +18,10 @@ Mapbuilder::Application.routes.draw do
   end
 
   resources :malls do
-    resources :floors, only: [:index, :new]
+    resources :floors do
+      get 'svg', on: :member
+      resources :entrances
+    end
     resources :schedules do
       resources :schedule_intervals
     end
