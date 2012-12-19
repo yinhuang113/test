@@ -36,16 +36,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    email_changed = @user.email != params[:user][:email]
-    password_changed = !params[:user][:password].empty?
-
-    successfully_updated = if email_changed or password_changed
-      @user.update_with_password(params[:user])
-    else
-      @user.update_without_password(params[:user])
-    end
-
-    if successfully_updated
+    if @user.update_without_password(params[:user])
       flash[:success] = "User updated"
       redirect_to @user
     else
