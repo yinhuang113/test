@@ -18,6 +18,6 @@ class Account < ActiveRecord::Base
   def status=(status)
     value = STATUSES[status.to_sym]
     raise ArgumentError.new("Invalid account status #{status}") if value.blank?
-    write_attribute(:role_value, value)
+    write_attribute(:status_value, value)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219011235) do
+ActiveRecord::Schema.define(:version => 20121219174827) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(:version => 20121219011235) do
     t.string   "password_digest"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "tilte",                  :default => "", :null => false
+    t.string   "title",                  :default => "", :null => false
     t.string   "first_name",             :default => "", :null => false
     t.string   "last_name",              :default => "", :null => false
     t.integer  "role_value",             :default => 0,  :null => false
