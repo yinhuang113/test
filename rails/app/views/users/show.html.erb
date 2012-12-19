@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span6 offset3">
     <ul>
-      <li>Account: <%= @user.account.name %></li>
+      <li>Account: <%= @user.account ? @user.account.name : "" %></li>
       <li>Name: <%= @user.name %></li>
       <li>Email: <%= mail_to @user.email %></li>
       <li>Role: <%= @user.role %></li>
