@@ -1,18 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Map Builder", root_path, id: "logo" %>
+      <%= link_to image_tag("mall-rat.png", alt: "Mall Rat"), root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Accounts", accounts_path %></li>
-          <li><%= link_to "Malls", malls_path %></li>
-          <li><%= link_to "Vendors", vendors_path %></li>
-          <li><%= link_to "Help", help_path %></li>
           <% if user_signed_in? %>
+            <li><%= link_to "Accounts", accounts_path %></li>
+            <li><%= link_to "Malls", malls_path %></li>
+            <li><%= link_to "Vendors", vendors_path %></li>
+            <li><%= link_to "Help", help_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
         </ul>
       </nav>

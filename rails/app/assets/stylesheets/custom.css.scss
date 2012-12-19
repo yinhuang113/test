@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
 section {
@@ -67,13 +67,7 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
+  padding-top: 0px;
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -114,6 +108,17 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.signin {
+  h2 {
+    text-align: left;
+    font-size:36px;
+    padding-bottom:18px;
+    font-family: 'luzsans-bookluzsans-book';
+    font-weight:normal;
+    color: black;
+  }
 }
 
 /* forms */
