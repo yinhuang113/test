@@ -1,5 +1,5 @@
 class MallsController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user!
   
   def index
     @account = Account.find(params[:account_id]) if params[:account_id]

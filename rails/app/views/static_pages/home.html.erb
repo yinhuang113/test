@@ -3,6 +3,6 @@
   <h1>Welcome to Map Builder</h1>
   
   <% if !current_user %>
-    <%= link_to "Log in now!", login_path, class: "btn btn-large btn-primary" %>
+    <%= link_to "Log in now!", new_user_session_path, class: "btn btn-large btn-primary" %>
   <% end %>
 </div>

@@ -1,5 +1,5 @@
 class EntrancesController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user!
 
   def index
     @floor = Floor.find(params[:floor_id])

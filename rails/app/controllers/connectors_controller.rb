@@ -1,5 +1,5 @@
 class ConnectorsController < ApplicationController
-  before_filter :authorize
+  before_filter :authenticate_user!
 
   def index
     @mall = Mall.find(params[:mall_id])

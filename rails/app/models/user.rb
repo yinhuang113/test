@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :title, :first_name, :last_name, :email, :password, :password_confirmation, :account_id
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable,
+         :validatable
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :title, :first_name, :last_name, :account_id
   belongs_to :account
-  has_secure_password
   
   before_save { |user| user.email = email.downcase }
   
