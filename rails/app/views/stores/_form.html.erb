@@ -10,7 +10,7 @@
   <%= f.input :email %>
   
   <%= f.simple_fields_for :polygon do |p| %>
-    <%= p.association :floor, label_method: :label, include_blank: false %>
+    <%= p.association :floor, collection: @mall.floors, label_method: :label, include_blank: false %>
     <%= p.input :label %>
     <%= p.input :vertices %>
   <% end %>

@@ -3,8 +3,9 @@ class Mall < ActiveRecord::Base
   belongs_to :account
   has_many :floors
   has_many :schedules
-  has_many :stores
   has_many :connectors
+  has_many :stores
+  has_many :zones
   
   scope :by_account, lambda { |account| where(account_id: account) }
 end

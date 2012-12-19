@@ -1,0 +1,14 @@
+<% provide(:title, @mall.name) %> 
+<h1><%= @mall.name %></h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <ul>
+      <li>Type: <%= @zone.zone_type.name %></li>
+      <li>Label: <%= @zone.label %></li>
+      <li>Polygon: <%= @zone.polygon.vertices %></li>
+    </ul>
+    <%= link_to 'Zones', mall_zones_path(@zone.mall), class: "btn" %>
+    <%= link_to 'Edit', edit_mall_zone_path(@mall, @zone), class: "btn btn-primary" %>
+  </div>
+</div>

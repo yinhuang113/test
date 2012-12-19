@@ -1,0 +1,25 @@
+<% provide(:title, 'Zones') %>
+<h1><%= @mall.name %> - Zones</h1>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Type</th>
+    <th>Label</th>
+    <th>Polygon</th>
+    <th style="width: 56px"></th>
+  </tr>
+<% @zones.each do |zone| %>
+  <tr>
+    <td><%= zone.zone_type.name %></td>
+    <td><%= zone.label %></td>
+    <td><%= zone.polygon.label %></td>
+    <td>
+      <%= link_to [@mall, zone] do %><i class="icon-eye-open"></i><% end %>
+      <%= link_to edit_mall_zone_path(@mall, zone) do %><i class="icon-pencil"></i><% end %>
+      <%= link_to [@mall, zone], confirm: 'Are you sure?', method: :delete do %><i class="icon-remove"></i><% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Mall', mall_path(@mall), class: "btn" %>
+<%= link_to 'New Zone', new_mall_zone_path(@mall), class: "btn btn-primary" %>

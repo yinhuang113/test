@@ -1,0 +1,17 @@
+<%= simple_form_for([@mall, @zone]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.association :mall, as: :hidden %>
+  <%= f.association :zone_type %>
+  <%= f.input :label %>
+  
+  <%= f.simple_fields_for :polygon do |p| %>
+    <fieldset class="well">
+      <%= p.association :floor, collection: @mall.floors, label_method: :label, include_blank: false %>
+      <%= p.input :label %>
+      <%= p.input :vertices %>
+    </fieldset>
+  <% end %>
+  
+  <%= f.button :submit, class: "btn btn-large btn-primary" %>
+<% end %>
