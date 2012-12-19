@@ -4,7 +4,7 @@
 #ifndef __poly__path_to_polygon__
 #define __poly__path_to_polygon__
 
-#include "polygon.h"
+#include "gsim/gs_polygon.h"
 #include "svg.h"
 
 #include <list>
@@ -15,7 +15,7 @@ namespace mb {
 	public:
 		void convert(svgPath* path);
 		
-		std::list<mb::polygon> polygons() const {
+		std::list<GsPolygon> polygons() const {
 			return _polygons;
 		}
 		
@@ -25,12 +25,12 @@ namespace mb {
 		
 	private:
 		bool _starting;
-		point _start;
-		point _current;
-		point _last_control;
+		GsPnt2 _start;
+		GsPnt2 _current;
+		GsPnt2 _last_control;
 		
-		mb::polygon _polygon;
-		std::list<mb::polygon> _polygons;
+		GsPolygon _polygon;
+		std::list<GsPolygon> _polygons;
 	};
 }
 

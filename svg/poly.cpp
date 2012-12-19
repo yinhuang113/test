@@ -1,9 +1,9 @@
 #include "bezier.h"
 #include "path_to_polygon.h"
-#include "polygon.h"
-#include "serialization.h"
 
 #include "svg.h"
+#include "gsim/gs_polygon.h"
+#include <iomanip>
 #include <iostream>
 #include <iterator>
 #include <list>
@@ -11,15 +11,15 @@
 
 #define FLOOR_ID "FLOOR"
 
-void processItem(svgItem *item);
-std::list<mb::polygon> convertPathToPolygons(svgPath *path);
-mb::polygon convertRectToPolygon(svgRect *rect);
-mb::polygon convertCircleToPolygon(svgCircle *circle);
-mb::polygon convertEllipseToPolygon(svgEllipse *ellipste);
-mb::polygon convertLineToPolygon(svgLine *line);
-mb::polygon convertPolylineToPolygon(svgPolyline *polyline);
-mb::polygon convertPolygonToPolygon(svgPolygon* polygon);
-
+void processItem(const std::string& label, svgItem *item);
+void printPolygon(const GsPolygon& polygon);
+std::list<GsPolygon> convertPathToPolygons(svgPath *path);
+GsPolygon convertRectToPolygon(svgRect *rect);
+GsPolygon convertCircleToPolygon(svgCircle *circle);
+GsPolygon convertEllipseToPolygon(svgEllipse *ellipste);
+GsPolygon convertLineToPolygon(svgLine *line);
+GsPolygon convertPolylineToPolygon(svgPolyline *polyline);
+GsPolygon convertPolygonToPolygon(svgPolygon* polygon);
 
 int main(int argc, char* argv[]) {
 	if (argc < 2) {
@@ -37,8 +37,8 @@ int main(int argc, char* argv[]) {
 	// Process all top level elements
 	svgItem *item = ptSvg->tItemList.ptItem;
 	while (item != NULL) {
-		std::cout << "# id: " << item->szId << "\n";
-		processItem(item);
+		gsout << "# id: " << item->szId << "\n";
+		processItem(item->szId, item);
 		item = item->ptNextItem;
 	}
 	
@@ -46,15 +46,19 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
-void processItem(svgItem *item) {
+void processItem(const std::string& label, svgItem *item) {
+	int count = 0;
 	svgItem *subitem = item->ptFirstChild;
 	while (subitem != NULL) {
-		mb::polygon poly;
+		GsPolygon poly;
 		switch (subitem->tKind) {
 			case SVG_ITEM_KIND_PATH: {
-				std::list<mb::polygon> list = convertPathToPolygons(&subitem->tParameters.tPath);
-				for (std::list<mb::polygon>::iterator it = list.begin(); it != list.end(); ++it)
-					std::cout << *it << "\n";
+				std::list<GsPolygon> list = convertPathToPolygons(&subitem->tParameters.tPath);
+				for (std::list<GsPolygon>::iterator it = list.begin(); it != list.end(); ++it) {
+					std::cout << label << std::setfill('0') << std::setw(3) << count << '\t';
+					printPolygon(*it);
+					count += 1;
+				}
 			} break;
 				
 			case SVG_ITEM_KIND_RECT:
@@ -87,67 +91,81 @@ void processItem(svgItem *item) {
 			default:
 				std::cerr << "Invalid or unsupported element " << subitem->tKind;
 		}
-		if (!poly.empty())
-			std::cout << poly << "\n";
+		if (!poly.empty()) {
+			std::cout << label << std::setfill('0') << std::setw(3) << count << '\t';
+			printPolygon(poly);
+			count += 1;
+		}
 		subitem = subitem->ptNextItem;
 	}
 }
 
-std::list<mb::polygon> convertPathToPolygons(svgPath *path) {
+void printPolygon(const GsPolygon& polygon) {
+	const int size = polygon.size();
+	std::cout << '(';
+	for (int i = 0; i < size; i += 1) {
+		std::cout << '(' << polygon.get(i).x << ',' << polygon.get(i).y << ')';
+		if (i < size - 1)
+			std::cout << ',';
+	}
+	std::cout << ')' << '\n';
+}
+
+std::list<GsPolygon> convertPathToPolygons(svgPath *path) {
 	mb::path_to_polygon ptp;
 	ptp.convert(path);
 	return ptp.polygons();
 }
 
-mb::polygon convertRectToPolygon(svgRect *rect) {
+GsPolygon convertRectToPolygon(svgRect *rect) {
 	float x = rect->tX.fValue;
 	float y = rect->tY.fValue;
 	float w = rect->tWidth.fValue;
 	float h = rect->tHeight.fValue;
 	
-	mb::polygon poly;
-	poly.add_vertex(mb::point(x, y));
-	poly.add_vertex(mb::point(x, y + h));
-	poly.add_vertex(mb::point(x + w, y + h));
-	poly.add_vertex(mb::point(x + w, y));
+	GsPolygon poly;
+	poly.push(GsVec2(x, y));
+	poly.push(GsVec2(x, y + h));
+	poly.push(GsVec2(x + w, y + h));
+	poly.push(GsVec2(x + w, y));
 	return poly;
 }
 
-mb::polygon convertCircleToPolygon(svgCircle *circle) {
-	mb::polygon poly;
+GsPolygon convertCircleToPolygon(svgCircle *circle) {
+	GsPolygon poly;
 	// TODO
 	std::cerr << "Circle elements are not supported\n";
 	return poly;
 }
 
-mb::polygon convertEllipseToPolygon(svgEllipse *ellipste) {
-	mb::polygon poly;
+GsPolygon convertEllipseToPolygon(svgEllipse *ellipste) {
+	GsPolygon poly;
 	std::cerr << "Ellipse elements are not supported\n";
 	return poly;
 }
 
-mb::polygon convertLineToPolygon(svgLine *line) {
-	mb::polygon poly;
-	poly.add_vertex(mb::point(line->tX1.fValue, line->tY1.fValue));
-	poly.add_vertex(mb::point(line->tX2.fValue, line->tY2.fValue));
+GsPolygon convertLineToPolygon(svgLine *line) {
+	GsPolygon poly;
+	poly.push(GsVec2(line->tX1.fValue, line->tY1.fValue));
+	poly.push(GsVec2(line->tX2.fValue, line->tY2.fValue));
 	return poly;
 }
 
-mb::polygon convertPolylineToPolygon(svgPolyline *polyline) {
-	mb::polygon poly;
+GsPolygon convertPolylineToPolygon(svgPolyline *polyline) {
+	GsPolygon poly;
 	svgPoint* point = &polyline->tFirstPoint;
 	while (point) {
-		poly.add_vertex(mb::point(point->tX.fValue, point->tY.fValue));
+		poly.push(GsVec2(point->tX.fValue, point->tY.fValue));
 		point = point->ptNextPoint;
 	}
 	return poly;
 }
 
-mb::polygon convertPolygonToPolygon(svgPolygon* polygon) {
-	mb::polygon poly;
+GsPolygon convertPolygonToPolygon(svgPolygon* polygon) {
+	GsPolygon poly;
 	svgPoint* point = &polygon->tFirstPoint;
 	while (point) {
-		poly.add_vertex(mb::point(point->tX.fValue, point->tY.fValue));
+		poly.push(GsVec2(point->tX.fValue, point->tY.fValue));
 		point = point->ptNextPoint;
 	}
 	return poly;

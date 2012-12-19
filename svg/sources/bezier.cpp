@@ -7,25 +7,25 @@
 #include <cmath>
 
 namespace mb {
-	point bezier::eval(real_t t) const {
+	GsPnt2 bezier::eval(real_t t) const {
 		real_t s = 1 - t;
 		real_t a = s * s * s;
 		real_t b = 3 * s * s * t;
 		real_t c = 3 * s * t * t;
 		real_t d = t * t * t;
 		
-		point::value_t x = a * p1.x + b * p2.x + c * p3.x + d * p4.x;
-		point::value_t y = a * p1.y + b * p2.y + c * p3.y + d * p4.y;
-		return point(x, y);
+		float x = a * p1.x + b * p2.x + c * p3.x + d * p4.x;
+		float y = a * p1.y + b * p2.y + c * p3.y + d * p4.y;
+		return GsPnt2(x, y);
 	}
 	
 	std::pair<bezier, bezier> bezier::split(real_t t) const {
-		point p12 = lerp(p1, p2, t);
-		point p23 = lerp(p2, p3, t);
-		point p34 = lerp(p3, p4, t);
-		point p123 = lerp(p12, p23, t);
-		point p234 = lerp(p23, p34, t);
-		point p1234 = lerp(p123, p234, t);
+		GsPnt2 p12 = lerp(p1, p2, t);
+		GsPnt2 p23 = lerp(p2, p3, t);
+		GsPnt2 p34 = lerp(p3, p4, t);
+		GsPnt2 p123 = lerp(p12, p23, t);
+		GsPnt2 p234 = lerp(p23, p34, t);
+		GsPnt2 p1234 = lerp(p123, p234, t);
 		
 		bezier c1(p1, p12, p123, p1234);
 		bezier c2(p1234, p234, p34, p4);
@@ -38,18 +38,18 @@ namespace mb {
 	
 	bezier::list_t bezier::recursive_linearize(const bezier& b, real_t tol) {
 		// Calculate all the mid-points of the line segments
-		point p12 = lerp(b.p1, b.p2, 0.5f);
-		point p23 = lerp(b.p2, b.p3, 0.5f);
-		point p34 = lerp(b.p3, b.p4, 0.5f);
-		point p123 = lerp(p12, p23, 0.5f);
-		point p234 = lerp(p23, p34, 0.5f);
-		point p1234 = lerp(p123, p234, 0.5f);
+		GsPnt2 p12 = lerp(b.p1, b.p2, 0.5f);
+		GsPnt2 p23 = lerp(b.p2, b.p3, 0.5f);
+		GsPnt2 p34 = lerp(b.p3, b.p4, 0.5f);
+		GsPnt2 p123 = lerp(p12, p23, 0.5f);
+		GsPnt2 p234 = lerp(p23, p34, 0.5f);
+		GsPnt2 p1234 = lerp(p123, p234, 0.5f);
 		
 		// Try to approximate the full cubic curve by a single straight line
-        vector v14 = b.p4 - b.p1;  // vector from p1 to p4, the line approximation
-		real_t d14 = v14.length(); // distance between p1 an dp4
-		vector t = v14 / d14;      // tangent for the line approximation
-		vector n = t.perp();       // normal for the line approximation
+        GsPnt2 v14 = b.p4 - b.p1; // vector from p1 to p4, the line approximation
+		real_t d14 = v14.len();   // distance between p1 an dp4
+		GsPnt2 t = v14 / d14;     // tangent for the line approximation
+		GsPnt2 n = t.ortho();     // normal for the line approximation
 		
 		// perpendicular and tangential distances between the control points and their ideal line locations
 		real_t d2p = std::fabs(dot(b.p4 - b.p2, n));
