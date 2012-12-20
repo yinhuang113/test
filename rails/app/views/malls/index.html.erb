@@ -18,7 +18,10 @@
     <td><%= link_to(mall.name, mall) %></td>
     <td><%= mall.address + mall.city + mall.state + mall.zipcode %></td>
     <td><%= mall.email %></td>
-    <td><%= link_to 'Edit', edit_mall_path(mall) %></td>
+    <td>
+      <%= link_to edit_mall_path(mall) do %><i class="icon-pencil"> </i><% end %>
+      <%= link_to mall, confirm: 'Are you sure?', method: :delete do %><i class="icon-remove"> </i><% end %>
+    </td>
   </tr>
 <% end %>
 </table>
