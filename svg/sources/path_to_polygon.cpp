@@ -227,7 +227,8 @@ namespace mb {
 	}
 	
 	void path_to_polygon::new_polygon() {
-		_polygons.push_back(_polygon);
+		if (!_polygon.empty())
+			_polygons.push_back(_polygon);
 		_polygon.size(0);
 	}
 }

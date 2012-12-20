@@ -22,18 +22,14 @@ GsPolygon convertLineToPolygon(svgLine *line);
 GsPolygon convertPolylineToPolygon(svgPolyline *polyline);
 GsPolygon convertPolygonToPolygon(svgPolygon* polygon);
 
-static const char* floor_id = "\\N";
 static const char* label = 0;
 static SeDcdt *dcdt;
 
 int main(int argc, char* argv[]) {
 	if (argc < 2) {
-		std::cerr << "Usage: " << argv[0] << " <svg> [<floor_id>]\n";
+		std::cerr << "Usage: " << argv[0] << " <svg>\n";
 		return -1;
 	}
-
-	if (argc > 2)
-		floor_id = argv[2];
 	
 	// Open the SVG file
 	svgDrawing *ptSvg = svgOpenFile(argv[1]);
@@ -46,10 +42,6 @@ int main(int argc, char* argv[]) {
 	float ymin = ptSvg->tY.fValue;
 	float xmax = xmin + ptSvg->tWidth.fValue;
 	float ymax = ymin + ptSvg->tHeight.fValue;
-	
-	// Print header
-	std::cout << "DELETE FROM polygons WHERE from_svg = TRUE;\n";
-	std::cout << "COPY polygons (floor_id, label, vertices, from_svg, created_at, updated_at) FROM stdin;\n";
 	
 	// Create the triangulator
 	dcdt = new SeDcdt(0.5);
@@ -67,9 +59,6 @@ int main(int argc, char* argv[]) {
 		processItem(item);
 		item = item->ptNextItem;
 	}
-	
-	// Print footer
-	std::cout << "\\.\n";
 	
 	// Print triangulation
 	//dcdt->save(gsout);
@@ -133,8 +122,6 @@ void processItem(svgItem *item) {
 }
 
 void printPolygon(const GsPolygon& polygon, int number) {
-	if (floor_id)
-		std::cout << floor_id << '\t';
 	std::cout << label << std::setfill('0') << std::setw(3) << number << '\t';
 	
 	const int size = polygon.size();
@@ -144,11 +131,7 @@ void printPolygon(const GsPolygon& polygon, int number) {
 		if (i < size - 1)
 			std::cout << ',';
 	}
-	std::cout << ')' << '\t';
-	
-	std::cout << "TRUE\t";
-	std::cout << "NOW()\t";
-	std::cout << "NOW()\n";
+	std::cout << ')' << '\n';
 }
 
 std::list<GsPolygon> convertPathToPolygons(svgPath *path) {
