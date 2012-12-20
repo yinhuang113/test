@@ -1,4 +1,4 @@
 class ZoneType < ActiveRecord::Base
   attr_accessible :name
-  belongs_to :zone
+  has_many :zones
 end
