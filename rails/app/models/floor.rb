@@ -53,7 +53,6 @@ class Floor < ActiveRecord::Base
   end
   
   def generate_polygons
-    puts "here?"
     Polygon.where(floor_id: id, from_svg: true).destroy_all
     if @svg_file
       data = `#{Rails.root.join('bin', 'poly')} #{@svg_file.tempfile.path}`
