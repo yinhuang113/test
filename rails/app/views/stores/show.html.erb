@@ -6,7 +6,7 @@
     <ul>
       <li>Vendor: <%= @store.vendor.name %></li>
       <li>Category: <%= @store.vendor_category.name %></li>
-      <li>Polygon: <%= @store.polygon.vertices %></li>
+      <li>Polygon: <%= @store.polygon.label %><% if @store.polygon.from_svg %> - from svg<% end %></li>
       <li>Description: <%= @store.description %></li>
       <li>Telephone: <%= @store.telephone %></li>
       <li>Website: <%= @store.website %></li>

@@ -3,17 +3,22 @@
   
   <%= f.association :mall, as: :hidden %>
   <%= f.association :vendor %>
-  <%= f.association :vendor_category, collection: @store.vendor.categories %>
+  <% if @store.vendor %>
+    <%= f.association :vendor_category, collection: @store.vendor.categories %>
+  <% elsif %>
+    <%= f.association :vendor_category %>
+  <% end %>
   <%= f.input :description %>
   <%= f.input :telephone %>
   <%= f.input :website %>
   <%= f.input :email %>
   
-  <%= f.simple_fields_for :polygon do |p| %>
-    <%= p.association :floor, collection: @mall.floors, label_method: :label, include_blank: false %>
-    <%= p.input :label %>
-    <%= p.input :vertices %>
-  <% end %>
+  <%= f.association :polygon, collection: Polygon.where(floor_id: @mall.floors), label_method: :label, include_blank: false %>
+  <%#= f.simple_fields_for :polygon do |p| %>
+    <%#= p.association :floor, collection: @mall.floors, label_method: :label, include_blank: false %>
+    <%#= p.input :label %>
+    <%#= p.input :vertices %>
+  <%# end %>
   
   <%= f.button :submit, class: "btn btn-large btn-primary" %>
 <% end %>
