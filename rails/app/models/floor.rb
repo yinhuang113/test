@@ -13,8 +13,14 @@ class Floor < ActiveRecord::Base
   after_save :generate_polygons
   
   def should_be_only_main
-    if main && Floor.where(mall_id: mall, main: true).exists?
-      errors.add(:main, "there is already a main floor")
+    if id
+      if main && Floor.where('mall_id = ? AND id != ? AND main = TRUE', mall_id, id).exists?
+        errors.add(:main, "there is already a main floor")
+      end
+    else
+      if main && Floor.where(mall_id: mall, main: true).exists?
+        errors.add(:main, "there is already a main floor")
+      end
     end
   end
   
@@ -24,9 +30,9 @@ class Floor < ActiveRecord::Base
         errors.add(:order, "there is already a floor with this order number")
       end
     else
-        if Floor.where('mall_id = ? AND "order" = ?', mall_id, order).exists?
-          errors.add(:order, "there is already a floor with this order number")
-        end
+      if Floor.where('mall_id = ? AND "order" = ?', mall_id, order).exists?
+        errors.add(:order, "there is already a floor with this order number")
+      end
     end
   end
   
