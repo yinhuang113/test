@@ -7,15 +7,20 @@
     <th>Label</th>
     <th>Order</th>
     <th>Main</th>
-    <th></th>
+    <th>Polygons</th>
+    <th style="width: 36px"></th>
   </tr>
 <% @floors.each do |floor| %>
   <tr>
     <td><%= link_to image_tag(svg_floor_path(floor), size: "48x48"), svg_floor_path(floor) %></td>
     <td><%= link_to floor.label, floor_path(floor) %></td>
     <td><%= floor.order %></td>
-    <td><%= floor.main %></td>
-    <td><%= link_to 'Edit', edit_floor_path(floor) %></td>
+    <td><% if floor.main %><i class="icon-star"></i><% end %></td>
+    <td><%= Polygon.where(floor_id: floor).count %></td>
+    <td>
+      <%= link_to edit_floor_path(floor) do %><i class="icon-pencil"></i><% end %>
+      <%= link_to floor, confirm: 'Are you sure?', method: :delete do %><i class="icon-remove"></i><% end %>
+    </td>
   </tr>
 <% end %>
 </table>
