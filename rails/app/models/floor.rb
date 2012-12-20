@@ -1,7 +1,7 @@
 class Floor < ActiveRecord::Base
   attr_accessible :label, :main, :mall_id, :order, :source_map_file_name, :svg, :svg_file
   belongs_to :mall
-  has_many :ploygons, dependent: :destroy
+  has_many :polygons, dependent: :destroy
   has_many :connector_locations, dependent: :destroy
   has_many :entrances, dependent: :destroy
   
@@ -53,6 +53,7 @@ class Floor < ActiveRecord::Base
   end
   
   def generate_polygons
+    puts "here?"
     Polygon.where(floor_id: id, from_svg: true).destroy_all
     if @svg_file
       data = `#{Rails.root.join('bin', 'poly')} #{@svg_file.tempfile.path}`
