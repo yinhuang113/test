@@ -10,7 +10,6 @@ jQuery ->
     else
       $(this).text('show')
       $('.floor-plan').hide()
-    end
     event.preventDefault()
     
   $('.switch-triangulation').on 'click', (event) ->
@@ -20,5 +19,4 @@ jQuery ->
     else
       $(this).text('show')
       $('.triangulation').hide()
-    end
     event.preventDefault()
