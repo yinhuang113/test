@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219174827) do
+ActiveRecord::Schema.define(:version => 20121220004134) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -92,14 +92,16 @@ ActiveRecord::Schema.define(:version => 20121219174827) do
   add_index "malls", ["account_id"], :name => "index_malls_on_account_id"
 
   create_table "polygons", :force => true do |t|
-    t.integer  "floor_id",                  :null => false
+    t.integer  "floor_id",                                     :null => false
     t.string   "label"
-    t.string   "vertices",   :limit => nil, :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.string   "vertices",   :limit => nil,                    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.boolean  "from_svg",                  :default => false, :null => false
   end
 
   add_index "polygons", ["floor_id"], :name => "index_polygons_on_floor_id"
+  add_index "polygons", ["from_svg"], :name => "index_polygons_on_from_svg"
 
   create_table "schedule_intervals", :force => true do |t|
     t.integer  "schedule_id"
