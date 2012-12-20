@@ -2,7 +2,8 @@
 #include "path_to_polygon.h"
 
 #include "svg.h"
-#include "gsim/gs_polygon.h"
+#include <gsim/gs_polygon.h>
+#include <gsim/se_dcdt.h>
 #include <iomanip>
 #include <iostream>
 #include <iterator>
@@ -11,8 +12,8 @@
 
 #define FLOOR_ID "FLOOR"
 
-void processItem(const std::string& label, svgItem *item);
-void printPolygon(const GsPolygon& polygon);
+void processItem(svgItem *item);
+void printPolygon(const GsPolygon& polygon, int number);
 std::list<GsPolygon> convertPathToPolygons(svgPath *path);
 GsPolygon convertRectToPolygon(svgRect *rect);
 GsPolygon convertCircleToPolygon(svgCircle *circle);
@@ -21,12 +22,19 @@ GsPolygon convertLineToPolygon(svgLine *line);
 GsPolygon convertPolylineToPolygon(svgPolyline *polyline);
 GsPolygon convertPolygonToPolygon(svgPolygon* polygon);
 
+static const char* floor_id = "\\N";
+static const char* label = 0;
+static SeDcdt *dcdt;
+
 int main(int argc, char* argv[]) {
 	if (argc < 2) {
-		std::cerr << "Please specify the SVG file name\n";
+		std::cerr << "Usage: " << argv[0] << " <svg> [<floor_id>]\n";
 		return -1;
 	}
 
+	if (argc > 2)
+		floor_id = argv[2];
+	
 	// Open the SVG file
 	svgDrawing *ptSvg = svgOpenFile(argv[1]);
 	if (ptSvg == NULL) {
@@ -34,19 +42,45 @@ int main(int argc, char* argv[]) {
 		return -1;
 	}
 	
+	float xmin = ptSvg->tX.fValue;
+	float ymin = ptSvg->tY.fValue;
+	float xmax = xmin + ptSvg->tWidth.fValue;
+	float ymax = ymin + ptSvg->tHeight.fValue;
+	
+	// Print header
+	std::cout << "DELETE FROM polygons WHERE from_svg = TRUE;\n";
+	std::cout << "COPY polygons (floor_id, label, vertices, from_svg, created_at, updated_at) FROM stdin;\n";
+	
+	// Create the triangulator
+	dcdt = new SeDcdt(0.5);
+	GsPolygon domain(0, 4);
+	domain.push(GsVec2(xmin, ymin));
+	domain.push(GsVec2(xmax, ymin));
+	domain.push(GsVec2(xmax, ymax));
+	domain.push(GsVec2(xmin, ymax));
+	dcdt->init(domain, 0.5f);
+	
 	// Process all top level elements
 	svgItem *item = ptSvg->tItemList.ptItem;
 	while (item != NULL) {
-		gsout << "# id: " << item->szId << "\n";
-		processItem(item->szId, item);
+		label = item->szId;
+		processItem(item);
 		item = item->ptNextItem;
 	}
 	
+	// Print footer
+	std::cout << "\\.\n";
+	
+	// Print triangulation
+	//dcdt->save(gsout);
+	
+	delete dcdt;
 	svgFreeDrawing(ptSvg);
+	
 	return 0;
 }
 
-void processItem(const std::string& label, svgItem *item) {
+void processItem(svgItem *item) {
 	int count = 0;
 	svgItem *subitem = item->ptFirstChild;
 	while (subitem != NULL) {
@@ -55,9 +89,8 @@ void processItem(const std::string& label, svgItem *item) {
 			case SVG_ITEM_KIND_PATH: {
 				std::list<GsPolygon> list = convertPathToPolygons(&subitem->tParameters.tPath);
 				for (std::list<GsPolygon>::iterator it = list.begin(); it != list.end(); ++it) {
-					std::cout << label << std::setfill('0') << std::setw(3) << count << '\t';
-					printPolygon(*it);
-					count += 1;
+					dcdt->insert_polygon(*it);
+					printPolygon(*it, count++);
 				}
 			} break;
 				
@@ -92,15 +125,18 @@ void processItem(const std::string& label, svgItem *item) {
 				std::cerr << "Invalid or unsupported element " << subitem->tKind;
 		}
 		if (!poly.empty()) {
-			std::cout << label << std::setfill('0') << std::setw(3) << count << '\t';
-			printPolygon(poly);
-			count += 1;
+			dcdt->insert_polygon(poly);
+			printPolygon(poly, count++);
 		}
 		subitem = subitem->ptNextItem;
 	}
 }
 
-void printPolygon(const GsPolygon& polygon) {
+void printPolygon(const GsPolygon& polygon, int number) {
+	if (floor_id)
+		std::cout << floor_id << '\t';
+	std::cout << label << std::setfill('0') << std::setw(3) << number << '\t';
+	
 	const int size = polygon.size();
 	std::cout << '(';
 	for (int i = 0; i < size; i += 1) {
@@ -108,7 +144,11 @@ void printPolygon(const GsPolygon& polygon) {
 		if (i < size - 1)
 			std::cout << ',';
 	}
-	std::cout << ')' << '\n';
+	std::cout << ')' << '\t';
+	
+	std::cout << "TRUE\t";
+	std::cout << "NOW()\t";
+	std::cout << "NOW()\n";
 }
 
 std::list<GsPolygon> convertPathToPolygons(svgPath *path) {
