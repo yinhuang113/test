@@ -4,7 +4,6 @@
 #include "path_to_polygon.h"
 
 #include "bezier.h"
-#include "serialization.h"
 
 #include <iostream>
 #include <iterator>

@@ -29,8 +29,8 @@ $(POLY_OBJDIR)/%.o: %.cpp
 $(POLY_OBJDIR)/poly.o: ../poly.cpp
 	$(CROSS_COMPILE)$(CXX) $(CPPFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
 
-$(BINDIR)/poly: $(OFILES) $(LIBSVG2_AFILE) $(POLY_OBJDIR)/poly.o
-	$(CROSS_COMPILE)$(CXX) $(OFILES) $(POLY_OBJDIR)/poly.o $(LDFLAGS) -o $@
+$(BINDIR)/poly: $(OFILES) $(POLY_OBJDIR)/poly.o
+	$(CROSS_COMPILE)$(CXX) $(OFILES) $(POLY_OBJDIR)/poly.o $(LDFLAGS) $(LIBSVG_DIR)/bin/libsvg2.a $(LIBGSIM_DIR)/lib/libgsimtripath.a -o $@
 
 clean:
 	@$(RM) $(POLY_OBJDIR)
