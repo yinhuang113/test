@@ -6,4 +6,15 @@
   border-style: solid;
   border-width: 1px;
   border-color: #eaeaea;
+  position: realtive;
+  width: 320px;
+  height: 480px;
+  .floor-plan {
+    position:absolute;
+    z-index: 1;
+  }
+  .triangulation {
+    position:absolute;
+    z-index: 1;
+  }
 }

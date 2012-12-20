@@ -77,6 +77,8 @@
 		A971D4FD16826D5500F1F658 /* se_triangulator_tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A971D4C81682546100F1F658 /* se_triangulator_tools.cpp */; };
 		A971D5021682769D00F1F658 /* libtripath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A971D4DF16826D4400F1F658 /* libtripath.a */; };
 		A971D503168276B600F1F658 /* libtripath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A971D4DF16826D4400F1F658 /* libtripath.a */; };
+		A971D5131683903300F1F658 /* triangulate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A971D5121683903200F1F658 /* triangulate.cpp */; };
+		A971D51616839D1A00F1F658 /* libtripath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A971D4DF16826D4400F1F658 /* libtripath.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,13 @@
 			remoteGlobalIDString = A971D4DE16826D4400F1F658;
 			remoteInfo = tripath;
 		};
+		A971D51416839C0F00F1F658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9214E141653438F00315E60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A971D4DE16826D4400F1F658;
+			remoteInfo = tripath;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +130,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		A9214ECC165863A600315E60 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A971D50616838FC800F1F658 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -248,6 +266,8 @@
 		A971D4D31682546100F1F658 /* setut_triface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = setut_triface.cpp; sourceTree = "<group>"; };
 		A971D4D41682546100F1F658 /* setut_vmesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setut_vmesh.h; sourceTree = "<group>"; };
 		A971D4DF16826D4400F1F658 /* libtripath.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtripath.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A971D50816838FC800F1F658 /* triangulate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = triangulate; sourceTree = BUILT_PRODUCTS_DIR; };
+		A971D5121683903200F1F658 /* triangulate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = triangulate.cpp; path = ../triangulate.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,12 +304,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A971D50516838FC800F1F658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A971D51616839D1A00F1F658 /* libtripath.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A9214E121653438F00315E60 = {
 			isa = PBXGroup;
 			children = (
+				A971D5121683903200F1F658 /* triangulate.cpp */,
 				A9214EEA16587AEC00315E60 /* poly.cpp */,
 				A9214E2F165343B100315E60 /* poly */,
 				A9214EC61658615000315E60 /* tests */,
@@ -309,6 +338,7 @@
 				A9214E38165343D500315E60 /* libsvg2.a */,
 				A9214ECE165863A600315E60 /* test */,
 				A971D4DF16826D4400F1F658 /* libtripath.a */,
+				A971D50816838FC800F1F658 /* triangulate */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,6 +665,24 @@
 			productReference = A971D4DF16826D4400F1F658 /* libtripath.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		A971D50716838FC800F1F658 /* triangulate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A971D50F16838FC900F1F658 /* Build configuration list for PBXNativeTarget "triangulate" */;
+			buildPhases = (
+				A971D50416838FC800F1F658 /* Sources */,
+				A971D50516838FC800F1F658 /* Frameworks */,
+				A971D50616838FC800F1F658 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A971D51516839C0F00F1F658 /* PBXTargetDependency */,
+			);
+			name = triangulate;
+			productName = triangulate;
+			productReference = A971D50816838FC800F1F658 /* triangulate */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -660,6 +708,7 @@
 				A9214E37165343D500315E60 /* libsvg2 */,
 				A9214ECD165863A600315E60 /* test */,
 				A971D4DE16826D4400F1F658 /* tripath */,
+				A971D50716838FC800F1F658 /* triangulate */,
 			);
 		};
 /* End PBXProject section */
@@ -741,6 +790,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A971D50416838FC800F1F658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A971D5131683903300F1F658 /* triangulate.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -764,6 +821,11 @@
 			target = A971D4DE16826D4400F1F658 /* tripath */;
 			targetProxy = A971D5001682768B00F1F658 /* PBXContainerItemProxy */;
 		};
+		A971D51516839C0F00F1F658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A971D4DE16826D4400F1F658 /* tripath */;
+			targetProxy = A971D51416839C0F00F1F658 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -786,10 +848,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
-					"$(SRCROOT)/../libsvg2/include",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -809,10 +867,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
-					"$(SRCROOT)/../libsvg2/include",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
@@ -823,6 +877,8 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
 					"$(SRCROOT)/../tripath",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -834,6 +890,8 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
 					"$(SRCROOT)/../tripath",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -844,6 +902,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -853,6 +915,10 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -863,6 +929,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
 					"$(SRCROOT)/../tripath",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -880,6 +948,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
+					/usr/include/libxml2,
+					"$(SRCROOT)/../libsvg2/include",
 					"$(SRCROOT)/../tripath",
 				);
 				LIBRARY_SEARCH_PATHS = (
@@ -916,6 +986,38 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../tripath",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A971D51016838FC900F1F658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../tripath",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A971D51116838FC900F1F658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -969,6 +1071,14 @@
 			buildConfigurations = (
 				A971D4E116826D4400F1F658 /* Debug */,
 				A971D4E216826D4400F1F658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A971D50F16838FC900F1F658 /* Build configuration list for PBXNativeTarget "triangulate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A971D51016838FC900F1F658 /* Debug */,
+				A971D51116838FC900F1F658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

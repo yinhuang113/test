@@ -1,3 +1,5 @@
+require "open3"
+
 class FloorsController < ApplicationController
   before_filter :authenticate_user!
 
@@ -46,8 +48,21 @@ class FloorsController < ApplicationController
   end
   
   def svg
-    headers["Content-Type"] = "image/svg+xml"
     @floor = Floor.find(params[:id])
+    headers["Content-Type"] = "image/svg+xml"
     render xml: @floor.svg
+  end
+  
+  def triangulation
+    @floor = Floor.find(params[:id])
+    polygons = ""
+    @floor.polygons.each do |polygon|
+      polygons << polygon.vertices + "\n"
+    end
+    polygons << "\n\x04"
+    
+    headers["Content-Type"] = "image/svg+xml"
+    data, status = Open3.capture2("#{Rails.root.join('bin', 'triangulate')} 640 960", stdin_data: polygons)
+    render xml: data
   end
 end

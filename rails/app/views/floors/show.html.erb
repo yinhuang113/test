@@ -9,11 +9,20 @@
       <li>Order: <%= @floor.order %></li>
       <li>Source map file name: <%= @floor.source_map_file_name %></li>
       <li>Polygons: <%= Polygon.where(floor_id: @floor, from_svg: true).count %> from svg + <%= Polygon.where(floor_id: @floor, from_svg: false).count %> custom</li>
+      <li>
+        <%= link_to 'floor plan', svg_mall_floor_path(@floor.mall, @floor) %> -
+        <%= link_to 'hide', '#', class: "switch-floor-plan" %>
+      </li>
+      <li>
+        <%= link_to 'triangulation', triangulation_mall_floor_path(@floor.mall, @floor) %> -
+        <%= link_to 'hide', '#', class: "switch-triangulation" %>
+      </li>
     </ul>
   </div>
   <div class="span4">
     <div class="map">
-      <%= image_tag svg_floor_path(@floor) %>
+      <%= image_tag svg_mall_floor_path(@floor.mall, @floor), size: "320x480", class: "floor-plan" %>
+      <%= image_tag triangulation_mall_floor_path(@floor.mall, @floor), size: "320x480", class: "triangulation"  %>
     </div>
   </div>
 </div>
@@ -21,6 +30,6 @@
   <div class="span6 offset3">
     <%= link_to 'Floors', mall_floors_path(@floor.mall), class: "btn" %>
     <%= link_to 'Entrances', mall_floor_entrances_path(@floor.mall, @floor), class: "btn" %>
-    <%= link_to 'Edit', edit_floor_path(@floor), class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_mall_floor_path(@floor.mall, @floor), class: "btn btn-primary" %>
   </div>
 </div>

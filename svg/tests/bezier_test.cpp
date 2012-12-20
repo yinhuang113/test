@@ -2,7 +2,6 @@
 //  Copyright (c) 2012 Synergy Media. All rights reserved.
 
 #include "bezier.h"
-#include "serialization.h"
 
 #include <boost/test/unit_test.hpp>
 #include <boost/test/floating_point_comparison.hpp>

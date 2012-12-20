@@ -10,8 +10,6 @@
 #include <list>
 #include <strings.h>
 
-#define FLOOR_ID "FLOOR"
-
 void processItem(svgItem *item);
 void printPolygon(const GsPolygon& polygon, int number);
 std::list<GsPolygon> convertPathToPolygons(svgPath *path);

@@ -10,13 +10,10 @@ Mapbuilder::Application.routes.draw do
   resources :accounts
   resources :users
 
-  resources :floors, except: [:index] do
-    get 'svg', on: :member
-  end
-
   resources :malls do
     resources :floors do
       get 'svg', on: :member
+      get 'triangulation', on: :member
       resources :entrances
     end
     resources :schedules do

@@ -7,7 +7,7 @@ CFILES:=${shell find ${CURDIR} -name "*.cpp" -print}
 OFILES:=$(patsubst %.cpp,%.o,$(CFILES))
 OFILES:=$(notdir $(OFILES))
 OFILES:=$(addprefix $(POLY_OBJDIR)/,$(OFILES))
-OUTFILES:=$(BINDIR)/poly
+OUTFILES:=$(BINDIR)/poly $(BINDIR)/triangulate
 CPPFLAGS:=$(CPPFLAGS)
 LDFLAGS:=-lsvg2 $(LDFLAGS) -L$(BINDIR)
 # Define sub-directories
@@ -31,6 +31,12 @@ $(POLY_OBJDIR)/poly.o: ../poly.cpp
 
 $(BINDIR)/poly: $(OFILES) $(POLY_OBJDIR)/poly.o
 	$(CROSS_COMPILE)$(CXX) $(OFILES) $(POLY_OBJDIR)/poly.o $(LDFLAGS) $(LIBSVG_DIR)/bin/libsvg2.a $(LIBGSIM_DIR)/lib/libgsimtripath.a -o $@
+
+$(POLY_OBJDIR)/triangulate.o: ../triangulate.cpp
+	$(CROSS_COMPILE)$(CXX) $(CPPFLAGS) $(addprefix -I,$(INCDIR)) -c $< -o $@
+
+$(BINDIR)/triangulate: $(OFILES) $(POLY_OBJDIR)/triangulate.o
+	$(CROSS_COMPILE)$(CXX) $(OFILES) $(POLY_OBJDIR)/triangulate.o $(LDFLAGS) $(LIBGSIM_DIR)/lib/libgsimtripath.a -o $@
 
 clean:
 	@$(RM) $(POLY_OBJDIR)
