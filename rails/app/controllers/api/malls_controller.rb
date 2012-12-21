@@ -10,4 +10,8 @@ class Api::MallsController < ApplicationController
     @mall = Mall.find(params[:id])
     @schedule = Schedule.current(@mall)
   end
+
+  def navigation
+    @mall = Mall.find(params[:id])
+  end
 end

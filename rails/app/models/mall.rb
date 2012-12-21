@@ -6,6 +6,7 @@ class Mall < ActiveRecord::Base
   has_many :connectors, dependent: :destroy
   has_many :stores, dependent: :destroy
   has_many :zones, dependent: :destroy
+  has_many :entrances, through: :floors
   
   scope :by_account, lambda { |account| where(account_id: account) }
 end

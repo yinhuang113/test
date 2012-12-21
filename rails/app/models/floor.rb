@@ -4,6 +4,8 @@ class Floor < ActiveRecord::Base
   has_many :polygons, dependent: :destroy
   has_many :connector_locations, dependent: :destroy
   has_many :entrances, dependent: :destroy
+  has_many :stores, through: :polygons
+  has_many :zones, through: :polygons
   
   validates :label, presence: true
   validates :order, presence: true, numericality: { only_integer: true, greater_than_or_equal: 0 }

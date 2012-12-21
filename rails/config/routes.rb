@@ -29,6 +29,7 @@ Mapbuilder::Application.routes.draw do
   scope module: "api" do
     match 'api/malls', to: 'malls#index', format: :json
     match 'api/malls/:id', to: 'malls#show', format: :json
+    match 'api/malls/:id/navigation', to: 'malls#navigation', format: :json
     match 'api/floors', to: 'floors#index', format: :json
     match 'api/floors/:id', to: 'floors#show', format: :json
     match 'api/floors/:id/svg', to: 'floors#svg', format: :json
