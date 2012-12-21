@@ -123,6 +123,7 @@ void printPolygon(const GsPolygon& polygon, int number) {
 	std::cout << label << std::setfill('0') << std::setw(3) << number << '\t';
 	
 	const int size = polygon.size();
+	std::cout.precision(8);
 	std::cout << '(';
 	for (int i = 0; i < size; i += 1) {
 		std::cout << '(' << polygon.get(i).x << ',' << polygon.get(i).y << ')';
