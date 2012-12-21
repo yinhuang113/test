@@ -12,7 +12,7 @@
   </tr>
 <% @floors.each do |floor| %>
   <tr>
-    <td><%= link_to image_tag(svg_mall_floor_path(@mall, floor), size: "48x48"), svg_floor_path(floor) %></td>
+    <td><%= link_to image_tag(svg_mall_floor_path(@mall, floor), size: "48x48"), svg_mall_floor_path(@mall, floor) %></td>
     <td><%= link_to floor.label, mall_floor_path(@mall, floor) %></td>
     <td><%= floor.order %></td>
     <td><% if floor.main %><i class="icon-star"></i><% end %></td>
