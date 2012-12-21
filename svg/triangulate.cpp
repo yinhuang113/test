@@ -4,6 +4,7 @@
 #include <gsim/se_dcdt.h>
 #include <cstdlib>
 #include <iostream>
+#include <string.h>
 
 SeDcdt* createTriangulator(float width, float height);
 
