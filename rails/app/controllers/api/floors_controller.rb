@@ -30,7 +30,8 @@ class Api::FloorsController < ApplicationController
       polygons << polygon.vertices + "\n"
     end
     polygons << "\n"
-
+    
+    headers["Content-Type"] = "text/plain"
     data, status = Open3.capture2("#{Rails.root.join('bin', 'triangulate')} 640 960 psql", stdin_data: polygons)
     render xml: data
   end
