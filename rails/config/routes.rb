@@ -25,4 +25,9 @@ Mapbuilder::Application.routes.draw do
   end
 
   resources :vendors
+  
+  scope module: "api" do
+    match 'api/malls', to: 'malls#index', format: :json
+    match 'api/malls/:id', to: 'malls#show', format: :json
+  end
 end
