@@ -62,7 +62,7 @@ class FloorsController < ApplicationController
     polygons << "\n\x04"
     
     headers["Content-Type"] = "image/svg+xml"
-    data, status = Open3.capture2("#{Rails.root.join('bin', 'triangulate')} 640 960", stdin_data: polygons)
+    data, status = Open3.capture2("#{Rails.root.join('bin', 'triangulate')} 640 960 svg", stdin_data: polygons)
     render xml: data
   end
 end
