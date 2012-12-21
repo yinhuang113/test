@@ -32,7 +32,8 @@ Mapbuilder::Application.routes.draw do
     match 'api/malls/:id/navigation', to: 'malls#navigation', format: :json
     match 'api/floors', to: 'floors#index', format: :json
     match 'api/floors/:id', to: 'floors#show', format: :json
-    match 'api/floors/:id/svg', to: 'floors#svg', format: :json
+    match 'api/floors/:id/svg', to: 'floors#svg', format: :xml
+    match 'api/floors/:id/triangulation', to: 'floors#triangulation'
     match 'api/stores', to: 'stores#index', format: :json
     match 'api/stores/:id', to: 'stores#show', format: :json
   end

@@ -21,4 +21,17 @@ class Api::FloorsController < ApplicationController
       render xml: @floor.svg
     end
   end
+
+  def triangulation
+    @floor = Floor.find(params[:id])
+    
+    polygons = ""
+    @floor.polygons.each do |polygon|
+      polygons << polygon.vertices + "\n"
+    end
+    polygons << "\n"
+
+    data, status = Open3.capture2("#{Rails.root.join('bin', 'triangulate')} 640 960 psql", stdin_data: polygons)
+    render xml: data
+  end
 end
