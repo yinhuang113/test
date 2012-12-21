@@ -15,19 +15,40 @@ bool skipClosing(const std::string& line, std::size_t& i);
 void skipWS(const std::string& line, std::size_t& i);
 
 void generateSVG(SeDcdt* dcdt);
+void generateTriangles(SeDcdt* dcdt);
 
+
+void printUsage(int argc, const char* argv[]) {
+	std::cerr << "Usage: " << argv[0] << " <width> <height> [<format>]\n";
+	std::cerr << "\n";
+	std::cerr << "Options:\n";
+	std::cerr << "  format: The output format, either svg or psql. Default is psql.\n";
+	std::cerr << "\n";
+}
 
 int main(int argc, const char* argv[]) {
 	if (argc < 3) {
-		std::cerr << "Usage: " << argv[0] << " <width> <height>\n";
-		return -1;
+		printUsage(argc, argv);
+		return 1;
 	}
 	
 	float width = strtof(argv[1], NULL);
 	float height = strtof(argv[2], NULL);
 	SeDcdt* dcdt = createTriangulator(width, height);
 	readPolygons(dcdt);
-	generateSVG(dcdt);
+	
+	if (argc >= 4) {
+		if (strcmp(argv[3], "svg") == 0)
+			generateSVG(dcdt);
+		else if (strcmp(argv[3], "psql") == 0)
+			generateTriangles(dcdt);
+		else {
+			printUsage(argc, argv);
+			return 1;
+		}
+	} else {
+		generateTriangles(dcdt);
+	}
 	
     return 0;
 }
@@ -184,3 +205,22 @@ void generateSVG(SeDcdt* dcdt) {
 	std::cout << "</svg>\n";
 }
 
+void generateTriangles(SeDcdt* dcdt) {
+	SeDcdtFace* face = dcdt->mesh()->first()->fac();
+	SeDcdtFace* iface = face;
+	SeDcdtSymEdge* s;
+	
+	std::cout.precision(8);
+	do {
+		s = face->se();
+		std::cout << "((" << s->vtx()->p.x << ',' << s->vtx()->p.y << ')' << ',';
+		
+		s = s->nxt();
+		std::cout << '(' << s->vtx()->p.x << ',' << s->vtx()->p.y << ')' << ',';
+		
+		s = s->nxt();
+		std::cout << '(' << s->vtx()->p.x << ',' << s->vtx()->p.y << "))\n";
+		
+		face = face->nxt();
+	} while (face != iface);
+}
