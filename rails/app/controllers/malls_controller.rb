@@ -4,9 +4,9 @@ class MallsController < ApplicationController
   def index
     @account = Account.find(params[:account_id]) if params[:account_id]
     if @account
-      @malls = Mall.by_account(@account)
+      @malls = Mall.by_account(@account).paginate(:page => params[:page])
     else
-      @malls = Mall.all
+      @malls = Mall.paginate(:page => params[:page])
     end
   end
 

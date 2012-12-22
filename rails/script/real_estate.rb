@@ -25,5 +25,3 @@ end
 
 data = Marshal.dump(mapping)
 open('real_estate_mapping', 'wb') { |f| f.puts data }
-
-puts mapping
