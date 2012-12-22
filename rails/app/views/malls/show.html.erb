@@ -5,6 +5,7 @@
   <div class="span6 offset3">
     <ul>
       <li>Email: <%= @mall.email %></li>
+      <li>Website: <%= link_to @mall.website, @mall.website if !@mall.website.blank? %></li>
       <li>Phone: <%= @mall.phone %></li>
       <li>Address: <%= @mall.address %><br />
       <%= @mall.city %>, <%= @mall.state %> <%= @mall.zipcode %></li>

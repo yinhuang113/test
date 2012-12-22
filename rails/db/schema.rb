@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220004134) do
+ActiveRecord::Schema.define(:version => 20121222012730) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.integer  "status_value"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city",         :default => "", :null => false
+    t.string   "state",        :default => "", :null => false
+    t.string   "zipcode"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "website"
   end
 
   add_index "accounts", ["status_value"], :name => "index_accounts_on_status_value"
@@ -87,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20121220004134) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "account_id"
+    t.string   "website"
   end
 
   add_index "malls", ["account_id"], :name => "index_malls_on_account_id"

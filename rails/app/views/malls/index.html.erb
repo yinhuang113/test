@@ -8,7 +8,7 @@
     <th>Mall Name</th>
     <th>Address</th>
     <th>Email</th>
-    <th></th>
+    <th style="width: 36px"></th>
   </tr>
 <% @malls.each do |mall| %>
   <tr>
@@ -16,7 +16,7 @@
       <td><%= link_to(mall.account ? mall.account.name : "", mall.account) %></td>
     <% end %>
     <td><%= link_to(mall.name, mall) %></td>
-    <td><%= mall.address + mall.city + mall.state + mall.zipcode %></td>
+    <td><%= "#{mall.address} #{mall.city}, #{mall.state} #{mall.zipcode}" %></td>
     <td><%= mall.email %></td>
     <td>
       <%= link_to edit_mall_path(mall) do %><i class="icon-pencil"> </i><% end %>
