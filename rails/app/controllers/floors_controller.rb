@@ -28,6 +28,7 @@ class FloorsController < ApplicationController
   end
 
   def edit
+    @mall = Mall.find(params[:mall_id])
     @floor = Floor.find(params[:id])
   end
 
