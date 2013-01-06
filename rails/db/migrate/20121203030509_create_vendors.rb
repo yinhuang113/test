@@ -10,6 +10,5 @@ class CreateVendors < ActiveRecord::Migration
       t.timestamps
     end
     add_index :vendors, :name
-    Vendor.all
   end
 end

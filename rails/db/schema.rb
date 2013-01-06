@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222012730) do
+ActiveRecord::Schema.define(:version => 20130106001737) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -191,6 +191,9 @@ ActiveRecord::Schema.define(:version => 20121222012730) do
     t.integer "vendor_id"
     t.integer "category_id"
   end
+
+  add_index "vendor_categories_vendors", ["vendor_id", "category_id"], :name => "index_vendor_categories_vendors_on_vendor_id_and_category_id", :unique => true
+  add_index "vendor_categories_vendors", ["vendor_id"], :name => "index_vendor_categories_vendors_on_vendor_id"
 
   create_table "vendors", :force => true do |t|
     t.string   "name"
