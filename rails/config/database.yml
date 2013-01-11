@@ -4,8 +4,6 @@ development:
   database: mapbuilder_development
   pool: 5
   host: localhost
-  username: mapbuilder
-  password: 123456
 
 test:
   adapter: postgresql
