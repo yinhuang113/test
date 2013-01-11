@@ -15,7 +15,7 @@
     <% if !@account %>
       <td><%= link_to(mall.account ? mall.account.name : "", mall.account) %></td>
     <% end %>
-    <td><%= link_to(mall.name, mall) %></td>
+    <td><%= link_to(mall.name, mall) %>&nbsp;&nbsp;<%= link_to("map", venu_mall_path) %></td>
     <td><%= "#{mall.address} #{mall.city}, #{mall.state} #{mall.zipcode}" %></td>
     <td><%= mall.email %></td>
     <td>

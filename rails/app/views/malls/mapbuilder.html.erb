@@ -1,0 +1,870 @@
+    <div class="container-fluid custom-container mapBuilderContainer">
+      <div class="row-fluid custom-container mapBuilderContainer">
+        <div class="span4 span4Custom leftpanel pagination-centered leftsliding antiscroll-wrap" id="leftpanel">
+              <div class="btn-group custom-btn-group">
+                <button class="btn btn-save"><i class="icon-checkmark"></i>save</button>
+                <button class="btn btn-test"><i class="icon-clipboard"></i>test</button>
+                <button class="btn btn-deploy"><i class="icon-export"></i>deploy</button>
+              </div>
+              <div class="row-fluid">
+                <ul class="nav nav-tabs menuTabs" id="myTab">
+                    <li class="active"><a href="#venue" class="venu"><i class="icon-location"></i><span>VENUE</span></a></li>
+                    <li><a href="#floor" class="floor"><i class="icon-floor"></i><span>FLOOR</span></a></li>
+                    <li ><a href="#stores" class="stores"><i class="icon-star"></i><span>STORES</span></a></li>
+                    <li ><a href="#elements" class="elements"><i class="icon-flag"></i><span>ELEMENTS</span></a></li>
+                </ul>
+         				
+                <div class="tab-content map-tab-content pagination-left">
+                	
+                    <div class="tab-pane active" id="venue">
+                    	<div class="scroll-box-wrap vanue-scroll-box-wrap antiscroll-wrap">
+                      	<div class="scroll-box">
+          								<div class="antiscroll-inner">
+                           <form class="mapForm">
+                              <fieldset>
+                                 <label>Shopping Mall Name</label>
+                                 <input type="text" class="span12">
+                              </fieldset>
+                               <fieldset>
+                                 <label>Address</label>
+                                 <input type="text" class="span12">
+                              </fieldset>
+                              <fieldset>
+                              	  <span class="span6">	
+                                     <label>City</label>
+                                     <input type="text" class="span12">
+                                  </span>
+                                  <span class="span6">	
+                                     <label>Province / State</label>
+                                     <div class="controls">
+                                        <input type="text" class="span12" data-provide="typeahead" data-items="6" data-source='["Alabama","Alaska","Arizona","Arizona","California","Colorado","Colorado","Dist. Columbia","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","Alberta","British Columbia","Labrador","Manitoba","New Brunswick","Newfoundland","Nova Scotia","Nunavut","North West Terr.","Ontario","Prince Edward Is.","Quebec","Saskatchewen","Yukon"]' placeholder="Choose a Province / State">
+                                    </div>
+                                  </span>   
+                              </fieldset>
+                              <fieldset>
+                              	  <span class="span6">	
+                                     <label>Postal / Zip Code</label>
+                                     <input type="text" class="span12">
+                                  </span>
+                                  <span class="span6">	
+                                     <label>Country</label>
+                                     <div class="controls">
+                                        <select class="selectpicker span12" spry:selected="Country">
+                                            <option>Choose a Country</option>
+                                            <option>USA</option>
+                                            <option>Canada</option>
+                                        </select>
+                                    </div>
+                                  </span>   
+                              </fieldset>
+                              <fieldset>
+                              	  <span class="span6">	
+                                     <label>Phone</label>
+                                     <input type="text" class="span12" placeholder="(xxx) xxx - xxxx">
+                                  </span>
+                                  <span class="span6">	
+                                     <label>Website</label>
+                                     <div class="input-prepend">
+                                        <span class="add-on span3">www.</span>
+                                        <input class="span9" id="prependedInput" type="text">
+                                     </div>
+                                  </span>
+                              </fieldset>
+                              <fieldset>
+                              	  <span class="span6 btnspan">	
+                                     <label>Latitude / Longitude</label>
+                                     <span class="span6 spanFirst">
+                                     	<button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From address</button>
+                                     </span>
+                                     <span class="span6">
+                                     	<button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From map</button>
+                                     </span>
+                                  </span>
+                                  <span class="span6 position">	
+                                     <span class="span4">
+                                     	<input type="text" class="span12">
+                                     	<label>lat</label>
+                                     </span>
+                                     <span class="span4">
+                                     	 <input type="text"  class="span12">
+                                     	 <label>long</label>
+                                     </span>
+                                     <span class="span4">
+                                     	 <input type="text"  class="span12">
+                                     	<label>zoom</label>
+                                     </span>   
+                                  </span>   
+                              </fieldset>
+                           </form> 
+                           <div class="row-fluid">                           
+                           		<div class="row-fluid common-block">
+                                	<h4 class="padl19px">Hours of Operation</h4>
+                                    <span class="row-fluid">
+                                    	<p class="span6 padl19px">Add Hours of Operation</p>
+                                        <span class="span6 pagination-right padr19px add-schedule-mapbuilder"><a class="btn btn-invite marginRight0" type="button"><i class="icon-plus font11"></i><i class="icon-calendar"></i></a></span>
+                                    </span>    
+                                </div>
+                           </div>
+                           <!--End of row-->
+                           <div class="row-fluid schedule-comand-line-container">
+                                
+                           		<div class="row-fluid common-block hidden-for-all">
+                                    <span class="row-fluid hrOpsBlockHead">
+                                    	<h4 class="span6 padl19px hrOpsBlockTitle"><i class="icon-calendar"></i><span>[No schedule selected]</span></h4>
+                                        <span class="span6 padl19px">	
+                                             <div class="controls hidden-inner-collapse">
+                                                  <select class="selectpicker span12">
+                                                       <option value="">Select a Planed Schedule Type</option>
+                                                       <option value="normalHrOps">Normal Hours or Operation</option>
+                                                       <option value="holidayHtOps">Holiday Hours of Operation</option>
+                                                       <option value="specialHrOps">Special Date / Holiday</option>
+                                                  </select>
+                                             </div>
+                                        </span>&nbsp;
+                                        
+                                        <span class="span5 pagination-right pull-right padr19px">
+                                        	<a class="btn btn-comment collapse-manual selected" type="button"><i class="icon-comment"></i></a>
+                            				<a class="btn btn-delete delete-manual marginRight0" type="button"><i class="icon-trashcan"></i></a>
+                                        </span>
+                                    </span>
+                                    
+                                    
+                                    <div class="accordion-body row-fluid operationBlock ">
+                                        <div class="accordion-inner pull-left custom-inner span12 operationinner">
+                                            <span class="row-fluid">
+                                               <!-- <span class="span6">	
+                                                     <div class="controls hidden-inner-collapse">
+                                                        <select class="selectpicker span12">
+                                                            <option value="">Select a Planed Schedule Type</option>
+                                                            <option value="normalHrOps">Normal Hours or Operation</option>
+                                                            <option value="holidayHtOps">Holiday Hours of Operation</option>
+                                                            <option value="specialHrOps">Special Date / Holiday</option>
+                                                        </select>
+                                                    </div>
+                                                </span>  -->
+                                                
+                                                <div class="hidden-tabs-schedule" id="normalHrOps">
+                                                    <!--End of span6-->
+                                                    <span class="span12 marginLeft0">	
+                                                         <form class="form-inline formNormal">
+                                                         	<fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Monday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Tuesday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Wednesday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Thursday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Friday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Saturday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Sunday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                         </form>
+                                                    </span>  
+                                                    <!--End of span12-->
+                                                     
+                                                </div>
+                                                <div class="hidden-tabs-schedule" id="holidayHtOps">
+                                                    <span class="span12 marginLeft0">	
+                                                         <form class="form-inline formNormal">
+                                                         	<fieldset>
+                                                                <div class="span6">
+                                                                    <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Starting from" >
+                                                                    <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                                                                </div>
+                                                                <div class="span6">
+                                                                    <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Ending on" >
+                                                                    <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                                                                </div>
+                                                            </fieldset>    
+                                                         	<fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Monday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Tuesday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Wednesday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Thursday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Friday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Saturday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                            <fieldset class="row-fluid singleInfoRow">
+                                                            	<label class="span4">Sunday</label>
+     															<input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">		
+                                                                <span class="span2 pull-right">   
+                                                                     <div class="controls pagination-right">
+                                                                        <label class="span12">
+                                                                            <p class="spanP span9 closed">Closed</p>
+                                                                            <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                        </label>
+                                                                    </div>
+                                                         		</span>    
+                                                            </fieldset>
+                                                         </form>
+                                                    </span>  
+                                                    <!--End of span12-->
+                                                </div>
+                                                <div class="hidden-tabs-schedule" id="specialHrOps">
+                                                    <!--End of span6-->
+                                                    <span class="span12 marginLeft0">	
+                                                         <div class="controls">
+                                                            <select class="selectpicker span12">
+                                                                <option>Special Date / Holiday</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                            </select>
+                                                        </div>
+                                                    </span>  
+                                                    <!--End of span12-->
+                                                    <span class="span12 marginLeft0">	
+                                                         <div class="controls">
+                                                            <input type="text"  class="span12">
+                                                         </div>
+                                                    </span>  
+                                                    <!--End of span12-->
+                                                    <span class="span12 marginLeft0 singleInfoRow">
+                                                        <form class="form-inline">
+                                                            <span class="span4">
+                                                                <div class="span12 maginnegative">
+                                                                    <input type="text" value="" class="span10 timeTextField tbDatePicker dateInputCustom" placeholder="Starting from" >
+                                                                    <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                                                                </div>
+                                                             </span>
+                                                             <span class="span6">   
+                                                                 <input type="text" class="span6 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">													
+                                                                <input type="text" class="span6 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                                                             </span>
+                                                             <span class="span2 pull-right">   
+                                                                 <div class="controls pagination-right">
+                                                                    <label class="span12">
+                                                                        <p class="spanP span9 closed">Closed</p>
+                                                                        <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                                                    </label>
+                                                                </div>
+                                                             </span>    
+                                                        </form>
+                                                     </span>
+                                                    <!--End of span12-->
+                                                     
+                                                </div>
+                                                <!--End of hidden-tabs-schedule-->
+                                            </span>
+                                            <!--End of row-->    
+                                        </div>
+                                    </div>
+                                    <!--End of accordian-->
+                                </div>
+                                <!--End of common-blobk-->
+                                
+                           </div>
+                           <!--End of row-->
+                       		</div>
+                    		</div>
+                       </div>
+                    </div>
+                    <!--End of tab-pane-->
+                    <div class="tab-pane" id="floor">
+                    	<div class="scroll-box-wrap floor-scroll-box-wrap antiscroll-wrap">
+                      	<div class="scroll-box">
+          								<div class="antiscroll-inner">
+                            <span class="row-fluid fluid-border minht fluid-border-none">
+                              <p class="span6 padl19px pcolor pMargin linehight fontsize">Add New Floor</p>
+                              <span class="span6 pagination-right padr19px linehight">
+                                <a class="btn btn-invite marginRight0 addFloorBtn" type="button"><i class="icon-plus font11"></i><i class="icon-floor font11"></i></a>
+                              </span>
+                            </span>
+                      <!--End of row-fluid-->
+                            <span class="row-fluid hrOpsBlockHead fluid-border minht selectedfloor hide floorInfoToClone">
+                              <span class="row-fluid">
+                                <p class="span4 padl19px pMargin linehight floorInfoTitle">Floor <em></em></p>
+                                <span class="span6 pagination-right pull-right padr19px linehight">
+                                  <div class="btn-group btn-floor floorInfoDetailsBtns">
+                                    <a class="btn btn-hselect floorInfoCollapse" rel="floorInfoComment" type="button"><i class="icon-comment"></i></a>
+                                    <a class="btn" rel="floorInfoFlag" type="button"><i class="icon-map"></i></a>
+                                    <a class="btn" rel="floorInfoAdjust" type="button"><i class="icon-contrast"></i></a>
+                                    <a class="btn floorInfoCheckBtn" type="button" data-toggle="buttons-radio"><i class="icon-checkbox"></i></a>
+                                    <a class="btn floorInfoDelete" type="button"><i class="icon-trashcan"></i></a>
+                                  </div>
+                                </span>
+                                
+                              </span>
+                              
+                              <span class="row-fluid floorInfoBody">
+                                <span class="row-fluid hrOpsBlockHead fluid-border minht headenflor hide floorInfoComment">
+                                  <input class="span11 marginl19 pagination-centered" type="text" placeholder="Floor abbreviation (max 2 characters)" maxlength="2"  />
+                                  
+                                 <!-- <span class="span6 marginLeft0">
+                                    <a href="#"><img class="" src="img/drag-drop-2.png" alt=""></a>
+                                  </span>
+                                  <span class="span6 marginLeft0">
+                                    <a href="#"><img class="" src="img/drag-drop-2.png" alt=""></a>
+                                  </span> -->
+                                  <span class="span6 marginLeft0 svgDropZone">
+                                    <div class="svgDropHere"><p>Drag or click here to add Floor SVG</p></div>
+<input class="fileupload" type="file" name="files[]" data-url="fileupload/server/php/" style="display:none;">
+
+                                  </span>
+                                  <span class="span6 marginLeft0 svgDropZone">
+                                    <div class="svgDropHere"><p>Drag or click here to add a Source Map</p></div>
+<input class="fileupload" type="file" name="files[]" data-url="fileupload/server/php/" style="display:none;">
+
+                                  </span>
+                                  
+                                </span>
+                                
+                                <span class="row-fluid hrOpsBlockHead fluid-border minht headenflor hide floorInfoFlag">
+                                  <span class="row-fluid">
+                                    <span class="span6 pagination-left padr19px linehight fontsize">
+                                      <p class="span6 padl19px pcolor linehight">Add New Layer</p>
+                                    </span>
+                                    <span class="span6 pagination-right padr19px linehight">
+                                      <a class="btn btn-invite marginRight0 addFloorAttrBtn" type="button"><i class="icon-plus font11"></i><i class="icon-layer font11 "></i></a>
+                                    </span>
+                                  </span> 
+                                  <span class="row-fluid hide floorAttrToClone">                              
+                                    <!--<span class="row-fluid pull-left">
+                                      <p class="span6 padl57px pMargin linehight">Object ID</p>
+                                      <span class="span6 pagination-right pull-right padr19px linehight">
+                                        <div class="btn-group btn-floor">
+                                          <a class="btn" type="button"><i class="icon-comment"></i></a>
+                                        </div>
+                                      </span>
+                                    </span>-->                               
+                                    <span class="row-fluid pull-left defaultFloorInfoAttr fontsize">
+                                    	<span class="row-fluid">                                        	
+                                            <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle hide">[no title]</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField">
+                                          <input class="span12" type="text" placeholder="Title" value="" />
+                                        </span></p>
+                                        
+                                            <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">
+                                                <a class="btn floorInfoAttrComment btn-hselect" type="button"><i class="icon-comment"></i></a>
+                                                <a class="btn floorInfoFixedAttrEye" type="button" data-toggle="buttons-radio"><i class="icon-eye"></i></a>
+                                                <a class="btn" type="button"><i class="icon-pencil"></i></a>
+                                                <a class="btn" type="button"><i class="icon-wireframe"></i></a>
+                                                <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trashcan"></i></a>
+                                            </div>
+                                         	</span>
+                                        </span>
+                                        <span class="row-fluid hide floorInfoSubAttrInfo">
+                                            <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                              <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                              <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                                <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                              </span>
+                                              <span class="span6 pagination-right pull-right padr19px linehight">
+                                                <div class="btn-group btn-floor">                                          
+                                                  <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                                  <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                                </div>
+                                              </span>
+                                            </span>
+                                            <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                              <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                              <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                                <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                              </span>
+                                              <span class="span6 pagination-right pull-right padr19px linehight">
+                                                <div class="btn-group btn-floor">                                          
+                                                  <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                                  <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                                </div>
+                                              </span>
+                                            </span>     
+                                        </span>
+                                    </span>                             
+                                  </span>
+                                  <div class="floorInfoAttrList">
+                                    <span class="row-fluid pull-left floorInfoAttr">
+                                      <span class="row-fluid">
+                                        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Kiosks</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+                                          <input class="span12" type="text" placeholder="Title" value="Kiosks" />
+                                        </span></p>                                      
+                                        
+                                        <span class="span6 pagination-right pull-right padr19px linehight">
+                                          <div class="btn-group btn-floor">
+                                            <a class="btn floorInfoFixedAttrComment" type="button"><i class="icon-comment"></i></a>
+                                            <a class="btn floorInfoFixedAttrEye" type="button" data-toggle="buttons-radio"><i class="icon-eye"></i></a>
+                                            <a class="btn" type="button"><i class="icon-eyedroppper"></i></a>
+                                            <a class="btn" type="button"><i class="icon-wireframe"></i></a>
+                                            <a class="btn floorInfoFixedAttrDelete" type="button"><i class="icon-trashcan"></i></a>
+                                          </div>
+                                        </span>
+                                      </span>
+                                      <span class="row-fluid hide floorInfoSubAttrInfo">
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>     
+                                      </span>                                 
+                                    </span>
+                                    <span class="row-fluid pull-left floorInfoAttr">   
+                                    	<span class="row-fluid">                                   
+                                        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Majors</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+                                            <input class="span12" type="text" placeholder="Title" value="Majors" />
+                                          </span></p>
+                                          
+                                        <span class="span6 pagination-right pull-right padr19px linehight">
+                                          <div class="btn-group btn-floor">
+                                            <a class="btn floorInfoFixedAttrComment" type="button"><i class="icon-comment"></i></a>
+                                            <a class="btn floorInfoFixedAttrEye" type="button" data-toggle="buttons-radio"><i class="icon-eye"></i></a>
+                                            <a class="btn" type="button"><i class="icon-eyedroppper"></i></a>
+                                            <a class="btn" type="button"><i class="icon-wireframe"></i></a>
+                                            <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trashcan"></i></a>
+                                          </div>
+                                        </span>
+                                      </span>
+                                      <span class="row-fluid hide floorInfoSubAttrInfo">
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>     
+                                      </span>
+                                    </span>
+                                    <span class="row-fluid pull-left floorInfoAttr">
+                                      <span class="row-fluid"> 
+                                        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Stores</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+                                            <input class="span12" type="text" placeholder="Title" value="Stores" />
+                                          </span></p>
+                                                                              
+                                        <span class="span6 pagination-right pull-right padr19px linehight">
+                                          <div class="btn-group btn-floor">
+                                            <a class="btn floorInfoFixedAttrComment" type="button"><i class="icon-comment"></i></a>
+                                            <a class="btn floorInfoFixedAttrEye" type="button" data-toggle="buttons-radio"><i class="icon-eye"></i></a>
+                                            <a class="btn" type="button"><i class="icon-eyedroppper"></i></a>
+                                            <a class="btn" type="button"><i class="icon-wireframe"></i></a>
+                                            <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trashcan"></i></a>
+                                          </div>
+                                        </span>
+                                      </span>
+                                      <span class="row-fluid hide floorInfoSubAttrInfo">
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>     
+                                      </span>
+                                    </span>
+                                    <span class="row-fluid pull-left floorInfoAttr">
+                                    	<span class="row-fluid"> 
+                                        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Floor</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+                                            <input class="span12" type="text" placeholder="Title" value="Floor" />
+                                          </span></p>
+                                          
+                                        <span class="span6 pagination-right pull-right padr19px linehight">
+                                          <div class="btn-group btn-floor">
+                                            <a class="btn floorInfoFixedAttrComment" type="button"><i class="icon-comment"></i></a>
+                                            <a class="btn floorInfoFixedAttrEye" type="button" data-toggle="buttons-radio"><i class="icon-eye"></i></a>
+                                            <a class="btn" type="button"><i class="icon-eyedroppper"></i></a>
+                                            <a class="btn" type="button"><i class="icon-wireframe"></i></a>
+                                            <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trashcan"></i></a>
+                                          </div>
+                                        </span>
+                                      </span>
+                                      <span class="row-fluid hide floorInfoSubAttrInfo">
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>
+                                        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+                                          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+                                          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+                                            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+                                          </span>
+                                          <span class="span6 pagination-right pull-right padr19px linehight">
+                                            <div class="btn-group btn-floor">                                          
+                                              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+                                              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+                                            </div>
+                                          </span>
+                                        </span>     
+                                      </span>
+                                    </span>
+                                    <!-- <span class="row-fluid pull-left floorInfoAttr">
+                                      <p class="span6 padl19px pMargin linehight"><i class="colorPlus">&nbsp;&nbsp;&nbsp;</i> Source Map</p>
+                                      <span class="span6 pagination-right pull-right padr19px linehight">
+                                        <div class="btn-group btn-floor">
+                                          <a class="btn btn-hselect" type="button"><i class="icon-eye-open"></i></a>
+                                          <a class="btn" type="button"><i class="icon-comment"></i></a>
+                                          <a class="btn" type="button"><i class="icon-pencil"></i></a>
+                                          <a class="btn" type="button"><i class="icon-table"></i></a>
+                                          <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trash"></i></a>
+                                        </div>
+                                      </span>
+                                    </span> -->
+                                  </div>
+                                </span>
+                                
+                                <span class="row-fluid hrOpsBlockHead fluid-border minht headenflor hide floorInfoAdjust">
+                                  <span class="row-fluid">
+                                    <p class="pull-left offset2">0%</p>
+                                    <div class="sliderBar pull-left"></div>
+                                    <p class="pull-left">100%</p>
+                                  </span>
+                                </span>
+                              </span>
+                            </span>
+                      			<div class="floorInfoList"></div>
+                      		</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--End of tab-pane-->
+                    <div class="tab-pane" id="stores">
+                      <div class="scroll-box-wrap store-scroll-box-wrap antiscroll-wrap">
+                          <div class="scroll-box">
+                            <div class="antiscroll-inner">
+                              <table class="table table-hover storeListTable">
+                    <tr class="item_title">
+                      <th><!--Add a store<span class="lftbtn addStoreBtn"><i class="icon-plus"></i><i class="icon-star"></i></span>-->
+                                      
+                                        <p class="span6 marginbottom0">Add a store</p>
+                                          <span class="span6 pagination-right"><a class="btn btn-invite marginRight0 addStoreBtn" type="button"><i class="icon-plus font11"></i><i class="icon-star font11"></i></a></span>
+                                      
+                                      </th>
+                    </tr>
+                                  
+                    <!--<tr class="item hide storeInfoToCloneHead">
+                      <td>
+                                        <span class="txtrow hide stroreInfoTitle span6">
+                                          <input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox">[no vendor selected yet]
+                                          </span>
+                                          <span class="lftbtn span6 pull-right pagination-right">
+                                            <i class="icon-comment storeInfoCollapse"></i><i class="icon-trash storeInfoDelete"></i>
+                                          </span>
+                                      </td>
+                     </tr>-->
+                     <tr class="hide storeInfoToCloneBody">
+                      <td>
+                                        <span class="txtrow hide stroreInfoTitle span6">
+                                          <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>[no vendor selected yet]
+                                          </span>
+                                          <span class="span2 pagination-right pull-right zIndex">
+                                              <a class="btn btn-comment storeInfoCollapse selected" type="button"><i class="icon-comment"></i></a>
+                                              <a class="btn btn-delete storeInfoDelete marginRight0" type="button"><i class="icon-trashcan"></i></a>
+                                          </span>
+                                                      
+                                        <div class="collapseInfo span11">								
+                           <form class="form-inline">
+                              <div class="left span6">
+                                   <p>
+                                      <label class="span12 clorBlack">Store Name</label>
+                                      <input type="text" class="span12 vendorTitle" data-provide="typeahead" data-items="4" data-source='["Armani Exchange","Aritzia","Bluenotes","Bebe","Coles","David’s Tea","EB Games","GAP","Gymboree","JACOB","London Drugs","Mastercuts","Opa!"]' placeholder="Choose a Store">
+                                  </p>
+                                  <p>
+                                    <label class="span12 clorBlack">Category</label>
+                                    <select class="selectpicker span12">
+                                           <option>Select a Category</option>
+                                           <option>Major</option>
+                                           <option>Cards, Books, Gifts</option>
+                                           <option>Children's Fashions</option>
+                                           <option>Eyewear &amp; Optometry</option>
+                                           <option>Food Services</option>
+                                           <option>Food Specialty</option>
+                                           <option>Footwear</option>
+                                           <option>Health &amp; Beauty</option>
+                                           <option>Home</option>
+                                           <option>Jewellery &amp; Accessories</option>
+                                           <option>Medical &amp; Dental</option>
+                                           <option>Men's Fashions</option>
+                                           <option>Photo &amp; Electronics</option>
+                                           <option>Restaurants</option>
+                                           <option>Services</option>
+                                           <option>Specialty Retail</option>
+                                           <option>Sporting Goods &amp; Apparel</option>
+                                           <option>Telecommunications</option>
+                                           <option>Unisex Fashions</option>
+                                           <option>Women's Fashions</option>
+                                      </select>
+                                   </p>
+                                   <p> <label class="span12 clorBlack">Phone</label><input class="span12" type="text" placeholder="(xxx) xxx - xxxx"></p>
+                              </div>
+                              <div class="left span3">
+                                <div class="draggable">
+                                  <p><img src="<%= asset_path "drag-drop.png" %>" alt=""></p>
+                                </div>
+                              </div>
+                                                      
+                              <div id="txtboxarea">
+                                <p><label class="span12 clorBlack">Description</label><textarea rows="3" cols="" class="span12"> </textarea></p>
+                              </div>
+                            </form>
+                                          </div>    								
+                      </td>
+                     </tr>
+                   </table>
+                   					</div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--End of tab-pane-->
+                    <div class="tab-pane" id="elements">
+                    	<div class="scroll-box-wrap store-scroll-box-wrap antiscroll-wrap">
+                          <div class="scroll-box">
+                            <div class="antiscroll-inner">
+                               <div class="btngroupContainer btn-group">
+                                    <em class="emstyle">Structural</em>
+                                    <button class="btn btn-element" type="button"><i class="icon-entrance"></i><br/><em>Entrance</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-elevator"></i><br/><em>Elevator</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-escalator"><br/></i><em>Escalator</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-stairs"></i><br/><em>Stairs</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-bus"></i><br/><em>Bus</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-skytrain"></i><br/><em>Skytrain</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-kiosk"></i><br/><em>Kiosk</em></button>
+                                    <em class="emstyle">Amenity</em>
+                                    <button class="btn btn-element" type="button"><i class="icon-stroller"></i><br/><em>Stroller</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-foodcourt"></i><br/><em>Food Court</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-phone-2"><br/></i><em>Pay Phone</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-restroom"></i><br/><em>Restroom</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-playarea"></i><br/><em>Play Area</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-atm"></i><br/><em>ATM</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-handicap"></i><br/><em>Handicap</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-security"><br/></i><em>Security</em></button>
+                                    <button class="btn btn-element" type="button"><i class="icon-customer_service"></i><br/><em>Customer Service</em></button>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       <!--End of row-fluid-->
+                    </div>
+                    <!--End of tab-pane-->
+                	
+                </div>
+              </div><!--/row-->
+        </div><!--/span-->
+        <div id="mapbuttons" class="leftsliding">
+			<div class="btn-group">
+				<button class="btn btn-map-zoomout"><i class="icon-minus-extra"></i></button>
+				<button class="btn btn-map-zoomin"><i class="icon-plus-extra"></i></button>
+			</div>
+			<button class="btn btn-map-openstreet" data-toggle="button"><i class="icon-map"></i></button>
+			<button class="btn btn-map-split" data-toggle="button"><i class="icon-split"></i></button>
+		</div><!--/map buttons-->
+		<div id="map_area" class="row-fluid grid custom-container leftsliding">
+			<div id="map_openmaparea" class="row-fluid custom-container" style="display:none;">
+			</div>
+			<div id="map_svgarea" class="row-fluid custom-container">
+				<object data="img/test2.svg" type="image/svg+xml" width="640px" height="960px" style="left: 400px; display: block; margin: 20px 0 0 250px;"></object>
+			</div>
+		</div>
+
+      </div><!--/row-->
+    </div><!--/.fluid-container-->

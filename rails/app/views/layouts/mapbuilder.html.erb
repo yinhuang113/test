@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css">
+  <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="loginBody1">
+	<%= render 'layouts/header_template1' %>
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

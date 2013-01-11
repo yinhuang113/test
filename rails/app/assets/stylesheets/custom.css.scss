@@ -1,5 +1,5 @@
-@import "bootstrap";
-
+/*@import "bootstrap";
+@import "responsive";*/
 /* =====================================================================
  /*!
  * SYNERGY MEDIA CORP.
@@ -210,7 +210,7 @@ footer li strong {
   color:#fff; 
 }
 .accountBody {
-  background:url(../img/crosshatch_bg.png) repeat;
+  background: image-url('crosshatch_bg.png') repeat;
   
 }
 .accountContainer {
@@ -484,7 +484,7 @@ footer li strong {
   display: table-cell;
     text-align: center;
   vertical-align: middle;
-  background:url(../img/grid_bg.png) repeat;
+  background: image-url('grid_bg.png') repeat;
   border:1px solid #dddddd;
   border-top:none;
 }
@@ -1133,12 +1133,16 @@ input[readonly], select[readonly], textarea[readonly] {
   margin: 8px 0 0 10px;
   position: fixed;
   z-index: 10;
-}
-#mapbuttons .btn {
-  padding: 4px 6px;
-}
-#mapbuttons .btn [class^="icon-"], #mapbuttons .btn [class*=" icon-"] {
-  background-image: url("../img/glyphicons-halflings.png");
+  .btn {
+    padding: 4px 6px;
+    [class^="icon-"], [class*=" icon-"] {
+      background-image: image-url("glyphicons-halflings.png");
+    }
+  }
+  .btn-group {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 /* map_drawarea */
 #map_area {
@@ -1156,7 +1160,7 @@ input[readonly], select[readonly], textarea[readonly] {
   width: 100%;
 }
 .grid {
-  background: url("../img/grid_bg.png") repeat;
+  background: image-url("grid_bg.png") repeat;
 }
 #map_svgarea {
   position: absolute;
@@ -1472,7 +1476,7 @@ input[readonly], select[readonly], textarea[readonly] {
   cursor:pointer;
 }
 .svgDropHere {
-  background:url(../img/layer.png) no-repeat center 26px;
+  background:image-url('layer.png') no-repeat center 26px;
   width:250px;
   height: 87px;
   -webkit-border-radius: 6px;
