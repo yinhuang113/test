@@ -9,11 +9,11 @@
       </a>
       <div class="nav-collapse collapse pull-right">
         <ul class="nav">
-          <li><a href="#"><i class="icon-house icon-white"></i>DASHBOARD</a></li>
-          <li><a href="#VENUES"><i class="icon-location"></i>VENUES</a></li>
+          <li><%= link_to root_path do %><i class="icon-house icon-white"></i>DASHBOARD<% end %></li>
+          <li><%= link_to venu_mall_path do %><i class="icon-location"></i>VENUES<% end %></li>
           <li><a href="#CONTENT"><i class="icon-bookmark"></i>CONTENT</a></li>
-          <li><a href="#ACCOUNT"><i class="icon-cog"></i>ACCOUNT</a></li>
-          <li class="active"><a href="#LogOUT"><i class="icon-user icon-user-custom"></i>LogOUT</a></li>
+          <li><%= link_to accounts_path do %><i class="icon-cog"></i>ACCOUNT<% end %></li>
+          <li class="active"><%= link_to destroy_user_session_path, method: :delete do %><i class="icon-user icon-user-custom"></i>LogOUT<% end %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
