@@ -14,6 +14,7 @@ class FloorsController < ApplicationController
   end
 
   def create
+    @mall = Mall.find(params[:mall_id])
     @floor = Floor.new(params[:floor])
     if @floor.save
       flash[:success] = "Floor created!"
@@ -32,6 +33,7 @@ class FloorsController < ApplicationController
   end
 
   def update
+    @mall = Mall.find(params[:mall_id])
     @floor = Floor.find(params[:id])
     if @floor.update_attributes(params[:floor])
       flash[:success] = "Floor updated"
