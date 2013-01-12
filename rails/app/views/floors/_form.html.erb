@@ -1,4 +1,4 @@
-<%= simple_form_for(@floor, html: { multipart: true }) do |f| %>
+<%= simple_form_for([@mall, @floor], html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
   <%= f.association :mall, as: :hidden %>
