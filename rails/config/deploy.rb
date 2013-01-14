@@ -4,7 +4,6 @@ set :scm, :git
 set :deploy_to, "/var/www/mapbuilder-deploy"
 set :user, "deploy"
 set :use_sudo, false
-set :branch, "frontend-work"
 
 #set :bundle_without, [:development, :test]
 #require "bundler/capistrano"
