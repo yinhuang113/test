@@ -49,4 +49,11 @@ class MallsController < ApplicationController
     flash[:success] = "Mall destroyed."
     redirect_to malls_url
   end
+  
+  def venu
+  end
+  def mapbuilder
+    @title = 'SYNERGY MEDIA CORP'
+    render :layout => 'mapbuilder'
+  end
 end

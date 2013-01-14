@@ -1,0 +1,21 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button class="btn btn-leftsider-toggle" data-toggle="button"><i class="icon-pencil"></i></button>
+      <!--<i class="icon-pencil icon-pencil-custom"></i>-->
+      <a class="brand map-brand span5" href="#">
+      	<em>Coquitlam Centre</em><button class="btn btn-not-strated" type="button">NOT STARTED</button><br/>
+        <p>last updated 2012.11.12 <i>(9 days ago)</i> by Franca Aere</p>
+      </a>
+      <div class="nav-collapse collapse pull-right">
+        <ul class="nav">
+          <li><%= link_to root_path do %><i class="icon-house icon-white"></i>DASHBOARD<% end %></li>
+          <li><%= link_to venu_mall_path do %><i class="icon-location"></i>VENUES<% end %></li>
+          <li><a href="#CONTENT"><i class="icon-bookmark"></i>CONTENT</a></li>
+          <li><%= link_to accounts_path do %><i class="icon-cog"></i>ACCOUNT<% end %></li>
+          <li class="active"><%= link_to destroy_user_session_path, method: :delete do %><i class="icon-user icon-user-custom"></i>LogOUT<% end %></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: mapbuilder_development
+  database: mapbuilder
   pool: 5
   host: localhost
 
@@ -15,6 +15,5 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: mapbuilder_production
+  database: mapbuilder
   pool: 5
-  host: localhost

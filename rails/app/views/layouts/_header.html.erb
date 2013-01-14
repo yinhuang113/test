@@ -1,20 +1,20 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container">
-      <%= link_to image_tag("mall-rat.png", alt: "Mall Rat"), root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Accounts", accounts_path %></li>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Malls", malls_path %></li>
-            <li><%= link_to "Vendors", vendors_path %></li>
-            <li><%= link_to "Help", help_path %></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          <% end %>
-        </ul>
-      </nav>
+    <div class="container-fluid span5">
+      <%= link_to image_tag("simon_logo.png", alt: "Mall Rat"), root_path, id: "logo", class: "brand" %>
     </div>
+    <% if user_signed_in? %>
+    <nav>
+      <ul class="nav pull-right">
+        <li><%= link_to root_path do %><i class="icon-house icon-white"></i>DASHBOARD<% end %></li>
+        <li><%= link_to venu_mall_path do %><i class="icon-location"></i>VENUES<% end %></li>
+        <li><%= link_to vendors_path do %><i class="icon-cart"></i>Vendors<% end %></li>
+        <li><%= link_to accounts_path do %><i class="icon-cog"></i>Accounts<% end %></li>
+        <li><%= link_to users_path do %><i class="icon-user"></i>Users<% end %></li>
+        <li><%= link_to accounts_path do %><i class="icon-vcard"></i>Profile<% end %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %><i class="icon-exit"></i>Log Out<% end %></li>
+      </ul>
+    </nav>
+    <% end %>
   </div>
 </header>
