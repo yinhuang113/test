@@ -1152,12 +1152,14 @@ input[readonly], select[readonly], textarea[readonly] {
   bottom: 0px;
   right: 0px;
   width: auto;
+  overflow-x: hidden;
 }
 #map_openmaparea {
   position: absolute;
   background: transparent;
   height: 100%;
-  width: 100%;
+  width: 170%;
+  overflow-x: hidden;
 }
 .grid {
   background: image-url("grid_bg.png") repeat;
@@ -1610,10 +1612,12 @@ table.dataTable.eventInfoListTable thead th {
   margin-top:20px;
 }
 .loginBody1 {
-  //padding-top:80px;
+  padding-top:1px;
 }
 .accounth2 {
   color: #212121;
   padding-top:8px;
     font: 36px/40px 'luzsans-bookluzsans-book'; 
 }
+
+.map-start{margin-top: 80px;}
