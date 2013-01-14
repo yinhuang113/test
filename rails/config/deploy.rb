@@ -1,5 +1,3 @@
-require "bundler/capistrano"
-
 set :application, "mapbuilder"
 set :repository,  "git@poweredbydra.com:mapbuilder"
 set :scm, :git
@@ -8,12 +6,14 @@ set :user, "deploy"
 set :use_sudo, false
 set :branch, "frontend-work"
 
+#set :bundle_without, [:development, :test]
+#require "bundler/capistrano"
+
+
 role :web, "poweredbydra.com"
 role :app, "poweredbydra.com"
 role :db,  "poweredbydra.com", :primary => true
 
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
