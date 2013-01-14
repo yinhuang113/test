@@ -17,4 +17,3 @@ production:
   encoding: unicode
   database: mapbuilder
   pool: 5
-  host: localhost
