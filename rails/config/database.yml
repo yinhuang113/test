@@ -1,19 +1,28 @@
 development:
   adapter: postgresql
-  encoding: unicode
-  database: mapbuilder
-  pool: 5
   host: localhost
+  encoding: utf-8
+  database: mapbuilder_development
+  pool: 5
+  username: postgres
+  password: secret
 
 test:
   adapter: postgresql
-  encoding: unicode
+  host: localhost
+  encoding: utf-8
   database: mapbuilder_test
   pool: 5
-  host: localhost
+  username: postgres
+  password: secret
+
 
 production:
   adapter: postgresql
-  encoding: unicode
-  database: mapbuilder
+  host: localhost
+  encoding: utf-8
+  database: mapbuilder_production
   pool: 5
+  username: postgres
+  password: secret
+
