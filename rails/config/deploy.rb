@@ -1,9 +1,12 @@
+require "bundler/capistrano"
+
 set :application, "mapbuilder"
 set :repository,  "git@poweredbydra.com:mapbuilder"
 set :scm, :git
 set :deploy_to, "/var/www/mapbuilder-deploy"
 set :user, "deploy"
 set :use_sudo, false
+set :branch, "frontend-work"
 
 role :web, "poweredbydra.com"
 role :app, "poweredbydra.com"
