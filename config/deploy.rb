@@ -8,6 +8,7 @@ set :use_sudo, false
 #set :bundle_without, [:development, :test]
 #require "bundler/capistrano"
 
+load 'deploy/assets'
 
 role :web, "poweredbydra.com"
 role :app, "poweredbydra.com"
