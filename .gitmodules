@@ -1,3 +1,0 @@
-[submodule "svg/libsvg2"]
-	path = svg/libsvg2
-	url = git://github.com/aleph7/libsvg2.git
