@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mapbuilder
+  pool: 5
+
+test:
+  <<: *defaults
+  database: mapbuilder_test
+
+production:
+  <<: *defaults
+
