@@ -25,7 +25,7 @@
 	</div><!--/span-->
 	<div id="idTab1" style="display: block;">
 
-		<div class="rightContent" style="min-height: 559px;">
+		<div class="rightContent" >
 			<div class="changePassForm span7">
 				<h2 class="accounth2">Profile</h2>
 				<form>
@@ -86,7 +86,7 @@
 	</div>
 	<!--End of idTab1-->
 	<div id="idTab2" style="display: none;">
-		<div class="rightContent" id="tabs-2" style="min-height: 559px;">
+		<div class="rightContent" id="tabs-2" >
 			<div class="changePassForm span7">
 				<h2 class="accounth2">Change Password</h2>
 				<form>
@@ -113,7 +113,7 @@
 	</div>
 	<!--End of idTab2-->
 	<div id="idTab3" style="display: none;">
-		<div class="rightContent" style="min-height: 559px;">
+		<div class="rightContent" >
 			<table width="0" border="0" cellspacing="0" cellpadding="0" class="table userTable" id="tabs-1">
 				<tbody>
 					<tr>
@@ -598,9 +598,9 @@
 		<!--End of rightContent-->
 	</div>
 	<!--End of idTab3-->
-	<div id="idTab4" style="display: none;">
+	<div id="idTab4" style="display: none;" >
 		<!--Billing div here-->
-		<div class="rightContent" style="min-height: 559px;">
+		<div class="rightContent" style="min-height:300px;">
 
 			<!--End of changePassForm-->
 		</div>
@@ -608,7 +608,7 @@
 	</div>
 	<!--End of idTab4-->
 	<div id="idTab5" style="display: none;">
-		<div class="changePlan rightContent" style="min-height: 559px;">
+		<div class="changePlan rightContent" >
 			<div class="row-fluid">
 				<div class="partner">
 					<div class="borderwith">
@@ -759,7 +759,9 @@
 	<!--End of idTab5-->
 </div>
 </div>
+
     <script type="text/javascript">
+    	//$.noConflict(true);
 		jQuery(document).ready(function(e) {
 			$('.styledCheckbox').checkbox({
 				cls:'jqueryCheckbox',
@@ -817,7 +819,7 @@
 			var dheight= ($(document).height());
 			var wheight= ($(window).height());
 			var setHeight=dheight-240;
-			$('.rightContent').css({ "min-height": setHeight + 'px' });
+			//$('.rightContent').css({ "min-height": setHeight + 'px' });
 			if ($('#tabs').length) {
 				$('#tabs').tabs();
 			}
