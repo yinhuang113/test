@@ -1,0 +1,825 @@
+<div class="container-fluid custom-container accountContainer">
+<div class="row-fluid">
+	<div class="span2">
+		<div class="sidebar-nav accountSidebarMin">
+			<div class="idTabs">
+				<ul class="nav nav-list">
+					<li>
+						<a href="#idTab1" class="selected"><i class="icon-user icon-user-custom"></i>Profile</a>
+					</li>
+					<li>
+						<a href="#idTab2" class=""><i class="icon-locked"></i>Change password</a>
+					</li>
+					<li>
+						<a href="#idTab3" class=""><i class="icon-users"></i>users</a>
+					</li>
+					<li>
+						<a href="#idTab4" class=""><i class="icon-credit-card"></i>Billing</a>
+					</li>
+					<li>
+						<a href="#idTab5" class=""><i class=" icon-plus"></i>change plans</a>
+					</li>
+				</ul>
+			</div>
+		</div><!--/.sidebar-nav -->
+	</div><!--/span-->
+	<div id="idTab1" style="display: block;">
+
+		<div class="rightContent" style="min-height: 559px;">
+			<div class="changePassForm span7">
+				<h2 class="accounth2">Profile</h2>
+				<form>
+					<fieldset>
+						<div class="control-group span6">
+							<label><i>First Name</i></label>
+							<input type="text" class="span12">
+						</div>
+						<div class="control-group span6">
+							<label><i>Last Name</i></label>
+							<input type="text" class="span12">
+						</div>
+						<label><i>Email Address</i></label>
+						<input type="text" class="span12">
+						<div class="control-group">
+							<label><i>Team Agent Change</i></label>
+							<div class="controls">
+								<select class="selectpicker span12" style="display: none;">
+									<option>Choose one</option>
+									<option>1</option>
+									<option>2</option>
+								</select>
+<!--
+								<div class="btn-group bootstrap-select span12">
+									<button class="btn dropdown-toggle btn-select clearfix" data-toggle="dropdown">
+										<span class="filter-option pull-left">Choose one</span>&nbsp;<i class="icon-menu"></i>
+									</button>
+									<div class="dropdown-menu" role="menu">
+										<ul>
+											<li rel="0">
+												<a tabindex="-1" href="#">Choose one</a>
+											</li>
+											<li rel="1">
+												<a tabindex="-1" href="#">1</a>
+											</li>
+											<li rel="2">
+												<a tabindex="-1" href="#">2</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+-->
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn btn-custom">
+									UPDATE PROFILE
+								</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<!--End of changePassForm-->
+		</div>
+		<!--End of rightContent-->
+	</div>
+	<!--End of idTab1-->
+	<div id="idTab2" style="display: none;">
+		<div class="rightContent" id="tabs-2" style="min-height: 559px;">
+			<div class="changePassForm span7">
+				<h2 class="accounth2">Change Password</h2>
+				<form>
+					<fieldset>
+						<label><i>Old Password</i></label>
+						<input type="password" class="span12">
+						<label><i>New Password</i></label>
+						<input type="password" class="span12">
+						<label><i>Confirm New Password</i></label>
+						<input type="password" class="span12">
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn btn-custom">
+									CHANGE PASSWORD
+								</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<!--End of changePassForm-->
+		</div>
+		<!--End of rightContent-->
+	</div>
+	<!--End of idTab2-->
+	<div id="idTab3" style="display: none;">
+		<div class="rightContent" style="min-height: 559px;">
+			<table width="0" border="0" cellspacing="0" cellpadding="0" class="table userTable" id="tabs-1">
+				<tbody>
+					<tr>
+						<th width="17%" colspan="5" class="bodernone">Users</th>
+
+						<th width="20%" valign="middle" class="bodernone">Invite User <a class="btn btn-invite" type="button" data-toggle="modal" data-target="#modal4"><i class="icon-plus"></i><i class="icon-users"></i></a></th>
+					</tr>
+					<tr>
+						<td colspan="6" class="nohover">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<th width="17%" class="secondth pad0 bodernone">Accounts</th>
+									<th width="17%" class="secondth bodernone">Name</th>
+									<th width="14%" class="secondth bodernone">Email Address</th>
+									<th width="11%" class="secondth bodernone">Role</th>
+									<th width="9%" class="secondth bodernone">Status</th>
+									<th width="17%" valign="middle" class="secondth bodernone"></th>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr>
+						<td colspan="6" class="">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td width="17%" class="pad0">Simon Property Group, Inc</td>
+									<td width="17%">Aaron Carter</td>
+									<td width="14%"><a href="mailto:acarter@simon.com" class="emailLink" style="display: block;"><i>&nbsp;</i>acarter@simon.com</a></td>
+									<td width="11%">Role</td>
+									<td width="9%">
+									<button class="btn btn-mini btn-active" type="button">
+										active
+									</button></td>
+									<td width="17%"><a class="btn btn-comment collapsed" type="button" data-toggle="collapse" href="#collapse1"><i class="icon-comment"></i></a><a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="accordion">
+									<td class="pad0">
+									<div id="collapse1" class="accordion-body collapse" style="height: 0px;">
+										<div class="accordion-inner pull-left custom-inner span5">
+											<form class="form-horizontal">
+												<div class="control-group custom-control">
+													<fieldset class="topFieldset">
+														<label>Account</label>
+														<input type="text" placeholder="Simon Property Group, Inc" class="span12">
+														<label>Name</label>
+														<input type="text" placeholder="Frank Sinatra" class="span12">
+														<label>Email Address</label>
+														<input type="text" placeholder="fsinatra@simon.com" class="span12">
+													</fieldset>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="Role">Role</label>
+													<div class="span7">
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Administrator
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Agent
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="2" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Member
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Observer
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="password reset">Password Reset</label>
+													<div class="span7">
+														<div class="controls">
+															<a type="button" class="btn btn-invite">Reset</a>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+											</form>
+										</div>
+										<div class="span3 pull-right actionBtns">
+											<a class="btn btn-comment" type="button" data-toggle="collapse" href="#collapse1" style="background-color: rgb(157, 208, 0); background-position: initial initial; background-repeat: initial initial;"><i class="icon-comment"></i></a>
+											<a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a>
+										</div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr>
+						<td colspan="6" class="">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td width="17%" class="pad0">Simon Property Group, Inc</td>
+									<td width="17%">Aaron Carter</td>
+									<td width="14%"><a href="mailto:acarter@simon.com" class="emailLink" style="display: block;"><i>&nbsp;</i>acarter@simon.com</a></td>
+									<td width="11%">Role</td>
+									<td width="9%">
+									<button class="btn btn-mini btn-pending" type="button">
+										pending
+									</button></td>
+									<td width="17%"><a class="btn btn-comment collapsed" type="button" data-toggle="collapse" href="#collapse2"><i class="icon-comment"></i></a><a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="accordion">
+									<td class="pad0">
+									<div id="collapse2" class="accordion-body collapse" style="height: 0px;">
+										<div class="accordion-inner pull-left custom-inner span5">
+											<form class="form-horizontal">
+												<div class="control-group custom-control">
+													<fieldset class="topFieldset">
+														<label>Account</label>
+														<input type="text" placeholder="Simon Property Group, Inc" class="span12">
+														<label>Name</label>
+														<input type="text" placeholder="Frank Sinatra" class="span12">
+														<label>Email Address</label>
+														<input type="text" placeholder="fsinatra@simon.com" class="span12">
+													</fieldset>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="Role">Role</label>
+													<div class="span7">
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Administrator
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Agent
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="2" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Member
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Observer
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="password reset">Password Reset</label>
+													<div class="span7">
+														<div class="controls">
+															<a type="button" class="btn btn-invite">Reset</a>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+											</form>
+										</div>
+										<div class="span3 pull-right actionBtns">
+											<a class="btn btn-comment" type="button" data-toggle="collapse" href="#collapse2" style="background-color: rgb(157, 208, 0); background-position: initial initial; background-repeat: initial initial;"><i class="icon-comment"></i></a>
+											<a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a>
+										</div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr>
+						<td colspan="6">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td width="17%" class="pad0">Simon Property Group, Inc</td>
+									<td width="17%">Aaron Carter</td>
+									<td width="14%"><a href="mailto:acarter@simon.com" class="emailLink"><i>&nbsp;</i>acarter@simon.com</a></td>
+									<td width="11%">Role</td>
+									<td width="9%">
+									<button class="btn btn-mini btn-active" type="button">
+										active
+									</button></td>
+									<td width="17%"><a class="btn btn-comment" type="button" data-toggle="collapse" href="#collapse3"><i class="icon-comment"></i></a><a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="accordion">
+									<td class="pad0">
+									<div id="collapse3" class="accordion-body collapse">
+										<div class="accordion-inner pull-left custom-inner span5">
+											<form class="form-horizontal">
+												<div class="control-group custom-control">
+													<fieldset class="topFieldset">
+														<label>Account</label>
+														<input type="text" placeholder="Simon Property Group, Inc" class="span12">
+														<label>Name</label>
+														<input type="text" placeholder="Frank Sinatra" class="span12">
+														<label>Email Address</label>
+														<input type="text" placeholder="fsinatra@simon.com" class="span12">
+													</fieldset>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="Role">Role</label>
+													<div class="span7">
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Administrator
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Agent
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="2" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Member
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Observer
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="password reset">Password Reset</label>
+													<div class="span7">
+														<div class="controls">
+															<a type="button" class="btn btn-invite">Reset</a>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+											</form>
+										</div>
+										<div class="span3 pull-right actionBtns"></div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr>
+						<td colspan="6">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td width="17%" class="pad0">Simon Property Group, Inc</td>
+									<td width="17%">Aaron Carter</td>
+									<td width="14%"><a href="mailto:acarter@simon.com" class="emailLink"><i>&nbsp;</i>acarter@simon.com</a></td>
+									<td width="11%">Role</td>
+									<td width="9%">
+									<button class="btn btn-mini btn-active" type="button">
+										active
+									</button></td>
+									<td width="17%"><a class="btn btn-comment" type="button" data-toggle="collapse" href="#collapse4"><i class="icon-comment"></i></a><a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="accordion">
+									<td class="pad0">
+									<div id="collapse4" class="accordion-body collapse">
+										<div class="accordion-inner pull-left custom-inner span5">
+											<form class="form-horizontal">
+												<div class="control-group custom-control">
+													<fieldset class="topFieldset">
+														<label>Account</label>
+														<input type="text" placeholder="Simon Property Group, Inc" class="span12">
+														<label>Name</label>
+														<input type="text" placeholder="Frank Sinatra" class="span12">
+														<label>Email Address</label>
+														<input type="text" placeholder="fsinatra@simon.com" class="span12">
+													</fieldset>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="Role">Role</label>
+													<div class="span7">
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Administrator
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Agent
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="2" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Member
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Observer
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="password reset">Password Reset</label>
+													<div class="span7">
+														<div class="controls">
+															<a type="button" class="btn btn-invite">Reset</a>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+											</form>
+										</div>
+										<div class="span3 pull-right actionBtns"></div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+					<tr>
+						<td colspan="6">
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td width="17%" class="pad0">Simon Property Group, Inc</td>
+									<td width="17%">Aaron Carter</td>
+									<td width="14%"><a href="mailto:acarter@simon.com" class="emailLink"><i>&nbsp;</i>acarter@simon.com</a></td>
+									<td width="11%">Role</td>
+									<td width="9%">
+									<button class="btn btn-mini btn-active" type="button">
+										active
+									</button></td>
+									<td width="17%"><a class="btn btn-comment" type="button" data-toggle="collapse" href="#collapse5"><i class="icon-comment"></i></a><a class="btn btn-delete" type="button"><i class="icon-trashcan"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+						<table width="0" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="accordion">
+									<td class="pad0">
+									<div id="collapse5" class="accordion-body collapse">
+										<div class="accordion-inner pull-left custom-inner span5">
+											<form class="form-horizontal">
+												<div class="control-group custom-control">
+													<fieldset class="topFieldset">
+														<label>Account</label>
+														<input type="text" placeholder="Simon Property Group, Inc" class="span12">
+														<label>Name</label>
+														<input type="text" placeholder="Frank Sinatra" class="span12">
+														<label>Email Address</label>
+														<input type="text" placeholder="fsinatra@simon.com" class="span12">
+													</fieldset>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="Role">Role</label>
+													<div class="span7">
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Administrator
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Agent
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="2" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Team Member
+															</p>
+														</div>
+														<div class="controls">
+															<span class="customchk1">
+																<input name="chk-1" type="radio" value="1" class="styledRadio" style="position: absolute; z-index: -1; visibility: hidden;">
+																<span class="jqueryRadio"><span class="mark"><img src="<%= asset_path "empty.png" %>" alt=""></span></span></span>
+															<p class="spanP spanP1">
+																Observer
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+												<div class="control-group custom-control">
+													<label class="control-label" for="password reset">Password Reset</label>
+													<div class="span7">
+														<div class="controls">
+															<a type="button" class="btn btn-invite">Reset</a>
+														</div>
+													</div>
+												</div>
+												<!--End of control-group-->
+											</form>
+										</div>
+										<div class="span3 pull-right actionBtns"></div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--End of rightContent-->
+	</div>
+	<!--End of idTab3-->
+	<div id="idTab4" style="display: none;">
+		<!--Billing div here-->
+		<div class="rightContent" style="min-height: 559px;">
+
+			<!--End of changePassForm-->
+		</div>
+		<!--End of rightContent-->
+	</div>
+	<!--End of idTab4-->
+	<div id="idTab5" style="display: none;">
+		<div class="changePlan rightContent" style="min-height: 559px;">
+			<div class="row-fluid">
+				<div class="partner">
+					<div class="borderwith">
+						<h3>PARTNER</h3>
+						<div class="letterStyle">
+							<br>
+							<p>
+								always
+							</p>
+							<i>$</i>
+							<i class="i2l">0<sub>/mo</sub></i>
+						</div>
+						<!--End of changePlan-->
+						<ul>
+							<li>
+								Full features
+							</li>
+							<li>
+								Online support
+							</li>
+							<li class="libg2">
+								Upgrade account to deploy maps
+							</li>
+							<li class="libg2">
+								No analytics
+							</li>
+						</ul>
+						<button type="submit" class="btn btn-custom position">
+							Sign up
+						</button>
+					</div>
+					<!--End of borderwith-->
+				</div>
+				<!--End of partner-->
+				<div class="partner">
+					<div class="borderwith">
+						<h3>PARTNER</h3>
+						<div class="letterStyle">
+							<br>
+							<p>
+								starting from
+							</p>
+							<i>$</i>
+							<i class="i2l">29<sub>/mo</sub></i>
+						</div>
+						<!--End of changePlan-->
+						<ul>
+							<li>
+								10,000 map views/month
+							</li>
+							<li>
+								Online support
+							</li>
+							<li>
+								Deploy to web, mobile, tablet, kiosk
+							</li>
+							<li class="libg2">
+								No analytics
+							</li>
+							<li class="libg2">
+								poweredbyDRA logo on maps
+							</li>
+						</ul>
+						<button type="submit" class="btn btn-custom position">
+							Cancel
+						</button>
+					</div>
+					<!--End of borderwith-->
+				</div>
+				<!--End of partner-->
+				<div class="partner">
+					<div class="borderwith">
+						<h3>PARTNER</h3>
+						<div class="letterStyle">
+							<br>
+							<p>
+								starting from
+							</p>
+							<i>$</i>
+							<i class="i2l">149<sub>/mo</sub></i>
+						</div>
+						<!--End of changePlan-->
+						<ul>
+							<li>
+								300,000 map views/month
+							</li>
+							<li>
+								Online support
+							</li>
+							<li>
+								Dashboard analytics
+							</li>
+							<li>
+								Branding-free maps
+							</li>
+							<li>
+								Deploy to web, mobile, tablet, kiosk
+							</li>
+						</ul>
+						<button type="submit" class="btn btn-custom position">
+							Sign up
+						</button>
+					</div>
+					<!--End of borderwith-->
+				</div>
+				<!--End of partner-->
+				<div class="partner">
+					<div class="borderwith">
+						<h3>PARTNER</h3>
+						<div class="letterStyle">
+							<br>
+							<p>
+								starting from
+							</p>
+							<i>$</i>
+							<i class="i2l">449<sub>/mo</sub></i>
+						</div>
+						<!--End of changePlan-->
+						<ul>
+							<li>
+								10,000 map views/month
+							</li>
+							<li>
+								Dedicated support
+							</li>
+							<li>
+								Dashboard analytics
+							</li>
+							<li>
+								Branding-free maps
+							</li>
+							<li>
+								Deploy to web, mobile, tablet, kiosk
+							</li>
+						</ul>
+						<button type="submit" class="btn btn-custom position">
+							Sign up
+						</button>
+					</div>
+					<!--End of borderwith-->
+				</div>
+				<!--End of partner-->
+			</div>
+			<!--End of row-fluid-->
+		</div>
+		<!--End of changePlane-->
+	</div>
+	<!--End of idTab5-->
+</div>
+</div>
+    <script type="text/javascript">
+		jQuery(document).ready(function(e) {
+			$('.styledCheckbox').checkbox({
+				cls:'jqueryCheckbox',
+				empty:'<%= asset_path "empty.png" %>'
+			});
+			
+			$('.styledRadio').checkbox({
+				cls:'jqueryRadio',
+				empty:'<%= asset_path "empty.png" %>'
+			});
+			
+			$('.selectpicker').selectpicker();
+			$('.userTable').find('.btn-comment').click(function(e) {
+				var parentContainerTable = $(this).parentsUntil('table').parent('table');
+				var parentContainerCell = parentContainerTable.parent();
+				var emailLinkObj = parentContainerTable.find('.emailLink');
+				//console.log(parentContainerCell);
+				if ($($(this).attr('href')).height() == 0) {
+					//parentContainerCell.removeClass('collapse');
+					parentContainerCell.addClass('expand');
+					parentContainerCell.css({'background':'none'});
+					var parentContainerCellFirstTable = parentContainerCell.children('table').first();
+					var parentContainerCellLastTable = parentContainerCell.children('table').last();
+					parentContainerCellFirstTable.css({'display':'none'});
+					//console.log(parentContainerCellFirstTable.find('tr'));
+					emailLinkObj.css({'display':'none'});
+					$(this).css({'background':'#9dd000'});
+					parentContainerCellLastTable.find('.actionBtns').html(parentContainerCellFirstTable.find('td').last().html());
+					parentContainerCellLastTable.find('.actionBtns').find('.btn-comment').click(function(){
+						$(this).parentsUntil('table').parent('table').prev('table').find('.btn-comment').trigger('click');
+					});
+				} else {					
+					//parentContainerCell.addClass('collapse');
+					parentContainerCell.removeClass('expand');
+					parentContainerCell.removeAttr('style');
+					//console.log(parentContainerCell);
+					var parentContainerCellFirstTable = parentContainerCell.children('table').first();
+					parentContainerCellFirstTable.removeAttr('style');
+					//parentContainerCellLastTable.find('.actionBtns').html('');
+					emailLinkObj.css({'display':'block'});
+					$(this).removeAttr('style');
+				}
+			});
+			
+			$('.userTable').children('tbody').children('tr').children('td').mouseenter(function(e) {
+				if (!$(this).hasClass('expand') && !$(this).hasClass('nohover') ) {
+					$(this).css({'background':'#F5F5F5'});   
+				}
+			}).mouseleave(function(e) {
+				if (!$(this).hasClass('expand')) {
+					$(this).removeAttr('style');   
+				}
+			});
+			
+			var dheight= ($(document).height());
+			var wheight= ($(window).height());
+			var setHeight=dheight-240;
+			$('.rightContent').css({ "min-height": setHeight + 'px' });
+			if ($('#tabs').length) {
+				$('#tabs').tabs();
+			}
+  });		
+	</script>

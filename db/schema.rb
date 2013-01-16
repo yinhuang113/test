@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(:version => 20130106001737) do
   add_index "accounts", ["status_value"], :name => "index_accounts_on_status_value"
 
   create_table "connector_locations", :force => true do |t|
-    t.integer  "floor_id",     :null => false
-    t.integer  "connector_id", :null => false
-    t.string   "location",     :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "floor_id",                    :null => false
+    t.integer  "connector_id",                :null => false
+    t.string   "location",     :limit => nil, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   add_index "connector_locations", ["connector_id"], :name => "index_connector_locations_on_connector_id"
@@ -58,11 +58,11 @@ ActiveRecord::Schema.define(:version => 20130106001737) do
   add_index "connectors", ["mall_id"], :name => "index_connectors_on_mall_id"
 
   create_table "entrances", :force => true do |t|
-    t.string   "name",       :default => "", :null => false
-    t.integer  "floor_id",                   :null => false
-    t.string   "location",                   :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "name",                      :default => "", :null => false
+    t.integer  "floor_id",                                  :null => false
+    t.string   "location",   :limit => nil,                 :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "entrances", ["floor_id"], :name => "index_entrances_on_floor_id"
@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(:version => 20130106001737) do
   add_index "malls", ["account_id"], :name => "index_malls_on_account_id"
 
   create_table "polygons", :force => true do |t|
-    t.integer  "floor_id",                      :null => false
+    t.integer  "floor_id",                                     :null => false
     t.string   "label"
-    t.string   "vertices",                      :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "from_svg",   :default => false, :null => false
+    t.string   "vertices",   :limit => nil,                    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.boolean  "from_svg",                  :default => false, :null => false
   end
 
   add_index "polygons", ["floor_id"], :name => "index_polygons_on_floor_id"
