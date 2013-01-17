@@ -5,7 +5,6 @@ Mapbuilder::Application.routes.draw do
   match '/about', :to => 'static_pages#about'
   match '/contact', :to => 'static_pages#contact'
   match '/malls/venu', :to => 'malls#venu', :as => 'venu_mall'
-  match '/malls/mapbuilder', :to => 'malls#mapbuilder', :as => 'mapbuilder_mall'
   match '/profile', :to => 'profiles#index', :as => 'profile'
   
   devise_for :users
@@ -14,6 +13,7 @@ Mapbuilder::Application.routes.draw do
   resources :users
 
   resources :malls do
+    get 'mapbuilder', on: :member
     resources :floors do
       get 'svg', on: :member
       get 'triangulation', on: :member

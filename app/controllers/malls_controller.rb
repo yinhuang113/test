@@ -51,6 +51,12 @@ class MallsController < ApplicationController
   end
   
   def venu
+    @account = Account.find(params[:account_id]) if params[:account_id]
+    if @account
+      @malls = Mall.by_account(@account).paginate(:page => params[:page])
+    else
+      @malls = Mall.paginate(:page => params[:page])
+    end
   end
   def mapbuilder
     @title = 'SYNERGY MEDIA CORP'
