@@ -3,7 +3,11 @@
   	<% @malls.each do |mall| %>
   	<li>
   	  <%= link_to mapbuilder_mall_path(mall) do %>
-  	  <span><%= image_tag(svg_mall_floor_path(mall, mall.floors[0]), size: "200x194") %></span>
+  	  <span>
+  	    <% if !mall.floors.empty? %>
+        <%= image_tag(svg_mall_floor_path(mall, mall.floors[0]), size: "200x194")  %>
+        <% end %>
+  	  </span>
       <strong><%= mall.name %></strong>
       <p><%= mall.address %></p>
       <% end %>

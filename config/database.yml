@@ -8,10 +8,6 @@ test:
   <<: *defaults
   database: mapbuilder_test
 
-staging:
-  <<: *defaults
-  database: mapbuilder_staging
-
 production:
   <<: *defaults
 
