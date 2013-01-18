@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  <%= stylesheet_link_tag    "bootstrap", "bootstrap-responsive", "jquery.checkbox", "_font", "bootstrap-select", "site", "added", :media => "all"%>
+  <%= javascript_include_tag "js/profile_jquery1.8.3.min", "js/profile_bootstrap.min", "js/jquery.checkbox.min", "js/jquery.idTabs.min", "js/bootstrap-select"   %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="wrapper">
+  	<%= render 'layouts/header' %>
+	  <div >
+	      <% flash.each do |key, value| %>
+	        <div class="alert alert-<%= key %>"><%= value %></div>
+	      <% end %>
+	      <%= yield %>
+	      <!--<%= debug(params) if Rails.env.development? %> -->  
+	  </div>
+	  <%= render 'layouts/footer' %>
+  </div>
+</body>
+</html>

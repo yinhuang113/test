@@ -1,4 +1,4 @@
-<div class="container-fluid custom-container accountContainer">
+<div class="container-fluid custom-container accountContainer" style="padding-bottom:0px !important;">
 	<div class="row-fluid">
 		<div class="span2">
 			<div class="sidebar-nav accountSidebarMin">
@@ -25,7 +25,7 @@
 		</div><!--/span-->
 		<div id="idTab1">
 
-			<div class="rightContent">
+			<div class="rightContent" style="min-height:499px;">
 				<div class="changePassForm span7">
 					<h2 class="accounth2">Profile</h2>
 					<form>
@@ -550,7 +550,7 @@
 		<!--End of idTab3-->
 		<div id="idTab4">
 			<!--Billing div here-->
-			<div class="rightContent" style="min-height:300px">
+			<div class="rightContent" >
 
 				<!--End of changePassForm-->
 			</div>
@@ -709,6 +709,28 @@
 		<!--End of idTab5-->
 	</div><!--/row-->
 </div><!--/.fluid-container-->
+<div class="modal hide fade" id="modal4">
+	<div class="modal-header borNon">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			&times;
+		</button>
+		<h3 class="requestAcc">Invite a New Team Member</h3>
+	</div>
+	<div class="modal-header borNon padr30px">
+		<form class="padtb70px">
+			<span class="row-fluid">
+				<input type="text" class="span11 pull-left" />
+				<span class="span1 pull-right marginLeft0"> <span class="btn-group btn-floor floorInfoDetailsBtns"> <a class="btn btn-invite1" type="button"><i class="icon-comment"></i></a> </span> </span> <label class="loLabel"><i>(Separate emails with commas)</i> </label> </span>
+		</form>
+	</div>
+	<div class="formFooter">
+		<button class="btn pull-left btn-custom closPos2" style="margin: 18px 20px 0 250px !important;" data-dismiss="modal" aria-hidden="true">
+			Close
+		</button>
+	</div>
+	<!--End of formFooter-->
+</div>
+
 <script type="text/javascript">
 	jQuery(document).ready(function(e) {
 		$('.styledCheckbox').checkbox({
@@ -779,9 +801,9 @@
 		var dheight = ($(document).height());
 		var wheight = ($(window).height());
 		var setHeight = dheight - 240;
-		/*$('.rightContent').css({
+		$('.rightContent').css({
 			"min-height" : setHeight + 'px'
-		});*/
+		});
 //		if(dheight >= wheight-60) {
 //			$('footer').css({'bottom':'0'});
 //		}
