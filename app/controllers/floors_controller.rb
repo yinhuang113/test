@@ -18,7 +18,7 @@ class FloorsController < ApplicationController
     @floor = Floor.new(params[:floor])
     if @floor.save
       flash[:success] = "Floor created!"
-      redirect_to @floor
+      redirect_to [@mall, @floor]
     else
       render 'new'
     end
@@ -39,7 +39,7 @@ class FloorsController < ApplicationController
     @floor = Floor.find(params[:id])
     if @floor.update_attributes(params[:floor])
       flash[:success] = "Floor updated"
-      redirect_to @floor
+      redirect_to [@mall, @floor]
     else
       render 'edit'
     end
