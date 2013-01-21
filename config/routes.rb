@@ -6,6 +6,7 @@ Mapbuilder::Application.routes.draw do
   match '/contact', :to => 'static_pages#contact'
   match '/malls/venu', :to => 'malls#venu', :as => 'venu_mall'
   match '/profile', :to => 'profiles#index', :as => 'profile'
+  match '/request_access', :to => 'users#request_access', :as => 'request_access', via: :post
   
   devise_for :users
   

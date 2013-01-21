@@ -1,25 +1,23 @@
 <% if modal == "signup" %>
   <div class="modal hide fade" id="modal1">
-        <div class="modal-header borNon">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="requestAcc">Request Access</h3>
+    <div class="modal-header borNon">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="requestAcc">Request Access</h3>
+    </div>
+    <div class="modal-header borNon padr30px">
+      <form accept-charset="UTF-8" action="/request_access" method="post" novalidate="novalidate">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="utf8" type="hidden" value="&#x2713;" />
         </div>
-        <div class="modal-header borNon padr30px">
-        <form>
-                <label><i>Name</i> </label>
-                <input type="text" class="spanf" />
-                <label><i>Email Address</i> </label>
-                <input type="text" class="spanf" />
-                <label><i>Real Estate / Shopping Mall</i> </label>
-                <input type="text" class="spanf" />
-                <label><i>Telephone</i> </label>
-                <input type="text" class="spanf" />
-          </form>
-          </div>
-          <div class="formFooter">
-            <button class="btn btn-custom requestbtn" type="submit">Request</button>
-          </div>
-          <!--End of formFooter-->
+        <label><i>Name</i> </label> <input type="text" class="spanf" />
+        <label><i>Email Address</i> </label> <input type="text" class="spanf" />
+        <label><i>Real Estate / Shopping Mall</i> </label><input type="text" class="spanf" />
+        <label><i>Telephone</i> </label> <input type="text" class="spanf" />
+        <div class="formFooter">
+          <button class="btn btn-custom requestbtn" type="submit">Request</button>
+        </div>
+      </form>
+    </div>
   </div>
 <% end %>
 <% if modal == "password_recover" %>

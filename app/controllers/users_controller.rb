@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:request_access]
   load_and_authorize_resource
+  skip_authorize_resource only: :request_access
 
   def index
     @account = Account.find(params[:account_id]) if params[:account_id]
@@ -55,5 +56,11 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
+  end
+  
+  def request_access
+    SignUpMailer.signup(params).deliver
+    flash[:success] = "Access request sent. You will be notified when you can access MapBuilder."
+    redirect_to new_user_session_path
   end
 end

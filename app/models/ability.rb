@@ -3,6 +3,10 @@ class Ability
 
   def initialize(user)
     return unless user
+    
+    can :request_access, User
+    can :read, Mall, account_id: user.account_id if user.account_id
+    
     if user.role == :admin
       can :manage, :all
     elsif user.role == :agent && user.account_id
@@ -12,8 +16,6 @@ class Ability
     elsif user.role == :member && user.account_id 
       can :manage, Mall, account_id: user.account_id
       can :manage, User, id: user.id
-    elsif user.role == :observer && user.account_id
-      can :read, Mall, account_id: user.account_id
     end
   end
 end
