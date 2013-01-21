@@ -8,8 +8,10 @@ class Ability
     elsif user.role == :agent && user.account_id
       can :manage, Account, id: user.account_id
       can :manage, Mall, account_id: user.account_id
+      can :manage, User, account_id: user.account_id
     elsif user.role == :member && user.account_id 
       can :manage, Mall, account_id: user.account_id
+      can :manage, User, id: user.id
     elsif user.role == :observer && user.account_id
       can :read, Mall, account_id: user.account_id
     end
