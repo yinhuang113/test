@@ -59,8 +59,8 @@ class MallsController < ApplicationController
       @malls = Mall.paginate(:page => params[:page])
     end
   end
+  
   def mapbuilder
-    @title = 'SYNERGY MEDIA CORP'
     render :layout => 'mapbuilder'
   end
 end

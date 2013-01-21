@@ -15,14 +15,17 @@ Mapbuilder::Application.routes.draw do
 
   resources :malls do
     get 'mapbuilder', on: :member
+    
     resources :floors do
       get 'svg', on: :member
       get 'triangulation', on: :member
       resources :entrances
     end
+    
     resources :schedules do
       resources :schedule_intervals
     end
+    
     resources :connectors
     resources :stores
     resources :zones
