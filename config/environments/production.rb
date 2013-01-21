@@ -1,6 +1,11 @@
 Mapbuilder::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # ActionMailer configuration
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => "staging.poweredbydra.com" }
+  config.action_mailer.delivery_method = :sendmail
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -47,11 +52,6 @@ Mapbuilder::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( jquery.checkbox.css )
-
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => "poweredbydra.com" }
-  config.action_mailer.delivery_method = :sendmail
   
   # Enable threaded mode
   # config.threadsafe!
@@ -66,7 +66,5 @@ Mapbuilder::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
-  
-  config.action_mailer.default_url_options = { :host => 'poweredbydra.com/mapbuilder' }
   
 end
