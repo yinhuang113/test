@@ -1,0 +1,23 @@
+<div class="span4 span4Custom leftpanel pagination-centered leftsliding antiscroll-wrap" id="leftpanel">
+  <div class="btn-group custom-btn-group">
+    <button class="btn btn-save"><i class="icon-checkmark"></i>save</button>
+    <button class="btn btn-test"><i class="icon-clipboard"></i>test</button>
+    <button class="btn btn-deploy"><i class="icon-export"></i>deploy</button>
+  </div>
+
+  <div class="row-fluid">
+    <ul class="nav nav-tabs menuTabs" id="myTab">
+        <li class="active"><a href="#venue" class="venu"><i class="icon-location"></i><span>VENUE</span></a></li>
+        <li><a href="#floor" class="floor"><i class="icon-floor"></i><span>FLOOR</span></a></li>
+        <li ><a href="#stores" class="stores"><i class="icon-star"></i><span>STORES</span></a></li>
+        <li ><a href="#elements" class="elements"><i class="icon-flag"></i><span>ELEMENTS</span></a></li>
+    </ul>
+
+    <div class="tab-content map-tab-content pagination-left">
+      <%= render 'venue_tab' %>
+      <%= render 'floor_tab' %>
+      <%= render 'stores_tab' %>
+      <%= render 'elements_tab' %>
+    </div>
+  </div>
+</div>
