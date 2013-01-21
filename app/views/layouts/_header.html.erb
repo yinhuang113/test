@@ -4,7 +4,7 @@
       <% if current_account %>
         <%= link_to current_account.name, account_path(current_account), class: "logo" %>
       <% else %>
-        <span class="logo">Admin</span>
+        <%= image_tag "mall-rat.png", alt: "Mall Rat" %>
       <% end %>
     </div>
     <% if user_signed_in? %>
