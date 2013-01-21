@@ -6,6 +6,7 @@
       <th>Account</th>
     <% end %>
     <th>Mall Name</th>
+    <th>Status</th>
     <th>Address</th>
     <th>Email</th>
     <th style="width: 36px"></th>
@@ -16,6 +17,7 @@
       <td><%= link_to(mall.account ? mall.account.name : "", mall.account) %></td>
     <% end %>
     <td><%= link_to(mall.name, mall) %>&nbsp;&nbsp;<%= link_to("map", venu_mall_path) %></td>
+    <td><%= mall.status.to_s.humanize %></td>
     <td><%= "#{mall.address} #{mall.city}, #{mall.state} #{mall.zipcode}" %></td>
     <td><%= mall.email %></td>
     <td>

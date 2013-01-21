@@ -4,6 +4,7 @@
 <div class="row">
   <div class="span6 offset3">
     <ul>
+      <li>Status: <%= @mall.status.to_s.humanize %></li>
       <li>Email: <%= @mall.email %></li>
       <li>Website: <%= link_to @mall.website, @mall.website if !@mall.website.blank? %></li>
       <li>Phone: <%= @mall.phone %></li>

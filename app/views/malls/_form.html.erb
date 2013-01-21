@@ -2,6 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
   
   <%= f.association :account, as: :hidden %>
+  <%= f.input :status, label: "Status", collection: Mall::STATUS.collect, label_method: lambda { |s| s.to_s.humanize }, include_blank: false %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :website %>
