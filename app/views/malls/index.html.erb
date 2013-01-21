@@ -9,6 +9,8 @@
     <th>Status</th>
     <th>Address</th>
     <th>Email</th>
+    <th>Created</th>
+    <th>Updated</th>
     <th style="width: 36px"></th>
   </tr>
 <% @malls.each do |mall| %>
@@ -20,6 +22,8 @@
     <td><%= mall.status.to_s.humanize %></td>
     <td><%= "#{mall.address} #{mall.city}, #{mall.state} #{mall.zipcode}" %></td>
     <td><%= mall.email %></td>
+    <td><%= l mall.created_at, format: :long %></td>
+    <td><%= l mall.updated_at, format: :long %></td>
     <td>
       <%= link_to edit_mall_path(mall) do %><i class="icon-pencil"> </i><% end %>
       <%= link_to mall, confirm: 'Are you sure?', method: :delete do %><i class="icon-remove"> </i><% end %>

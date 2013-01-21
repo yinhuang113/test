@@ -10,7 +10,10 @@
       <li>Phone: <%= @mall.phone %></li>
       <li>Address: <%= @mall.address %><br />
       <%= @mall.city %>, <%= @mall.state %> <%= @mall.zipcode %></li>
-      <li><%= @mall.latitude %>, <%= @mall.longitude %></li>
+      <li>Latitude: <%= @mall.latitude %></li>
+      <li>Longitude: <%= @mall.longitude %></li>
+      <li>Created: <%= l @mall.created_at, format: :long %></li>
+      <li>Updated: <%= l @mall.updated_at, format: :long %></li>
     </ul>
     <%= link_to 'Floors', mall_floors_path(@mall), class: "btn" %>
     <%= link_to 'Schedules', mall_schedules_path(@mall), class: "btn" %>
