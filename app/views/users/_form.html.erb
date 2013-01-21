@@ -1,7 +1,11 @@
 <%= simple_form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
-  <%= f.association :account, as: :hidden %>
+  <% if current_user.role == :admin %>
+    <%= f.association :account %>
+  <% else %>
+    <%= f.association :account, as: :hidden %>
+  <% end %>
   <%= f.input :title %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
