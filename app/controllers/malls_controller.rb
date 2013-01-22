@@ -39,7 +39,7 @@ class MallsController < ApplicationController
     @mall = Mall.find(params[:id])
     if @mall.update_attributes(params[:mall])
       flash[:success] = "Mall updated"
-      redirect_to @mall
+      redirect_to request.referer
     else
       render 'edit'
     end
