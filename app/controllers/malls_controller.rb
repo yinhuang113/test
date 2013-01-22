@@ -61,6 +61,7 @@ class MallsController < ApplicationController
   end
   
   def mapbuilder
+    @mall = Mall.find(params[:id])
     render :layout => 'mapbuilder'
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121194134) do
+ActiveRecord::Schema.define(:version => 20130122001935) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20130121194134) do
     t.integer  "account_id"
     t.string   "website"
     t.string   "status",     :default => "new", :null => false
+    t.string   "country",    :default => "",    :null => false
   end
 
   add_index "malls", ["account_id"], :name => "index_malls_on_account_id"

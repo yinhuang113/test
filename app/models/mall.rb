@@ -1,6 +1,6 @@
 class Mall < ActiveRecord::Base
   attr_accessible :account_id, :address, :city, :database, :email, :latitude,
-    :longitude, :name, :phone, :state, :zipcode, :website, :status
+    :longitude, :name, :phone, :state, :zipcode, :country, :website, :status
   belongs_to :account
   has_many :floors, dependent: :destroy
   has_many :schedules, dependent: :destroy
