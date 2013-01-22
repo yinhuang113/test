@@ -2,13 +2,15 @@
   <div class="navbar-inner">
     <div class="container-fluid span5">
       <% if current_account %>
-        <%= link_to current_account.name, account_path(current_account), class: "logo" %>
+        <%= link_to current_account.name, account_path(current_account), class: "logo brand" %>
       <% else %>
-        <%= image_tag "mall-rat.png", alt: "Mall Rat" %>
+        <%= link_to root_path, :class => "brand" do %>
+          <%= image_tag "mall-rat.png", alt: "Mall Rat" %>
+        <% end %>
       <% end %>
     </div>
     <% if user_signed_in? %>
-      <nav>
+      <nav class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li><%= link_to root_path do %><i class="icon-house icon-white"></i>DASHBOARD<% end %></li>
           <li><%= link_to venu_mall_path do %><i class="icon-location"></i>VENUES<% end %></li>

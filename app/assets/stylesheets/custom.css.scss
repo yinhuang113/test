@@ -32,15 +32,7 @@ a:focus,
   min-height:100%;  
   position:relative;
 }
-.container-fluid {
-  padding-right:0;
-  padding-left:0; 
-  margin-left:0;
-}
-.navbar-inverse .navbar-inner {
-  background:#212121; 
-  min-height:80px;
-}
+
 .loginBody {
     
 }
@@ -158,54 +150,7 @@ footer li strong {
   color:#fff;
   font-size:12px;
 }
-/*-------------Account Page-----------------*/
-.navbar-inverse .accountBrand {
-  padding:13px 0 0 48px;
-}
-.icon-star-white {
-  color:#fff; 
-}
-.navbar-inverse .accountBrand small {
-  font:normal 13px/15px  'helveticaregular';
-  color:#fff; 
-  float:left; 
-  padding:6px 0 0 10px;
-}
-.navbar-inverse .accountBrand i {
-  float:left; 
-  margin-top:2px;
-}
-.navbar-inverse .accountBrand em {
-  font:normal 24px/30px 'luzsans-boldluzsans-bold';
-  color:#fff; 
-}
-.navbar .nav {
-  margin-right:0;
-}
-.navbar-inverse .nav > li > a {
-  text-transform:uppercase;
-  color:#fff; 
-  padding:5px 17px 5px 17px;
-}
-.navbar-inverse .nav > li > a i {
-  margin-right:10px;  
-}
-.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus,.navbar-inverse .nav > li > a:hover {
-  background:#101010; 
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color:#fff; 
-}
-.navbar-inverse .nav .active > a:last-child, .navbar-inverse .nav .active > a:hover:last-child, .navbar-inverse .nav .active > a:focus:last-child, { 
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-left-radius: 5px;
-  color:#fff; 
-}
+
 .accountBody {
   background: image-url('crosshatch_bg.png') repeat;
   
@@ -638,9 +583,6 @@ footer li strong {
   box-shadow:none;  
 }
 /*-------------Mapbuilder Page-----------------*/
-.navbar-inverse .map-brand {
-  margin:20px 0 0 0;
-}
 .icon-pencil-custom {
   /*width:60px;
   height:40px;
@@ -677,30 +619,7 @@ footer li strong {
   color: white;
 }
 
-.navbar-inverse .map-brand em {
-  font-weight:normal;
-  font-size:24px; 
-  color:#fff;
-}
-.btn-not-strated,.btn-not-strated:hover {
-  background:#999999;
-  border:none;
-  box-shadow:none;
-  color:#fff; 
-  text-shadow:none;
-  margin:0px 0 0 8px !important;
-  font-size:10px !important;
-  font-family: 'HelveticaNeueLTPro-Bd';
-  line-height:14px !important;
-  padding:0 4px !important;
-}
-.navbar-inverse .map-brand p {
-  color:#fff;
-  font-size:13px; 
-}
-.navbar-inverse .map-brand p i {
-  font-style:italic;
-}
+
 .mapBuilderContainer {
   background:#fff;
   padding:0 !important;   
@@ -1613,4 +1532,3 @@ table.dataTable.eventInfoListTable thead th {
     font: 36px/40px 'luzsans-bookluzsans-book'; 
 }
 
-.map-start{margin-top: 80px;}
