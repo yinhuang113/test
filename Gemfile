@@ -14,6 +14,7 @@ gem 'rake'
 gem 'simple_form'
 gem 'therubyracer'
 gem 'bootstrap-will_paginate'
+gem 'haml'
 
 group :development do
   gem 'better_errors',      '>= 0.3.2'
