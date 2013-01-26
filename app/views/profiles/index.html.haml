@@ -1,0 +1,40 @@
+.row-fluid
+  .tabs-left
+    %ul.nav.nav-tabs#profile_tabs
+      %li.active
+        %a{:href => "#profile_tab"}
+          %i.icon-user.icon-user-custom
+          Profile
+      %li
+        %a{:href => "#password_tab"}
+          %i.icon-locked
+          Change password
+      %li
+        %a{:href => "#users_tab"}
+          %i.icon-users
+          Users
+      %li
+        %a{:href => "#billing_tab"}
+          %i.icon-credit-card
+          Billing
+      %li
+        %a{:href => "#plans_tab"}
+          %i.icon-plus
+          Change Plans
+    .tab-content
+      = render "/profiles/tabs/profile", :user => current_user
+      = render "/profiles/tabs/password", :user => current_user
+      = render "/profiles/tabs/users", :users => @users
+      = render "/profiles/tabs/billing", :user => current_user
+      = render "/profiles/tabs/plans", :user => current_user
+
+
+- content_for :js do
+  :javascript
+    $(function() {
+      $('#profile_tabs a').click(function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
+    });
+

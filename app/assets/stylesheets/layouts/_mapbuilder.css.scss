@@ -207,22 +207,98 @@
   background:#f8f8f8;
   color:#333333;
 }
+
+
 .menuTabs {
   border-top:1px solid #eeeeee;
+
+  > li {
+    width:25%;
+    text-align:center;
+
+    i, span {
+      display:inline;
+      float:none;
+    }
+
+    > a {
+      padding:11px 0 9px 0;
+    }
+  }
+
+  > .active > a:hover, .menuTabs > .active > a {
+    padding:11px 0 9px 0;
+  }
 }
-/*.nav-tabs > li > .venu {
-  padding: 11px 32px 9px 33px;
+
+.map-tab-content > .tab-pane {
+  width:100%;
+  padding:0 0 0 0;
 }
-.nav-tabs > li > .floor {
-  padding: 11px 32px 9px 29px;
+.mapForm {
+  fieldset {
+    padding:8px 19px 0px;
+    border-bottom:1px solid #eeeeee;
+  }
+
+  label {
+    font-size:13px;
+  }
+
+  input {
+    color:#333 !important;
+  }
+
+  .add-on {
+    color:#999999;
+  }
+
+  .btnspan button {
+    width:98%;
+    margin-left:0;
+    margin-right:0;
+    padding:5px 0;
+  }
+
+  .control-group {
+    margin-bottom: 0;
+  }
+
+  .btn-active, .btn-active:hover,.btn-pending,.btn-pending:hover {
+    border:none;
+    background:#9dd000;
+    color:#fff;
+    text-shadow:none;
+    padding:0 12px;
+    text-transform:uppercase;
+    font-weight:bold;
+  }
+  .btn-pending, .btn-pending:hover {
+    background:#3286ab;
+  }
+  .btn-invite, .btn-invite:hover,.btn-comment,.btn-delete,.btn-comment:hover,.btn-delete:hover {
+    border:none;
+    background:#b4c2cc;
+    color:#fff;
+    margin-right:22px;
+    text-shadow:none;
+    padding:0 12px;
+    margin:0 22px 0 15px;
+  }
+  .btn-invite i {
+    margin-top:2px;
+    margin-right:6px;
+  }
+  .btn-invite i:last-child {
+    margin-right:0;
+  }
+
 }
-.nav-tabs > li > .stores {
-  padding: 11px 25px 9px 25px;
+.tab-content {
+  overflow:visible;
 }
-.nav-tabs > li > .elements {
-  padding: 11px 21px 9px 21px;
-}
-*/.pagination-left {
+
+.pagination-left {
     text-align:left;
   }
 .map-tab-content > .tab-pane {

@@ -2,7 +2,7 @@
   <div class="scroll-box-wrap vanue-scroll-box-wrap antiscroll-wrap">
     <div class="scroll-box">
       <div class="antiscroll-inner">
-        <%= simple_form_for(@mall) do |f| %>
+        <%= simple_form_for(@mall, :html => {:class => 'mapForm'}) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <fieldset>
             <%= f.input :name, label: "Shopping Mall Name", input_html: { class: "span12" } %>

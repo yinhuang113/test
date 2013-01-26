@@ -1,0 +1,10 @@
+.compact-form {
+  line-height: 14px;
+  label, input, button, select, textarea  {
+    font-size: 13px;
+    font-family: helveticaregular;
+  }
+  .control-group {
+    margin: 0;
+  }
+}

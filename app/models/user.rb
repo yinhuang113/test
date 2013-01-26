@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
   
   def name
-    "#{self.title} #{self.first_name} #{self.last_name}"
+    [self.title, self.first_name, self.last_name].compact.join(' ')
   end
   
   def password_changed?

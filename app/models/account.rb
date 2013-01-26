@@ -1,7 +1,12 @@
 class Account < ActiveRecord::Base
+  # @todo remove me. Its just temp accessor for profile form (field "Team Agent Change")
+  attr_accessor :team_agent
+
   attr_accessible :name, :address1, :address2, :city, :state, :zipcode, :email, :phone, :website, :status_value
   has_many :users
   has_many :malls
+
+
   
   STATUSES = {
     pending: 0,

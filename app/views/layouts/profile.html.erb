@@ -14,15 +14,13 @@
   <%= javascript_include_tag "profile"   %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="l-profile <%=body_class %>">
   <div class="wrapper">
   	<%= render 'layouts/header' %>
-	  <div >
-	      <% flash.each do |key, value| %>
-	        <div class="alert alert-<%= key %>"><%= value %></div>
-	      <% end %>
-	      <%= yield %>
-	      <!--<%= debug(params) if Rails.env.development? %> -->  
+	  <div class="content">
+      <%= render "/shared/flash" if flash.present? %>
+
+	    <%= yield %>
 	  </div>
 	  <%= render 'layouts/footer' %>
   </div>

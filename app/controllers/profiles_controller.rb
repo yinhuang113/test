@@ -3,6 +3,6 @@ class ProfilesController < ApplicationController
   layout "profile"
     
   def index
-       
+    @users = current_user.account.try(:users)
   end
 end

@@ -137,15 +137,16 @@ jQuery(document).ready(function(e){
 	});
 	//$('#venue').jScrollPane({showArrows: true});
 
-	$('.styledCheckbox').checkbox({
+/*	$('.styledCheckbox').checkbox({
 		cls:'jqueryCheckbox',
 		empty:'img/empty.png'
 	});
-	
+
 	$('.styledRadio').checkbox({
 		cls:'jqueryRadio',
 		empty:'img/empty.png'
 	});
+ */
 	//console.log($('.scroll-box-wrap').offset());
 	updateLeftPanelScrollCont();
 	if ($('.scroll-box-wrap').length) {

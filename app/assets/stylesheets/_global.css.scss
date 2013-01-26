@@ -2,4 +2,16 @@
 @import "shared/font";
 @import "shared/layout";
 @import "shared/top_nav";
+@import "shared/footer";
+@import "components/tabs";
+@import "components/modal";
+@import "components/forms";
+
+
+.btn-custom, .btn-custom:hover {
+  color: #fff;
+  text-shadow: 0 -1px #597bc0;
+  background: #39befe;
+  border: none;
+}
 
