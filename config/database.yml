@@ -2,10 +2,7 @@ development: &defaults
   adapter: postgresql
   encoding: unicode
   database: mapbuilder
-  username: rails
-  password: dev
   pool: 5
-  host: localhost
 
 test:
   <<: *defaults
