@@ -7,9 +7,9 @@
     %button{:class => "btn btn-#{user.account.status}"}
       = user.account.status
   %td.btn-group
-    %a.btn.btn-comment{:type => "button", :data => {:toggle => "collapse", :parent => "#users_table"}, :href => "#edit_#{dom_id(user)}"}
+    %a.btn.btn-small.btn-comment{:type => "button", :data => {:toggle => "collapse", :parent => "#users_table"}, :href => "#edit_#{dom_id(user)}"}
       %i.icon-comment
-    %a.btn.btn-delete{:type => "button"}
+    %a.btn.btn-small.btn-delete{:type => "button"}
       %i.icon-trashcan
 %tr.form-row
   %td{:colspan => 6}

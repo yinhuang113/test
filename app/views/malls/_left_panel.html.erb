@@ -14,10 +14,10 @@
     </ul>
 
     <div class="tab-content map-tab-content pagination-left">
-      <%= render 'venue_tab' %>
-      <%= render 'floor_tab' %>
-      <%= render 'stores_tab' %>
-      <%= render 'elements_tab' %>
+      <%= render 'venue_tab', :mall => @mall %>
+      <%= render 'floor_tab', :mall => @mall  %>
+      <%= render 'stores_tab', :mall => @mall  %>
+      <%= render 'elements_tab', :mall => @mall  %>
     </div>
   </div>
 </div>

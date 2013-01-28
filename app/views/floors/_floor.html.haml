@@ -1,0 +1,18 @@
+%span.row-fluid.hrOpsBlockHead.fluid-border.minht.selectedfloor.floorInfoToClone
+  %span.row-fluid
+    %p.span4.padl19px.pMargin.linehight.floorInfoTitle
+      = "#{floor.label} floor"
+      %span.span6.pagination-right.pull-right.padr19px.linehight
+        .btn-group.btn-floor.floorInfoDetailsBtns
+          %a.btn.btn-hselect.floorInfoCollapse{:rel => "floorInfoComment", :type => "button"}
+            %i.icon-comment
+          %a.btn{:rel => "floorInfoFlag", :type => "button"}
+            %i.icon-map
+          %a.btn{:rel => "floorInfoAdjust", :type => "button"}
+            %i.icon-contrast
+          %a.btn.floorInfoCheckBtn{:type => "button", :data => {:toggle => "buttons-radio"}}
+            %i.icon-checkbox
+          %a.btn.floorInfoDelete{:type => "button"}
+            %i.icon-trashcan
+
+
