@@ -36,5 +36,12 @@
         e.preventDefault();
         $(this).tab('show');
       });
+
+      var dheight= ($(document).height());
+      var wheight= ($(window).height());
+      var setHeight=dheight-270;
+      $('.tab-pane').css({ "min-height": setHeight + 'px' });
     });
+
+
 

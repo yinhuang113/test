@@ -22,24 +22,25 @@
 
 
 
-#modal4.modal.hide.fade
-  .modal-header.borNon
-    %button.close{:type => "button", :data => {:dismiss => "modal"}, "aria-hidden" => "true"} &times;
-    %h3.requestAcc Invite a New Team Member
+- content_for :modals do
+  #modal4.modal.hide.fade
+    .modal-header.borNon
+      %button.close{:type => "button", :data => {:dismiss => "modal"}, "aria-hidden" => "true"} &times;
+      %h3.requestAcc Invite a New Team Member
 
-  .modal-body
-    %form
-      %span.row-fluid
-        %input.span11.pull-left{:type => "text"}
-        %span.span1.pull-right.marginLeft0
-          %span.btn-group.btn-floor.floorInfoDetailsBtns
-            %a.btn-small.btn.btn-invite{:type => "button"}
-              %i.icon-comment
-        %p.hint
-          %small (Separate emails with commas)
-  .modal-footer
-    %button.btn.pull-left.btn-custom.closPos2{:style => "margin: 18px 20px 0 250px !important;", :data => {:dismiss => "modal"}, "aria-hidden" => "true"}
-      Close
+    .modal-body
+      %form
+        %span.row-fluid
+          %input.span11.pull-left{:type => "text"}
+          %span.span1.pull-right.marginLeft0
+            %span.btn-group.btn-floor.floorInfoDetailsBtns
+              %a.btn-small.btn.btn-invite{:type => "button"}
+                %i.icon-comment
+          %p.hint
+            %small (Separate emails with commas)
+    .modal-footer
+      %button.btn.pull-left.btn-custom.closPos2{:style => "margin: 18px 20px 0 250px !important;", :data => {:dismiss => "modal"}, "aria-hidden" => "true"}
+        Close
 
 
 

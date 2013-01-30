@@ -1,7 +1,10 @@
 body.l-profile {
   background: image-url('crosshatch_bg.png') repeat;
-}
-.l-profile {
+
+  .brand {
+    font:  normal 24px/30px 'luzsans-boldluzsans-bold';
+    padding: 13px 0 0 48px;
+  }
 
   h2 {
     color: #212121;
@@ -10,7 +13,7 @@ body.l-profile {
   }
 
   .content {
-    padding: 40px 50px 110px;
+    padding: 70px 50px 110px;
   }
 
   input {
@@ -80,7 +83,7 @@ body.l-profile {
           margin-right: 10px !important;
           color: #fff;
           line-height: 21px;
-          padding-top: 0px;
+          padding-top: 2px;
         }
       }
     }

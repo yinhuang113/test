@@ -929,7 +929,7 @@ window.onresize = function(event) {
 }
 makeLeftpanelFitable = function() {
 	var newHeight = $(window).height() - 175;// - 195;
-	$(".tab-pane").css("height", newHeight+"px");
+	$(".l-mapbuilder .tab-pane").css("height", newHeight+"px");
 
 	/*newHeight = $(window).height() - 80;
 	$(".custom-container").css("height", newHeight+"px");*/
