@@ -1,6 +1,11 @@
 /* map-buttons */
 body.l-mapbuilder {
   font-family: helveticaregular;
+  padding-top: 80px;
+
+  .jqueryCheckbox {
+    margin-right: 0;
+  }
 
   .icon-minus-extra {
     background-position: 0px -164px;
@@ -292,9 +297,8 @@ body.l-mapbuilder {
       color:#fff;
       margin-right:22px;
       text-shadow:none;
-      padding:0 12px;
-      margin:0 22px 0 15px;
     }
+
     .btn-invite i {
       margin-top:2px;
       margin-right:6px;
@@ -336,6 +340,10 @@ body.l-mapbuilder {
     .tab-header {
       color: #97a1a7;
       font-size: 13px;
+    }
+
+    .btn-comment.selected {
+      background-color: #9ED103;
     }
   }
   .mapForm .add-on {
@@ -494,8 +502,6 @@ body.l-mapbuilder {
     position:relative;
   }
 
-  .map-start{margin-top: 80px;}
-
   .navbar-inverse .map-brand {
     margin:20px 0 0 0;
   }
@@ -523,6 +529,42 @@ body.l-mapbuilder {
   }
   .navbar-inverse .map-brand p i {
     font-style:italic;
+  }
+
+  .addonCustom {
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top:10px;
+    margin-left:-6px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .maginnegative {
+    margin-top: -10px !important;
   }
 }
 

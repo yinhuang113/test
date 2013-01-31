@@ -137,16 +137,16 @@ jQuery(document).ready(function(e){
 	});
 	//$('#venue').jScrollPane({showArrows: true});
 
-/*	$('.styledCheckbox').checkbox({
+	$('.styledCheckbox').checkbox({
 		cls:'jqueryCheckbox',
-		empty:'img/empty.png'
+		empty:'<%= image_path('empty.png') %>'
 	});
 
 	$('.styledRadio').checkbox({
 		cls:'jqueryRadio',
-		empty:'img/empty.png'
+		empty:'<%= image_path('empty.png') %>'
 	});
- */
+
 	//console.log($('.scroll-box-wrap').offset());
 	updateLeftPanelScrollCont();
 	if ($('.scroll-box-wrap').length) {
@@ -289,10 +289,9 @@ jQuery(document).ready(function(e){
 						if (datepickerIconCal.length) {
 							//console.log($(commBlock).find('.datepickerIconCal'));	
 							$(commBlock).find('.datepickerIconCal').each(function(index, ele){
-								//console.log(commBlockIndex);
+
 								var dpClass = 'tbDatePicker-' + commBlockIndex + '-' + index;
 								var dpIconClass = 'datepickerIconCal-' + commBlockIndex + '-' + index;
-								
 								if (!($(ele).parent().prev('.tbDatePicker').hasClass(dpClass))) {
 									$(ele).parent().prev('.tbDatePicker').addClass(dpClass);
 									$('.'+dpClass).datepicker({
@@ -328,7 +327,7 @@ jQuery(document).ready(function(e){
 									$(chkEle).addClass(chkClass);									
 									$('.'+chkClass).checkbox({
 										cls:'jqueryCheckbox',
-										empty:'img/empty.png'
+										empty:'<%= image_path('empty.png') %>'
 									});
 									$('.'+chkClass).click(function(e) {
                                         if (!$(this).is(':checked')){
@@ -346,7 +345,7 @@ jQuery(document).ready(function(e){
 						/*
 						$('.styledCheckbox').checkbox({
 							cls:'jqueryCheckbox',
-							empty:'img/empty.png'
+							empty:'<%= image_path('empty.png') %>'
 						});
 						*/
 					}	
@@ -799,7 +798,7 @@ jQuery(document).ready(function(e){
 				$(chkEle).addClass(chkClass);									
 				$('.'+chkClass).checkbox({
 					cls:'jqueryCheckbox',
-					empty:'img/empty.png'
+					empty:'<%= image_path('empty.png') %>'
 				});
 				/*$('.'+chkClass).click(function(e) {
 					if (!$(this).is(':checked')){

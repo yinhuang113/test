@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree ../../../vendor/assets/javascripts
 //= require_tree ./js
+//= require profile/jquery.checkbox.min
 //= require connectors
 //= require floors
 

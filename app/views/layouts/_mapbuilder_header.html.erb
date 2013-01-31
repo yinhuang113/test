@@ -4,7 +4,7 @@
       <button class="btn btn-leftsider-toggle" data-toggle="button"><i class="icon-pencil"></i></button>
       <!--<i class="icon-pencil icon-pencil-custom"></i>-->
       <a class="brand map-brand span5" href="#">
-      	<em><%= @mall.name %></em><button class="btn btn-not-strated" type="button"><%= @mall.status.to_s.humanize %></button><br/>
+      	<em><%=truncate @mall.name, :limit => 30 %></em><button class="btn btn-not-strated" type="button"><%= @mall.status.to_s.humanize %></button><br/>
         <p>last updated <%= l @mall.updated_at, format: :long %> <i>(<%= time_ago_in_words(@mall.updated_at) %> ago)</i></p>
       </a>
       <div class="nav-collapse collapse pull-right">
