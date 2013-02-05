@@ -10,7 +10,10 @@
 
     = f.fields_for :account do |af|
       = af.input :team_agent, :as => :select, :collection => user.account.try(:users), :input_html => {:class => 'input-xxlarge'}
-    = f.button :submit, :value => "UPADTE PROFILE", :class => "btn btn-custom"
+
+    .control-group
+      .controls
+        = f.submit :submit, :value => "UPADTE PROFILE", :class => "btn btn-primary"
 
 
 

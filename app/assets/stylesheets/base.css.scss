@@ -204,77 +204,70 @@ footer {
   }
 }
 
-.navbar-inverse .navbar-inner {
-  background:#212121;
-  min-height:80px;
+.navbar-inverse {
+  .navbar-inner {
+    background:#212121;
+    min-height:80px;
+  }
+
+  .accountBrand {
+    padding:13px 0 0 48px;
+
+    small { font: normal 13px/15px 'helveticaregular'; color: white; float: left; padding: 6px 0 0 10px; }
+    em    { font:normal 24px/30px 'luzsans-boldluzsans-bold'; color:#fff; }
+    i     { font-size: 20px; float:left; margin-top:2px; }
+  }
+
+  .nav > li > a {
+    text-transform:uppercase;
+    color:#fff;
+    padding:5px 17px 5px 17px;
+    i { margin-right:10px; }
+  }
+
+  .logo {
+    display: block;
+    float: left;
+    padding: 10px 20px 10px 70px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 1px 0 white;
+
+    &:hover { text-decoration: none; }
+  }
+
+  .brand { padding: 13px 0 0 48px; color: #999; }
 }
 
-.navbar-inverse .accountBrand {
-  padding:13px 0 0 48px;
-}
 .icon-star-white {
   color:#fff;
 }
-.navbar-inverse .accountBrand small {
-  font:normal 13px/15px  'helveticaregular';
-  color:#fff;
-  float:left;
-  padding:6px 0 0 10px;
-}
-.navbar-inverse .accountBrand i {
-  float:left;
-  margin-top:2px;
-}
-.navbar-inverse .accountBrand em {
-  font:normal 24px/30px 'luzsans-boldluzsans-bold';
-  color:#fff;
-}
+
 .navbar .nav {
   margin-right:0;
 }
-.navbar-inverse .nav > li > a {
-  text-transform:uppercase;
-  color:#fff;
-  padding:5px 17px 5px 17px;
-}
-.navbar-inverse .nav > li > a i {
-  margin-right:10px;
-}
-.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus,.navbar-inverse .nav > li > a:hover {
+
+.navbar-inverse .nav .active > a, 
+.navbar-inverse .nav .active > a:hover, 
+.navbar-inverse .nav .active > a:focus,
+.navbar-inverse .nav > li > a:hover {
   background:#101010;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   color:#fff;
 }
-.navbar-inverse .nav .active > a:last-child, .navbar-inverse .nav .active > a:hover:last-child, .navbar-inverse .nav .active > a:focus:last-child, {
+
+.navbar-inverse .nav .active > a:last-child,
+.navbar-inverse .nav .active > a:hover:last-child,
+.navbar-inverse .nav .active > a:focus:last-child {
+  color:#fff;
+  border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  border-radius: 0px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomleft: 5px;
   border-bottom-left-radius: 5px;
-  color:#fff;
 }
-
-.navbar-inverse .brand {
-  padding:0 0 0 40px;
-}
-
-.navbar-inverse .logo {
-  display: block;
-  float: left;
-  padding: 10px 20px 10px 70px;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: white;
-  text-shadow: 0 1px 0 white;
-}
-
-.navbar-inverse .logo :hover {
-  text-decoration: none;
-}
-
-
-

@@ -1,43 +1,23 @@
-i,em {
-  font-style:normal;  
-}
-/*-------------Login Page-----------------*/
-body {
-    font-family: 'helveticaregular';
-  padding-top:0;
-}
-html,body {
-  height:100%;  
-}
+i,em { font-style:normal; }
+html,body { height:100%; font-family: 'helveticaregular'; padding-top:0; }
+a:link, a:focus, .btn:focus { border:none !important; outline:none; }
+
 path{
   fill: black;
   fill-opacity: .2;
   stroke: white;
   stroke-width: 1.5px;
 }
-a:link,
-a:focus,
-.btn:focus {
-  border:none !important;
-  outline:none;
-}
-.wrap {
-  min-height:100%;  
-  position:relative;
-}
 
-.loginBody {
-    
-}
 .wrapper {
   .custom-container {
-    /*min-height:2076px;*/
     padding-bottom: 60px !important;
-    padding-top: 80px !important;    
+    padding-top: 70px !important;    
   }
   min-height: 100%;
   position: relative;
 }
+
 .loginmin {
   padding-top:157px;  
   min-width:600px;
@@ -66,29 +46,40 @@ a:focus,
     margin: 0;
   }
 }
+
 .row-fluid .customOffset1 {
-    margin-left: 29.6% !important;
-    *margin-left: 29.6% !important;
+  margin-left: 29.6% !important;
+  *margin-left: 29.6% !important;
 }
 
-.control-group .customchk {
-  float:left; 
-  width:12px; 
-  padding:9px 0 0 0;
-  margin-right:7px;
+.control-group {
+  .customchk {
+    float:left; 
+    width:12px; 
+    padding:9px 0 0 0;
+    margin-right:7px;
+  }
+
+  .control-group .spanP {
+    float:left;
+    width:80%;
+    margin-left:0;
+    padding-top:10px;
+    color:#8c9092;  
+  }
 }
-.control-group .spanP {
-  float:left;
-  width:80%;
-  margin-left:0;
-  padding-top:10px;
-  color:#8c9092;  
-}
-.btn-custom {
+
+.btn-primary{
   margin-top:7px; 
+  color: #fff; 
+  text-shadow: 0 -1px #597bc0;
+  background:#39befe;
+  border:none;
 }
-.btn-custom,.btn-custom:hover {
+
+.btn-custom, .btn-custom:hover {
   float:right;  
+  margin-top:7px; 
   color: #fff; 
   text-shadow: 0 -1px #597bc0;
   background:#39befe;
@@ -1279,6 +1270,7 @@ input[readonly], select[readonly], textarea[readonly] {
 .selectedfloor .btn-floor > .btn {
     padding-bottom: 2px;
 }
+
 /*-----------added----------*/
 .modal-header .spanf {
   width:100%; 
@@ -1310,6 +1302,7 @@ input[readonly], select[readonly], textarea[readonly] {
   margin:15px 235px 0 0px;
   text-align:center;
 }
+
 .margintb100 {
   margin:100px 0; 
 }
@@ -1325,6 +1318,7 @@ input[readonly], select[readonly], textarea[readonly] {
 .table-striped tbody > tr:nth-child(2n+1) > td {
   background-color: #FFF;
 }
+
 table.dataTable.eventInfoListTable thead th {
   padding:5px 0 5px 10px;
   color: #000000;
