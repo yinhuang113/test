@@ -2,6 +2,9 @@
  
  *= require twitter/bootstrap
  *= require twitter/bootstrap/_responsive
+
+ *= require font
+ *= require icons
  
  *= require antiscroll
  *= require jquery.checkbox

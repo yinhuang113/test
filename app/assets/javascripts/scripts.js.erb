@@ -9,15 +9,19 @@ var leftPanelScroller = null;
 var testA = 1;
 var scrollContMaxWidth = 0;
 var dropZoneName = null;
+
 $('.sub-group').on('show',function(){
 	$(this).prev().children("i").removeClass("icon-plus").addClass("icon-minus");
 });
+
 $('.sub-group').on('hide',function(){
 	$(this).prev().children("i").removeClass("icon-minus").addClass("icon-plus");
 });
+
 $('.sub-group2').on('show',function(){
 	$(this).prev().children("i").removeClass("icon-plus").addClass("icon-minus");
 });
+
 $('.sub-group2').on('hide',function(){
 	$(this).prev().children("i").removeClass("icon-minus").addClass("icon-plus");
 });
