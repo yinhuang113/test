@@ -1,12 +1,23 @@
-.jqueryCheckbox       {margin-right: 7px; display: inline; font-size: 20px; line-height: 20px; cursor: pointer; cursor: hand;}
-.jqueryCheckbox .mark {display: inline;}
+.jqueryCheckbox {
+	display: inline;
+	font-size: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	cursor: hand;
+	
+	.mark {
+		display: inline;
+	}
 
-.jqueryCheckbox img {vertical-align: middle; width: 13px; height:13px;}
-.jqueryCheckbox img{background: transparent url(../assets/checkBox.png) no-repeat;}
-
-.jqueryCheckbox img{
-	background-position: 0px 0px;
+	img {
+		vertical-align: middle; 
+		width: 13px; 
+		height:13px;
+		background: transparent image-url('checkBox.png') no-repeat;
+		background-position: 0px 0px;
+	}
 }
+
 .jqueryCheckbox-hover img{
 	background-position: 0px 0px;
 }
@@ -24,16 +35,24 @@
 	background-position: 0px -40px;
 }
 
+.jqueryRadio {
+	display: inline;
+	font-size: 20px;
+	line-height: 20px;
+	cursor: pointer;
+	cursor: hand;
 
-.jqueryRadio       {display: inline; font-size: 20px; line-height: 20px; cursor: pointer; cursor: hand;}
-.jqueryRadio .mark {display: inline;}
+	.mark {display: inline;}
 
-.jqueryRadio img {vertical-align: middle; width: 14px; height: 14px;}
-.jqueryRadio img{background: transparent url(../img/radio.png) no-repeat;}
-
-.jqueryRadio img{
-	background-position: 0px 0px;
+	img {
+		vertical-align: middle;
+		width: 14px;
+		height: 14px;
+		background: transparent image-url('radio.png') no-repeat;
+		background-position: 0px 0px;
+	}
 }
+
 .jqueryRadio-hover img{
 	background-position: 0px 0px;
 }
