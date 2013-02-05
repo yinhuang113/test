@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',                '3.2.11'
 
-gem 'bootstrap-sass',       '2.1'
+gem 'bootstrap-sass-rails'
 gem 'bcrypt-ruby',          '~> 3.0.0'
 gem 'cancan'
 gem 'devise'
