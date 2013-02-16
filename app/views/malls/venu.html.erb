@@ -1,47 +1,17 @@
 <div class="row-fluid">
   <ul class="venuul">
-  	<% @malls.each do |mall| %>
-  	<li>
-  	  <%= link_to mapbuilder_mall_path(mall) do %>
-  	  <span>
-  	    <% if !mall.floors.empty? %>
+    <% @malls.each do |mall| %>
+    <li>
+      <%= link_to mapbuilder_mall_path(mall) do %>
+      <span>
+        <% if !mall.floors.empty? %>
         <%= image_tag(svg_mall_floor_path(mall, mall.floors[0]), size: "200x194")  %>
         <% end %>
-  	  </span>
+      </span>
       <strong><%= mall.name %></strong>
       <p><%= mall.address %></p>
       <% end %>
     </li>
-  	<% end %>
+    <% end %>
   </ul>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In blandit metus at nisi laoreet in dictum lacus posuere. Phasellus pharetra commodo ipsum, ut porttitor risus varius ut. Mauris dignissim, ligula nec congue tempus, odio tortor tincidunt lectus, eu fermentum tortor metus nec lacus. In in velit id ante faucibus porta. In et nisl commodo metus auctor cursus id in eros. Donec scelerisque suscipit libero id suscipit. Nulla id ligula sed mi tincidunt vehicula. Maecenas tempor, felis nec dignissim mollis, mauris metus placerat orci, id scelerisque felis tortor at augue. Etiam vehicula mauris nec metus suscipit fringilla. Integer mattis, sapien eu volutpat tristique, neque turpis ultrices massa, in scelerisque massa est ut ipsum. Nulla facilisi. Praesent hendrerit, mauris consectetur fringilla adipiscing, nulla mi gravida enim, non accumsan nulla mauris ac arcu. Nam convallis lectus libero.
-
-Sed eu mi lacus, vel condimentum dui. Duis dignissim tortor commodo lorem convallis ultricies. Sed vitae mattis ligula. Pellentesque id dui eu nunc lobortis consequat. Ut dapibus risus scelerisque nibh euismod sollicitudin. Ut molestie euismod diam, at facilisis mauris sollicitudin non. Donec ornare tempor velit at consequat. Sed eget faucibus mauris. Praesent venenatis, turpis eget feugiat vulputate, nulla enim euismod leo, in porta nunc sem eu justo.
-
-Sed in dolor mi. Pellentesque neque ligula, tempus ut congue id, accumsan vel lacus. Praesent vitae eros a massa dictum vestibulum. In in arcu ante. Nulla ornare condimentum porttitor. Curabitur non augue sit amet sem tristique facilisis ac et leo. Phasellus eget leo id mi faucibus gravida ac vitae turpis. Suspendisse ac est massa. Sed semper auctor leo eu facilisis. Phasellus facilisis, purus at imperdiet tempus, augue dui feugiat dui, nec vulputate sapien diam sit amet sapien.
-
-Sed pretium hendrerit dui. Aenean pharetra scelerisque ligula, vel vehicula eros egestas vel. Donec porttitor, libero non consequat tristique, sem enim mattis nisl, id fringilla arcu lorem ac ligula. Nulla dapibus lacinia massa, eget tempor dolor porta ut. Fusce eu est velit, vitae eleifend dui. Sed sed nulla felis, ac consequat purus. Maecenas eu arcu augue. Suspendisse et ligula lorem, hendrerit molestie tellus. Sed lacinia tincidunt sollicitudin. Aliquam erat volutpat. Nulla lacinia, metus quis vehicula hendrerit, risus lorem sollicitudin est, sed rhoncus leo lorem ut ipsum. Integer dolor elit, fringilla ac rutrum eu, tincidunt nec orci. Curabitur libero purus, posuere eu tristique id, eleifend vitae nunc.
-
-Vivamus vehicula pellentesque lacinia. Vivamus nec vehicula dolor. Curabitur eros nulla, malesuada in volutpat at, rutrum ac enim. In a nisl et enim volutpat bibendum. Pellentesque ligula turpis, tempor eu auctor consequat, porttitor in enim. Aliquam a dolor nisi, quis scelerisque sapien. Pellentesque lorem dui, porta vitae lacinia vel, ultrices volutpat velit. Vivamus id mauris nulla. Donec magna nibh, rhoncus eget aliquet et, pharetra vel arcu.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In blandit metus at nisi laoreet in dictum lacus posuere. Phasellus pharetra commodo ipsum, ut porttitor risus varius ut. Mauris dignissim, ligula nec congue tempus, odio tortor tincidunt lectus, eu fermentum tortor metus nec lacus. In in velit id ante faucibus porta. In et nisl commodo metus auctor cursus id in eros. Donec scelerisque suscipit libero id suscipit. Nulla id ligula sed mi tincidunt vehicula. Maecenas tempor, felis nec dignissim mollis, mauris metus placerat orci, id scelerisque felis tortor at augue. Etiam vehicula mauris nec metus suscipit fringilla. Integer mattis, sapien eu volutpat tristique, neque turpis ultrices massa, in scelerisque massa est ut ipsum. Nulla facilisi. Praesent hendrerit, mauris consectetur fringilla adipiscing, nulla mi gravida enim, non accumsan nulla mauris ac arcu. Nam convallis lectus libero.
-
-Sed eu mi lacus, vel condimentum dui. Duis dignissim tortor commodo lorem convallis ultricies. Sed vitae mattis ligula. Pellentesque id dui eu nunc lobortis consequat. Ut dapibus risus scelerisque nibh euismod sollicitudin. Ut molestie euismod diam, at facilisis mauris sollicitudin non. Donec ornare tempor velit at consequat. Sed eget faucibus mauris. Praesent venenatis, turpis eget feugiat vulputate, nulla enim euismod leo, in porta nunc sem eu justo.
-
-Sed in dolor mi. Pellentesque neque ligula, tempus ut congue id, accumsan vel lacus. Praesent vitae eros a massa dictum vestibulum. In in arcu ante. Nulla ornare condimentum porttitor. Curabitur non augue sit amet sem tristique facilisis ac et leo. Phasellus eget leo id mi faucibus gravida ac vitae turpis. Suspendisse ac est massa. Sed semper auctor leo eu facilisis. Phasellus facilisis, purus at imperdiet tempus, augue dui feugiat dui, nec vulputate sapien diam sit amet sapien.
-
-Sed pretium hendrerit dui. Aenean pharetra scelerisque ligula, vel vehicula eros egestas vel. Donec porttitor, libero non consequat tristique, sem enim mattis nisl, id fringilla arcu lorem ac ligula. Nulla dapibus lacinia massa, eget tempor dolor porta ut. Fusce eu est velit, vitae eleifend dui. Sed sed nulla felis, ac consequat purus. Maecenas eu arcu augue. Suspendisse et ligula lorem, hendrerit molestie tellus. Sed lacinia tincidunt sollicitudin. Aliquam erat volutpat. Nulla lacinia, metus quis vehicula hendrerit, risus lorem sollicitudin est, sed rhoncus leo lorem ut ipsum. Integer dolor elit, fringilla ac rutrum eu, tincidunt nec orci. Curabitur libero purus, posuere eu tristique id, eleifend vitae nunc.
-
-Vivamus vehicula pellentesque lacinia. Vivamus nec vehicula dolor. Curabitur eros nulla, malesuada in volutpat at, rutrum ac enim. In a nisl et enim volutpat bibendum. Pellentesque ligula turpis, tempor eu auctor consequat, porttitor in enim. Aliquam a dolor nisi, quis scelerisque sapien. Pellentesque lorem dui, porta vitae lacinia vel, ultrices volutpat velit. Vivamus id mauris nulla. Donec magna nibh, rhoncus eget aliquet et, pharetra vel arcu.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In blandit metus at nisi laoreet in dictum lacus posuere. Phasellus pharetra commodo ipsum, ut porttitor risus varius ut. Mauris dignissim, ligula nec congue tempus, odio tortor tincidunt lectus, eu fermentum tortor metus nec lacus. In in velit id ante faucibus porta. In et nisl commodo metus auctor cursus id in eros. Donec scelerisque suscipit libero id suscipit. Nulla id ligula sed mi tincidunt vehicula. Maecenas tempor, felis nec dignissim mollis, mauris metus placerat orci, id scelerisque felis tortor at augue. Etiam vehicula mauris nec metus suscipit fringilla. Integer mattis, sapien eu volutpat tristique, neque turpis ultrices massa, in scelerisque massa est ut ipsum. Nulla facilisi. Praesent hendrerit, mauris consectetur fringilla adipiscing, nulla mi gravida enim, non accumsan nulla mauris ac arcu. Nam convallis lectus libero.
-
-Sed eu mi lacus, vel condimentum dui. Duis dignissim tortor commodo lorem convallis ultricies. Sed vitae mattis ligula. Pellentesque id dui eu nunc lobortis consequat. Ut dapibus risus scelerisque nibh euismod sollicitudin. Ut molestie euismod diam, at facilisis mauris sollicitudin non. Donec ornare tempor velit at consequat. Sed eget faucibus mauris. Praesent venenatis, turpis eget feugiat vulputate, nulla enim euismod leo, in porta nunc sem eu justo.
-
-Sed in dolor mi. Pellentesque neque ligula, tempus ut congue id, accumsan vel lacus. Praesent vitae eros a massa dictum vestibulum. In in arcu ante. Nulla ornare condimentum porttitor. Curabitur non augue sit amet sem tristique facilisis ac et leo. Phasellus eget leo id mi faucibus gravida ac vitae turpis. Suspendisse ac est massa. Sed semper auctor leo eu facilisis. Phasellus facilisis, purus at imperdiet tempus, augue dui feugiat dui, nec vulputate sapien diam sit amet sapien.
-
-Sed pretium hendrerit dui. Aenean pharetra scelerisque ligula, vel vehicula eros egestas vel. Donec porttitor, libero non consequat tristique, sem enim mattis nisl, id fringilla arcu lorem ac ligula. Nulla dapibus lacinia massa, eget tempor dolor porta ut. Fusce eu est velit, vitae eleifend dui. Sed sed nulla felis, ac consequat purus. Maecenas eu arcu augue. Suspendisse et ligula lorem, hendrerit molestie tellus. Sed lacinia tincidunt sollicitudin. Aliquam erat volutpat. Nulla lacinia, metus quis vehicula hendrerit, risus lorem sollicitudin est, sed rhoncus leo lorem ut ipsum. Integer dolor elit, fringilla ac rutrum eu, tincidunt nec orci. Curabitur libero purus, posuere eu tristique id, eleifend vitae nunc.
-
-Vivamus vehicula pellentesque lacinia. Vivamus nec vehicula dolor. Curabitur eros nulla, malesuada in volutpat at, rutrum ac enim. In a nisl et enim volutpat bibendum. Pellentesque ligula turpis, tempor eu auctor consequat, porttitor in enim. Aliquam a dolor nisi, quis scelerisque sapien. Pellentesque lorem dui, porta vitae lacinia vel, ultrices volutpat velit. Vivamus id mauris nulla. Donec magna nibh, rhoncus eget aliquet et, pharetra vel arcu.
-
 </div>
