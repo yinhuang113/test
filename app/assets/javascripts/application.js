@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-
+//= require jquery.idTabs.min
 //= require twitter/bootstrap
 
 //= require bootstrap-limit
