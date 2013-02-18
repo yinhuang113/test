@@ -1,29 +1,31 @@
 <% provide(:title, 'Profile') %>
 
-<div class="row-fluid">
+<div class="profileContainer">
+  <div class="row-fluid">
 
-  <div class="span2">
-    <%= render 'profiles/sidenav' %>
-  </div><!--/span-->
+    <div class="span2">
+      <%= render 'profiles/sidenav' %>
+    </div><!--/span-->
 
-  <div id="idTab1">
-    <%= render partial: 'profiles/tab_profile' %>
-  </div><!--End of idTab1-->
+    <div id="idTab1">
+      <%= render partial: 'profiles/tab_profile' %>
+    </div><!--End of idTab1-->
 
-  <div id="idTab2">
-    <%= render partial: 'profiles/tab_change_password' %>
-  </div><!--End of idTab2-->
+    <div id="idTab2">
+      <%= render partial: 'profiles/tab_change_password' %>
+    </div><!--End of idTab2-->
 
-  <div id="idTab3">
-    <%= render partial: 'profiles/tab_users' %>
-  </div><!--End of idTab3-->
+    <div id="idTab3">
+      <%= render partial: 'profiles/tab_users' %>
+    </div><!--End of idTab3-->
 
-  <div id="idTab4">
-    <%= render partial: 'profiles/tab_billing' %>
-  </div><!--End of idTab4-->
+    <div id="idTab4">
+      <%= render partial: 'profiles/tab_billing' %>
+    </div><!--End of idTab4-->
 
-  <div id="idTab5">
-    <%= render partial: 'profiles/tab_change_plans' %>
-  </div><!--End of idTab5-->
+    <div id="idTab5">
+      <%= render partial: 'profiles/tab_change_plans' %>
+    </div><!--End of idTab5-->
 
-</div><!--/row-->
+  </div><!--/row-->
+</div>

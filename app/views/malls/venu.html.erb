@@ -1,19 +1,17 @@
-<div class="venu-container">
-  <div class="row-fluid">
-    <ul class="venuul">
-      <% @malls.each do |mall| %>
-      <li>
-        <%= link_to mapbuilder_mall_path(mall) do %>
-        <span>
-          <% if !mall.floors.empty? %>
-          <%= image_tag(svg_mall_floor_path(mall, mall.floors[0]), size: "100x194")  %>
-          <% end %>
-        </span>
-        <strong><%= mall.name %></strong>
-        <p><%= mall.address %></p>
+<div class="venuContainer">
+  <ul class="venuul">
+    <% @malls.each do |mall| %>
+    <li>
+      <%= link_to mapbuilder_mall_path(mall) do %>
+      <span>
+        <% if !mall.floors.empty? %>
+        <%= image_tag(svg_mall_floor_path(mall, mall.floors[0]), size: "100x194")  %>
         <% end %>
-      </li>
+      </span>
+      <strong><%= mall.name %></strong>
+      <p><%= mall.address %></p>
       <% end %>
-    </ul>
-  </div>
+    </li>
+    <% end %>
+  </ul>
 </div>
