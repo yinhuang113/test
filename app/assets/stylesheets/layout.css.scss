@@ -1,0 +1,192 @@
+/*-------------Default Tags-----------------*/
+
+i,em {
+  font-style:normal;  
+}
+body {
+  font-family: 'helveticaregular';
+  padding-top:0;
+}
+html,body {
+  height:100%;  
+}
+
+/*-------------Layout Tags-----------------*/
+
+a:link,
+a:focus,
+.btn:focus {
+  border:none !important;
+  outline:none;
+}
+.wrapper {
+  min-height:100%;  
+  position:relative;
+}
+.container-fluid {
+  padding-right:0;
+  padding-left:0; 
+}
+.navbar-inverse .navbar-inner {
+  background:#212121; 
+  min-height:80px;
+}
+.navbar-inverse .brand {
+  padding:0 0 0 20px; 
+}
+.loginBody {
+    
+}
+.custom-container {
+  /*min-height:2076px;*/
+  padding-bottom:60px !important;
+  padding-top:80px !important;
+}
+.loginmin {
+  padding-top:157px;  
+  min-width:600px;
+}
+.row-fluid .customOffset1 {
+    margin-left: 29.6% !important;
+    *margin-left: 29.6% !important;
+}
+.loginmin h2 {
+  font-size:36px;
+  padding-bottom:18px;
+    font-family: 'luzsans-bookluzsans-book';
+  font-weight:normal;
+}
+.loginmin label {
+  font-size:12px;
+  color:#aaaeb1;  
+} 
+.loginmin label i {
+  color:#333333;  
+}
+.loginmin label a {
+  color:#2d78b1;  
+}
+.control-group .customchk {
+  float:left; 
+  width:12px; 
+  padding:9px 0 0 0;
+  margin-right:7px;
+}
+.control-group .spanP {
+  float:left;
+  width:80%;
+  margin-left:0;
+  padding-top:10px;
+  color:#8c9092;  
+}
+.btn-custom {
+  margin-top:7px; 
+}
+.btn-custom,.btn-custom:hover {
+  float:right;  
+  color: #fff; 
+  text-shadow: 0 -1px #597bc0;
+  background:#39befe;
+  border:none;
+}
+
+/*-------------Header Tags-----------------*/
+.navbar-inverse .accountBrand {
+  padding:13px 0 0 48px;
+}
+.icon-star-white {
+  color:#fff; 
+}
+.navbar-inverse .accountBrand small {
+  font:normal 13px/15px  'helveticaregular';
+  color:#fff; 
+  float:left; 
+  padding:6px 0 0 10px;
+}
+.navbar-inverse .accountBrand i {
+  float:left; 
+  margin-top:2px;
+}
+.navbar-inverse .accountBrand em {
+  font:normal 24px/30px 'luzsans-boldluzsans-bold';
+  color:#fff; 
+}
+.navbar .nav {
+  margin-right:0;
+}
+.navbar-inverse .nav > li > a {
+  text-transform:uppercase;
+  color:#fff; 
+  padding:5px 17px 5px 17px;
+}
+.navbar-inverse .nav > li > a i {
+  margin-right:10px;  
+}
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus,.navbar-inverse .nav > li > a:hover {
+  background:#101010; 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color:#fff; 
+}
+.navbar-inverse .nav .active > a:last-child, .navbar-inverse .nav .active > a:hover:last-child, .navbar-inverse .nav .active > a:focus:last-child, { 
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  color:#fff; 
+}
+
+/*-------------Footer Tags-----------------*/
+
+footer {
+  background:#f8f8f8; 
+  width:100%;
+  height:60px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+footer.container-fluid {
+  height:auto;  
+}
+.footermin {
+  min-width:800px;
+  padding-bottom:184px; 
+}
+.row-fluid .customOffset2 {
+    margin-left: 25.7% !important;
+    *margin-left: 25.7% !important;
+}
+footer ul {
+  float:left;
+  margin:0;
+  padding:36px 0 0 0;
+  width:25%;  
+}
+footer li {
+  padding-bottom:2px; 
+}
+footer li,footer li a,footer li strong,footer li em {
+  display:block;
+  overflow:hidden;
+  font-size:13px;
+  color:#39befe;
+  font:normal 13px/17px 'SegoeUI';    
+}
+footer li strong { 
+  font-size:14px;
+  color:#3c4e5a;
+    font-family: 'helveticaregular';
+  
+}
+.footerBottom {
+  background:#141414;
+  min-height:60px;
+  line-height:60px;
+  text-transform:uppercase;
+  color:#fff;
+  font-size:12px;
+}
