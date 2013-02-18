@@ -22,18 +22,31 @@ a:focus,
 .wrap {
   min-height:100%;  
   position:relative;
+  //vertical-align: top;
 }
 
 .content {
   padding-top: 96px !important;  
   padding-bottom:60px !important;
   padding-left: 0px;
-  padding-right: 0px;  
+  padding-right: 0px;
+  //vertical-align: top;
+  //position: relative;
 }
 
 .custom-container {
   /*min-height:2076px;*/
 }
+
+.default-container {
+  padding: 20px;
+}
+
+.clear_both {
+  clear: both;
+}
+
+/*-- --*/
 
 .container-fluid {
   padding-right:0;
