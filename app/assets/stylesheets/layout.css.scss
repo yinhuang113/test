@@ -19,10 +19,22 @@ a:focus,
   border:none !important;
   outline:none;
 }
-.wrapper {
+.wrap {
   min-height:100%;  
   position:relative;
 }
+
+.content {
+  padding-top: 96px !important;  
+  padding-bottom:60px !important;
+  padding-left: 50px;
+  padding-right: 50px;  
+}
+
+.custom-container {
+  /*min-height:2076px;*/
+}
+
 .container-fluid {
   padding-right:0;
   padding-left:0; 
@@ -36,11 +48,6 @@ a:focus,
 }
 .loginBody {
     
-}
-.custom-container {
-  /*min-height:2076px;*/
-  padding-bottom:60px !important;
-  padding-top:80px !important;
 }
 .loginmin {
   padding-top:157px;  

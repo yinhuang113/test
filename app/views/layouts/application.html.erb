@@ -2,12 +2,14 @@
   <%= render 'layouts/header' %>
   <%= render 'layouts/mapbuilder_header' %>
 
-  <div class="content container-fluid">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
+  <div class="content">
+    <div class="container-fluid">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 
-    <%= yield %>  
+      <%= yield %>
+    </div>
   </div>
 
   <%= render 'layouts/footer' %>

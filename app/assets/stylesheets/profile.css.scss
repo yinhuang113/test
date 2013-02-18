@@ -1,3 +1,36 @@
+
+/*------------- Tabs -----------------*/
+#idTab1 {
+  width:100%; 
+}
+#idTab2 {
+  width:100%;
+  display:none; 
+}
+#idTab3 {
+  width:100%;
+  display:none; 
+}
+#idTab4 {
+  width:100%;
+  display:none; 
+}
+#idTab5 {
+  width:100%;
+  display:none; 
+}
+.idTabs a.selected,.idTabs a:hover.selected  { 
+  background:#0086c9; 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color:#fff; 
+}
+.idTabs a.selected i,.idTabs a:hover.selected i {
+  background:#006496;
+}
+/*------------- Tags-----------------*/
+
 .c-profiles {
   background: image-url('crosshatch_bg.png') repeat;
 
@@ -14,11 +47,6 @@
     color: #212121;
     padding-top: 8px;
     font: 36px/40px "luzsans-bookluzsans-book";
-  }
-
-  .content {
-    padding: 50px 50px 0;
-    padding-bottom: 60px;
   }
 
   input {
