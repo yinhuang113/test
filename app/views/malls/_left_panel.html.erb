@@ -9,15 +9,15 @@
     <ul class="nav nav-tabs menuTabs" id="myTab">
         <li class="active"><a href="#venue" class="venu"><i class="icon-location"></i><span>VENUE</span></a></li>
         <li><a href="#floor" class="floor"><i class="icon-floor"></i><span>FLOOR</span></a></li>
-        <li ><a href="#stores" class="stores"><i class="icon-star"></i><span>STORES</span></a></li>
-        <li ><a href="#elements" class="elements"><i class="icon-flag"></i><span>ELEMENTS</span></a></li>
+        <li><a href="#stores" class="stores"><i class="icon-star"></i><span>STORES</span></a></li>
+        <li><a href="#elements" class="elements"><i class="icon-flag"></i><span>ELEMENTS</span></a></li>
     </ul>
 
     <div class="tab-content map-tab-content pagination-left">
-      <%= render 'venue_tab', :mall => @mall %>
-      <%= render 'floor_tab', :mall => @mall  %>
-      <%= render 'stores_tab', :mall => @mall  %>
-      <%= render 'elements_tab', :mall => @mall  %>
+      <%= render 'tab_venue', :mall => @mall %>
+      <%= render 'tab_floor', :mall => @mall  %>
+      <%= render 'tab_stores', :mall => @mall  %>
+      <%= render 'tab_elements', :mall => @mall  %>
     </div>
   </div>
 </div>
