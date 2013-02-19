@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.idTabs.min
+//= require jquery.jscrollpane
 //= require twitter/bootstrap
 
 //= require bootstrap-limit

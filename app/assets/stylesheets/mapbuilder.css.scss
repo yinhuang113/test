@@ -306,7 +306,7 @@
 
   }
   .tab-content {
-    overflow:visible;
+    overflow: visible;
     width: 98%;
     margin: auto;
   }
@@ -563,4 +563,544 @@
   .maginnegative {
     margin-top: -10px !important;
   }
+}
+
+/*-------------Mapbuilder Page-----------------*/
+.navbar-inverse .map-brand {
+  margin:20px 0 0 0;
+}
+.icon-pencil-custom {
+  /*width:60px;
+  height:40px;
+  background:#9dd000;
+  color:#fff;
+  text-align:center;
+  line-height:40px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; 
+  float:left;
+  margin-right:20px;*/
+  background:#9dd000;
+}
+.btn-leftsider-toggle {
+  float: left;
+  padding: 8px 20px 8px 20px;
+  margin: 20px 0 0 20px !important;
+  background:#000;
+  box-shadow: none;
+  border: none;
+  color: white;
+}
+.btn-leftsider-toggle:hover {
+  background:#111111;
+  color: white;
+}
+.btn-leftsider-toggle.active {
+  background:#9dd000;
+  color: white;
+}
+.btn-leftsider-toggle.active:hover {
+  background:#Ade020;
+  color: white;
+}
+
+.navbar-inverse .map-brand em {
+  font-weight:normal;
+  font-size:24px; 
+  color:#fff;
+}
+.btn-not-strated,.btn-not-strated:hover {
+  background:#999999;
+  border:none;
+  box-shadow:none;
+  color:#fff; 
+  text-shadow:none;
+  margin:0px 0 0 8px !important;
+  font-size:10px !important;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  line-height:14px !important;
+  padding:0 4px !important;
+}
+.navbar-inverse .map-brand p {
+  color:#fff;
+  font-size:13px; 
+}
+.navbar-inverse .map-brand p i {
+  font-style:italic;
+}
+.mapBuilderContainer {
+  background:#fff;
+  padding:0 !important;   
+}
+.row-fluid .span4Custom {
+  width:34%;  
+}
+.leftpanel {
+  width:561px !important;
+  padding-top:10px !important;
+  background-color: white;
+  border-right: 1px solid #CCC;
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  position: fixed;
+  left: -561px;
+}
+.leftsliding {
+  transition: left 200ms;
+  -moz-transition: left 200ms;
+  -webkit-transition: left 200ms;
+}
+.leftpanel #venue,
+.leftpanel #floor,
+.leftpanel #stores,
+.leftpanel #elements{
+  width: 100%;
+  height: 200px;
+  /*overflow-y: auto;*/
+  overflow:hidden;
+}
+
+.custom-btn-group {
+  margin-bottom:9px;  
+}
+.custom-btn-group > .btn{
+  border-color:#fff;
+  border:none;
+  margin-right:2px;
+  text-transform:uppercase;
+  font-family: 'HelveticaNeueLTPro-Bd';
+  color:#fff;
+  font-size:14px; 
+  text-shadow:none;
+  padding:4px 19px 4px 21px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+}
+.custom-btn-group > .btn:first-child {
+   -webkit-border-bottom-left-radius: 6px;
+   border-bottom-left-radius: 6px;
+   -webkit-border-top-left-radius: 6px;
+   border-top-left-radius: 6px;
+   -moz-border-radius-bottomleft: 6px;
+   -moz-border-radius-topleft: 6px;
+    margin-right:2px;
+
+}
+.custom-btn-group > .btn:last-child {
+   -webkit-border-top-right-radius: 6px;
+   border-top-right-radius: 6px;
+   -webkit-border-bottom-right-radius: 6px;
+   border-bottom-right-radius: 6px;
+   -moz-border-radius-topright: 6px;
+   -moz-border-radius-bottomright: 6px;
+}
+
+.custom-btn-group > .btn:hover {
+  border-color: #fff;
+}
+.custom-btn-group > .btn i {
+  margin-right:9px; 
+  margin-top:3px;
+}
+.custom-btn-group > .btn-save {/*,.custom-btn-group > .btn-save:hover {*/
+  background:#9dd000;
+}
+.custom-btn-group > .btn-test,.custom-btn-group > .btn-test:hover {
+  background:#39befe;
+} 
+.custom-btn-group > .btn-deploy,.custom-btn-group > .btn-deploy:hover {
+  background:#f8f8f8;
+  color:#333333;
+}
+.menuTabs {
+  border-top:1px solid #eeeeee; 
+}
+/*.nav-tabs > li > .venu {
+  padding: 11px 32px 9px 33px;
+} 
+.nav-tabs > li > .floor {
+  padding: 11px 32px 9px 29px;  
+}
+.nav-tabs > li > .stores {
+  padding: 11px 25px 9px 25px;  
+}
+.nav-tabs > li > .elements {
+  padding: 11px 21px 9px 21px;  
+}
+*/.pagination-left {
+   text-align:left;
+}
+.map-tab-content > .tab-pane {
+  width:100%;
+  padding:0 0 0 0;  
+}
+.mapForm fieldset {
+  padding:8px 19px 0px;
+  border-bottom:1px solid #eeeeee;  
+}
+.mapForm label {
+  font-size:13px; 
+}
+.mapForm input {
+  color:#333 !important;  
+}
+.tab-content {
+  overflow:visible; 
+}
+.mapForm .add-on {
+  color:#999999;  
+}
+.mapForm .btnspan button {
+  width:98%;
+  margin-left:0;
+  margin-right:0;
+  padding:5px 0;
+}
+.row-fluid .spanFirst {
+  margin-left:0 !important; 
+}
+.row-fluid .position input {
+  margin-top:26px;
+  margin-bottom:0px;
+  border-color:#c5c5c5;
+  color:#a6aeb3;  
+} 
+.row-fluid .position label {
+  color:#a6aeb3;  
+}
+.row-fluid .common-block {
+  border-bottom:1px solid #eeeeee;
+  padding:4px 0 0 0;  
+  position:relative;
+  float:left;
+}
+.row-fluid .common-block h4 {
+  font-size:13px;
+  font-weight:normal;
+  margin:0 0 2px 0;
+}
+.row-fluid .common-block h4 i {
+  margin-right:11px;  
+}
+.row-fluid .common-block p {
+  color:#97a1a7;  
+  font-size:13px;
+}
+.marginRight0,.marginRight0:hover {
+  margin-right:0;
+} 
+.padl19px {
+  padding-left:19px;  
+}
+.marginLeft0 {
+  margin-left:0 !important; 
+}
+.padr19px {
+  padding-right:19px; 
+}
+.operationBlock {
+  background:#eeeeee; 
+  position:relative;
+}
+.operationinner {
+  padding:10px 19px 10px 35px;
+} 
+.overflow {
+  overflow:visible; 
+}
+.timepicker {
+  font-size:12px !important;  
+}
+input[readonly], select[readonly], textarea[readonly] {
+  background:#fff;    
+}
+.row-fluid .closed {
+  padding-top:3px;  
+}
+/*----------------floorTab---------------*/
+.floorheader {
+  background:#0086c9;
+  margin-top:0;
+  font-weight:normal; 
+  color:#fff; 
+  margin-bottom:0;
+}
+.floorheader i {
+  margin:4px 0 0 19px;
+  font-size:18px;
+  cursor:pointer;
+  color:#39befe;
+  float:left;
+  line-height:32px !important;  
+}
+.floorheader p {
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  margin-bottom:0;
+}
+.row-fluid .inputHeight {
+  min-height:20px;
+  font-size:12px;
+  color:#333;
+  padding-left:0px;
+}
+.marginRight10 {
+  margin-right:10px;
+  margin-left:15px; 
+}
+.marginBottom0 {
+  margin-bottom:0;  
+}
+#floor ul, li {margin: 0px; padding: 0px; list-style: none;}
+
+#floor .tab-wrap {
+/*  width: 560px;*/
+}
+
+#floor .group .item {
+  border-bottom: 1px solid #eee;
+  padding: 5px 10px 5px 20px;
+  line-height: 20px;
+}
+
+#floor .group .item:hover {
+  background: #eeeeee;
+}
+
+#floor .group .item .icon {
+  margin: 2px 15px 0px 0px;
+  cursor: pointer;
+}
+
+#floor li.active > .item,
+#floor li.active:hover > .item {
+  background-color: #0086c9;
+}
+
+#floor .item .input,
+#floor .item .text-input {
+  height: 20px;
+  padding: 0px;
+  width: 44px;
+  margin: 0px 20px 0px 0px;
+  border: none;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#floor .item .text-input {
+  padding: 0px 5px;
+  width: 100px;
+  margin: 0px 0px 0px -6px;
+  text-align: left;
+  font-weight: normal;
+}
+
+#floor .item .checkbox {
+  margin: 0px;
+}
+
+#floor .sub-group .item {
+  padding-left: 48px;
+}
+
+#floor .sub-group2 .item {
+  padding-left: 76px;
+}
+
+#floor .tab-wrap .btn-group .btn {
+  padding: 0px 13px;
+  margin: 0px 1px 0px 0px;
+  border: none;
+  background: #b4c2cc;
+}
+
+#floor .tab-wrap .btn-group .btn.active,
+#floor .tab-wrap .btn-group .btn:hover {
+  background: #9dd000;
+}
+
+#floor .tab-wrap .btn-group .btn [class^="icon-"] {
+/*  background-image: url("../img/glyphicons-halflings-white.png");*/
+  color: white;
+}
+
+#floor .text-gray {
+  color: #97a1a7;
+  margin-right: 10px;
+}
+#floor .icon-minus.active:before {
+  content: "\f067";;
+}
+/*----------------elementTab---------------*/
+
+.tab-pane .emstyle{
+  float:left;
+  width:100%;
+  font:normal 13px "Myriad Pro";
+  color:#39befe;
+  padding:8px 0 10px 10px;
+}
+
+.tab-pane .customWith {
+  float:left;
+  width:20%;
+  height:80px;
+  text-align:center;
+}
+.tab-pane .customWith i {
+  margin-top:25px;
+}
+.customWith em {
+  display:block;
+  overflow:hidden;
+  text-align:center;
+  font-size:13px; 
+}
+.tab-pane .customWith:hover {
+  background-color:#f8f8f8;
+}
+.tab-pane .active2  {
+  float:left;
+  width:20%;
+  height:80px;
+  text-align:center;
+  background-color:#9dd000;
+}
+.tab-pane .customWith i {
+  text-align:center;
+  font-size:24px;
+  margin-left:-10px;
+}
+/*---------------elementButtons-----------------------*/
+.btngroupContainer {
+  width:560px;
+  float:left;
+  position:relative;
+}
+.btngroupContainer .emstyle {
+  display:block;
+  clear:both; 
+}
+.btn-group > .btn-element {
+  background:none;
+  border:none;
+  -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  padding: 18px 12px 13px;
+  width:112px;
+  float:left;
+}
+.btn-group > .btn-element:hover {
+  background-color:#f8f8f8;
+}
+.btn-group > .btn-element i {
+  font-size:24px;
+  width:auto !important;
+}
+.btn-group > .btn-element em {
+  padding-top:6px;
+  display:block;  
+} 
+.btn-group > .btn-element:first-child,.btn-group > .btn-element:last-child {
+  -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.btn-group > .btn-element:hover,
+/*.btn-group > .btn-element:focus,
+.btn-group > .btn-element:active,*/
+.btn-group > .btn-element.active,
+.btn-group > .btn-element.active:hover {
+  background-color:#9dd000; 
+  color:#fff; 
+  text-shadow:none;
+}
+.btn-group > .btn-element + .btn-element {
+  margin-left:0;  
+}
+.btn-group > .btn-element:hover {
+  background-color:#f8f8f8;
+  color:#333;
+}
+.btn-group > .btn-element:active:hover {
+  background-color:#bade4c; 
+  color:#fff; 
+  text-shadow:none;
+}
+
+/* map-buttons */
+.icon-minus-extra {
+  background-position: 0px -164px;
+}
+.icon-plus-extra {
+  background-position: -24px -164px;
+}
+.icon-map {
+  background-position: -49px -164px;
+}
+.icon-split {
+  background-position: -72px -163px;
+}
+#mapbuttons {
+  width: 120px;
+  margin: 8px 0 0 10px;
+  position: fixed;
+  z-index: 10;
+}
+#mapbuttons .btn {
+  padding: 4px 6px;
+}
+#mapbuttons .btn [class^="icon-"], #mapbuttons .btn [class*=" icon-"] {
+  background-image: url("../img/glyphicons-halflings.png");
+}
+/* map_drawarea */
+#map_area {
+  position: absolute;
+  left: 0px;
+  top: 80px;
+  bottom: 0px;
+  right: 0px;
+  width: auto;
+}
+#map_openmaparea {
+  position: absolute;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+}
+.grid {
+  background: url("../img/grid_bg.png") repeat;
+}
+#map_svgarea {
+  position: absolute;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#map_svgdata > object {
+  
+}
+.longitude-latitude button, .longitude-latitude button:hover {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.hidden-for-all, .hidden-tabs-schedule{
+  display:none;
+}
+.posRel {
+  position:relative;
 }

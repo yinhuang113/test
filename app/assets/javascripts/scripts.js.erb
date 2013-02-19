@@ -140,7 +140,7 @@ jQuery(document).ready(function(e){
 		}
 	});
 	//$('#venue').jScrollPane({showArrows: true});
-
+/*
 	$('.styledCheckbox').checkbox({
 		cls:'jqueryCheckbox',
 		empty:'<%= image_path('empty.png') %>'
@@ -150,6 +150,7 @@ jQuery(document).ready(function(e){
 		cls:'jqueryRadio',
 		empty:'<%= image_path('empty.png') %>'
 	});
+*/
 
 	//console.log($('.scroll-box-wrap').offset());
 	updateLeftPanelScrollCont();
@@ -172,7 +173,9 @@ jQuery(document).ready(function(e){
 		}
 	});
 	
+	/*
 	$('.selectpicker').selectpicker();
+	*/
 	$('.userTable').find('.btn-comment').click(function(e) {
 		var parentContainerTable = $(this).parentsUntil('table').parent();
 		var parentContainerCell = parentContainerTable.parent().parent();
@@ -758,8 +761,10 @@ jQuery(document).ready(function(e){
 	/*$('.addEvent').modal({
 		 keyboard: false	
 	});*/
-	
+
+/*	
 	$('.myselectpicker').selectpicker();
+*/	
 	/*$('.mydatepicker input').datepicker({
 		autoclose : true	
 	})*/
@@ -932,7 +937,7 @@ window.onresize = function(event) {
 }
 makeLeftpanelFitable = function() {
 	var newHeight = $(window).height() - 175;// - 195;
-	$(".l-mapbuilder .tab-pane").css("height", newHeight+"px");
+	$(".tab-pane").css("height", newHeight+"px");
 
 	/*newHeight = $(window).height() - 80;
 	$(".custom-container").css("height", newHeight+"px");*/
