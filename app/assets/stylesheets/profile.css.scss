@@ -100,7 +100,7 @@
   color:#666666;
 }
 .partner .libg2 {
-  background:url(../img/li-bg-2.png) no-repeat 0 5px; 
+  background:url(../img/li-bg-2.png) no-repeat 0 5px;
 }
 .partner .position {
   margin:10px 0 5px 32%;  
@@ -116,30 +116,30 @@
 }
 
 #idTab1 {
-  width:100%; 
+  width:100%;
 }
 #idTab2 {
   width:100%;
-  display:none; 
+  display:none;
 }
 #idTab3 {
   width:100%;
-  display:none; 
+  display:none;
 }
 #idTab4 {
   width:100%;
-  display:none; 
+  display:none;
 }
 #idTab5 {
   width:100%;
-  display:none; 
+  display:none;
 }
 .idTabs a.selected,.idTabs a:hover.selected  { 
-  background:#0086c9; 
+  background:#0086c9;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  color:#fff; 
+  color:#fff;
 }
 .idTabs a.selected i,.idTabs a:hover.selected i {
   background:#006496;
@@ -389,11 +389,11 @@
   text-align:center;  
 }
 .marginb10px {
-  margin-bottom:10px; 
+  margin-bottom:10px;
   margin-left:0;
 }
 .closPos {
-  margin:20px 20px 0 200px; 
+  margin:20px 20px 0 200px;
 }
 .removePro {
   color:#333333;
@@ -409,7 +409,7 @@
   margin-bottom:4px;  
 }
 .row-fluid .fontSize11 {
-  font-size:11px; 
+  font-size:11px;
 }
 .nav-tabs > .eventsli {
   width:150px;  
@@ -417,14 +417,14 @@
 }
 .nav-tabs > .eventsli i,.nav-tabs > .jobsli i {
   display:inline;
-  float:none; 
+  float:none;
 }
 .nav-tabs > .jobsli {
   width:150px;  
   text-align:center;
 }
 .closPos2, .closPos2:hover {
-  margin:18px 20px 0 250px; 
+  margin:18px 20px 0 250px;
 }
 .loLabel {
   font:normal 12px 'luzsans-bookluzsans-book';
@@ -432,7 +432,7 @@
   margin-top:-7px;
 }
 .padtb70px {
-  padding:70px 0; 
+  padding:70px 0;
 }
 .btn-invite1 i {
   margin-top:7px;
@@ -445,4 +445,62 @@
     font:bold 14px 'luzsans-bookluzsans-book';
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+#floor ul, li {margin: 0px; padding: 0px; list-style: none;}
+
+
+/*-- navlist --*/
+.nav-list {
+  padding:0;  
+}
+.nav-list > li > a, .nav-list .nav-header {
+  margin:0;
+}
+.nav-list > li > a {
+  padding:8px 0 8px 0;  
+}
+.icon-user-custom {
+  background-image:none !important;
+}
+.nav-list > li > a {
+  color:#333;
+}
+.nav-list > li > a i {
+  background-color:#333333;
+  width:24px;
+  height:24px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  float:left;
+  margin:0 10px 0 20px;
+  text-align:center;
+  margin-right:10px !important;
+  color:#fff;
+  line-height:21px;
+  padding-top:2px;
+}
+.nav-list > li > a:hover i,.nav-list > .active > a i, .nav-list > .active > a:hover i {
+  background-color:#006496;
+}
+[class^="icon-"], [class*=" icon-"] {
+  background:none;
+}
+.nav-list > .active > a, .nav-list > .active > a:hover {
+  background:#0086c9;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color:#fff;
+}
+.nav-list > li > a:hover {
+  background:#f5f5f5;
+  color:#333;
+}
+.nav-list > li > a:hover i {
+  background-color:#333333;
 }
