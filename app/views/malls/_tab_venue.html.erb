@@ -2,382 +2,383 @@
   <div class="scroll-box-wrap vanue-scroll-box-wrap antiscroll-wrap">
     <div class="scroll-box">
       <div class="antiscroll-inner">
-        <%= simple_form_for(@mall, :html => {:class => 'mapForm'}) do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
-          <fieldset>
-            <%= f.input :name, label: "Shopping Mall Name", input_html: { class: "span12" } %>
-          </fieldset>
-          <fieldset>
-            <%= f.input :address, as: :string, input_html: { class: "span12" } %>
-          </fieldset>
-          <fieldset>
-            <span class="span6">
-              <%= f.input :city, input_html: { class: "input-block-level" } %>
-            </span>
-            <span class="span6">
-              <%= f.input :state, label: "Province / State", input_html: { class: "input-block-level" }, collection: states_array %>
-            </span>
-          </fieldset>
-          <fieldset>
-            <span class="span6">
-              <%= f.input :zipcode, label: "Postal / Zip Code", input_html: { class: "input-block-level" } %>
-            </span>
-            <span class="span6">
-              <%= f.input :country, input_html: { class: "input-block-level" }, collection: countries_array %>
-            </span>
-          </fieldset>
-          <fieldset>
-            <span class="span6">
-              <%= f.input :phone, input_html: { class: "input-block-level" }, placeholder: "(xxx) xxx - xxxx" %>
-            </span>
-            <span class="span6">
-              <%= f.input :website, input_html: { class: "input-block-level" } %>
-            </span>
-          </fieldset>
-          <fieldset>
-            <span class="span6 btnspan">
-              <label>Latitude / Longitude</label>
-              <span class="span6 spanFirst">
-                <button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From address</button>
-              </span>
-              <span class="span6">
-                <button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From map</button>
-              </span>
-            </span>
-            <span class="span6 position">
-              <span class="span4">
-                <%= f.input :latitude, as: :string, label: false, input_html: { class: "input-block-level" } %>
-                <label>lat</label>
-              </span>
-              <span class="span4">
-                <%= f.input :longitude, as: :string, label: false, input_html: { class: "input-block-level" } %>
-                <label>long</label>
-              </span>
-              <span class="span4">
-                <input type="text"  class="span12">
-                <label>zoom</label>
-              </span>
-            </span>
-          </fieldset>
-        <% end %>
+        
+<%= simple_form_for(@mall, :html => {:class => 'mapForm'}) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <fieldset>
+    <%= f.input :name, label: "Shopping Mall Name", input_html: { class: "span12" } %>
+  </fieldset>
+  <fieldset>
+    <%= f.input :address, as: :string, input_html: { class: "span12" } %>
+  </fieldset>
+  <fieldset>
+    <span class="span6">
+      <%= f.input :city, input_html: { class: "input-block-level" } %>
+    </span>
+    <span class="span6">
+      <%= f.input :state, label: "Province / State", input_html: { class: "input-block-level selectpicker", value: "Choose aProvince / State" }, collection: states_array %>
+    </span>
+  </fieldset>
+  <fieldset>
+    <span class="span6">
+      <%= f.input :zipcode, label: "Postal / Zip Code", input_html: { class: "input-block-level" } %>
+    </span>
+    <span class="span6">
+      <%= f.input :country, input_html: { class: "input-block-level selectpicker", value: "Choose a Country" }, collection: countries_array %>
+    </span>
+  </fieldset>
+  <fieldset>
+    <span class="span6">
+      <%= f.input :phone, input_html: { class: "input-block-level" }, placeholder: "(xxx) xxx - xxxx" %>
+    </span>
+    <span class="span6">
+      <%= f.input :website, input_html: { class: "input-block-level" } %>
+    </span>
+  </fieldset>
+  <fieldset>
+    <span class="span6 btnspan">
+      <label>Latitude / Longitude</label>
+      <span class="span6 spanFirst">
+        <button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From address</button>
+      </span>
+      <span class="span6">
+        <button class="btn btn-invite" type="button"><i class="icon-plus font11"></i>From map</button>
+      </span>
+    </span>
+    <span class="span6 position">
+      <span class="span4">
+        <%= f.input :latitude, as: :string, label: false, input_html: { class: "input-block-level" } %>
+        <label>lat</label>
+      </span>
+      <span class="span4">
+        <%= f.input :longitude, as: :string, label: false, input_html: { class: "input-block-level" } %>
+        <label>long</label>
+      </span>
+      <span class="span4">
+        <input type="text"  class="span12">
+        <label>zoom</label>
+      </span>
+    </span>
+  </fieldset>
+<% end %>
 
-        <div class="row-fluid">
-          <div class="row-fluid common-block">
-            <h4 class="padl19px">Hours of Operation</h4>
-              <span class="row-fluid">
-                <p class="span6 padl19px">Add Hours of Operation</p>
-                <span class="span6 pagination-right padr19px add-schedule-mapbuilder">
-                  <a class="btn btn-small btn-invite marginRight0" type="button">
-                    <i class="icon-plus font11"></i><i class="icon-calendar"></i>
-                  </a>
-                </span>
-              </span>
-          </div>
-        </div>
-        <!--End of row-->
-        <div class="row-fluid schedule-comand-line-container">
+<div class="row-fluid">
+  <div class="row-fluid common-block">
+    <h4 class="padl19px">Hours of Operation</h4>
+      <span class="row-fluid">
+        <p class="span6 padl19px">Add Hours of Operation</p>
+        <span class="span6 pagination-right padr19px add-schedule-mapbuilder">
+          <a class="btn btn-small btn-invite marginRight0" type="button">
+            <i class="icon-plus font11"></i><i class="icon-calendar"></i>
+          </a>
+        </span>
+      </span>
+  </div>
+</div>
+<!--End of row-->
+<div class="row-fluid schedule-comand-line-container">
 
-        <div class="row-fluid common-block hidden-for-all">
-          <span class="row-fluid hrOpsBlockHead" style="display: inline-block;">
-            <h4 class="span6 padl19px hrOpsBlockTitle"><i class="icon-calendar"></i><span>[No schedule selected]</span></h4>
-              <span class="span6 padl19px">
+<div class="row-fluid common-block hidden-for-all">
+  <span class="row-fluid hrOpsBlockHead" style="display: inline-block;">
+    <h4 class="span6 padl19px hrOpsBlockTitle"><i class="icon-calendar"></i><span>[No schedule selected]</span></h4>
+      <span class="span6 padl19px">
+           <div class="controls hidden-inner-collapse">
+             <select class="selectpicker span12">
+               <option value="">Select a Planed Schedule Type</option>
+               <option value="normalHrOps">Normal Hours or Operation</option>
+               <option value="holidayHtOps">Holiday Hours of Operation</option>
+               <option value="specialHrOps">Special Date / Holiday</option>
+             </select>
+           </div>
+      </span>
+
+      <span class="span5 pagination-right pull-right padr19px btn-group">
+        <a class="btn btn-small btn-comment collapse-manual selected" type="button" data-toggle="button"><i class="icon-comment"></i></a>
+        <a class="btn btn-small btn-delete delete-manual marginRight0" type="button"><i class="icon-trashcan"></i></a>
+      </span>
+  </span>
+
+
+  <div class="accordion-body row-fluid operationBlock ">
+  <div class="accordion-inner pull-left custom-inner span12 operationinner">
+          <span class="row-fluid">
+             <!-- <span class="span6">
                    <div class="controls hidden-inner-collapse">
-                     <select class="selectpicker span12">
-                       <option value="">Select a Planed Schedule Type</option>
-                       <option value="normalHrOps">Normal Hours or Operation</option>
-                       <option value="holidayHtOps">Holiday Hours of Operation</option>
-                       <option value="specialHrOps">Special Date / Holiday</option>
-                     </select>
-                   </div>
-              </span>
+                      <select class="selectpicker span12">
+                          <option value="">Select a Planed Schedule Type</option>
+                          <option value="normalHrOps">Normal Hours or Operation</option>
+                          <option value="holidayHtOps">Holiday Hours of Operation</option>
+                          <option value="specialHrOps">Special Date / Holiday</option>
+                      </select>
+                  </div>
+              </span>  -->
 
-              <span class="span5 pagination-right pull-right padr19px btn-group">
-                <a class="btn btn-small btn-comment collapse-manual selected" type="button" data-toggle="button"><i class="icon-comment"></i></a>
-                <a class="btn btn-small btn-delete delete-manual marginRight0" type="button"><i class="icon-trashcan"></i></a>
-              </span>
-          </span>
-
-
-          <div class="accordion-body row-fluid operationBlock ">
-          <div class="accordion-inner pull-left custom-inner span12 operationinner">
-                  <span class="row-fluid">
-                     <!-- <span class="span6">
-                           <div class="controls hidden-inner-collapse">
-                              <select class="selectpicker span12">
-                                  <option value="">Select a Planed Schedule Type</option>
-                                  <option value="normalHrOps">Normal Hours or Operation</option>
-                                  <option value="holidayHtOps">Holiday Hours of Operation</option>
-                                  <option value="specialHrOps">Special Date / Holiday</option>
-                              </select>
-                          </div>
-                      </span>  -->
-
-                      <div class="hidden-tabs-schedule" id="normalHrOps">
-                        <!--End of span6-->
-                          <span class="span12 marginLeft0">
-                               <form class="form-inline formNormal">
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Monday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Tuesday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Wednesday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Thursday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Friday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Saturday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Sunday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                               </form>
-                          </span>
-                        <!--End of span12-->
-
-                      </div>
-                      <div class="hidden-tabs-schedule" id="holidayHtOps">
-                          <span class="span12 marginLeft0">
-                               <form class="form-inline formNormal">
-                                 <fieldset>
-                                   <div class="span6">
-                                     <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Starting from" data-date-format="mm-dd-yy" />
-                                     <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+              <div class="hidden-tabs-schedule" id="normalHrOps">
+                <!--End of span6-->
+                  <span class="span12 marginLeft0">
+                       <form class="form-inline formNormal">
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Monday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
                                    </div>
-                                   <div class="span6">
-                                     <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Ending on" data-date-format="mm-dd-yy" />
-                                     <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Tuesday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
                                    </div>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Monday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Tuesday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Wednesday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Thursday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Friday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Saturday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                                 <fieldset class="row-fluid singleInfoRow">
-                                   <label class="span4">Sunday</label>
-                                   <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                   <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                      <span class="span2 pull-right">
-                                           <div class="controls pagination-right">
-                                             <label class="span12">
-                                               <p class="spanP span9 closed">Closed</p>
-                                               <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                             </label>
-                                           </div>
-                                  </span>
-                                 </fieldset>
-                               </form>
                           </span>
-                        <!--End of span12-->
-                      </div>
-                      <div class="hidden-tabs-schedule" id="specialHrOps">
-                        <!--End of span6-->
-                          <span class="span12 marginLeft0">
-                               <div class="controls">
-                                 <select class="selectpicker span12">
-                                   <option>Special Date / Holiday</option>
-                                   <option>1</option>
-                                   <option>2</option>
-                                   <option>1</option>
-                                   <option>2</option>
-                                   <option>1</option>
-                                   <option>2</option>
-                                 </select>
-                               </div>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Wednesday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
                           </span>
-                        <!--End of span12-->
-                          <span class="span12 marginLeft0">
-                               <div class="controls">
-                                 <input type="text"  class="span12">
-                               </div>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Thursday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
                           </span>
-                        <!--End of span12-->
-                          <span class="span12 marginLeft0 singleInfoRow">
-                              <form class="form-inline">
-                                  <span class="span4">
-                                      <div class="span12 maginnegative">
-                                        <input type="text" value="" class="span10 timeTextField tbDatePicker dateInputCustom" placeholder="Starting from" >
-                                        <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
-                                      </div>
-                                   </span>
-                                   <span class="span6">
-                                       <input type="text" class="span6 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
-                                      <input type="text" class="span6 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
-                                   </span>
-                                   <span class="span2 pull-right">
-                                       <div class="controls pagination-right">
-                                         <label class="span12">
-                                           <p class="spanP span9 closed">Closed</p>
-                                           <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
-                                         </label>
-                                       </div>
-                                   </span>
-                              </form>
-                           </span>
-                        <!--End of span12-->
-
-                      </div>
-                      <!--End of hidden-tabs-schedule-->
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Friday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="4" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Saturday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Sunday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                       </form>
                   </span>
-                  <!--End of row-->
-          </div>
-          </div>
-          <!--End of accordian-->
-        </div>
-        <!--End of common-blobk-->
+                <!--End of span12-->
 
-        </div>
-      <!--End of row-->
+              </div>
+              <div class="hidden-tabs-schedule" id="holidayHtOps">
+                  <span class="span12 marginLeft0">
+                       <form class="form-inline formNormal">
+                         <fieldset>
+                           <div class="span6">
+                             <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Starting from" data-date-format="mm-dd-yy" />
+                             <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                           </div>
+                           <div class="span6">
+                             <input type="text" value="" class="span10 tbDatePicker dateInputCustom" placeholder="Ending on" data-date-format="mm-dd-yy" />
+                             <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                           </div>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Monday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Tuesday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Wednesday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Thursday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Friday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Saturday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                         <fieldset class="row-fluid singleInfoRow">
+                           <label class="span4">Sunday</label>
+                           <input type="text" class="span3 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                           <input type="text" class="span3 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                              <span class="span2 pull-right">
+                                   <div class="controls pagination-right">
+                                     <label class="span12">
+                                       <p class="spanP span9 closed">Closed</p>
+                                       <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                     </label>
+                                   </div>
+                          </span>
+                         </fieldset>
+                       </form>
+                  </span>
+                <!--End of span12-->
+              </div>
+              <div class="hidden-tabs-schedule" id="specialHrOps">
+                <!--End of span6-->
+                  <span class="span12 marginLeft0">
+                       <div class="controls">
+                         <select class="selectpicker span12">
+                           <option>Special Date / Holiday</option>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>1</option>
+                           <option>2</option>
+                         </select>
+                       </div>
+                  </span>
+                <!--End of span12-->
+                  <span class="span12 marginLeft0">
+                       <div class="controls">
+                         <input type="text"  class="span12">
+                       </div>
+                  </span>
+                <!--End of span12-->
+                  <span class="span12 marginLeft0 singleInfoRow">
+                      <form class="form-inline">
+                          <span class="span4">
+                              <div class="span12 maginnegative">
+                                <input type="text" value="" class="span10 timeTextField tbDatePicker dateInputCustom" placeholder="Starting from" >
+                                <span class="add-on addonCustom"><i class="icon-calendar datepickerIconCal"></i></span>
+                              </div>
+                           </span>
+                           <span class="span6">
+                               <input type="text" class="span6 timeTextField" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Opening Time">
+                              <input type="text" class="span6 timeTextField offset1" data-provide="typeahead" data-items="6" data-source='["12:00am","12:15am","12:30am","12:45am","1:00am","1:15am","1:30am","1:45am","2:00am","2:15am","2:30am","2:45am","3:00am","3:15am","3:30am","3:45am","4:00am","4:15am","4:30am","4:45am","5:00am","5:15am","5:30am","5:45am","6:00am","6:15am","6:30am","6:45am","7:00am","7:15am","7:30am","7:45am","8:00am","8:15am","8:30am","8:45am","9:00am","9:15am","9:30am","9:45am","10:00am","10:15am","10:30am","10:45am","11:00am","11:15am","11:30am","11:45am","12:00pm","12:15pm","12:30pm","12:45pm","1:00pm","1:15pm","1:30pm","1:45pm","2:00pm","2:15pm","2:30pm","2:45pm","3:00pm","3:15pm","3:30pm","3:45pm","4:00pm","4:15pm","4:30pm","4:45pm","5:00pm","5:15pm","5:30pm","5:45pm","6:00pm","6:15pm","6:30pm","6:45pm","7:00pm","7:15pm","7:30pm","7:45pm","8:00pm","8:15pm","8:30pm","8:45pm","9:00pm","9:15pm","9:30pm","9:45pm","10:00pm","10:15pm","10:30pm","10:45pm","11:00pm","11:15pm","11:30pm","11:45pm"]' placeholder="Closing Time">
+                           </span>
+                           <span class="span2 pull-right">
+                               <div class="controls pagination-right">
+                                 <label class="span12">
+                                   <p class="spanP span9 closed">Closed</p>
+                                   <span class="customchk"><input name="chk-1" type="checkbox" value="1" class="hrOpsStyledCheckbox"></span>
+                                 </label>
+                               </div>
+                           </span>
+                      </form>
+                   </span>
+                <!--End of span12-->
+
+              </div>
+              <!--End of hidden-tabs-schedule-->
+          </span>
+          <!--End of row-->
+  </div>
+  </div>
+  <!--End of accordian-->
+</div>
+<!--End of common-blobk-->
+
+</div>
+<!--End of row-->
       </div>
     </div>
   </div>

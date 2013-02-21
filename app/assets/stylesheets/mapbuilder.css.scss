@@ -979,6 +979,95 @@ input[readonly], select[readonly], textarea[readonly] {
   font-size:24px;
   margin-left:-10px;
 }
+/*-----------------storeTab----------------*/
+#stores .draggable { 
+  width: 90px; height: 90px; padding:15px 0 0 60px;
+}
+#stores .draggable .right{
+  float:left;
+  width:auto;
+}
+#stores .table{
+  /*max-width:560px;*/
+}
+#stores .table input, .table textarea, .table select{
+  font-size:13px;
+}
+#stores .form-inline{
+  padding-top:20px;
+}
+#stores .form-inline .left{
+  float:left;
+  width:auto;
+}
+#stores .item_title{
+  font-weight:normal;
+  font-size:14px;
+  color:#97a1a7;
+}
+#stores .table th{
+  font-weight:normal;
+  padding-right:20px;
+  padding-left:20px;
+  padding-bottom:0;
+  border-top:none;
+}
+#stores .table th:hover {
+  background:none !important; 
+}
+#stores .table tr{
+  overflow:hidden;
+  font-size:13px;
+}
+#stores .lftbtn{
+  float:right;
+  padding-right:10px;
+}
+#stores .item tr td{
+  padding-left:15px !important;
+}
+#stores .table tr td{
+  background:#fff;
+}
+#stores .table td{
+  /*padding:3px 0 6px 0;*/
+  padding:2px 20px 0 8px;
+}
+#stores .table tbody tr.item td{
+  background:#fff;
+}
+#stores .table tbody tr.item:hover td{
+  background:#0086c9;
+  color:#fff;
+}
+#stores tr.item_hide, tr.item_hide td{
+  padding:0 10px !important;
+  margin:0 !important;
+  border:none !important;
+  background:#eeeeee !important;
+}
+#stores #txtboxarea{
+  width:100%;
+  display:block;
+  float:left;
+}
+#stores #txtboxarea textarea{
+  width:500px;
+  /*width: 100%;*/
+}
+#stores .txtrow{
+  position:relative;
+  top:4px;
+  left:15px;
+}
+
+.hide {
+  display:none;
+}
+#stores .storeListTable .storeInfoBody td {
+  background:#eee;    
+}
+
 /*---------------elementButtons-----------------------*/
 .btngroupContainer {
   width:560px;
@@ -1080,9 +1169,7 @@ input[readonly], select[readonly], textarea[readonly] {
   height: 100%;
   width: 100%;
 }
-.grid {
-  background: url("../img/grid_bg.png") repeat;
-}
+
 #map_svgarea {
   position: absolute;
   background: transparent;
