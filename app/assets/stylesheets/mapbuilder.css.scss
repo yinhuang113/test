@@ -7,6 +7,50 @@
 
   font-family: helveticaregular;
 
+  [class^="icon-"], [class*=" icon-"] {
+    background:none;
+  }
+
+  .btn-invite,.btn-invite:hover,.btn-comment,.btn-delete,.btn-comment:hover,.btn-delete:hover {
+    border:none;
+    background:#b4c2cc;
+    color:#fff;
+    margin-right:22px;
+    text-shadow:none;
+    padding:0 12px;
+    margin:0 22px 0 15px; 
+  }
+
+  .btn-invite, .btn-comment, .btn-delete {
+    padding: 0 12px;
+  }
+
+  .btn-comment, .btn-comment:hover {
+    margin-right: -3px;
+  }
+
+  .btn-invite {
+    margin: 0 22px 0 15px;
+  }
+
+  .btn-invite i {
+    margin-top:2px;
+    margin-right:6px;
+  }
+  .btn-invite i:last-child {
+    margin-right:0;
+  }
+
+  .btn-delete,.btn-delete:hover {
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; 
+    margin-left:0;
+  }
+
   .jqueryCheckbox {
     margin-right: 0;
   }
@@ -295,6 +339,16 @@
       margin-right:22px;
       text-shadow:none;
     }
+
+  .btn-invite,.btn-invite:hover,.btn-comment,.btn-delete,.btn-comment:hover,.btn-delete:hover {
+    border:none;
+    background:#b4c2cc;
+    color:#fff;
+    margin-right:22px;
+    text-shadow:none;
+    padding:0 12px;
+    margin:0 22px 0 15px;
+  }
 
     .btn-invite i {
       margin-top:2px;
