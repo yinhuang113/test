@@ -26,7 +26,14 @@
   }
 
   .btn-comment, .btn-comment:hover {
-    margin-right: -3px;
+    margin-right:-3px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left:0;  
   }
 
   .btn-invite {
@@ -876,6 +883,50 @@ input[readonly], select[readonly], textarea[readonly] {
   padding-top:3px;  
 }
 /*----------------floorTab---------------*/
+/*-------floor---------*/
+.tab-pane .pcolor {
+  color:#97a1a7;  
+}
+.btn-floor > .btn {
+  border-color:#FFF;
+  background:#b4c2cc;
+  padding:0 12px;
+  color:#FFF;
+  text-shadow:none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.tab-pane .pMargin {
+  margin-bottom:0;
+}
+.tab-pane .fluid-border {
+  float:left;
+  border-bottom:solid 1px #eeeeee;  
+}
+.tab-pane .fluid-border-none {
+  border-bottom:none; 
+}
+.tab-pane .minht {
+  min-height:10px;
+  padding-top:5px;
+}
+.tab-pane .linehight {
+  min-height:27px;
+}
+.tab-pane .fontsize {
+  font-size:13px; 
+}
+.row-fluid .selectedfloor {
+  background-color:#eeeeee; 
+}
+.tab-pane .btn-hselect {
+  background-color:#9dd000;
+}
+.tab-pane .headenflor {
+  float:left;
+  background-color:#eeeeee;
+}
 .floorheader {
   background:#0086c9;
   margin-top:0;
