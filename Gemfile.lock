@@ -254,7 +254,7 @@ DEPENDENCIES
   rails (= 3.2.11)
   rake
   rspec-rails (= 2.11.0)
-  sass-rails (~> 3.2.3)
+  sass-rails
   simple_form
   spork (= 0.9.2)
   therubyracer

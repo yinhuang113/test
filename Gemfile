@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'json'
 gem 'pg'
 gem 'rake'
+gem 'sass-rails'
 gem 'simple_form'
 gem 'therubyracer'
 gem 'bootstrap-will_paginate'
@@ -32,7 +33,6 @@ group :development, :test do
 end
 
 group :assets do
-  gem 'sass-rails',         '~> 3.2.3'
   gem 'coffee-rails',       '~> 3.2.1'
   gem 'uglifier',           '>= 1.0.3'
   gem 'bootstrap-sass-rails', '~> 2.3.0.0'
