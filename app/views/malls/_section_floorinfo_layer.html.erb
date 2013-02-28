@@ -1,0 +1,218 @@
+<span class="row-fluid hrOpsBlockHead fluid-border minht headenflor hide floorInfoFlag">
+  <span class="row-fluid">
+    <span class="span6 pagination-left padr19px linehight fontsize">
+      <p class="span6 padl19px pcolor linehight">Add New Layer</p>
+    </span>
+    <span class="span6 pagination-right padr19px linehight">
+      <a class="btn btn-invite marginRight0 addFloorAttrBtn" type="button"><i class="icon-plus font11"></i><i class="icon-layer font11"></i></a>
+    </span>
+  </span>
+  <span class="row-fluid hide floorAttrToClone">
+    <!--<span class="row-fluid pull-left">
+      <p class="span6 padl57px pMargin linehight">Object ID</p>
+      <span class="span6 pagination-right pull-right padr19px linehight">
+        <div class="btn-group btn-floor">
+          <a class="btn" type="button"><i class="icon-comment"></i></a>
+        </div>
+      </span>
+    </span>-->
+    <span class="row-fluid pull-left defaultFloorInfoAttr fontsize">
+      <span class="row-fluid">
+        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i>
+          <span class="floorInfoAttrTitle hide">[no title]</span>
+          <span class="span10 pull-left marginl0 floorInfoAttrTitleField">
+          <input class="span12" type="text" placeholder="Title" value="" />
+        </span>
+        </p>
+        <%= render partial: 'section_floorinfo_layer_buttons'%>
+      </span>
+      <span class="row-fluid hide floorInfoSubAttrInfo">
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+      </span>
+    </span>
+  </span>
+
+  <div class="floorInfoAttrList">
+    <!-- kiosks -->    
+    <span class="row-fluid pull-left floorInfoAttr">
+      <span class="row-fluid">
+        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i>
+          <span class="floorInfoAttrTitle">Kiosks</span>
+          <span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+            <input class="span12" type="text" placeholder="Title" value="Kiosks" />
+          </span>
+        </p>
+        <%= render partial: 'section_floorinfo_layer_buttons'%>
+      </span>
+      <span class="row-fluid hide floorInfoSubAttrInfo">
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+      </span>
+    </span>
+
+    <!-- majors -->
+    <span class="row-fluid pull-left floorInfoAttr">
+      <span class="row-fluid">
+        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Majors</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+          <input class="span12" type="text" placeholder="Title" value="Majors" />
+        </span></p>
+        <%= render partial: 'section_floorinfo_layer_buttons'%>
+      </span>
+      <span class="row-fluid hide floorInfoSubAttrInfo">
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+      </span>
+    </span>
+
+    <!-- stores -->
+    <span class="row-fluid pull-left floorInfoAttr">
+      <span class="row-fluid">
+        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Stores</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+          <input class="span12" type="text" placeholder="Title" value="Stores" />
+        </span></p>
+        <%= render partial: 'section_floorinfo_layer_buttons'%>
+      </span>
+      <span class="row-fluid hide floorInfoSubAttrInfo">
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+      </span>
+    </span>
+
+    <!-- floor -->
+    <span class="row-fluid pull-left floorInfoAttr">
+      <span class="row-fluid">
+        <p class="span6 padl19px pMargin linehight fontsize"><i class="icon-plus colorPlus pull-left floorInfoSubAttrInfoShowHide cursorPointer"></i> <span class="floorInfoAttrTitle">Floor</span><span class="span10 pull-left marginl0 floorInfoAttrTitleField hide">
+          <input class="span12" type="text" placeholder="Title" value="Floor" />
+        </span></p>
+        <%= render partial: 'section_floorinfo_layer_buttons'%>
+      </span>
+      <span class="row-fluid hide floorInfoSubAttrInfo">
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+        <span class="row-fluid pull-left floorInfoSubAttr fontsize">
+          <p class="span6 pMargin padl57px linehight floorInfoSubAttrTitle">Object ID</p>
+          <span class="span5 padl57px marginl0 floorInfoSubAttrTitleField hide">
+            <input class="span10" type="text" placeholder="Object ID" value="Object ID" />
+          </span>
+          <span class="span6 pagination-right pull-right padr19px linehight">
+            <div class="btn-group btn-floor">
+              <a class="btn floorInfoSubAttrComment" type="button"><i class="icon-comment"></i></a>
+              <!-- <a class="btn floorInfoSubAttrDelete" type="button"><i class="icon-trash"></i></a> -->
+            </div>
+          </span>
+        </span>
+      </span>
+    </span>
+    <!-- <span class="row-fluid pull-left floorInfoAttr">
+      <p class="span6 padl19px pMargin linehight"><i class="colorPlus">&nbsp;&nbsp;&nbsp;</i> Source Map</p>
+      <span class="span6 pagination-right pull-right padr19px linehight">
+        <div class="btn-group btn-floor">
+          <a class="btn btn-hselect" type="button"><i class="icon-eye-open"></i></a>
+          <a class="btn" type="button"><i class="icon-comment"></i></a>
+          <a class="btn" type="button"><i class="icon-pencil"></i></a>
+          <a class="btn" type="button"><i class="icon-table"></i></a>
+          <a class="btn floorInfoAttrDelete" type="button"><i class="icon-trash"></i></a>
+        </div>
+      </span>
+    </span> -->
+  </div>
+</span>
