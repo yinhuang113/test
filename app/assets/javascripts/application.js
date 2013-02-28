@@ -19,5 +19,6 @@
 //= require connectors
 //= require floors
 //= require scripts
+//= require profiles
 
 //= require d3.v2
