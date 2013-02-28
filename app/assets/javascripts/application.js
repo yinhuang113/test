@@ -18,6 +18,6 @@
 
 //= require connectors
 //= require floors
+//= require scripts
 
 //= require d3.v2
-//= require_tree .
