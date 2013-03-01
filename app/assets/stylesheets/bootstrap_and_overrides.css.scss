@@ -68,3 +68,38 @@ a:hover {
   color: #333333;
   white-space: nowrap;
 }
+
+//-- form --
+.form-horizontal .custom-control label {
+  text-align:left !important;
+  font-size:13px !important;
+}
+
+.form-horizontal .custom-control {
+  margin-bottom:0;
+  font-family:'helveticaregular';
+}
+
+.form-horizontal .custom-control a {
+  color:#666;
+  float:left;
+  margin-top:5px;
+}
+
+.form-horizontal .custom-control .controls {
+  margin-left:0;
+}
+
+.form-horizontal .custom-control .span7 {
+  margin-left:0;
+}
+
+.form-horizontal .custom-control .span7 .controls {
+  clear:both;
+}
+
+.form-horizontal .custom-control a.btn-invite {
+  float:right;
+  font-size:13px;
+  color:#fff;
+}
