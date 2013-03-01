@@ -1,10 +1,4 @@
 /*
- *= require twitter/bootstrap
- *= require twitter/bootstrap/_responsive
-
- *= require font
- *= require icons
- 
  *= require antiscroll
  *= require jquery.checkbox
  *= require timepicker
@@ -12,6 +6,16 @@
  *= require jquery-ui-1.9.2.custom.min
  *= require bootstrap-select
 
+ *= require font
+ *= require icons
+
+ *= require bootstrap_and_overrides
+ *= require layout
+ *= require table
+ *= require mall
+ *= require profile
+ *= require user
+ *= require mapbuilder
+ 
  *= require_self
- *= require_tree .
 */
