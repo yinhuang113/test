@@ -21,6 +21,9 @@ jQuery(function()
   });
   //-- profile tab team agent change select picker -
   $('.selectpicker').selectpicker();
-  //---  
+  //-- styledcheckbox
+  $('.styledCheckbox').checkbox({ cls:'jqueryCheckbox', empty:'assets/empty.png' });
+  //-- styledradio
+  $('.styledRadio').checkbox({ cls:'jqueryRadio', empty:'assets/empty.png' });
 });
 

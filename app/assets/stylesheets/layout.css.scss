@@ -15,6 +15,7 @@ html,body {
 
 a:link,
 a:focus,
+
 .btn:focus {
   border:none !important;
   outline:none;
@@ -108,6 +109,16 @@ a:focus,
   text-shadow: 0 -1px #597bc0;
   background:#39befe;
   border:none;
+}
+
+.btn-delete,.btn-delete:hover {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left:0;
 }
 
 /*-------------Header Tags-----------------*/
