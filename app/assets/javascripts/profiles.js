@@ -19,6 +19,8 @@ jQuery(function()
       $(this).removeAttr('style');
     }
   });
-  //---
+  //-- profile tab team agent change select picker -
+  $('.selectpicker').selectpicker();
+  //---  
 });
 
