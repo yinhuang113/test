@@ -21,4 +21,6 @@
 //= require profiles
 //= require mapbuilder
 
+//= require scripts
+
 //= require d3.v2
