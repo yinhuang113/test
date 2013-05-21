@@ -1,9 +1,0 @@
-<%= simple_form_for([@floor.mall, @floor, @entrance]) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  
-  <%= f.association :floor, as: :hidden %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  
-  <%= f.button :submit, class: "btn btn-large btn-primary" %>
-<% end %>
