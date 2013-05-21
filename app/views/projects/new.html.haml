@@ -1,0 +1,10 @@
+.add_user
+  %script
+    $('#main-nav li').removeClass('current');
+    $('#main-nav .write').addClass('current');
+    $('#main-nav>ul li.write>ul li').removeClass('current');
+    $('#main-nav ul li.write>ul li').eq(1).addClass('current');
+    $('#breadcrumb li:first-child a').html('Project');
+    $('#breadcrumb li:last-child a').html('Add Project');
+  = render 'form'
+  

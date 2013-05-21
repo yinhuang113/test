@@ -1,0 +1,52 @@
+= form_for @inventory do |f|
+  - if @inventory.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@inventory.errors.count, "error")} prohibited this inventory from being saved:"
+      %ul
+        - @inventory.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :product
+    = f.text_field :product
+  .field
+    = f.label :manufacture
+    = f.text_field :manufacture
+  .field
+    = f.label :manufacture_part
+    = f.text_field :manufacture_part
+  .field
+    = f.label :vendor_perferred
+    = f.text_field :vendor_perferred
+  .field
+    = f.label :vendor_other
+    = f.text_field :vendor_other
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :units
+    = f.text_field :units
+  .field
+    = f.label :tax
+    = f.text_field :tax
+  .field
+    = f.label :stock_on_hand
+    = f.text_field :stock_on_hand
+  .field
+    = f.label :stock_location
+    = f.text_field :stock_location
+  .field
+    = f.label :references_sales_orders
+    = f.text_field :references_sales_orders
+  .field
+    = f.label :references_companies_who_own
+    = f.text_field :references_companies_who_own
+  .field
+    = f.label :references_purchase_orders
+    = f.text_field :references_purchase_orders
+  .field
+    = f.label :references_rmas
+    = f.text_field :references_rmas
+  .actions
+    = f.submit 'Save'

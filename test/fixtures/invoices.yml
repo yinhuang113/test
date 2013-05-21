@@ -1,0 +1,77 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_name: MyString
+  phone: MyString
+  fax: MyString
+  status: MyString
+  site_street_address: MyString
+  site_city: MyString
+  site_state: false
+  site_zip: MyString
+  site_phone: MyString
+  site_business_hours: MyString
+  site_round_trip_mileage: MyString
+  site_tolls: MyString
+  site_map: MyString
+  open_invoices: MyString
+  open_credit_invoices: MyString
+  billing_contact__fn: MyString
+  billing_contact_ln: MyString
+  billing_contact_title: MyString
+  billing_contact_email: MyString
+  billing_contact_phone: MyString
+  billing_info_account_type: MyString
+  billing_info_approval_level: MyString
+  billing_info_approver: MyString
+  agreement_terms: MyString
+  agreement_included: MyString
+  agreement_excluded: MyString
+  invoice_due_date: MyString
+  charges_products: MyString
+  charges_time: 2013-04-27 22:48:41
+  charges_expenses: MyString
+  charges_tax: MyString
+  invoiced_sales_order: MyString
+  invoiced_ticket_number: MyString
+  invoiced_purchase_order: MyString
+  commission_product: MyString
+  commission_service: MyString
+
+two:
+  company_name: MyString
+  phone: MyString
+  fax: MyString
+  status: MyString
+  site_street_address: MyString
+  site_city: MyString
+  site_state: false
+  site_zip: MyString
+  site_phone: MyString
+  site_business_hours: MyString
+  site_round_trip_mileage: MyString
+  site_tolls: MyString
+  site_map: MyString
+  open_invoices: MyString
+  open_credit_invoices: MyString
+  billing_contact__fn: MyString
+  billing_contact_ln: MyString
+  billing_contact_title: MyString
+  billing_contact_email: MyString
+  billing_contact_phone: MyString
+  billing_info_account_type: MyString
+  billing_info_approval_level: MyString
+  billing_info_approver: MyString
+  agreement_terms: MyString
+  agreement_included: MyString
+  agreement_excluded: MyString
+  invoice_due_date: MyString
+  charges_products: MyString
+  charges_time: 2013-04-27 22:48:41
+  charges_expenses: MyString
+  charges_tax: MyString
+  invoiced_sales_order: MyString
+  invoiced_ticket_number: MyString
+  invoiced_purchase_order: MyString
+  commission_product: MyString
+  commission_service: MyString

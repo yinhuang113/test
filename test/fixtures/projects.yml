@@ -1,0 +1,89 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  approver: MyString
+  phone: MyString
+  extension: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  start_date: 2013-04-27 22:26:49
+  end_date: 2013-04-27 22:26:49
+  status: false
+  type: 
+  project_manager: MyString
+  budgeted_hours: MyString
+  budgeted_expenses: MyString
+  description: MyText
+  notes: MyText
+  tasks: MyString
+  resources_name: MyString
+  resources_role: MyString
+  schedule: MyString
+  products_name: MyString
+  products_cost: MyString
+  products_price: MyString
+  products_purchase_order: MyString
+  products_bin: MyString
+  account_manager: MyString
+  open_issues: MyString
+  time_entry_standard: MyString
+  time_entry_completed: MyString
+  expenses: MyString
+  phone_logs: MyString
+  documents: MyText
+  survery_results: MyString
+  knowledgebase_articles: MyString
+  phases: MyString
+  billing_method_terms: MyString
+  billing_method_approver: MyString
+  downpayment_info_amount: MyString
+  downpayment_info_breakdown: MyString
+  downpayment_info_invoice: MyString
+  downpayment_info_datepaid: MyString
+  invoices: MyString
+
+two:
+  company_id: 1
+  approver: MyString
+  phone: MyString
+  extension: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  start_date: 2013-04-27 22:26:49
+  end_date: 2013-04-27 22:26:49
+  status: false
+  type: 
+  project_manager: MyString
+  budgeted_hours: MyString
+  budgeted_expenses: MyString
+  description: MyText
+  notes: MyText
+  tasks: MyString
+  resources_name: MyString
+  resources_role: MyString
+  schedule: MyString
+  products_name: MyString
+  products_cost: MyString
+  products_price: MyString
+  products_purchase_order: MyString
+  products_bin: MyString
+  account_manager: MyString
+  open_issues: MyString
+  time_entry_standard: MyString
+  time_entry_completed: MyString
+  expenses: MyString
+  phone_logs: MyString
+  documents: MyText
+  survery_results: MyString
+  knowledgebase_articles: MyString
+  phases: MyString
+  billing_method_terms: MyString
+  billing_method_approver: MyString
+  downpayment_info_amount: MyString
+  downpayment_info_breakdown: MyString
+  downpayment_info_invoice: MyString
+  downpayment_info_datepaid: MyString
+  invoices: MyString

@@ -1,0 +1,101 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contact_id: 1
+  name: MyString
+  phone: MyString
+  fax: MyString
+  website: MyString
+  industry: MyString
+  status: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  primary_contact_fn: MyString
+  primary_contact_ln: MyString
+  s_street_add: MyString
+  s_city: MyString
+  s_state: MyString
+  s_phone: MyString
+  s_hours: MyString
+  s_afterhourscontactname: MyString
+  s_afterhourscontactphone: MyString
+  s_round_trip_mileage: MyString
+  s_tolls: MyString
+  s_map: MyString
+  sales_activities: MyString
+  devices: MyString
+  software_name: MyString
+  software_licenses: MyString
+  software_expiration: MyString
+  invoices: MyString
+  open_invoices: MyString
+  open_credit_invoices: MyString
+  billing_contact_fn: MyString
+  billing_contact_ln: MyString
+  billing_contact_title: MyString
+  billing_contact_email: MyString
+  billing_contact_phone: MyString
+  billing_info_account_type: MyString
+  billing_info_approval_level: MyString
+  billing_info_approver: MyString
+  knowledgebase_articles: MyText
+  agrements_terms: MyString
+  agrements_cycle: MyString
+  agreements_startdate: 2013-04-27 18:09:50
+  agreements_endstart: 2013-04-27 18:09:50
+  agreements_lastinvoiceamount: MyString
+  agreements_devices_count: MyString
+  agreements_devices_cost: MyString
+  agreements_devices_price: MyString
+
+two:
+  contact_id: 1
+  name: MyString
+  phone: MyString
+  fax: MyString
+  website: MyString
+  industry: MyString
+  status: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  primary_contact_fn: MyString
+  primary_contact_ln: MyString
+  s_street_add: MyString
+  s_city: MyString
+  s_state: MyString
+  s_phone: MyString
+  s_hours: MyString
+  s_afterhourscontactname: MyString
+  s_afterhourscontactphone: MyString
+  s_round_trip_mileage: MyString
+  s_tolls: MyString
+  s_map: MyString
+  sales_activities: MyString
+  devices: MyString
+  software_name: MyString
+  software_licenses: MyString
+  software_expiration: MyString
+  invoices: MyString
+  open_invoices: MyString
+  open_credit_invoices: MyString
+  billing_contact_fn: MyString
+  billing_contact_ln: MyString
+  billing_contact_title: MyString
+  billing_contact_email: MyString
+  billing_contact_phone: MyString
+  billing_info_account_type: MyString
+  billing_info_approval_level: MyString
+  billing_info_approver: MyString
+  knowledgebase_articles: MyText
+  agrements_terms: MyString
+  agrements_cycle: MyString
+  agreements_startdate: 2013-04-27 18:09:50
+  agreements_endstart: 2013-04-27 18:09:50
+  agreements_lastinvoiceamount: MyString
+  agreements_devices_count: MyString
+  agreements_devices_cost: MyString
+  agreements_devices_price: MyString

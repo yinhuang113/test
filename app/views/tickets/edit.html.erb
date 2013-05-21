@@ -1,0 +1,16 @@
+<div class="add_user edit_user">
+<script>
+$(document).ready(function() {	
+	$('#main-nav li').removeClass('current');
+	$('#main-nav .comments').addClass('current');
+	$('#main-nav>ul li.comments>ul li').removeClass('current');
+	$('#main-nav ul li.comments>ul li:first-child').addClass('current');
+	$('#breadcrumb li:first-child a').html('Tickets');
+	$('#breadcrumb li:last-child a').html('Update Ticket');
+	$('h1').html('Information of Current Ticket');
+	$('.add_user label.first-label').css('margin-bottom','-5px!important');
+  });
+</script>
+
+<%= render 'form' %>
+</div>

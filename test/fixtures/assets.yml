@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company: MyString
+  contact: MyString
+  product: MyString
+  name: MyString
+  description: MyText
+  cost: MyString
+  price: MyString
+  manufacturer: MyString
+  serial_numbers: MyString
+  type: 
+  refer_tickets: MyString
+  refer_projects: MyString
+  refer_locations: MyString
+  refer_purchase_order: MyString
+  refer_sales_order: MyString
+  refer_invoices: MyString
+  date_of_installation: MyString
+  warranty_date_start: 2013-04-27 22:54:04
+  warranty_date_end: 2013-04-27 22:54:04
+  license_key: MyString
+
+two:
+  company: MyString
+  contact: MyString
+  product: MyString
+  name: MyString
+  description: MyText
+  cost: MyString
+  price: MyString
+  manufacturer: MyString
+  serial_numbers: MyString
+  type: 
+  refer_tickets: MyString
+  refer_projects: MyString
+  refer_locations: MyString
+  refer_purchase_order: MyString
+  refer_sales_order: MyString
+  refer_invoices: MyString
+  date_of_installation: MyString
+  warranty_date_start: 2013-04-27 22:54:04
+  warranty_date_end: 2013-04-27 22:54:04
+  license_key: MyString

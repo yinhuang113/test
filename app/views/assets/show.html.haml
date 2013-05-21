@@ -1,0 +1,67 @@
+.edit_user.show_user   
+  %p#notice= notice
+  
+  %p
+    %b Company:
+    = @asset.company
+  %p
+    %b Contact:
+    = @asset.contact
+  %p
+    %b Product:
+    = @asset.product
+  %p
+    %b Name:
+    = @asset.name
+  %p
+    %b Description:
+    = @asset.description
+  %p
+    %b Cost:
+    = @asset.cost
+  %p
+    %b Price:
+    = @asset.price
+  %p
+    %b Manufacturer:
+    = @asset.manufacturer
+  %p
+    %b Serial numbers:
+    = @asset.serial_numbers
+  %p
+    %b Type:
+    = @asset.type
+  %p
+    %b Refer tickets:
+    = @asset.refer_tickets
+  %p
+    %b Refer projects:
+    = @asset.refer_projects
+  %p
+    %b Refer locations:
+    = @asset.refer_locations
+  %p
+    %b Refer purchase order:
+    = @asset.refer_purchase_order
+  %p
+    %b Refer sales order:
+    = @asset.refer_sales_order
+  %p
+    %b Refer invoices:
+    = @asset.refer_invoices
+  %p
+    %b Date of installation:
+    = @asset.date_of_installation
+  %p
+    %b Warranty date start:
+    = @asset.warranty_date_start
+  %p
+    %b Warranty date end:
+    = @asset.warranty_date_end
+  %p
+    %b License key:
+    = @asset.license_key
+  
+  = link_to 'Edit', edit_asset_path(@asset)
+  \|
+  = link_to 'Back', assets_path

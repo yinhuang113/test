@@ -1,0 +1,223 @@
+<section class="grid_4 company_form">
+      <div class="block-border">
+      	<div class="block-content form" id="simple_form" >
+        <h1>Information Of Current Company</h1>
+        
+        <fieldset class="grey-bg required">
+          <p>
+			<%= form_for(@company) do |f| %>
+			  <% if @company.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+			
+			      <ul>
+			      <% @company.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			   
+			  <% end %>
+			<div class="section">
+			  
+			    <%= f.label :contact_id %>
+			    <%= f.number_field :contact_id %>
+			 
+			  
+			    <%= f.label :name %>
+			    <%= f.text_field :company_name %>
+			 
+			  
+			    <%= f.label :phone %>
+			    <%= f.telephone_field :phone %>
+			 
+			  
+			    <%= f.label :fax %>
+			    <%= f.telephone_field :fax %>
+			 
+			  
+			    <%= f.label :website %>
+			    <%= f.url_field :website %>
+			 
+			  
+			    <%= f.label :industry %>
+			    <%= f.text_field :industry %>
+			 
+			  
+			    <%= f.label :status %>
+			    <%= f.text_field :status %>
+			 
+			  
+			    <%= f.label :street %>
+			    <%= f.text_field :street %>
+			 
+			  
+			    <%= f.label :city %>
+			    <%= f.text_field :city %>
+			 
+			  
+			    <%= f.label :state %>
+			    <%= f.text_field :state %>
+			 
+			  
+			    <%= f.label :zip %>
+			    <%= f.text_field :zip %>
+			 
+			    <%= f.label :primary_contact_fn %>
+			    <%= f.text_field :primary_contact_fn %>
+			 
+			  
+			    <%= f.label :primary_contact_ln %>
+			    <%= f.text_field :primary_contact_ln %>
+			 
+			  
+			    <%= f.label :site_street_add %>
+			    <%= f.text_field :s_street_add %>
+			 
+			  
+			    <%= f.label :site_city %>
+			    <%= f.text_field :s_city %>
+			 
+			  
+			    <%= f.label :site_state %>
+			    <%= f.text_field :s_state %>
+				
+			    <%= f.label :site_phone %>
+			    <%= f.text_field :s_phone %>
+	
+				</div> 
+			 	<div class="section">
+			  
+			    <%= f.label :site_hours %>
+			    <%= f.text_field :s_hours %>
+			 
+			  
+			    <%= f.label :site_afterhourscontactname %>
+			    <%= f.text_field :s_afterhourscontactname %>
+			 
+			  
+			    <%= f.label :site_afterhourscontactphone %>
+			    <%= f.text_field :s_afterhourscontactphone %>
+			 
+			  
+			    <%= f.label :site_round_trip_mileage %>
+			    <%= f.text_field :s_round_trip_mileage %>
+			 
+			  
+			    <%= f.label :site_tolls %>
+			    <%= f.text_field :s_tolls %>
+			 
+			  
+			    <%= f.label :site_map %>
+			    <%= f.text_field :s_map %>
+			 
+			  
+			    <%= f.label :sales_activities %>
+			    <%= f.text_field :sales_activities %>
+			 
+			  
+			    <%= f.label :devices %>
+			    <%= f.text_field :devices %>
+			 
+			  
+			    <%= f.label :software_name %>
+			    <%= f.text_field :software_name %>
+			 
+			  
+			    <%= f.label :software_licenses %>
+			    <%= f.text_field :software_licenses %>
+			 
+			  
+			    <%= f.label :software_expiration %>
+			    <%= f.text_field :software_expiration %>
+			 
+			  
+			    <%= f.label :invoices %>
+			    <%= f.text_field :invoices %>
+			 
+			  
+			    <%= f.label :open_invoices %>
+			    <%= f.text_field :open_invoices %>
+			 
+			  
+			    <%= f.label :open_credit_invoices %>
+			    <%= f.text_field :open_credit_invoices %>
+	
+			    <%= f.label :billing_contact_fn %>
+			    <%= f.text_field :billing_contact_fn %>
+			 
+			  
+			    <%= f.label :billing_contact_ln %>
+			    <%= f.text_field :billing_contact_ln %>
+	
+				</div> 
+			 	<div class="section last-child">
+			  
+			 
+			  
+			    <%= f.label :billing_contact_title %>
+			    <%= f.text_field :billing_contact_title %>
+			 
+			  
+			    <%= f.label :billing_contact_email %>
+			    <%= f.text_field :billing_contact_email %>
+			 
+			  
+			    <%= f.label :billing_contact_phone %>
+			    <%= f.text_field :billing_contact_phone %>
+			 
+			  
+			    <%= f.label :billing_info_account_type %>
+			    <%= f.text_field :billing_info_account_type %>
+			 
+			  
+			    <%= f.label :billing_info_approval_level %>
+			    <%= f.text_field :billing_info_approval_level %>
+			 
+			  
+			    <%= f.label :billing_info_approver %>
+			    <%= f.text_field :billing_info_approver %>
+			 
+			  
+			    <%= f.label :agrements_terms %>
+			    <%= f.text_field :agrements_terms %>
+			 
+			  
+			    <%= f.label :agrements_cycle %>
+			    <%= f.text_field :agrements_cycle %>
+			 
+			  
+			    <%= f.label :agreements_lastinvoiceamount %>
+			    <%= f.text_field :agreements_lastinvoiceamount %>
+			 
+			  
+			    <%= f.label :agreements_devices_count %>
+			    <%= f.text_field :agreements_devices_count %>
+			 
+			  
+			    <%= f.label :agreements_devices_cost %>
+			    <%= f.text_field :agreements_devices_cost %>
+			 
+			  
+			    <%= f.label :agreements_devices_price %>
+			    <%= f.text_field :agreements_devices_price %>
+			    
+				<%= f.label :knowledgebase_articles %>
+			    <%= f.text_area :knowledgebase_articles %>
+			    
+			    <%= f.label :agreements_startdate %>
+			    <%= f.datetime_select :agreements_startdate %>
+			 
+			  
+			    <%= f.label :agreements_endstart %>
+			    <%= f.datetime_select :agreements_endstart %>
+			 
+				</div>
+				<div class="clear"></div>
+	        	<%= f.submit :class =>"submit-button" %>
+			    <%= link_to 'Back', companies_path %>
+	    	<% end %>
+          </p>
+        </fieldset>
+      </div>
+     </div>
+        </section>

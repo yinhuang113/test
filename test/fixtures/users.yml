@@ -1,9 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  contact_id: 1
+  firstName: MyString
+  lastName: MyString
+  title: MyString
   email: MyString
-  password_digest: MyString
+  email_private: MyString
+  phone: MyString
+  extension: MyString
+  fax: MyString
+  mobile: MyString
+  home_phone: MyString
+  company: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  notes: MyText
 
 two:
+  contact_id: 1
+  firstName: MyString
+  lastName: MyString
+  title: MyString
   email: MyString
-  password_digest: MyString
+  email_private: MyString
+  phone: MyString
+  extension: MyString
+  fax: MyString
+  mobile: MyString
+  home_phone: MyString
+  company: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  notes: MyText

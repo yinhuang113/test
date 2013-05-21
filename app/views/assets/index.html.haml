@@ -1,0 +1,58 @@
+.list_user    
+  %h2 Listing assets
+  
+  %table
+    %tr
+      %th Company
+      %th Contact
+      %th Product
+      %th Name
+      %th Description
+      %th Cost
+      %th Price
+      %th Manufacturer
+      %th Serial numbers
+      %th Type
+      %th Refer tickets
+      %th Refer projects
+      %th Refer locations
+      %th Refer purchase order
+      %th Refer sales order
+      %th Refer invoices
+      %th Date of installation
+      %th Warranty date start
+      %th Warranty date end
+      %th License key
+      %th
+      %th
+      %th
+  
+    - @assets.each do |asset|
+      %tr
+        %td= asset.company
+        %td= asset.contact
+        %td= asset.product
+        %td= asset.name
+        %td= asset.description
+        %td= asset.cost
+        %td= asset.price
+        %td= asset.manufacturer
+        %td= asset.serial_numbers
+        %td= asset.type
+        %td= asset.refer_tickets
+        %td= asset.refer_projects
+        %td= asset.refer_locations
+        %td= asset.refer_purchase_order
+        %td= asset.refer_sales_order
+        %td= asset.refer_invoices
+        %td= asset.date_of_installation
+        %td= asset.warranty_date_start
+        %td= asset.warranty_date_end
+        %td= asset.license_key
+        %td= link_to 'Show', asset
+        %td= link_to 'Edit', edit_asset_path(asset)
+        %td= link_to 'Destroy', asset, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  %br
+  
+  = link_to 'New Asset', new_asset_path

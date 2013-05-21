@@ -1,0 +1,53 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.project_action{
+  width: 30px;
+  margin-top: -85px;
+  margin-right: 120px;
+  float: right;
+}
+.project_action li{
+  margin-bottom:5px
+}
+.project_action li:hover{
+  background-color:none!important;
+}
+.section{
+  input, textarea,select,.checkbox{
+    margin-top:12px
+  } 
+  .first-input{
+    margin-top:10px;
+    background: white url(/assets/old-browsers-bg/input-bg.png) repeat-x top;
+    height:30px;
+    width:96%
+  }  
+  .checkbox{
+    width:100%
+  }
+  .type{
+    color:black!important;
+    font-weight:bold!important;
+  } 
+  textarea{width:93%!important;}
+  
+}
+.project_list{
+  margin-left:25%;
+  margin-top:50px
+}
+.show_project{
+  width:80%;
+  
+}
+.show_user_project{
+  margin:5% 10%!important;
+} 
+.show_user_project a{margin-left:330px!important;}
+#project_phone{
+  width:96%;
+  height:30px;
+  background: white url(/assets/old-browsers-bg/input-bg.png) repeat-x top;
+}
+

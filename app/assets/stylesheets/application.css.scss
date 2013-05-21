@@ -1,0 +1,302 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree ./css
+ *= require_tree .
+ */
+
+body{
+  background-color:#C1C8CB;
+  overflow:scroll
+  
+}
+
+.field{
+  input{
+    height:20px;
+    padding:5px 20px;
+    border-radius:5px;
+    border:1px solid #89BAD;
+  }
+}
+h2{
+  margin-bottom:10px;
+  font-size:30px;
+  color:black;
+  
+}
+
+.list_user>a{
+      width: 100px;
+      margin-left: 40px;
+      height: 15px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      line-height: 1em;
+      border: 1px solid #89BAD3;
+      color: #333;
+      -webkit-border-radius: 0;
+      -webkit-background-clip: padding-box;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      position: absolute;
+      text-align: center;
+      padding: 7px;
+      background-color: #dddddd;
+      &:hover{
+        background-color:#FDFDFD
+      }
+}
+#add_form{
+  margin:50px;
+  width:75%
+}
+.button_group{
+    width: 430px;
+    margin-left: 100px;
+    button{
+    margin-right:10px;
+  }
+  }
+.list_user{
+  padding:20px 50px;
+  table tr{
+    th{width:150px;background-color:#EBE3D1;color:blue;font-size:14px;border-right:1px solid white}
+    th:last-child{width:500px; border:none}
+    td{width:150px;background-color:white;color:black;font-size:12px;border-right:1px solid gray;border-bottom:1px solid gray;text-align:center}
+  }
+} 
+.active_user{
+  background-color:white
+} 
+.submit-button{
+  width:auto!important;
+  background:white;
+  height:30px;
+  margin-left:35%;
+  color:blue!important;
+}
+.submit-button:hover{
+  background:#D9D9D9;
+}
+.section{
+  float:left;
+  margin-right:50px;
+  width:29%;
+}
+
+  .section.last-child{
+    margin-right:0px;
+  }
+.edit_section{
+  float:left;
+  margin-right:20px;
+  width:31%;
+}
+
+  .edit_section.last-child{
+    margin-right:0px;
+  }
+
+
+
+.add_user{
+    margin-left:12%;
+    width:auto;
+    margin-top:50px;
+    margin-bottom:20px;
+    height:auto;
+  form label{
+    margin-bottom:-10px!important;
+  
+  }
+  label:first-child{
+    margin-bottom:0px!important;
+  }
+  input:first-child{
+    margin-bottom:0px!important;
+  }
+  input{
+    text-align:right
+  }
+  textarea{
+    width:92%!important;
+   
+  }
+  .actions{
+    input{
+      width:100px;
+      margin-left:160px;
+      height:30px;
+      cursor:pointer
+    }
+    input:hover{
+      background-color: white;
+  }
+  }
+  a:hover{
+      background-color: #D9D9D9;
+  }
+  a{
+      width: 80px;
+      margin-left: 110px;
+      height: 15px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      line-height: 1em;
+      border: 1px solid #89BAD3;
+      color: blue!important;
+      -webkit-border-radius: 0;
+      -webkit-background-clip: padding-box;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      
+      text-align: center;
+      padding: 7px;
+      background-color: #FDFDFD;
+    
+  }
+  .user_image{
+    width:200px;
+    height:200px;
+    float:left;
+    margin:50px 100px;
+  img{
+    
+    border:2px solid #89BAD3;
+    
+  }
+    
+  }
+  textarea{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    height:70px;
+    color: #333;
+    -webkit-border-radius: 0;
+    -webkit-background-clip: padding-box;
+    border-radius: 0;
+    border:none;
+    margin-bottom:20px;
+    width: 105%;
+    border: 1px solid #89BAD3;
+    border-radius:5px;
+    
+  }
+  input{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    border: 1px solid #89BAD3;
+    color: #333;
+    -webkit-border-radius: 0;
+    -webkit-background-clip: padding-box;
+    border-radius: 5px;
+    margin-bottom:20px;
+    width: 92%;
+  }
+  span{
+    background-color:white;
+    font-size: 1em;
+    line-height: 1em;
+    color: #333;
+    padding: 0.5em;
+    border: 1px solid #89BAD3;
+    border-radius:5px;
+    margin-left:10px;
+    
+  }
+  p{
+    color:#39C;
+    font-size:1.5em;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Sans", Arial, Helvetica, sans-serif;
+    margin-bottom:16px;
+      
+  }
+  .name{
+    width:150px;
+    height:auto;
+    margin-right:50px;
+    float:left;
+  }
+  .element{
+    float:left;
+    width:300px;
+    height:auto;
+  }
+  
+}
+
+.edit_user{
+  .actions{
+    input{
+      width:100px;
+      margin-left:100px;
+      height:30px;
+      cursor:pointer
+    }
+    input:hover{
+      background-color: white;
+  }
+  }
+  a:hover{
+      background-color: #dddddd;
+  }
+  a{
+      width: 80px;
+      margin-left: 180px;
+      height: 15px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      line-height: 1em;
+      border: 1px solid #89BAD3;
+      color: #333;
+      -webkit-border-radius: 0;
+      -webkit-background-clip: padding-box;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      text-align: center;
+      padding: 7px;
+      background-color: #FDFDFD;
+    
+  }
+  a.last-child{
+      margin-left: 140px;
+  }
+  
+}
+
+.show_user{
+  margin:5% 23%;
+  p{
+    margin-bottom:20px;
+    b{
+      margin-left:30px;
+    }
+  }
+  
+}
+.edit_section p{ 
+  color:green
+}
+
+.edit_section p b{
+  color:blue
+}
+.grid_4, .grid_8{
+  margin-bottom:30px
+}
+.ticket_form .first-label{
+  margin-bottom:-5px!important;
+}

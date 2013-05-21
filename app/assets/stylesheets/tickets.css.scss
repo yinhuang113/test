@@ -1,0 +1,20 @@
+// Place all the styles related to the Tickets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.list_ticket{
+  margin:5%;
+}
+.ticket_show{
+  margin:5%;
+  width:90%
+}
+.ticket_show a {
+  margin-left:300px!important;
+}
+
+.ticket_form textarea{
+  height: 66px!important; 
+  }
+.ticket_form .first-label{
+  margin-bottom:-5px!important;
+}

@@ -1,0 +1,219 @@
+<div class="edit_user">
+<script>
+$(document).ready(function() {	
+	$('#main-nav li').removeClass('current');
+	$('#main-nav .comments').addClass('current');
+	$('#main-nav>ul li.comments>ul li').removeClass('current');
+	$('#main-nav ul li.comments>ul li:first-child').addClass('current');
+	$('#breadcrumb li:first-child a').html('Ticket');
+	$('#breadcrumb li:last-child a').html('Information');
+  });
+</script>
+<section class="grid_4 ticket_show">
+  <div class="block-border">
+  	<div class="block-content form" id="simple_form" >
+    <h1>Full Information Of Current Ticket</h1>
+    
+    <fieldset class="grey-bg required">	
+		<p id="notice"><%= notice %></p>
+		<div class="edit_section">
+			<p>
+			  <b>Company:</b>
+			  <%= @ticket.company_id %>
+			</p>
+			
+			<p>
+			  <b>User:</b>
+			  <%= @ticket.user_id %>
+			</p>
+			
+			<p>
+			  <b>Phone:</b>
+			  <%= @ticket.phone %>
+			</p>
+			
+			<p>
+			  <b>Extension:</b>
+			  <%= @ticket.ticket_extension %>
+			</p>
+			
+			<p>
+			  <b>Email:</b>
+			  <%= @ticket.email %>
+			</p>
+			
+			<p>
+			  <b>Site city:</b>
+			  <%= @ticket.site_city %>
+			</p>
+			
+			<p>
+			  <b>Site zip:</b>
+			  <%= @ticket.site_zip %>
+			</p>
+			
+			<p>
+			  <b>Site phone:</b>
+			  <%= @ticket.site_phone %>
+			</p>
+			
+			<p>
+			  <b>Agreement project:</b>
+			  <%= @ticket.agreement_project %>
+			</p>
+			
+			<p>
+			  <b>Status:</b>
+			  <%= @ticket.status %>
+			</p>
+			
+			<p>
+			  <b>Type:</b>
+			  <%= @ticket.ticket_type %>
+			</p>
+			
+			<p>
+			  <b>Location:</b>
+			  <%= @ticket.ticket_location %>
+			</p>
+			
+			</div>
+			<div class="edit_section">
+			
+			<p>
+			  <b>Source:</b>
+			  <%= @ticket.source %>
+			</p>
+			
+			<p>
+			  <b>Budgeted hours:</b>
+			  <%= @ticket.budgeted_hours %>
+			</p>
+			
+			<p>
+			  <b>Priority level:</b>
+			  <%= @ticket.priority_level %>
+			</p>
+			
+			<p>
+			  <b>Description:</b>
+			  <%= @ticket.description %>
+			</p>
+			
+			<p>
+			  <b>Notes:</b>
+			  <%= @ticket.notes %>
+			</p>
+			
+			<p>
+			  <b>Tasks:</b>
+			  <%= @ticket.tasks %>
+			</p>
+			
+			<p>
+			  <b>Resource:</b>
+			  <%= @ticket.resource %>
+			</p>
+			
+			<p>
+			  <b>Schedule:</b>
+			  <%= @ticket.schedule %>
+			</p>
+
+			<p>
+			  <b>Device:</b>
+			  <%= @ticket.device %>
+			</p>
+			
+			<p>
+			  <b>Despatcher:</b>
+			  <%= @ticket.despatcher %>
+			</p>
+			
+			<p>
+			  <b>Account manager:</b>
+			  <%= @ticket.account_manager %>
+			</p>
+			
+			<p>
+			  <b>Open tickets device:</b>
+			  <%= @ticket.open_tickets_device %>
+			</p>
+							
+			</div>
+			<div class="edit_section last-child">
+			
+			<p>
+			  <b>Open ticket user:</b>
+			  <%= @ticket.open_ticket_user_id %>
+			</p>
+			
+			<p>
+			  <b>Open ticket company:</b>
+			  <%= @ticket.open_ticket_company_id %>
+			</p>
+			
+			<p>
+			  <b>Time entry standard:</b>
+			  <%= @ticket.time_entry_standard %>
+			</p>
+			
+			<p>
+			  <b>Time entry completed:</b>
+			  <%= @ticket.time_entry_completed %>
+			</p>
+			
+			<p>
+			  <b>Phone logs:</b>
+			  <%= @ticket.phone_logs %>
+			</p>
+			
+			<p>
+			  <b>Documents:</b>
+			  <%= @ticket.documents %>
+			</p>
+			
+			<p>
+			  <b>Sales task:</b>
+			  <%= @ticket.sales_task %>
+			</p>
+			
+			<p>
+			  <b>Products name:</b>
+			  <%= @ticket.products_name %>
+			</p>
+			
+			<p>
+			  <b>Products price:</b>
+			  <%= @ticket.products_price %>
+			</p>
+			
+			<p>
+			  <b>Products stocklevel:</b>
+			  <%= @ticket.products_stocklevel %>
+			</p>
+			
+			<p>
+			  <b>Expenses:</b>
+			  <%= @ticket.expenses %>
+			</p>
+			
+			<p>
+			  <b>Survey results:</b>
+			  <%= @ticket.survey_results %>
+			</p>
+			
+			<p>
+			  <b>Knowledgebase articles:</b>
+			  <%= @ticket.knowledgebase_articles %>
+			</p>
+			</div>
+			<div class="clear" style="margin-bottom: 20px"></div>
+			<%= link_to 'Edit', edit_ticket_path(@ticket) %>
+			<%= link_to 'Back', tickets_path %>
+			
+		</div>
+	</fieldset>
+  </div>
+ </section>
+ </div>

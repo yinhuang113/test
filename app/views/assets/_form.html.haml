@@ -1,0 +1,70 @@
+= form_for @asset do |f|
+  - if @asset.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@asset.errors.count, "error")} prohibited this asset from being saved:"
+      %ul
+        - @asset.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :company
+    = f.text_field :company
+  .field
+    = f.label :contact
+    = f.text_field :contact
+  .field
+    = f.label :product
+    = f.text_field :product
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :cost
+    = f.text_field :cost
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :manufacturer
+    = f.text_field :manufacturer
+  .field
+    = f.label :serial_numbers
+    = f.text_field :serial_numbers
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :refer_tickets
+    = f.text_field :refer_tickets
+  .field
+    = f.label :refer_projects
+    = f.text_field :refer_projects
+  .field
+    = f.label :refer_locations
+    = f.text_field :refer_locations
+  .field
+    = f.label :refer_purchase_order
+    = f.text_field :refer_purchase_order
+  .field
+    = f.label :refer_sales_order
+    = f.text_field :refer_sales_order
+  .field
+    = f.label :refer_invoices
+    = f.text_field :refer_invoices
+  .field
+    = f.label :date_of_installation
+    = f.text_field :date_of_installation
+  .field
+    = f.label :warranty_date_start
+    = f.datetime_select :warranty_date_start
+  .field
+    = f.label :warranty_date_end
+    = f.datetime_select :warranty_date_end
+  .field
+    = f.label :license_key
+    = f.text_field :license_key
+  .actions
+    = f.submit 'Save'

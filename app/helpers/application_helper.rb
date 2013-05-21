@@ -1,11 +1,10 @@
 module ApplicationHelper
-  def current_account
-    current_user.try(:account)
+def msg_body(msg)
+    if msg.length > 30
+      msg[0,27]+"..."
+    else
+      msg
+    end
   end
-
-  def body_class
-    %|c-#{controller.controller_name} a-#{controller.action_name}|
-  end
-
 
 end

@@ -1,0 +1,70 @@
+%script
+  $('#main-nav li').removeClass('current');
+  $('#main-nav .write').addClass('current');
+  $('#main-nav>ul li.write>ul li').removeClass('current');
+  $('#main-nav ul li.write>ul li').eq(2).addClass('current');
+  $('#breadcrumb li:first-child a').html('Product');
+  $('#breadcrumb li:last-child a').html('List');
+  
+%section.grid_4.project_list
+  .block-border
+    .block-content
+      %h1
+        Products list
+        = link_to 'New Product', new_product_path
+      - @products.each do |product|
+        .task.with-legend
+          .legend
+            - if product.product_type == "Standard"
+              %img{:height => "16", :src => "assets/icons/fugue/status.png", :width => "16"} Standard product
+            - if product.product_type == "Soon"
+              %img{:height => "16", :src => "assets/icons/fugue/status-away.png", :width => "16"} Soon overdue product
+            - if product.product_type == "Overdue"
+              %img{:height => "16", :src => "assets/icons/fugue/flag.png", :width => "16"} Overdue product
+          .task-description
+            %ul.floating-tags
+              %li.tag-time #{time_ago_in_words(product.created_at)}.
+              %li.tag-tags #{product.manufacture}
+              %li.tag-user #{product.units}
+            %h3 Product name
+            #{product.name}
+          %ul.grid-actions.project_action
+            %li
+              = link_to edit_product_path(product), {:title =>"Edit", :class =>"with-tip"} do
+                %img{:src =>"assets/icons/fugue/pencil.png", :width =>"16", :height =>"16"}
+            %li
+              = link_to product, method: :delete, data: { confirm: 'Are you sure?'}, :title =>"Delete", :class =>"with-tip" do
+                %img{:src =>"assets/icons/fugue/cross-circle.png", :width =>"16", :height =>"16"}
+            %li
+              = link_to product, {:title =>"More Information", :class =>"with-tip"} do
+                %img{:src =>"assets/icons/fugue/navigation.png", :width =>"16", :height =>"16"}
+          %ul.task-dialog
+            %li
+              %strong Marc:
+              Don't forget to tell the client
+              %em - Yesterday
+              %ul.mini-menu
+                %li
+                  %a{:href => "#", :title => "Send mail"}
+                    %img{:height => "16", :src => "assets/icons/fugue/mail.png", :width => "16"}/
+                %li
+                  %a{:href => "#", :title => "Delete comment"}
+                    %img{:height => "16", :src => "assets/icons/fugue/cross-circle.png", :width => "16"} Delete
+            %li
+              %strong John:
+              I suggest you could ask Dan or Sandy for a little help
+              %em - 2 hours ago
+              %ul.mini-menu
+                %li
+                  %a{:href => "#", :title => "Send mail"}
+                    %img{:height => "16", :src => "assets/icons/fugue/mail.png", :width => "16"}/
+                %li
+                  %a{:href => "#", :title => "Delete comment"}
+                    %img{:height => "16", :src => "assets/icons/fugue/cross-circle.png", :width => "16"} Delete
+            %li.auto-hide
+              %form.form.input-with-button{:action => "", :method => "post", :name => "task-1-comment"}
+                %input#task-1-comment{:name => "comment", :title => "Enter comment...", :type => "text", :value => ""}
+                  %button{:type => "submit"} Add
+                  
+      %ul.message.no-margin
+        %li #{@products.length} products found

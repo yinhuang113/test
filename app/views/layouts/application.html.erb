@@ -1,17 +1,15 @@
-<% content_for :container do %>
-  <%= render 'layouts/header' %>
-  <%= render 'layouts/mapbuilder_header' %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finish</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render :partial => 'layouts/header' %>
+<%= yield %>
+<%= render :partial => 'layouts/footer' %>
 
-  <div class="content">
-    <div class="container-fluid">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-
-      <%= yield %>
-    </div>
-  </div>
-
-  <%= render 'layouts/footer' %>
-<% end %>
-<%= render file: 'layouts/base' %>
+</body>
+</html>

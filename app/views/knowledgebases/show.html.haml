@@ -1,0 +1,49 @@
+.edit_user.show_user  
+  %p#notice= notice
+  
+  %p
+    %b Topic:
+    = @knowledgebasis.topic
+  %p
+    %b Product:
+    = @knowledgebasis.product
+  %p
+    %b Software:
+    = @knowledgebasis.software
+  %p
+    %b Description:
+    = @knowledgebasis.description
+  %p
+    %b Videos:
+    = @knowledgebasis.videos
+  %p
+    %b Screen shots:
+    = @knowledgebasis.screen_shots
+  %p
+    %b Related tickets:
+    = @knowledgebasis.related_tickets
+  %p
+    %b Companies:
+    = @knowledgebasis.companies
+  %p
+    %b Author:
+    = @knowledgebasis.author
+  %p
+    %b Edits:
+    = @knowledgebasis.edits
+  %p
+    %b Related articles:
+    = @knowledgebasis.related_articles
+  %p
+    %b Notes:
+    = @knowledgebasis.notes
+  %p
+    %b Related devices:
+    = @knowledgebasis.related_devices
+  %p
+    %b Date created:
+    = @knowledgebasis.date_created
+  
+  = link_to 'Edit', edit_knowledgebasis_path(@knowledgebasis)
+  \|
+  = link_to 'Back', knowledgebases_path

@@ -1,0 +1,3 @@
+class Invoice < ActiveRecord::Base
+  attr_accessible :agreement_excluded, :agreement_included, :agreement_terms, :billing_contact__fn, :billing_contact_email, :billing_contact_ln, :billing_contact_phone, :billing_contact_title, :billing_info_account_type, :billing_info_approval_level, :billing_info_approver, :charges_expenses, :charges_products, :charges_tax, :charges_time, :commission_product, :commission_service, :company_name, :fax, :invoice_due_date, :invoiced_purchase_order, :invoiced_sales_order, :invoiced_ticket_number, :open_credit_invoices, :open_invoices, :phone, :site_business_hours, :site_city, :site_map, :site_phone, :site_round_trip_mileage, :site_state, :site_street_address, :site_tolls, :site_zip, :status
+end

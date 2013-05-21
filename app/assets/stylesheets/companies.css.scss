@@ -1,0 +1,21 @@
+// Place all the styles related to the Companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.list_company{
+  margin:5%;
+}
+.show_company a {
+  margin-left:320px!important;
+}
+
+.company_form textarea{
+  height: 90px!important; 
+  }
+.company_form .first-label{
+  margin-bottom:-5px!important;
+}
+
+.show_company{
+  margin:5%!important;
+  width:90%!important;
+}

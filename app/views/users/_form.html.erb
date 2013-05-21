@@ -1,18 +1,78 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  
-  <% if current_user.role == :admin %>
-    <%= f.association :account %>
-  <% else %>
-    <%= f.association :account, as: :hidden %>
-  <% end %>
-  <%= f.input :title %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :role_value, label: "Role", collection: User::ROLES, include_blank: false %>
-  <%= f.input :password %>
-  <%= f.input :password_confirmation %>
-  
-  <%= f.button :submit, class: "btn btn-large btn-primary" %>
-<% end %>
+<section class="grid_4">
+      <div class="block-border">
+      	<div class="block-content form" id="simple_form" >
+        <h1>Information Of New User</h1>
+        
+        <fieldset class="grey-bg required">
+          <p>
+            <%= form_for(@user) do |f| %>
+            	
+	            <div class="section">
+	            	<%= f.label :contact_id, :class =>"first-label" %>
+	    			<%= f.number_field :contact_id, :placeholder =>"1", :class =>"first-input"%>
+	            
+	            	<%= f.label :firstName %><br />
+				    <%= f.text_field :firstName , :placeholder =>"Yin" %>
+				
+				    <%= f.label :lastName %><br />
+				    <%= f.text_field :lastName , :placeholder =>"Huang" %>
+				
+				    <%= f.label :title %><br />
+				    <%= f.text_field :title, :placeholder =>"Admin"  %>
+				
+				    <%= f.label :email %><br />
+				    <%= f.email_field :email , :placeholder =>"yinhuang@gmail.com" %>
+				
+	                <%= f.label :email_private %><br />
+				    <%= f.email_field :email_private , :placeholder =>"true" %>
+				
+				</div>
+				<div class="section">
+	                <%= f.label :phone %><br />
+				    <%= f.telephone_field :phone , :placeholder =>"+85 12345678" %>
+				
+				    <%= f.label :extension %><br />
+				    <%= f.text_field :extension , :placeholder =>"extension" %>
+				
+				    <%= f.label :fax %><br />
+				    <%= f.telephone_field :fax , :placeholder =>"+85 865-567-8989" %>
+				
+				    <%= f.label :mobile %><br />
+				    <%= f.telephone_field :mobile , :placeholder =>"+85 345-123-4563" %>
+				
+		            <%= f.label :home_phone  %><br />
+				    <%= f.telephone_field :home_phone , :placeholder =>"+85 678-546-3456"%>
+				
+				    <%= f.label :company %><br />
+				    <%= f.text_field :company , :placeholder =>"IT Company" %>
+				
+				</div>
+			    <div class="section last-child">
+				
+		            <%= f.label :site_city %><br />
+				    <%= f.text_field :site_city , :placeholder =>"Hong Kong" %>
+				  
+				    <%= f.label :site_zip %><br />
+				    <%= f.text_field :site_zip , :placeholder =>"856785463456"%>
+				
+				  
+				    <%= f.label :site_phone %><br />
+				    <%= f.phone_field :site_phone , :placeholder =>"+85 678-546-3456"%>
+				
+				  
+				    <%= f.label :notes %><br />
+				    <%= f.text_area :notes , :placeholder =>"this is the admin page"%>
+				</div>
+				<div class="clear"></div>
+	        	<%= f.submit :class =>"submit-button" %>
+			    <%= link_to 'Back', users_path %>
+	    	<% end %>
+          </p>
+        </fieldset>
+      </div>
+     </div>
+        </section>
+
+        
+
+

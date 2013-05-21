@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Mapbuilder::Application.config.secret_token = '04b9a11c77dd3a8c0961ee1cf3b07aa0fecb52aa55104f02d7285eb7b21d228613217d98f443be91a708b16095bf5721d85e3547b6d79cff46a8589ad1e2385f'
+Finish::Application.config.secret_token = '3cf3d8f33b78f104f57ccb3be6cfcce709e2656b5b58b87ec286508b66156e097c2ad8def80f68e036aa9bb3f12309cfb4800adca866d416d19d9f24f0d23296'

@@ -1,0 +1,74 @@
+<script>
+$(document).ready(function() {	
+	$('#main-nav li').removeClass('current');
+	$('#main-nav .settings').addClass('current');
+	$('#main-nav>ul li.settings>ul li').removeClass('current');
+	$('#main-nav ul li.settings>ul li').eq(0).addClass('current');
+	$('#breadcrumb li:first-child a').html('Help');
+	$('#breadcrumb li:last-child a').html('Help');
+	$('.accordion dt').click(function(){
+		$(this).next().slideToggle('fast');
+	});
+  });
+</script>
+
+<section class="grid_8">
+      <div class="block-border"><div class="block-content">
+        <h1>Help</h1>
+        
+        <div class="block-controls">
+          <ul class="controls-buttons">
+            <li><a href="#" title="Previous page"><img src="/images/icons/fugue/navigation-180.png" width="16" height="16"></a></li>
+            <li class="sep"></li>
+            <li><a href="#"><strong>Topics list</strong></a></li>
+            <li class="sep"></li>
+            <li><a href="#" title="Next page"><img src="/images/icons/fugue/navigation.png" width="16" height="16"></a></li>
+          </ul>
+        </div>
+        
+        <div class="infos">
+          <small>Help > CSS</small>
+          <h2 class="bigger">Create a new block</h2>
+        </div>
+        
+        <p class="grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        <p><strong>Follow these steps:</strong></p>
+        
+        <dl class="accordion">
+          <dt><span class="number">1</span> Insert a block div</dt>
+          <dd>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </dd>
+          
+          <dt><span class="number">2</span> Add title</dt>
+          <dd>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </dd>
+          
+          <dt><span class="number">3</span> Add navigation or pagination</dt>
+          <dd>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </dd>
+          
+          <dt><span class="number">4</span> Insert elements</dt>
+          <dd>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </dd>
+          
+          <dt><span class="number">5</span> Adding/removing block paddings</dt>
+          <dd>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </dd>
+        </dl>
+      
+      </div></div>
+    </section>
+    
+    <div class="clear"></div>
+    

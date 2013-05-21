@@ -1,8 +1,21 @@
-<% provide(:title, "Edit User") %>
-<h1>Edit User</h1>
+<div class="add_user edit_user">
+<script>
+$(document).ready(function() {	
+	$('#main-nav li').removeClass('current');
+	$('#main-nav .users').addClass('current');
+	$('#main-nav>ul li.users>ul li').removeClass('current');
+	$('#main-nav ul li.users>ul li').eq(1).html('Update User');
+	$('#main-nav ul li.users>ul li').eq(1).css('padding-left','10px');
+	$('#main-nav ul li.users>ul li').eq(1).css('padding-right','10px');
+	$('#main-nav ul li.users>ul li').eq(1).addClass('current');
+	$('#breadcrumb li:first-child a').html('Users');
+	$('#breadcrumb li:last-child a').html('Update User');
+	$('h1').html('Information of Current User');
+	$('.first-label').css('margin-bottom','20px');
+	$('.first-input').css('height','30px').css('margin-top','30px').css('width','95%');
+  });
+</script>	
+	
+<%= render 'form' %>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= render 'form' %>
-  </div>
 </div>

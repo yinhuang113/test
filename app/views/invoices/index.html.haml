@@ -1,0 +1,90 @@
+.list_user   
+  %h2 Listing invoices
+  
+  %table
+    %tr
+      %th Company name
+      %th Phone
+      %th Fax
+      %th Status
+      %th Site street address
+      %th Site city
+      %th Site state
+      %th Site zip
+      %th Site phone
+      %th Site business hours
+      %th Site round trip mileage
+      %th Site tolls
+      %th Site map
+      %th Open invoices
+      %th Open credit invoices
+      %th Billing contact  fn
+      %th Billing contact ln
+      %th Billing contact title
+      %th Billing contact email
+      %th Billing contact phone
+      %th Billing info account type
+      %th Billing info approval level
+      %th Billing info approver
+      %th Agreement terms
+      %th Agreement included
+      %th Agreement excluded
+      %th Invoice due date
+      %th Charges products
+      %th Charges time
+      %th Charges expenses
+      %th Charges tax
+      %th Invoiced sales order
+      %th Invoiced ticket number
+      %th Invoiced purchase order
+      %th Commission product
+      %th Commission service
+      %th
+      %th
+      %th
+  
+    - @invoices.each do |invoice|
+      %tr
+        %td= invoice.company_name
+        %td= invoice.phone
+        %td= invoice.fax
+        %td= invoice.status
+        %td= invoice.site_street_address
+        %td= invoice.site_city
+        %td= invoice.site_state
+        %td= invoice.site_zip
+        %td= invoice.site_phone
+        %td= invoice.site_business_hours
+        %td= invoice.site_round_trip_mileage
+        %td= invoice.site_tolls
+        %td= invoice.site_map
+        %td= invoice.open_invoices
+        %td= invoice.open_credit_invoices
+        %td= invoice.billing_contact__fn
+        %td= invoice.billing_contact_ln
+        %td= invoice.billing_contact_title
+        %td= invoice.billing_contact_email
+        %td= invoice.billing_contact_phone
+        %td= invoice.billing_info_account_type
+        %td= invoice.billing_info_approval_level
+        %td= invoice.billing_info_approver
+        %td= invoice.agreement_terms
+        %td= invoice.agreement_included
+        %td= invoice.agreement_excluded
+        %td= invoice.invoice_due_date
+        %td= invoice.charges_products
+        %td= invoice.charges_time
+        %td= invoice.charges_expenses
+        %td= invoice.charges_tax
+        %td= invoice.invoiced_sales_order
+        %td= invoice.invoiced_ticket_number
+        %td= invoice.invoiced_purchase_order
+        %td= invoice.commission_product
+        %td= invoice.commission_service
+        %td= link_to 'Show', invoice
+        %td= link_to 'Edit', edit_invoice_path(invoice)
+        %td= link_to 'Destroy', invoice, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  %br
+  
+  = link_to 'New Invoice', new_invoice_path

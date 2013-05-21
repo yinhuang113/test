@@ -1,0 +1,68 @@
+%script
+  $('#main-nav li').removeClass('current');
+  $('#main-nav .write').addClass('current');
+  $('#main-nav>ul li.write>ul li').removeClass('current');
+  $('#main-nav ul li.write>ul li').eq(2).addClass('current');
+  $('#breadcrumb li:first-child a').html('Product');
+  $('#breadcrumb li:last-child a').html('Show Product');
+.edit_user.show_user.show_user_product
+  %section.grid_4.show_project
+    .block-border
+      #simple_form.block-content.form
+        %h1 Full Information Of Current Product
+        %fieldset.grey-bg.required 
+          %p#notice= notice
+          .edit_section
+            %p
+              %b Name:
+              = @product.name
+            %p
+              %b Description:
+              = @product.description
+            %p
+              %b Cost:
+              = @product.cost
+            %p
+              %b Price:
+              = @product.price
+            %p
+              %b Manufacture:
+              = @product.manufacture
+          .edit_section
+            %p
+              %b Manufacture part:
+              = @product.manufacture_part
+            %p
+              %b Serial numbers:
+              = @product.serial_numbers
+            %p
+              %b Vendor perferred:
+              = @product.vendor_perferred
+            %p
+              %b Vendor other:
+              = @product.vendor_other
+            %p
+              %b Type:
+              = @product.product_type
+            %p
+              %b Units:
+              = @product.units
+          .edit_section.last-child  
+            %p
+              %b Tax:
+              = @product.tax
+            %p
+              %b Stock on hand:
+              = @product.stock_on_hand
+            %p
+              %b Stock location:
+              = @product.stock_location
+            %p
+              %b References recent orders:
+              = @product.references_recent_orders
+            %p
+              %b References companies who own:
+              = @product.references_companies_who_own
+          .clear
+        = link_to 'Edit', edit_product_path(@product)
+        = link_to 'Back', products_path

@@ -1,0 +1,46 @@
+.list_user    
+  %h2 Listing inventories
+  
+  %table
+    %tr
+      %th Product
+      %th Manufacture
+      %th Manufacture part
+      %th Vendor perferred
+      %th Vendor other
+      %th Type
+      %th Units
+      %th Tax
+      %th Stock on hand
+      %th Stock location
+      %th References sales orders
+      %th References companies who own
+      %th References purchase orders
+      %th References rmas
+      %th
+      %th
+      %th
+  
+    - @inventories.each do |inventory|
+      %tr
+        %td= inventory.product
+        %td= inventory.manufacture
+        %td= inventory.manufacture_part
+        %td= inventory.vendor_perferred
+        %td= inventory.vendor_other
+        %td= inventory.type
+        %td= inventory.units
+        %td= inventory.tax
+        %td= inventory.stock_on_hand
+        %td= inventory.stock_location
+        %td= inventory.references_sales_orders
+        %td= inventory.references_companies_who_own
+        %td= inventory.references_purchase_orders
+        %td= inventory.references_rmas
+        %td= link_to 'Show', inventory
+        %td= link_to 'Edit', edit_inventory_path(inventory)
+        %td= link_to 'Destroy', inventory, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  %br
+  
+  = link_to 'New Inventory', new_inventory_path

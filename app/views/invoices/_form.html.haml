@@ -1,0 +1,118 @@
+= form_for @invoice do |f|
+  - if @invoice.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@invoice.errors.count, "error")} prohibited this invoice from being saved:"
+      %ul
+        - @invoice.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :company_name
+    = f.text_field :company_name
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :fax
+    = f.text_field :fax
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :site_street_address
+    = f.text_field :site_street_address
+  .field
+    = f.label :site_city
+    = f.text_field :site_city
+  .field
+    = f.label :site_state
+    = f.check_box :site_state
+  .field
+    = f.label :site_zip
+    = f.text_field :site_zip
+  .field
+    = f.label :site_phone
+    = f.text_field :site_phone
+  .field
+    = f.label :site_business_hours
+    = f.text_field :site_business_hours
+  .field
+    = f.label :site_round_trip_mileage
+    = f.text_field :site_round_trip_mileage
+  .field
+    = f.label :site_tolls
+    = f.text_field :site_tolls
+  .field
+    = f.label :site_map
+    = f.text_field :site_map
+  .field
+    = f.label :open_invoices
+    = f.text_field :open_invoices
+  .field
+    = f.label :open_credit_invoices
+    = f.text_field :open_credit_invoices
+  .field
+    = f.label :billing_contact__fn
+    = f.text_field :billing_contact__fn
+  .field
+    = f.label :billing_contact_ln
+    = f.text_field :billing_contact_ln
+  .field
+    = f.label :billing_contact_title
+    = f.text_field :billing_contact_title
+  .field
+    = f.label :billing_contact_email
+    = f.text_field :billing_contact_email
+  .field
+    = f.label :billing_contact_phone
+    = f.text_field :billing_contact_phone
+  .field
+    = f.label :billing_info_account_type
+    = f.text_field :billing_info_account_type
+  .field
+    = f.label :billing_info_approval_level
+    = f.text_field :billing_info_approval_level
+  .field
+    = f.label :billing_info_approver
+    = f.text_field :billing_info_approver
+  .field
+    = f.label :agreement_terms
+    = f.text_field :agreement_terms
+  .field
+    = f.label :agreement_included
+    = f.text_field :agreement_included
+  .field
+    = f.label :agreement_excluded
+    = f.text_field :agreement_excluded
+  .field
+    = f.label :invoice_due_date
+    = f.text_field :invoice_due_date
+  .field
+    = f.label :charges_products
+    = f.text_field :charges_products
+  .field
+    = f.label :charges_time
+    = f.datetime_select :charges_time
+  .field
+    = f.label :charges_expenses
+    = f.text_field :charges_expenses
+  .field
+    = f.label :charges_tax
+    = f.text_field :charges_tax
+  .field
+    = f.label :invoiced_sales_order
+    = f.text_field :invoiced_sales_order
+  .field
+    = f.label :invoiced_ticket_number
+    = f.text_field :invoiced_ticket_number
+  .field
+    = f.label :invoiced_purchase_order
+    = f.text_field :invoiced_purchase_order
+  .field
+    = f.label :commission_product
+    = f.text_field :commission_product
+  .field
+    = f.label :commission_service
+    = f.text_field :commission_service
+  .actions
+    = f.submit 'Save'

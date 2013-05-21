@@ -1,0 +1,123 @@
+<script>
+$(document).ready(function() {	
+	$('#main-nav li').removeClass('current');
+	$('#main-nav .comments').addClass('current');
+	$('#main-nav>ul li.comments>ul li').removeClass('current');
+	$('#main-nav ul li.comments>ul li:first-child').addClass('current');
+	$('#breadcrumb li:first-child a').html('Tickets');
+	$('#breadcrumb li:last-child a').html('List');
+  });
+</script>
+
+<section class="grid_12 list_ticket">
+      <div class="block-border"><form class="block-content form" id="table_form" method="post" action="">
+        <h1>Tickets
+        <a href="tickets/new" title="Please click to add new user" class="with-tip"><img src="/images/icons/fugue/plus-circle-blue.png" width="16" height="16"> new add</a>
+        </h1>
+        <div class="block-controls">
+          
+          <ul class="controls-buttons">
+            <li><a href="#" title="Previous"><img src="/images/icons/fugue/navigation-180.png" width="16" height="16"> Prev</a></li>
+            <li><a href="#" title="Page 1" class="current"><b>1</b></a></li>
+            <li><a href="#" title="Page 2"><b>2</b></a></li>
+            <li><a href="#" title="Page 3"><b>3</b></a></li>
+            <li><a href="#" title="Page 4"><b>4</b></a></li>
+            <li><a href="#" title="Page 5"><b>5</b></a></li>
+            <li><a href="#" title="Next">Next <img src="/images/icons/fugue/navigation.png" width="16" height="16"></a></li>
+            <li class="sep"></li>
+            <li><a href="#"><img src="/images/icons/fugue/arrow-circle.png" width="16" height="16"></a></li>
+          </ul>
+          
+        </div>
+      
+        <div class="no-margin"><table class="table" cellspacing="0" width="100%">
+        
+          <thead>
+            <tr>
+              <th class="black-cell"><span class="loading"></span></th>
+              <th scope="col">
+                <span class="column-sort">
+                  <a href="#" title="Sort up" class="sort-up active"></a>
+                  <a href="#" title="Sort down" class="sort-down"></a>
+                </span>
+                Description
+              </th>
+              <th scope="col">Extension</th>
+              <th scope="col">Type</th>
+              <th scope="col">Status</th>
+              <th scope="col">Source</th>
+              <th scope="col">Tasks</th>
+              <th scope="col">
+              	<span class="column-sort">
+                  <a href="#" title="Sort up" class="sort-up"></a>
+                  <a href="#" title="Sort down" class="sort-down"></a>
+                </span>
+              	Products
+              </th>
+              <th scope="col">
+              	<span class="column-sort">
+                  <a href="#" title="Sort up" class="sort-up"></a>
+                  <a href="#" title="Sort down" class="sort-down"></a>
+                </span>
+              	Manager
+              </th>
+              <th scope="col">
+                <span class="column-sort">
+                  <a href="#" title="Sort up" class="sort-up"></a>
+                  <a href="#" title="Sort down" class="sort-down"></a>
+                </span>
+                Created Date
+              </th>
+              <th scope="col">
+                <span class="column-sort">
+                  <a href="#" title="Sort up" class="sort-up"></a>
+                  <a href="#" title="Sort down" class="sort-down"></a>
+                </span>
+                Budgeted Hours
+              </th>
+              <th scope="col" class="table-actions">Actions</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+          	<% @tickets.each do |ticket| %>
+          		<tr>
+      			  <th scope="row" class="table-check-cell"><input type="checkbox" name="selected[]" id="table-selected-1" value="1"></th>
+	              <% if (ticket.description.length > 30) %>
+	              	<td title="<%= ticket.description %>"><%= msg_body(ticket.description) %></td>
+	              <% else %>
+	              	<td><%= ticket.description %></td>
+	              <% end %>		
+	              <td><%= ticket.ticket_extension %></td>
+	              <td><%= ticket.ticket_type %></td>
+	              <td><%= ticket.status %></td>
+	              <td><%= ticket.source %></td>
+	              <td><%= ticket.tasks %></td>
+	              <td><%= ticket.products_name %></td>
+	              <td><%= ticket.account_manager %></td>
+	              <td><%= ticket.created_at.strftime("%d/%m/%y %H:%M")%></td>
+	              <td><%= ticket.budgeted_hours %></td>
+	              <td class="table-actions">
+	              	<%= link_to edit_ticket_path(ticket), {:title =>"Edit", :class =>"with-tip"} do %>
+                  	<img src="/images/icons/fugue/pencil.png" width="16" height="16">
+                  	<% end %>
+                  	<%= link_to ticket, method: :delete, data: { confirm: 'Are you sure?'}, :title =>"Delete", :class =>"with-tip" do %>
+                	<img src="/images/icons/fugue/cross-circle.png" width="16" height="16">
+                	<% end %>
+                	<%= link_to ticket, {:title =>"More Information", :class =>"with-tip"} do %>
+                	<img src="/images/icons/fugue/navigation.png" width="16" height="16">
+                	<% end %>
+	              </td>
+            	</tr>
+          	<% end %>
+
+          </tbody>
+        
+        </table></div>
+        
+        <ul class="message no-margin">
+          <li><%= @tickets.count  %> tickets found</li>
+        </ul>
+     </form></div>
+    </section>
+    

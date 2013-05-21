@@ -1,0 +1,49 @@
+.edit_user.show_user  
+  %p#notice= notice
+  
+  %p
+    %b Product:
+    = @inventory.product
+  %p
+    %b Manufacture:
+    = @inventory.manufacture
+  %p
+    %b Manufacture part:
+    = @inventory.manufacture_part
+  %p
+    %b Vendor perferred:
+    = @inventory.vendor_perferred
+  %p
+    %b Vendor other:
+    = @inventory.vendor_other
+  %p
+    %b Type:
+    = @inventory.type
+  %p
+    %b Units:
+    = @inventory.units
+  %p
+    %b Tax:
+    = @inventory.tax
+  %p
+    %b Stock on hand:
+    = @inventory.stock_on_hand
+  %p
+    %b Stock location:
+    = @inventory.stock_location
+  %p
+    %b References sales orders:
+    = @inventory.references_sales_orders
+  %p
+    %b References companies who own:
+    = @inventory.references_companies_who_own
+  %p
+    %b References purchase orders:
+    = @inventory.references_purchase_orders
+  %p
+    %b References rmas:
+    = @inventory.references_rmas
+  
+  = link_to 'Edit', edit_inventory_path(@inventory)
+  \|
+  = link_to 'Back', inventories_path

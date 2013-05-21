@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mapbuilder::Application.load_tasks
+Finish::Application.load_tasks

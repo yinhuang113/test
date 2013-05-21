@@ -1,0 +1,79 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  user_id: 1
+  phone: MyString
+  extension: MyString
+  email: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  agreement_project: MyString
+  status: MyString
+  type: 
+  location: MyString
+  source: MyString
+  budgeted_hours: MyString
+  priority_level: MyString
+  description: MyText
+  notes: MyText
+  tasks: MyString
+  resource: MyString
+  schedule: MyString
+  device: MyString
+  despatcher: MyString
+  account_manager: MyString
+  open_tickets_device: MyString
+  open_ticket_user_id: 1
+  open_ticket_company_id: 
+  time_entry_standard: MyString
+  time_entry_completed: MyString
+  phone_logs: MyText
+  documents: 
+  sales_task: MyString
+  products_name: MyString
+  products_price: MyString
+  products_stocklevel: MyString
+  expenses: MyString
+  survey_results: MyString
+  knowledgebase_articles: MyString
+
+two:
+  company_id: 1
+  user_id: 1
+  phone: MyString
+  extension: MyString
+  email: MyString
+  site_city: MyString
+  site_zip: MyString
+  site_phone: MyString
+  agreement_project: MyString
+  status: MyString
+  type: 
+  location: MyString
+  source: MyString
+  budgeted_hours: MyString
+  priority_level: MyString
+  description: MyText
+  notes: MyText
+  tasks: MyString
+  resource: MyString
+  schedule: MyString
+  device: MyString
+  despatcher: MyString
+  account_manager: MyString
+  open_tickets_device: MyString
+  open_ticket_user_id: 1
+  open_ticket_company_id: 
+  time_entry_standard: MyString
+  time_entry_completed: MyString
+  phone_logs: MyText
+  documents: 
+  sales_task: MyString
+  products_name: MyString
+  products_price: MyString
+  products_stocklevel: MyString
+  expenses: MyString
+  survey_results: MyString
+  knowledgebase_articles: MyString

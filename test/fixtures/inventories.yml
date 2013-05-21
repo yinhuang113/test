@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product: MyString
+  manufacture: MyString
+  manufacture_part: MyString
+  vendor_perferred: MyString
+  vendor_other: MyString
+  type: 
+  units: MyString
+  tax: MyString
+  stock_on_hand: MyString
+  stock_location: MyString
+  references_sales_orders: MyString
+  references_companies_who_own: MyString
+  references_purchase_orders: MyString
+  references_rmas: MyString
+
+two:
+  product: MyString
+  manufacture: MyString
+  manufacture_part: MyString
+  vendor_perferred: MyString
+  vendor_other: MyString
+  type: 
+  units: MyString
+  tax: MyString
+  stock_on_hand: MyString
+  stock_location: MyString
+  references_sales_orders: MyString
+  references_companies_who_own: MyString
+  references_purchase_orders: MyString
+  references_rmas: MyString

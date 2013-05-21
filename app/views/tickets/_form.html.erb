@@ -1,0 +1,159 @@
+<section class="grid_4 ticket_form">
+      <div class="block-border">
+      	<div class="block-content form" id="simple_form" >
+        <h1>Information Of Current Ticket</h1>
+        
+        <fieldset class="grey-bg required">
+          <p>
+			<%= form_for(@ticket) do |f| %>
+			  <% if @ticket.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+			
+			      <ul>
+			      <% @ticket.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			   
+			  <% end %>
+			<div class="section">					
+			  
+			    <%= f.label :company_id, :class =>'first-label' %>
+			    <%= f.number_field :company_id %>
+			  
+			    <%= f.label :user_id %>
+			    <%= f.number_field :user_id %>
+			  
+			    <%= f.label :phone %>
+			    <%= f.telephone_field :phone %>
+			  
+			    <%= f.label :extension %>
+			    <%= f.text_field :ticket_extension %>
+			  
+			    <%= f.label :email %>
+			    <%= f.email_field :email %>
+			  
+			    <%= f.label :site_city %>
+			    <%= f.text_field :site_city %>
+			  
+			    <%= f.label :site_zip %>
+			    <%= f.text_field :site_zip %>
+			  
+			    <%= f.label :site_phone %>
+			    <%= f.telephone_field :site_phone %>
+			  
+			    <%= f.label :agreement_project %>
+			    <%= f.text_field :agreement_project %>
+			  
+			    <%= f.label :status %>
+			    <%= f.text_field :status %>
+			  
+			    <%= f.label :type %>
+			    <%= f.text_field :ticket_type %>
+			  
+			    <%= f.label :location %>
+			    <%= f.text_field :ticket_location %>
+				
+				<%= f.label :source %>
+			    <%= f.text_field :source %>
+			  
+			    </div> 
+			 	<div class="section">
+			    
+			    <%= f.label :budgeted_hours %>
+			    <%= f.text_field :budgeted_hours %>
+				
+			    <%= f.label :priority_level %>
+			    <%= f.text_field :priority_level %>
+			  
+			    <%= f.label :tasks %>
+			    <%= f.text_field :tasks %>
+			  
+			    <%= f.label :resource %>
+			    <%= f.text_field :resource %>
+			  
+			    <%= f.label :schedule %>
+			    <%= f.text_field :schedule %>
+			  
+			    <%= f.label :device %>
+			    <%= f.text_field :device %>
+			  
+			    <%= f.label :despatcher %>
+			    <%= f.text_field :despatcher %>
+			 
+			    <%= f.label :account_manager %>
+			    <%= f.text_field :account_manager %>
+			  
+			    <%= f.label :open_tickets_device %>
+			    <%= f.text_field :open_tickets_device %>
+				
+				<%= f.label :open_ticket_user_id %>
+			    <%= f.number_field :open_ticket_user_id %>
+			 
+			  
+			    <%= f.label :open_ticket_company_id %>
+			    <%= f.text_field :open_ticket_company_id %>
+			 
+				<%= f.label :time_entry_standard %>
+			    <%= f.text_field :time_entry_standard %>
+			 
+			  
+			    <%= f.label :time_entry_completed %>
+			    <%= f.text_field :time_entry_completed %>
+			 
+			  
+			    </div>
+				<div class="section last-child"> 
+			    
+			    <%= f.label :documents %>
+			    <%= f.text_field :documents %>
+			 
+			    <%= f.label :sales_task %>
+			    <%= f.text_field :sales_task %>
+			
+			    <%= f.label :products_name %>
+			    <%= f.text_field :products_name %>
+			 
+			  
+			    <%= f.label :products_price %>
+			    <%= f.text_field :products_price %>
+			 
+			  
+			    <%= f.label :products_stocklevel %>
+			    <%= f.text_field :products_stocklevel %>
+			 
+			  
+			    <%= f.label :expenses %>
+			    <%= f.text_field :expenses %>
+			 
+			  
+			    <%= f.label :survey_results %>
+			    <%= f.text_field :survey_results %>
+			 
+			  
+			    <%= f.label :knowledgebase_articles %>
+			    <%= f.text_field :knowledgebase_articles %>
+			    
+			    <%= f.label :description %>
+			    <%= f.text_area :description %>
+			  
+			    <%= f.label :notes %>
+			    <%= f.text_area :notes %>
+			    
+			    <%= f.label :phone_logs %>
+			    <%= f.text_area :phone_logs %>
+			    
+			 </div>
+				<div class="clear"></div>
+	        	<%= f.submit :class =>"submit-button" %>
+			    <%= link_to 'Back', tickets_path %>
+	    	<% end %>
+          </p>
+        </fieldset>
+      </div>
+     </div>
+        </section>
+			
+			
+			

@@ -1,0 +1,402 @@
+%header
+  .container_12
+    %p#skin-name
+      %small
+        Constellation
+        %br Admin Skin
+      %strong 1.5
+    .server-info
+      Server:
+      %strong Apache 2.2.14
+    .server-info
+      Ruby on rails:
+      %strong 1.9.3
+%nav#main-nav
+  %ul.container_12
+    %li.home.current
+      %a{:href => "#", :title => "Home"} Home
+      %ul
+        %li.current
+          %a{:href => "#", :title => "Dashboard"} Dashboard
+        %li
+          %a{:href => "#", :title => "My profile"} My profile
+        %li.with-menu
+          %a{:href => "#", :title => "My settings"} My settings
+          .menu
+            %img{:height => "16", :src => "/images/menu-open-arrow.png", :width => "16"}
+              %ul
+                %li.icon_address
+                  %a{:href => "#"} Browse by
+                  %ul
+                    %li.icon_blog
+                      %a{:href => "#"} Blog
+                      %ul
+                        %li.icon_alarm
+                          %a{:href => "#"} Recents
+                          %ul
+                            %li.icon_building
+                              %a{:href => "#"} Corporate blog
+                            %li.icon_newspaper
+                              %a{:href => "#"} Press blog
+                        %li.icon_building
+                          %a{:href => "#"} Corporate blog
+                        %li.icon_computer
+                          %a{:href => "#"} Support blog
+                        %li.icon_search
+                          %a{:href => "#"} Search...
+                    %li.icon_server
+                      %a{:href => "#"} Website
+                    %li.icon_network
+                      %a{:href => "#"} Domain
+                %li.icon_export
+                  %a{:href => "#"} Export
+                  %ul
+                    %li.icon_doc_excel
+                      %a{:href => "#"} Excel
+                    %li.icon_doc_csv
+                      %a{:href => "#"} CSV
+                    %li.icon_doc_pdf
+                      %a{:href => "#"} PDF
+                    %li.icon_doc_image
+                      %a{:href => "#"} Image
+                    %li.icon_doc_web
+                      %a{:href => "#"} Html
+                %li.sep
+                %li.icon_refresh
+                  %a{:href => "#"} Reload
+                %li.icon_reset Reset
+                %li.icon_search
+                  %a{:href => "#"} Search
+                %li.sep
+                %li.icon_terminal
+                  %a{:href => "#"} Custom request
+                %li.icon_battery
+                  %a{:href => "#"} Stats server load
+    %li.write
+      %a{:href => "#", :title => "Write"} Write
+      %ul
+        %li
+          %a{:href => "/projects", :title => "Project"} Project
+        %li
+          %a{:href => "/projects/new", :title => "Add project"} Add project
+        %li
+          %a{:href => "/products", :title => "Product"} Product
+        %li
+          %a{:href => "/products/new", :title => "Add product"} Add product
+    %li.comments
+      %a{:href => "#", :title => "Tickets"} Tickets
+      %ul
+        %li
+          %a{:href => "/tickets", :title => "Manage"} Tickets
+        %li
+          %a{:href => "/tickets/new", :title => "Spams"} Add ticket
+    %li.medias
+      %a{:href => "#", :title => "Medias"} Medias
+      %ul
+        %li
+          %a{:href => "#", :title => "Browse"} Browse
+        %li
+          %a{:href => "#", :title => "Add file"} Add file
+        %li
+          %a{:href => "#", :title => "Manage"} Manage
+        %li
+          %a{:href => "#", :title => "Settings"} Settings
+    %li.users
+      %a{:href => "#", :title => "Users"} Users
+      %ul
+        %li
+          %a{:href => "/users", :title => "Browse"} List
+        %li
+          %a{:href => "/users/new", :title => "Add user"} Add user
+        %li
+          %a{:href => "/users/edit", :title => "Settings"} Settings
+        %li
+          %a{:href => "/companies", :title => "Settings"} Company
+        %li
+          %a{:href => "/companies/new", :title => "Settings"} Add company
+    %li.stats
+      %a{:href => "#", :title => "Stats"} Stats
+    %li.settings
+      %a{:href => "#", :title => "Help"} Help
+      %ul
+        %li
+          %a{:href => "/users/help", :title => "Help"} Help
+        %li
+          %a{:href => "/users/about", :title => "About Us"} About Us
+        
+    %li.backup
+      %a{:href => "#", :title => "Backup"} Backup
+#sub-nav
+  .container_12
+    %a.nav-button{:href => "#", :title => "Help"}
+      %b Help
+    %form#search-form{:action => "search.html", :method => "post", :name => "search-form"}
+      %input#s{:autocomplete => "off", :name => "s", :title => "Search admin...", :type => "text", :value => ""}
+/ End sub nav
+/ Status bar
+#status-bar
+  .container_12
+    %ul#status-infos
+      %li.spaced
+        Logged as:
+        %strong Admin
+      %li
+        %a.button{:href => "#", :title => "5 messages"}
+          %img{:height => "16", :src => "/images/icons/fugue/mail.png", :width => "16"}
+            %strong 5
+        #messages-list.result-block
+          %span.arrow
+            %span
+          %ul.small-files-list.icon-mail
+            %li
+              %a{:href => "#"}
+                %strong 10:15
+                Please update...
+                %br
+                  %small From: System
+            %li
+              %a{:href => "#"}
+                %strong Yest.
+                Hi
+                %br
+                  %small From: Jane
+            %li
+              %a{:href => "#"}
+                %strong Yest.
+                System update
+                %br
+                  %small From: System
+            %li
+              %a{:href => "#"}
+                %strong 2 days
+                Database backup
+                %br
+                  %small From: System
+            %li
+              %a{:href => "#"}
+                %strong 2 days
+                Re: bug report
+                %br
+                  %small From: Max
+          %p#messages-info.result-info
+            %a{:href => "#"} Go to inbox &raquo;
+      %li
+        %a.button{:href => "#", :title => "25 comments"}
+          %img{:height => "16", :src => "/images/icons/fugue/balloon.png", :width => "16"}
+            %strong 25
+        #comments-list.result-block
+          %span.arrow
+            %span
+          %ul.small-files-list.icon-comment
+            %li
+              %a{:href => "#"}
+                %strong> Jane
+                \: I don't think so
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> Ken_54
+                \: What about using a different...
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong Jane
+                Sure, but no more.
+                %br
+                  %small
+                    On
+                    %strong Another post
+            %li
+              %a{:href => "#"}
+                %strong> Max
+                \: Have you seen that...
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> Anonymous
+                \: Good luck!
+                %br
+                  %small
+                    On
+                    %strong My first post
+            %li
+              %a{:href => "#"}
+                %strong> Sébastien
+                \: This sure rocks!
+                %br
+                  %small
+                    On
+                    %strong Another post title
+            %li
+              %a{:href => "#"}
+                %strong> John
+                \: Me too!
+                %br
+                  %small
+                    On
+                    %strong Third post title
+            %li
+              %a{:href => "#"}
+                %strong John
+                This can be solved by...
+                %br
+                  %small
+                    On
+                    %strong Another post
+            %li
+              %a{:href => "#"}
+                %strong> Jane
+                \: No prob.
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> Anonymous
+                \: I had the following...
+                %br
+                  %small
+                    On
+                    %strong My first post
+            %li
+              %a{:href => "#"}
+                %strong> Anonymous
+                \: Yes
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> Lian
+                \: Please make sure that...
+                %br
+                  %small
+                    On
+                    %strong Last post title
+            %li
+              %a{:href => "#"}
+                %strong Ann
+                Thanks!
+                %br
+                  %small
+                    On
+                    %strong Last post
+            %li
+              %a{:href => "#"}
+                %strong> Max
+                \: Don't tell me what...
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> Gordon
+                \: Here is an article about...
+                %br
+                  %small
+                    On
+                    %strong My another post
+            %li
+              %a{:href => "#"}
+                %strong> Lee
+                \: Try to reset the value first
+                %br
+                  %small
+                    On
+                    %strong Last title
+            %li
+              %a{:href => "#"}
+                %strong> Lee
+                \: Sure!
+                %br
+                  %small
+                    On
+                    %strong Second post title
+            %li
+              %a{:href => "#"}
+                %strong Many
+                Great job, keep on!
+                %br
+                  %small
+                    On
+                    %strong Third post
+            %li
+              %a{:href => "#"}
+                %strong> John
+                \: I really like this
+                %br
+                  %small
+                    On
+                    %strong First title
+            %li
+              %a{:href => "#"}
+                %strong> Paul
+                \: Hello, I have an issue with...
+                %br
+                  %small
+                    On
+                    %strong My first post
+            %li
+              %a{:href => "#"}
+                %strong> June
+                \: Yuck.
+                %br
+                  %small
+                    On
+                    %strong Another title
+            %li
+              %a{:href => "#"}
+                %strong> Jane
+                \: Wow, sounds amazing, do...
+                %br
+                  %small
+                    On
+                    %strong Another title
+            %li
+              %a{:href => "#"}
+                %strong> Esther
+                \: Man, this is the best...
+                %br
+                  %small
+                    On
+                    %strong Another post
+            %li
+              %a{:href => "#"}
+                %strong> Max
+                \: Thanks!
+                %br
+                  %small
+                    On
+                    %strong Post title
+            %li
+              %a{:href => "#"}
+                %strong> John
+                \: I'd say it is not safe...
+                %br
+                  %small
+                    On
+                    %strong My first post
+          %p#comments-info.result-info
+            %a{:href => "#"} Manage comments &raquo;
+      %li
+        %a.button.red{:href => "/admin/logout", :title => "Logout"}
+          %span.smaller LOGOUT
+    / v1.5: you can now add class red to the breadcrumb
+    %ul#breadcrumb
+      %li
+        %a{:href => "#", :title => "Home"} Home
+      %li
+        %a{:href => "#", :title => "Dashboard"} Dashboard
+#header-shadow

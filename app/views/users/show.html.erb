@@ -1,14 +1,118 @@
-<% provide(:title, @user.name) %> 
-<h1><%= @user.name %></h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <ul>
-      <li>Account: <%= @user.account ? @user.account.name : "" %></li>
-      <li>Name: <%= @user.name %></li>
-      <li>Email: <%= mail_to @user.email %></li>
-      <li>Role: <%= @user.role %></li>
-    </ul>
-    <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>
-  </div>
-</div>
+<div class="edit_user show_user">
+	<script>
+		$(document).ready(function() {	
+			$('#main-nav li').removeClass('current');
+			$('#main-nav .users').addClass('current');
+			$('#main-nav>ul li.users>ul li').removeClass('current');
+			$('#main-nav ul li.users>ul li').eq(1).html('Show');
+			$('#main-nav ul li.users>ul li').eq(1).css('padding-left','10px');
+			$('#main-nav ul li.users>ul li').eq(1).css('padding-right','10px');
+			$('#main-nav ul li.users>ul li').eq(1).addClass('current');
+			$('#breadcrumb li:first-child a').html('Users');
+			$('#breadcrumb li:last-child a').html('Show');
+			$('.first-label').css('margin-bottom','20px');
+			$('.first-input').css('height','30px').css('margin-top','30px').css('width','95%');
+		  });
+	</script>
+	<section class="grid_4 user_show">
+      <div class="block-border">
+      	<div class="block-content form" id="simple_form" >
+        <h1>Full Information Of Current User</h1>
+        
+        <fieldset class="grey-bg required">	
+			<p id="notice"><%= notice %></p>
+			<div class="edit_section">
+			<p>
+			  <b>Contact:</b>n>
+			
+			  <%= @user.contact_id %>
+			</p>
+			
+			<p>
+			  <b>Firstname:</b>
+			  <%= @user.firstName %>
+			</p>
+			
+			<p>
+			  <b>Lastname:</b>
+			  <%= @user.lastName %>
+			</p>
+			
+			<p>
+			  <b>Title:</b>
+			  <%= @user.title %>
+			</p>
+			
+			<p>
+			  <b>Email:</b>
+			  <%= @user.email %>
+			</p>
+			
+			<p>
+			  <b>Email private:</b>
+			  <%= @user.email_private %>
+			</p>
+			</div>
+			<div class="edit_section">
+			<p>
+			  <b>Phone:</b>
+			  <%= @user.phone %>
+			</p>
+			
+			<p>
+			  <b>Extension:</b>
+			  <%= @user.extension %>
+			</p>
+			
+			<p>
+			  <b>Fax:</b>
+			  <%= @user.fax %>
+			</p>
+			
+			<p>
+			  <b>Mobile:</b>
+			  <%= @user.mobile %>
+			</p>
+			
+			<p>
+			  <b>Home phone:</b>
+			  <%= @user.home_phone %>
+			</p>
+			
+			<p>
+			  <b>Company:</b>
+			  <%= @user.company %>
+			</p>
+			</div>
+			<div class="edit_section last-child">
+			
+			<p>
+			  <b>Site city:</b>
+			  <%= @user.site_city %>
+			</p>
+			
+			<p>
+			  <b>Site zip:</b>
+			  <%= @user.site_zip %>
+			</p>
+			
+			<p>
+			  <b>Site phone:</b>
+			  <%= @user.site_phone %>
+			</p>
+			
+			<p>
+			  <b>Notes:</b>
+			  <%= @user.notes %>
+			</p>
+			</div>
+			<div class="clear" style="margin-bottom: 20px"></div>
+			<%= link_to 'Edit', edit_user_path(@user) %>
+			<%= link_to 'Back', users_path %>
+			
+			</div>
+		</fieldset>
+      </div>
+     </section>
+     </div>

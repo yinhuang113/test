@@ -1,11 +1,12 @@
-<footer class="row-fluid">
-    <div class="row-fluid footerBottom pagination-centered">
-    	<%= link_to image_tag("footer-logo.png", alt: "Powered by DRA", class: "footerLogo"), '#' %>
-    	COPYRIGHT © 2012 ALL RIGHTS RESERVED. SYNERGY MEDIA CORP.
-    	<%= link_to(@contact_path) do %>
-    		<em class="contatUs">Contact Us</em>
-		<% end %>
-    </div>        
-</footer>
-
-<%= yield :js %>
+<footer>
+    
+    <div class="float-left">
+      <a href="/users/help" class="button">Help</a>
+      <a href="/users/about" class="button">About</a>
+    </div>
+    
+    <div class="float-right">
+      <a href="#top" class="button"><img src="/images/icons/fugue/navigation-090.png" width="16" height="16"> Page top</a>
+    </div>
+    
+  </footer>

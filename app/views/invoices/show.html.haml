@@ -1,0 +1,115 @@
+.edit_user.show_user    
+  %p#notice= notice
+  
+  %p
+    %b Company name:
+    = @invoice.company_name
+  %p
+    %b Phone:
+    = @invoice.phone
+  %p
+    %b Fax:
+    = @invoice.fax
+  %p
+    %b Status:
+    = @invoice.status
+  %p
+    %b Site street address:
+    = @invoice.site_street_address
+  %p
+    %b Site city:
+    = @invoice.site_city
+  %p
+    %b Site state:
+    = @invoice.site_state
+  %p
+    %b Site zip:
+    = @invoice.site_zip
+  %p
+    %b Site phone:
+    = @invoice.site_phone
+  %p
+    %b Site business hours:
+    = @invoice.site_business_hours
+  %p
+    %b Site round trip mileage:
+    = @invoice.site_round_trip_mileage
+  %p
+    %b Site tolls:
+    = @invoice.site_tolls
+  %p
+    %b Site map:
+    = @invoice.site_map
+  %p
+    %b Open invoices:
+    = @invoice.open_invoices
+  %p
+    %b Open credit invoices:
+    = @invoice.open_credit_invoices
+  %p
+    %b Billing contact  fn:
+    = @invoice.billing_contact__fn
+  %p
+    %b Billing contact ln:
+    = @invoice.billing_contact_ln
+  %p
+    %b Billing contact title:
+    = @invoice.billing_contact_title
+  %p
+    %b Billing contact email:
+    = @invoice.billing_contact_email
+  %p
+    %b Billing contact phone:
+    = @invoice.billing_contact_phone
+  %p
+    %b Billing info account type:
+    = @invoice.billing_info_account_type
+  %p
+    %b Billing info approval level:
+    = @invoice.billing_info_approval_level
+  %p
+    %b Billing info approver:
+    = @invoice.billing_info_approver
+  %p
+    %b Agreement terms:
+    = @invoice.agreement_terms
+  %p
+    %b Agreement included:
+    = @invoice.agreement_included
+  %p
+    %b Agreement excluded:
+    = @invoice.agreement_excluded
+  %p
+    %b Invoice due date:
+    = @invoice.invoice_due_date
+  %p
+    %b Charges products:
+    = @invoice.charges_products
+  %p
+    %b Charges time:
+    = @invoice.charges_time
+  %p
+    %b Charges expenses:
+    = @invoice.charges_expenses
+  %p
+    %b Charges tax:
+    = @invoice.charges_tax
+  %p
+    %b Invoiced sales order:
+    = @invoice.invoiced_sales_order
+  %p
+    %b Invoiced ticket number:
+    = @invoice.invoiced_ticket_number
+  %p
+    %b Invoiced purchase order:
+    = @invoice.invoiced_purchase_order
+  %p
+    %b Commission product:
+    = @invoice.commission_product
+  %p
+    %b Commission service:
+    = @invoice.commission_service
+  
+  = link_to 'Edit', edit_invoice_path(@invoice)
+  \|
+  = link_to 'Back', invoices_path

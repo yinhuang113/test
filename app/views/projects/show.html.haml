@@ -1,0 +1,148 @@
+%script
+  $('#main-nav li').removeClass('current');
+  $('#main-nav .write').addClass('current');
+  $('#main-nav>ul li.write>ul li').removeClass('current');
+  $('#main-nav ul li.write>ul li').eq(0).addClass('current');
+  $('#breadcrumb li:first-child a').html('Project');
+  $('#breadcrumb li:last-child a').html('Show Project');
+.edit_user.show_user.show_user_project
+  %section.grid_4.show_project
+    .block-border
+      #simple_form.block-content.form
+        %h1 Full Information Of Current Project
+        %fieldset.grey-bg.required 
+          %p#notice= notice
+          .edit_section
+            %p
+              %b Company:
+              = @project.company_id
+            %p
+              %b Approver:
+              = @project.approver
+            %p
+              %b Phone:
+              = @project.phone
+            %p
+              %b Extension:
+              = @project.project_extension
+            %p
+              %b Site city:
+              = @project.site_city
+            %p
+              %b Site zip:
+              = @project.site_zip
+            %p
+              %b Site phone:
+              = @project.site_phone
+            %p
+              %b Start date:
+              = @project.start_date
+            %p
+              %b End date:
+              = @project.end_date
+            %p
+              %b Status:
+              = @project.status
+            %p
+              %b Type:
+              = @project.project_type
+            %p
+              %b Project manager:
+              = @project.project_manager
+            %p
+              %b Budgeted hours:
+              = @project.budgeted_hours
+            %p
+              %b Budgeted expenses:
+              = @project.budgeted_expenses
+          .edit_section
+            %p
+              %b Description:
+              = @project.description
+            %p
+              %b Notes:
+              = @project.notes
+            %p
+              %b Tasks:
+              = @project.tasks
+            %p
+              %b Resources name:
+              = @project.resources_name
+            %p
+              %b Resources role:
+              = @project.resources_role
+            %p
+              %b Schedule:
+              = @project.schedule
+            %p
+              %b Products name:
+              = @project.products_name
+            %p
+              %b Products cost:
+              = @project.products_cost
+            %p
+              %b Products price:
+              = @project.products_price
+            %p
+              %b Products purchase order:
+              = @project.products_purchase_order
+            %p
+              %b Products bin:
+              = @project.products_bin
+            %p
+              %b Account manager:
+              = @project.account_manager
+            %p
+              %b Open issues:
+              = @project.open_issues
+            %p
+              %b Time entry standard:
+              = @project.time_entry_standard
+          .edit_section.last-child
+            %p
+              %b Time entry completed:
+              = @project.time_entry_completed
+            %p
+              %b Expenses:
+              = @project.expenses
+            %p
+              %b Phone logs:
+              = @project.phone_logs
+            %p
+              %b Documents:
+              = @project.documents
+            %p
+              %b Survery results:
+              = @project.survery_results
+            %p
+              %b Knowledgebase articles:
+              = @project.knowledgebase_articles
+            %p
+              %b Phases:
+              = @project.phases
+            %p
+              %b Billing method terms:
+              = @project.billing_method_terms
+            %p
+              %b Billing method approver:
+              = @project.billing_method_approver
+            %p
+              %b Downpayment info amount:
+              = @project.downpayment_info_amount
+            %p
+              %b Downpayment info breakdown:
+              = @project.downpayment_info_breakdown
+            %p
+              %b Downpayment info invoice:
+
+              = @project.downpayment_info_invoice
+            %p
+              %b Downpayment info datepaid:
+              = @project.downpayment_info_datepaid
+            %p
+              %b Invoices:
+              = @project.invoices
+          .clear
+        = link_to 'Edit', edit_project_path(@project)
+        = link_to 'Back', projects_path
+

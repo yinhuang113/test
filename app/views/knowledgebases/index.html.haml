@@ -1,0 +1,46 @@
+.list_user    
+  %h2 Listing knowledgebases
+  
+  %table
+    %tr
+      %th Topic
+      %th Product
+      %th Software
+      %th Description
+      %th Videos
+      %th Screen shots
+      %th Related tickets
+      %th Companies
+      %th Author
+      %th Edits
+      %th Related articles
+      %th Notes
+      %th Related devices
+      %th Date created
+      %th
+      %th
+      %th
+  
+    - @knowledgebases.each do |knowledgebasis|
+      %tr
+        %td= knowledgebasis.topic
+        %td= knowledgebasis.product
+        %td= knowledgebasis.software
+        %td= knowledgebasis.description
+        %td= knowledgebasis.videos
+        %td= knowledgebasis.screen_shots
+        %td= knowledgebasis.related_tickets
+        %td= knowledgebasis.companies
+        %td= knowledgebasis.author
+        %td= knowledgebasis.edits
+        %td= knowledgebasis.related_articles
+        %td= knowledgebasis.notes
+        %td= knowledgebasis.related_devices
+        %td= knowledgebasis.date_created
+        %td= link_to 'Show', knowledgebasis
+        %td= link_to 'Edit', edit_knowledgebasis_path(knowledgebasis)
+        %td= link_to 'Destroy', knowledgebasis, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  %br
+  
+  = link_to 'New Knowledgebase', new_knowledgebasis_path

@@ -1,0 +1,150 @@
+%section.grid_4
+  .block-border
+    #simple_form.block-content.form
+      %h1 Information Of New Project
+      
+      %fieldset.grey-bg.required
+        %p
+          = form_for @project do |f|
+            - if @project.errors.any?
+              #error_explanation
+                %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+                %ul
+                  - @project.errors.full_messages.each do |msg|
+                    %li= msg
+          
+            .section
+              = f.label :company_id, :class =>"first-label"
+              = f.number_field :company_id, :placeholder =>"1", :class =>"first-input"
+            
+              = f.label :approver
+              = f.text_field :approver
+            
+              = f.label :phone
+              = f.telephone_field :phone
+           
+              = f.label :extension
+              = f.password_field :project_extension
+            
+              = f.label :site_city
+              = f.text_field :site_city
+            
+              = f.label :site_zip
+              = f.text_field :site_zip
+            
+              = f.label :site_phone
+              = f.text_field :site_phone
+            
+              
+              = f.label :type, :class =>"type"
+              = f.text_field :project_type
+            
+              = f.label :project_manager
+              = f.text_field :project_manager
+            
+              = f.label :budgeted_hours
+              = f.text_field :budgeted_hours
+              
+              = f.label :budgeted_expenses
+              = f.text_field :budgeted_expenses
+            
+              = f.label :tasks
+              = f.text_field :tasks, :placeholder =>"Standard or Soon or Overdue"
+            
+              = f.label :knowledgebase_articles
+              = f.text_field :knowledgebase_articles
+            
+              = f.label :phases
+              = f.text_field :phases
+            
+              = f.label :billing_method_terms
+              = f.text_field :billing_method_terms
+            
+            .section
+              
+              = f.label :resources_name
+              = f.text_field :resources_name
+            
+              = f.label :resources_role
+              = f.text_field :resources_role
+            
+              = f.label :schedule
+              = f.text_field :schedule
+              
+              = f.label :products_name
+              = f.text_field :products_name
+            
+              = f.label :products_cost
+              = f.text_field :products_cost
+            
+              = f.label :products_price
+              = f.text_field :products_price
+            
+              = f.label :products_purchase_order
+              = f.text_field :products_purchase_order
+           
+              = f.label :products_bin
+              = f.text_field :products_bin
+            
+              = f.label :account_manager
+              = f.text_field :account_manager
+            
+              = f.label :open_issues
+              = f.text_field :open_issues
+            
+              = f.label :time_entry_standard
+              = f.text_field :time_entry_standard
+            
+              = f.label :time_entry_completed
+              = f.text_field :time_entry_completed
+            
+              = f.label :expenses
+              = f.text_field :expenses
+            
+              = f.label :phone_logs
+              = f.text_field :phone_logs
+            
+              = f.label :survery_results
+              = f.text_field :survery_results
+            .section.last-child
+            
+              = f.label :billing_method_approver
+              = f.text_field :billing_method_approver
+            
+              = f.label :downpayment_info_amount
+              = f.text_field :downpayment_info_amount
+            
+              = f.label :downpayment_info_breakdown
+              = f.text_field :downpayment_info_breakdown
+            
+              = f.label :downpayment_info_invoice
+              = f.text_field :downpayment_info_invoice
+            
+              = f.label :downpayment_info_datepaid
+              = f.text_field :downpayment_info_datepaid
+            
+              = f.label :invoices
+              = f.text_field :invoices
+              
+              = f.label :description
+              = f.text_area :description
+            
+              = f.label :notes
+              = f.text_area :notes
+              
+              = f.label :documents
+              = f.text_area :documents
+              
+              = f.label :start_date
+              = f.datetime_select :start_date
+            
+              = f.label :end_date
+              = f.datetime_select :end_date
+            
+              = f.label :status
+              = f.check_box :status, :class =>"checkbox"
+
+            .clear
+            = f.submit :class =>"submit-button"
+            = link_to 'Back', projects_path
+            

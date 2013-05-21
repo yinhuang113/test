@@ -1,0 +1,265 @@
+<div class="edit_user">
+
+<section class="grid_4 show_company">
+  <div class="block-border">
+  	<div class="block-content form" id="simple_form" >
+    <h1>Full Information Of Current Company</h1>
+    
+    <fieldset class="grey-bg required">	
+		<p id="notice"><%= notice %></p>
+		<div class="edit_section">
+			<p>
+			  <b>Contact:</b>
+			  <%= @company.contact_id %>
+			</p>
+			
+			<p>
+			  <b>Name:</b>
+			  <%= @company.company_name %>
+			</p>
+			
+			<p>
+			  <b>Phone:</b>
+			  <%= @company.phone %>
+			</p>
+			
+			<p>
+			  <b>Fax:</b>
+			  <%= @company.fax %>
+			</p>
+			
+			<p>
+			  <b>Website:</b>
+			  <%= @company.website %>
+			</p>
+			
+			<p>
+			  <b>Industry:</b>
+			  <%= @company.industry %>
+			</p>
+			
+			<p>
+			  <b>Status:</b>
+			  <%= @company.status %>
+			</p>
+			
+			<p>
+			  <b>Street:</b>
+			  <%= @company.street %>
+			</p>
+			
+			<p>
+			  <b>City:</b>
+			  <%= @company.city %>
+			</p>
+			
+			<p>
+			  <b>State:</b>
+			  <%= @company.state %>
+			</p>
+			
+			<p>
+			  <b>Zip:</b>
+			  <%= @company.zip %>
+			</p>
+			
+			<p>
+			  <b>Primary contact fn:</b>
+			  <%= @company.primary_contact_fn %>
+			</p>
+			
+			<p>
+			  <b>Primary contact ln:</b>
+			  <%= @company.primary_contact_ln %>
+			</p>
+			
+			<p>
+			  <b>S street add:</b>
+			  <%= @company.s_street_add %>
+			</p>
+			
+			<p>
+			  <b>S city:</b>
+			  <%= @company.s_city %>
+			</p>
+			
+			<p>
+			  <b>S state:</b>
+			  <%= @company.s_state %>
+			</p>
+			
+			<p>
+			  <b>S phone:</b>
+			  <%= @company.s_phone %>
+			</p>
+			
+			<p>
+			  <b>S hours:</b>
+			  <%= @company.s_hours %>
+			</p>
+			
+			</div>
+			<div class="edit_section">
+
+			<p>
+			  <b>S afterhourscontactname:</b>
+			  <%= @company.s_afterhourscontactname %>
+			</p>
+			
+			<p>
+			  <b>S afterhourscontactphone:</b>
+			  <%= @company.s_afterhourscontactphone %>
+			</p>
+			
+			<p>
+			  <b>S round trip mileage:</b>
+			  <%= @company.s_round_trip_mileage %>
+			</p>
+			
+			<p>
+			  <b>S tolls:</b>
+			  <%= @company.s_tolls %>
+			</p>
+			
+			<p>
+			  <b>S map:</b>
+			  <%= @company.s_map %>
+			</p>
+			
+			<p>
+			  <b>Sales activities:</b>
+			  <%= @company.sales_activities %>
+			</p>
+			
+			<p>
+			  <b>Devices:</b>
+			  <%= @company.devices %>
+			</p>
+			
+			<p>
+			  <b>Software name:</b>
+			  <%= @company.software_name %>
+			</p>
+			
+			<p>
+			  <b>Software licenses:</b>
+			  <%= @company.software_licenses %>
+			</p>
+			
+			<p>
+			  <b>Software expiration:</b>
+			  <%= @company.software_expiration %>
+			</p>
+			
+			<p>
+			  <b>Invoices:</b>
+			  <%= @company.invoices %>
+			</p>
+			
+			<p>
+			  <b>Open invoices:</b>
+			  <%= @company.open_invoices %>
+			</p>
+			
+			<p>
+			  <b>Open credit invoices:</b>
+			  <%= @company.open_credit_invoices %>
+			</p>
+			
+			<p>
+			  <b>Billing contact fn:</b>
+			  <%= @company.billing_contact_fn %>
+			</p>
+			
+			</div>
+			<div class="edit_section last-child">
+
+			<p>
+			  <b>Billing contact ln:</b>
+			  <%= @company.billing_contact_ln %>
+			</p>
+			
+			<p>
+			  <b>Billing contact title:</b>
+			  <%= @company.billing_contact_title %>
+			</p>
+			
+			<p>
+			  <b>Billing contact email:</b>
+			  <%= @company.billing_contact_email %>
+			</p>
+			
+			<p>
+			  <b>Billing contact phone:</b>
+			  <%= @company.billing_contact_phone %>
+			</p>
+			
+			<p>
+			  <b>Billing info account type:</b>
+			  <%= @company.billing_info_account_type %>
+			</p>
+			
+			<p>
+			  <b>Billing info approval level:</b>
+			  <%= @company.billing_info_approval_level %>
+			</p>
+			
+			<p>
+			  <b>Billing info approver:</b>
+			  <%= @company.billing_info_approver %>
+			</p>
+			
+			<p>
+			  <b>Knowledgebase articles:</b>
+			  <%= @company.knowledgebase_articles %>
+			</p>
+			
+			<p>
+			  <b>Agrements terms:</b>
+			  <%= @company.agrements_terms %>
+			</p>
+			
+			<p>
+			  <b>Agrements cycle:</b>
+			  <%= @company.agrements_cycle %>
+			</p>
+			
+			<p>
+			  <b>Agreements startdate:</b>
+			  <%= @company.agreements_startdate %>
+			</p>
+			
+			<p>
+			  <b>Agreements endstart:</b>
+			  <%= @company.agreements_endstart %>
+			</p>
+			
+			<p>
+			  <b>Agreements lastinvoiceamount:</b>
+			  <%= @company.agreements_lastinvoiceamount %>
+			</p>
+			
+			<p>
+			  <b>Agreements devices count:</b>
+			  <%= @company.agreements_devices_count %>
+			</p>
+			
+			<p>
+			  <b>Agreements devices cost:</b>
+			  <%= @company.agreements_devices_cost %>
+			</p>
+			
+			<p>
+			  <b>Agreements devices price:</b>
+			  <%= @company.agreements_devices_price %>
+			</p>
+			</div>
+			<div class="clear" style="margin-bottom: 20px"></div>
+			<%= link_to 'Edit', edit_company_path(@company) %>
+			<%= link_to 'Back', companies_path %>
+			
+		</div>
+	</fieldset>
+  </div>
+ </section>
+ </div>
